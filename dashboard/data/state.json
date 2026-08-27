@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-08-27T07:26:30.899Z",
+  "updatedAt": "2026-08-27T16:13:53.820Z",
   "planning": {
     "activeEpisodeId": "FTN-PILOT-01",
     "shortlist": [
@@ -38,43 +38,43 @@
       "id": "brief",
       "mode": "auto",
       "status": "complete",
-      "note": "공식자료 조사 완료 · 출처 7개 · 사실 11개"
+      "note": "공식 출처 7개 · 시각 5개 · 승인 완료"
     },
     {
       "id": "shots",
       "mode": "review",
-      "status": "not_started",
-      "note": ""
+      "status": "complete",
+      "note": "18문장 대본 저장 완료"
     },
     {
       "id": "voice",
       "mode": "manual",
-      "status": "not_started",
-      "note": ""
+      "status": "ready_review",
+      "note": "Typecast Piljae · 78.36초 · 검토 필요"
     },
     {
       "id": "keyframes",
       "mode": "review",
-      "status": "planned",
-      "note": "주제별 형태 레퍼런스 5개 승인"
+      "status": "running",
+      "note": "설계 완료 · 이미지 9/18"
     },
     {
       "id": "video",
       "mode": "review",
-      "status": "not_started",
-      "note": ""
+      "status": "running",
+      "note": "영상 1/18"
     },
     {
       "id": "edit",
       "mode": "auto",
       "status": "not_started",
-      "note": ""
+      "note": "영상 완료 후 진행"
     },
     {
       "id": "qa",
       "mode": "auto",
       "status": "not_started",
-      "note": ""
+      "note": "최종 마스터 렌더링 후 진행"
     }
   ],
   "shots": [

@@ -11,3 +11,5 @@ output/**/*.svg
 dashboard/data/state.json.tmp
 node_modules/
 output/**/final/_segs/
+dashboard/data/claude-last-fail.log
+output/**/audio/_tts_segs/

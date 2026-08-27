@@ -8,22 +8,16 @@
     "subjectKo": "1977년 베르너 피셔(Werner Fischer)가 특허 낸 이중 스트링('스파게티') 테니스 라켓 — 메인(세로) 스트링을 앞뒤 두 겹으로 분리 배치하고 그 사이에 얽히지 않은 소수의 크로스(가로) 스트링을 끼워 넣은 3층 구조",
     "subjectEn": "Werner Fischer's 1977-patented double-strung ('spaghetti') tennis racket — two separated front/rear layers of vertical main strings sandwiching a small number of non-interlaced horizontal cross strings",
     "invariantsKo": [
-      "스트링 표면은 하나의 균일한 격자가 아니라, 앞/중간/뒤 3층 구조(앞 메인층-크로스층-뒤 메인층)다.",
-      "크로스 스트링은 5~6개뿐으로 통상 라켓(약 20개)보다 훨씬 적다.",
-      "메인 스트링과 크로스 스트링은 서로 얽혀(interlace) 고정되지 않고 접촉점에서 미끄러지듯 움직인다.",
-      "모든 메인-크로스 접촉점에는 원통형 보호 튜브(마카로니 모양)가 끼워져 있다.",
-      "앞쪽 메인 스트링층에는 별도의 가로 방향 홀딩 스트링이 있어 메인 다발을 하나의 단위로 묶는다.",
-      "라켓 프레임 자체(헤드 크기, 넥, 그립, 오벌 형태)는 1970년대 통상적 알루미늄 라켓과 동일하며, 구조적 특이점은 오직 스트링 배치에 있다.",
-      "실물 사진에서 크로스 스트링(주황/황갈색)은 스트링베드 전면이 아니라 중앙 대각선 대역에 다이아몬드형 클러스터로 뭉쳐 있고, 교차점마다 작은 흰색 클립으로 고정되어 있다."
+      "스파게티 라켓: 은회색 금속 오벌 프레임 + 흰색 스로트 + 갈색 가죽 그립 (1977년 W.Fischer 실물 기준).",
+      "세로 메인 스트링은 투명 나일론이 성기게 앞뒤 2겹으로 배치되고 서로 얽히지 않는다.",
+      "스트링베드 중앙부에 가로 5줄의 살몬핑크 튜브 열 — 세로줄마다 짧은 튜브 1개, 각 열은 주황색 가는 끈으로 엮여 매듭 고정.",
+      "일반 라켓(1977년)은 나무 프레임과 촘촘히 얽힌 격자 스트링베드다."
     ],
     "invariantsEn": [
-      "The string surface is not one uniform grid — it is a 3-layer stack: front main layer, cross-string layer, rear main layer.",
-      "There are only 5-6 cross strings, far fewer than a conventional racket's ~20.",
-      "Main and cross strings are NOT interlaced/bonded at crossings — they slide against each other at contact points.",
-      "Every main-cross contact point has a short cylindrical protective sheath/tube (macaroni-like) threaded onto the string.",
-      "The front main-string layer carries additional horizontal 'holding strings' that unify the main-string bundle's lateral movement.",
-      "The frame itself (head size, throat, grip, oval silhouette) is an ordinary 1970s aluminum oval-head racket — the only structural anomaly is the string arrangement.",
-      "In real photographs, the cross strings (orange/tan) cluster in a diagonal diamond pattern concentrated in the center band, not across the whole face, each crossing fastened with a small white clip/tie."
+      "Spaghetti racket: silver-grey oval metal frame, white plastic throat, brown leather grip (per the real 1977 W.Fischer racket).",
+      "Vertical main strings are sparse clear nylon in two separated front/rear layers, never interlaced.",
+      "Exactly FIVE horizontal rows of salmon-pink tubes across the middle of the bed - one short tube per main string - each row laced with a thin orange cord and small knots.",
+      "An ordinary 1977 racket is a wooden frame with a dense interlaced string grid."
     ],
     "constructionKo": [
       "앞면(타구면)에서 뒤로: 1) 앞쪽 메인(세로) 스트링 다발, 2) 크로스(가로) 스트링 5~6개(앞뒤 메인층 사이에 위치), 3) 뒤쪽 메인(세로) 스트링 다발.",
@@ -62,18 +56,16 @@
       "Holding strings and protective sheaths prevent fully chaotic movement, constraining the main-string bundle to move as one coordinated unit."
     ],
     "commonErrorsKo": [
-      "스트링을 하나의 평면 격자로 그려 앞/뒤로 분리된 이중 메인층 구조를 표현하지 못하는 오류.",
-      "크로스 스트링을 일반 라켓처럼 20개 안팎으로 촘촘하게 그리는 오류 — 실제로는 5~6개뿐이며 중앙 대역에 집중됨.",
-      "라켓 프레임 자체를 미래적이거나 이색적인 형태로 왜곡하는 오류 — 실제 프레임은 평범한 1970년대 오벌 헤드 알루미늄 라켓 형태.",
-      "스트링 교차점의 원통형 보호 튜브를 생략하거나 매듭·구슬로 잘못 표현하는 오류.",
-      "메인 스트링과 크로스 스트링이 일반 라켓처럼 서로 얽혀(짜여) 있는 것으로 그리는 오류 — 실제로는 얽히지 않고 층이 분리되어 미끄러지는 구조."
+      "튜브들을 대각선 다이아몬드 클러스터로 그리는 오류 — 실제는 가로 5열이다.",
+      "스파게티 라켓에 촘촘한 격자 크로스 스트링을 그리는 오류 — 크로스는 거의 없고 튜브 열이 그 역할을 한다.",
+      "프레임을 현대식 카본 라켓이나 미래형 형태로 왜곡하는 오류 — 실제는 은회색 금속 오벌 프레임.",
+      "튜브를 구슬·매듭으로 대체하거나 생략하는 오류."
     ],
     "commonErrorsEn": [
-      "Drawing the strings as one flat grid, failing to show the front/rear separated double main-string layer.",
-      "Drawing ~20 densely packed cross strings like a normal racket — the real count is only 5-6, clustered centrally.",
-      "Distorting the frame itself into a futuristic or exotic shape — the real frame is an unremarkable 1970s oval-head aluminum racket.",
-      "Omitting the cylindrical protective sheaths at crossing points, or replacing them with knots or beads.",
-      "Depicting main and cross strings as interlaced/woven like a normal racket — in reality the layers are separated and slide against each other."
+      "Drawing the tubes as a diagonal diamond cluster - the real racket has FIVE horizontal rows.",
+      "Giving the spaghetti racket a dense cross-string grid - it has almost no cross strings; the tube rows take their place.",
+      "Distorting the frame into a modern carbon or futuristic shape - the real frame is a plain silver-grey oval metal frame.",
+      "Replacing the tubes with beads or knots, or omitting them."
     ]
   },
   "references": [
@@ -122,7 +114,7 @@
         "Frame is silver aluminum with black throat/grip section and a 'MARK 77' label"
       ],
       "selected": true,
-      "localFile": null,
+      "localFile": "output/episodes/FTN-EP-001/visual-references/assets/refer01.jpg",
       "downloadError": null
     },
     {
@@ -143,7 +135,7 @@
         "Unlike the original Kuebler Mark 77, this shows a uniform full-face pattern rather than a centered cluster"
       ],
       "selected": true,
-      "localFile": null,
+      "localFile": "output/episodes/FTN-EP-001/visual-references/assets/refer02.jpg",
       "downloadError": null
     },
     {
@@ -166,7 +158,7 @@
         "Cross strings fitted with plastic spaghetti tubing and small glue dabs"
       ],
       "selected": true,
-      "localFile": null,
+      "localFile": "output/episodes/FTN-EP-001/visual-references/assets/refer03.jpg",
       "downloadError": null
     },
     {
@@ -197,8 +189,8 @@
     "ITF Rules of Tennis Rule 4 strings interlaced bonded",
     "1977 Raquette d'Or Nastase Vilas spaghetti racket"
   ],
-  "promptAnchorKo": "1970년대 오벌 헤드 알루미늄 테니스 라켓, 스트링베드는 앞뒤로 분리된 3층 구조: 앞쪽 세로 메인 스트링 다발 / 중앙에 얽히지 않은 가로 크로스 스트링 5~6개 / 뒤쪽 세로 메인 스트링 다발, 모든 메인-크로스 교차점에 작은 원통형 보호 튜브 장착, 크로스 스트링은 스트링베드 전면이 아니라 중앙 대각선 대역에 다이아몬드 클러스터로 집중, 초정밀 단면도로 앞/중간/뒤 세 층 사이 간격과 슬라이딩 여유 공간이 뚜렷이 구분되어 보임, 프레임 외형 자체는 평범한 통상적 1970년대 라켓 형태",
-  "promptAnchorEn": "1970s oval-head aluminum tennis racket, string bed built as a separated 3-layer stack: front bundle of vertical main strings / a central set of only 5-6 non-interlaced horizontal cross strings / rear bundle of vertical main strings, small cylindrical protective sheaths at every main-cross contact point, cross strings concentrated in a diagonal diamond cluster near the center rather than covering the full face, ultra-precise cross-section clearly showing the gap and sliding clearance between the front/middle/rear layers, ordinary unremarkable 1970s racket frame silhouette",
+  "promptAnchorKo": "스파게티 라켓의 실물 형태: 은회색 금속 오벌 프레임과 흰색 플라스틱 스로트(W.Fischer 빨간 글씨), 갈색 가죽 그립. 세로 메인 스트링은 투명 나일론으로 성기게 앞뒤 2겹 배치. 스트링베드 중앙부에 '가로 5줄'의 살몬핑크 플라스틱 튜브 열이 있고, 각 열은 세로줄마다 짧은 튜브 1개씩 끼워져 가는 주황색 끈으로 좌우로 엮여 작은 매듭들로 고정된다. 촘촘한 격자 크로스 스트링은 없다. 시대 기준: 1977년 — 일반 라켓은 나무 프레임 70년대 디자인, 현대식 카본 라켓 금지.",
+  "promptAnchorEn": "The real spaghetti racket: silver-grey oval metal frame with a white plastic throat piece (red W.Fischer lettering) and brown leather grip. Sparse clear nylon vertical main strings in two front/rear layers. Across the middle of the string bed run exactly FIVE horizontal rows of small salmon-pink plastic tubes - one short tube threaded on each main string - and each row is laced side-to-side with a thin orange cord fixed by small knots. There is NO dense cross-string grid and NO diagonal diamond cluster. Era: 1977 - ordinary rackets are wooden 1970s frames; modern carbon rackets are forbidden.",
   "warnings": [
     "특허 도면 이미지는 저해상도 소형 이미지라 세부가 흐릿하여, 특허 명세서(Description) 텍스트와 대조해 구조를 재구성했다.",
     "woodtennis.com 사진은 개인 컬렉터 아카이브 자료로 공식 라이선스가 없어 source-link-only로만 사용해야 한다.",

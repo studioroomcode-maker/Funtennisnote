@@ -1,0 +1,573 @@
+{
+  "version": 1,
+  "episodeId": "FTN-PILOT-01",
+  "name": "너무 강한 회전 때문에 금지된 라켓 — 씬 설계표 (18컷)",
+  "updatedAt": "2026-08-27T14:54:01.332Z",
+  "specs": {
+    "imageResolution": "1080x1920 (FullHD)",
+    "videoResolution": "704x1280 (HD 테스트)",
+    "fps": 24,
+    "colorArc": "클리니컬 화이트(컷1) → 세피아·앰버 아카이브(컷2~4) → 웜/쿨 대비와 스캔들 레드(컷5~10) → ITF 규정실의 쿨 블루그레이(컷11~16) → 미색 웜 뉴트럴로 회복하며 컷1과 색온도 대칭(컷17~18)",
+    "imageModel": "flow-image",
+    "videoModel": "minimax-h3"
+  },
+  "cuts": [
+    {
+      "cut": 1,
+      "title": "얽힌 줄의 질문",
+      "durationSec": 3.3,
+      "actionType": "측정",
+      "staging": "무광 화이트 사이클로라마 스튜디오 중앙에 현정식 스트링베드가 수직으로 매달려 균일하게 조명받고, 표면에는 인터레이스 교차점이 촘촘한 격자로 배열되어 있다. 옆에는 투명 유리 눈금자 패널이 떠서 교차 간격을 측정할 준비를 한다.",
+      "cameraAngle": "정면에서 살짝 위 부감",
+      "shotSize": "익스트림 클로즈업 → 클로즈업",
+      "lens": "100mm 매크로",
+      "cameraMove": "스트링 표면을 따라 좌→우 슬라이드 후 서서히 트랙아웃 (끝까지 지속)",
+      "subjectMotion": "유리 눈금자 패널이 교차점 위를 천천히 스캔하듯 이동한다.",
+      "tone": "클리니컬한 화이트, 차가운 스튜디오 조명",
+      "inSceneText": "",
+      "references": [],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "스트링 교차점이 실제 인터레이스(교차 고정) 형태인지",
+        "격자 간격이 균일한지",
+        "화면에 불필요한 글자가 없는지"
+      ],
+      "en": {
+        "staging": "A regulation-strung string bed hangs vertically at the center of a matte white cyclorama studio under even lighting, its surface covered in a tight uniform grid of interlaced crossing points; a transparent glass ruler panel floats beside it, ready to measure the spacing.",
+        "subjectMotion": "The glass ruler panel slowly scans across the string intersections.",
+        "cameraAngle": "Slightly high front angle",
+        "shotSize": "Extreme close-up to close-up",
+        "cameraMove": "Slide across the string surface left to right, then a slow track-out (continuous to the end of the cut)",
+        "tone": "Clinical white, cool studio lighting"
+      }
+    },
+    {
+      "cut": 2,
+      "title": "1977년의 문",
+      "durationSec": 5,
+      "actionType": "측정",
+      "staging": "어두운 아카이브 보관고 중앙에 원형 놋쇠 다이얼 게이지가 떠 있고 바늘이 연도 눈금을 스치듯 회전한다. 배경에는 흐릿한 라켓 실루엣이 받침대 위에서 스포트라이트를 기다리듯 서 있다.",
+      "cameraAngle": "로우앵글에서 다이얼을 올려다보는 구도",
+      "shotSize": "미디엄 → 클로즈업",
+      "lens": "50mm",
+      "cameraMove": "크레인 하강하며 다이얼 게이지로 푸시인 (끝까지 지속)",
+      "subjectMotion": "다이얼 바늘이 여러 연도를 스쳐 1977에서 딸깍 멈추고, 배경 스포트라이트가 켜진다.",
+      "tone": "세피아 빛이 도는 앰버, 먼지 낀 아카이브 공기감",
+      "inSceneText": "1977",
+      "references": [],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "다이얼 숫자 1977이 정확히 판독되는지",
+        "라켓 실루엣이 다음 컷 예고 수준으로만 노출되는지",
+        "앰버 톤 전환이 자연스러운지"
+      ],
+      "en": {
+        "staging": "A dark archive vault holds a circular brass dial gauge floating at its center, its needle sweeping across year markings; in the background a blurred racket silhouette waits on a pedestal as if for its spotlight.",
+        "subjectMotion": "The dial needle sweeps past several years and clicks to a stop at 1977 as the background spotlight switches on.",
+        "cameraAngle": "Low angle looking up at the dial",
+        "shotSize": "Medium to close-up",
+        "cameraMove": "Crane down while pushing in on the dial gauge (continuous to the end of the cut)",
+        "tone": "Sepia-tinged amber, dusty archival air"
+      }
+    },
+    {
+      "cut": 3,
+      "title": "피셔의 라켓",
+      "durationSec": 4.6,
+      "actionType": "단면",
+      "staging": "아카이브에서 이어지는 클린한 워크벤치 세트, 회전 받침대 위에 평범한 1970년대 오벌 헤드 알루미늄 프레임 라켓이 놓여 있고 옆 놋쇠 명판에 국가·이름이 새겨져 있다. 스트링베드 앞쪽 절반이 투명 게이트처럼 열리기 시작해 안쪽 이중 구조를 예고한다.",
+      "cameraAngle": "아이레벨에서 살짝 낮은 3/4 측면",
+      "shotSize": "미디엄 클로즈업",
+      "lens": "65mm",
+      "cameraMove": "받침대를 도는 아크샷 + 서서히 푸시인 (끝까지 지속)",
+      "subjectMotion": "받침대가 천천히 회전하며 스트링베드 앞면이 투명 절개선을 따라 갈라지기 시작한다.",
+      "tone": "앰버에서 미색으로 밝아지는 웜톤",
+      "inSceneText": "WERNER FISCHER · GERMANY",
+      "references": [],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "프레임이 미래적이지 않고 평범한 1970년대 오벌 헤드 형태인지",
+        "명판 글자가 정확히 판독되는지",
+        "절개가 앞면부터 시작되는지"
+      ],
+      "en": {
+        "staging": "A clean workbench set continues from the archive vault; an ordinary 1970s oval-head aluminum racket rests on a rotating pedestal, a brass nameplate beside it engraved with country and name. The front half of the string bed begins to open like a transparent gate, hinting at the double-layer structure inside.",
+        "subjectMotion": "The pedestal slowly turns as the front of the string bed splits open along a transparent seam line.",
+        "cameraAngle": "Eye-level, slightly low three-quarter angle",
+        "shotSize": "Medium close-up",
+        "cameraMove": "Arc shot circling the pedestal with a slow push-in (continuous to the end of the cut)",
+        "tone": "Warming from amber toward off-white"
+      }
+    },
+    {
+      "cut": 4,
+      "title": "미끄러지는 두 겹",
+      "durationSec": 5,
+      "actionType": "단면",
+      "staging": "워크벤치 클로즈업, 스트링베드가 완전히 절개되어 앞쪽 세로 메인 다발-빈 간격-뒤쪽 세로 메인 다발의 3층 구조가 옆에서 보이는 초정밀 단면으로 전시된다. 중앙 대각선 대역에는 얽히지 않은 가로 크로스 스트링 5~6가닥이 다이아몬드 클러스터로 떠 있고, 모든 메인-크로스 교차점에 작은 원통형 보호 튜브가 끼워져 있다.",
+      "cameraAngle": "측면 단면 정면",
+      "shotSize": "익스트림 클로즈업",
+      "lens": "100mm 매크로",
+      "cameraMove": "단면을 따라 슬라이드하며 서서히 줌인 (끝까지 지속)",
+      "subjectMotion": "크로스 스트링 다발이 메인 스트링 사이에서 미세하게 미끄러지듯 진동한다.",
+      "tone": "미색 클리니컬 라이트, 튜브 부분만 하이라이트",
+      "inSceneText": "",
+      "references": [],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "앞/뒤 메인층이 명확히 분리되어 보이는지",
+        "크로스 스트링이 5~6가닥으로 중앙에만 집중되는지(20개 아님)",
+        "모든 교차점에 매듭이 아닌 원통형 튜브가 있는지"
+      ],
+      "en": {
+        "staging": "A close-up workbench display shows the string bed fully sectioned from the side: a precision cross-section revealing front vertical main strings, an empty gap, and rear vertical main strings in three layers. In the central diagonal band, 5-6 unwoven cross strings float in a diamond cluster, and every main-cross intersection carries a small cylindrical protective tube.",
+        "subjectMotion": "The cross-string cluster vibrates with a faint sliding motion between the main string layers.",
+        "cameraAngle": "Straight-on cross-section view",
+        "shotSize": "Extreme close-up",
+        "cameraMove": "Slide along the cross-section while slowly zooming in (continuous to the end of the cut)",
+        "tone": "Off-white clinical light, tubes picked out in highlight"
+      }
+    },
+    {
+      "cut": 5,
+      "title": "두 배의 회전",
+      "durationSec": 4.2,
+      "actionType": "시뮬레이션",
+      "staging": "나란히 놓인 두 대의 발사 리그: 왼쪽은 표준 라켓, 오른쪽은 피셔의 이중 스트링 라켓. 각 라켓 앞에는 튜브형 공 발사 캐논과 회전 게이지 다이얼이 세워져 있다.",
+      "cameraAngle": "정면 와이드에서 두 리그를 동시에 담는 구도",
+      "shotSize": "와이드 → 미디엄",
+      "lens": "35mm",
+      "cameraMove": "두 리그 사이를 가로지르는 돌리 이동 후 오른쪽 게이지로 푸시인 (끝까지 지속)",
+      "subjectMotion": "공이 각 라켓에 맞고 튕겨 나가며 회전 게이지 바늘이 반응하고, 오른쪽 바늘이 왼쪽의 거의 두 배까지 치솟는다.",
+      "tone": "대비되는 쿨/웜 투톤, 오른쪽 리그만 붉은 경고 하이라이트",
+      "inSceneText": "RPM",
+      "references": [
+        "basicrefer_tennisball.png"
+      ],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "오른쪽 라켓도 3층 구조·튜브가 유지되는지",
+        "회전 게이지 바늘이 좌우 약 2배 차이로 보이는지",
+        "공 궤적이 과장되지 않고 그럴듯한지"
+      ],
+      "en": {
+        "staging": "Two firing rigs stand side by side: a standard racket on the left, Fischer's double-strung racket on the right. In front of each sits a tube-shaped ball cannon and a spin-rate gauge dial.",
+        "subjectMotion": "A ball strikes each racket and rebounds as the spin gauges react, the right needle climbing to nearly double the left.",
+        "cameraAngle": "Front wide framing both rigs together",
+        "shotSize": "Wide to medium",
+        "cameraMove": "Dolly across between the two rigs, then push in on the right-hand gauge (continuous to the end of the cut)",
+        "tone": "Contrasting cool/warm duotone, the right rig lit with a red warning highlight"
+      }
+    },
+    {
+      "cut": 6,
+      "title": "리듬을 잃은 궤적",
+      "durationSec": 4.4,
+      "actionType": "시뮬레이션",
+      "staging": "클린한 아키비즈 톤의 테니스 코트 세트를 베이스라인 뒤에서 담는다. 공중에는 두 개의 반투명 궤적 리본이 떠 있다: 하나는 완만한 정상 곡선, 다른 하나는 급격히 꺾이는 비정상 곡선이다.",
+      "cameraAngle": "코트 세로축을 따라 낮게 깔린 로우앵글",
+      "shotSize": "와이드",
+      "lens": "24mm",
+      "cameraMove": "베이스라인에서 네트를 향해 낮게 미끄러지는 트래킹 (끝까지 지속)",
+      "subjectMotion": "비정상 궤적 리본이 급격히 꺾이며 반대편 코너로 사라진다.",
+      "tone": "클레이코트의 적갈빛 웜톤, 비정상 궤적만 붉은 발광",
+      "inSceneText": "",
+      "references": [
+        "basicrefer_court.png",
+        "basicrefer_tennisball.png"
+      ],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "코트 라인 규격이 정확한지",
+        "두 궤적이 비교 가능하게 동시에 보이는지",
+        "리본이 화살표·자막처럼 보이지 않는지"
+      ],
+      "en": {
+        "staging": "A clean archviz-toned tennis court set is seen in full from behind the baseline; two translucent trajectory ribbons hover in the air — one a gentle normal arc, the other snapping into a violent, unpredictable curve.",
+        "subjectMotion": "The abnormal trajectory ribbon snaps sharply and vanishes into the far corner.",
+        "cameraAngle": "Low angle running along the court's long axis",
+        "shotSize": "Wide",
+        "cameraMove": "Low tracking glide from the baseline toward the net (continuous to the end of the cut)",
+        "tone": "Warm clay-court terracotta, the abnormal trajectory glowing red"
+      }
+    },
+    {
+      "cut": 7,
+      "title": "200위가 16번 시드를 꺾다",
+      "durationSec": 5.6,
+      "actionType": "측정",
+      "staging": "US오픈 코트 옆에 세워진 대형 청동 랭킹 보드, 왼쪽 기둥에 '200', 오른쪽 기둥에 '16'이 새겨진 두 눈금 기둥이 서 있고 사이에 저울처럼 균형바가 걸려 있다.",
+      "cameraAngle": "로우앵글, 두 기둥을 아래에서 위로",
+      "shotSize": "미디엄 와이드",
+      "lens": "35mm",
+      "cameraMove": "균형바를 따라 좌→우 패닝하며 200위 기둥 쪽 기울어짐까지 이동 (끝까지 지속)",
+      "subjectMotion": "균형바가 삐걱이며 200 기둥 쪽으로 기울어진다.",
+      "tone": "US오픈 하드코트의 청록빛",
+      "inSceneText": "200 / SEED 16",
+      "references": [
+        "basicrefer_court.png"
+      ],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "숫자 200과 16이 명확히 판독되는지",
+        "균형바가 이변을 상징하는 방향으로 기우는지",
+        "코트 색이 하드코트 톤인지"
+      ],
+      "en": {
+        "staging": "A large bronze ranking board stands beside the US Open court, two graduated pillars rising from it — the left engraved '200,' the right engraved '16' — with a balance beam hanging between them like a scale.",
+        "subjectMotion": "The balance beam creaks and tips toward the '200' pillar.",
+        "cameraAngle": "Low angle looking up at the two pillars",
+        "shotSize": "Medium wide",
+        "cameraMove": "Pan along the balance beam from left to right, ending on the tilt toward the 200 pillar (continuous to the end of the cut)",
+        "tone": "Teal-tinted US Open hard-court light"
+      }
+    },
+    {
+      "cut": 8,
+      "title": "나스타세도 집어 들다",
+      "durationSec": 5,
+      "actionType": "시뮬레이션",
+      "staging": "라켓 진열 랙 세트, 여러 평범한 라켓이 걸려 있고 그중 하나에 놋쇠 명판 '9'가 붙어 있다. 그 라켓이 랙에서 스스로 떠올라 회전하며 스트링이 표준 격자에서 이중 스트링 구조로 재구성된다.",
+      "cameraAngle": "아이레벨 정면",
+      "shotSize": "미디엄",
+      "lens": "50mm",
+      "cameraMove": "랙을 따라 슬라이드하다 변형되는 라켓에서 멈춰 푸시인 (끝까지 지속)",
+      "subjectMotion": "라켓의 스트링베드가 재구성되며 3층 구조와 원통형 튜브가 나타난다.",
+      "tone": "앰버에서 채도 높은 골드로 전환",
+      "inSceneText": "9",
+      "references": [],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "재구성 후 구조가 4번 컷과 동일한 3층+튜브 형태인지",
+        "숫자 9가 판독되는지",
+        "프레임 형태가 평범한지"
+      ],
+      "en": {
+        "staging": "A racket display rack holds several ordinary rackets, one marked with a brass '9' plaque. That racket lifts itself off the rack, spinning as its strings reconfigure from a standard grid into the double-string structure.",
+        "subjectMotion": "The racket's string bed reassembles, revealing the three-layer structure and cylindrical tubes.",
+        "cameraAngle": "Eye-level, front-on",
+        "shotSize": "Medium",
+        "cameraMove": "Slide along the rack, stopping to push in on the transforming racket (continuous to the end of the cut)",
+        "tone": "Shifting from amber to a slightly more saturated gold"
+      }
+    },
+    {
+      "cut": 9,
+      "title": "코트를 떠나다",
+      "durationSec": 4.9,
+      "actionType": "시뮬레이션",
+      "staging": "결승전 스코어보드가 있는 빈 코트, 스코어보드에 3세트 표시가 깜빡이다 멈춘다. 코트 한쪽 게이트가 저절로 열려 있고 그 틈으로 빛이 희미하게 새어 나온다.",
+      "cameraAngle": "스코어보드와 게이트를 함께 담는 대각선 구도",
+      "shotSize": "와이드",
+      "lens": "28mm",
+      "cameraMove": "스코어보드에서 열린 게이트 쪽으로 서서히 패닝 & 트랙 (끝까지 지속)",
+      "subjectMotion": "스코어보드 숫자가 3세트에서 깜빡이다 멈추고, 게이트 조명이 어두워진다.",
+      "tone": "채도가 급격히 빠지는 그레이톤, 스캔들의 정점",
+      "inSceneText": "SET 3",
+      "references": [
+        "basicrefer_court.png",
+        "basicrefer_net.png"
+      ],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "코트에 사람이 등장하지 않는지",
+        "스코어보드 표기가 SET 3로 명확한지",
+        "분위기가 과도하게 어둡지 않고 클린 아키비즈 톤을 유지하는지"
+      ],
+      "en": {
+        "staging": "An empty court holds a finals scoreboard displaying 'SET 3,' its digits flickering before freezing. A gate at the court's edge stands open on its own, light spilling faintly through it.",
+        "subjectMotion": "The scoreboard digits flicker on Set 3 and stop; the light through the gate dims.",
+        "cameraAngle": "Diagonal framing that holds both the scoreboard and the gate",
+        "shotSize": "Wide",
+        "cameraMove": "Slow pan and track from the scoreboard toward the open gate (continuous to the end of the cut)",
+        "tone": "Desaturating gray, the scandal's peak"
+      }
+    },
+    {
+      "cut": 10,
+      "title": "술렁이는 테니스판",
+      "durationSec": 3.4,
+      "actionType": "측정",
+      "staging": "ITF 우편실 같은 클린한 아카이브 공간, 중앙에 신문·전보 더미가 쌓여 올라가는 원기둥형 게이지가 있고 옆에는 '컨트로버시' 눈금이 상승하는 온도계형 다이얼이 세워져 있다.",
+      "cameraAngle": "정면 아이레벨",
+      "shotSize": "미디엄",
+      "lens": "35mm",
+      "cameraMove": "다이얼 게이지를 따라 아래에서 위로 틸업 (끝까지 지속)",
+      "subjectMotion": "서류 더미가 계속 쌓여 게이지 눈금을 밀어 올린다.",
+      "tone": "그레이 배경에 경고성 앰버 포인트",
+      "inSceneText": "",
+      "references": [
+        "basicrefer_court.png"
+      ],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "게이지가 자막이 아닌 3D 사물로 보이는지",
+        "서류 더미가 과도하게 많지 않은지",
+        "공간이 클린 아키비즈 톤을 유지하는지"
+      ],
+      "en": {
+        "staging": "A clean archival room resembling an ITF mailroom; a cylindrical gauge at its center rises as newspaper clippings and telegrams pile up, beside a thermometer-style dial marked 'controversy' climbing higher.",
+        "subjectMotion": "The stack of documents keeps growing, pushing the gauge needle upward.",
+        "cameraAngle": "Front eye-level",
+        "shotSize": "Medium",
+        "cameraMove": "Tilt up along the dial gauge from bottom to top (continuous to the end of the cut)",
+        "tone": "Gray backdrop with a warning amber accent"
+      }
+    },
+    {
+      "cut": 11,
+      "title": "규칙은 어떻게 막았나",
+      "durationSec": 3.3,
+      "actionType": "측정",
+      "staging": "차갑고 격식 있는 ITF 규정실 세트, 중앙 받침대 위 두꺼운 규칙서가 닫힌 채 놓여 있고 그 위로 탐색하듯 회전하는 스포트라이트 다이얼이 표지를 훑는다.",
+      "cameraAngle": "정면 부감",
+      "shotSize": "미디엄",
+      "lens": "50mm",
+      "cameraMove": "규칙서를 중심으로 도는 아크샷 (끝까지 지속)",
+      "subjectMotion": "스포트라이트가 규칙서 표지를 원을 그리듯 탐색한다.",
+      "tone": "웜톤에서 쿨 블루그레이로 전환되는 경계 지점",
+      "inSceneText": "ITF",
+      "references": [],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "규칙서가 위압적이지 않고 클린한 오브젝트로 보이는지",
+        "색 전환이 자연스러운지",
+        "ITF 글자가 판독되는지"
+      ],
+      "en": {
+        "staging": "A cold, formal ITF rules-chamber set; a thick closed rulebook rests on a central pedestal as a searching spotlight dial rotates overhead, sweeping across its cover.",
+        "subjectMotion": "The spotlight sweeps in a circle across the rulebook's cover as if searching.",
+        "cameraAngle": "Front high angle",
+        "shotSize": "Medium",
+        "cameraMove": "Arc shot circling the rulebook (continuous to the end of the cut)",
+        "tone": "The boundary point shifting from warm tones to cool blue-gray"
+      }
+    },
+    {
+      "cut": 12,
+      "title": "임시 금지",
+      "durationSec": 5.3,
+      "actionType": "시뮬레이션",
+      "staging": "규정실 워크데스크, 커다란 금속 스탬프 기구가 서류 위로 내려오며 도장을 찍는다. 서류 옆에는 날짜 눈금이 새겨진 캘린더 다이얼이 놓여 있다.",
+      "cameraAngle": "스탬프를 정면으로 낮게 보는 로우앵글",
+      "shotSize": "클로즈업",
+      "lens": "65mm",
+      "cameraMove": "스탬프가 내려오는 궤적을 따라 틸다운 + 임팩트 순간 푸시인 (끝까지 지속)",
+      "subjectMotion": "스탬프가 내려와 서류에 'TEMPORARY BAN'을 찍고, 캘린더 다이얼이 10월에 멈춘다.",
+      "tone": "쿨 블루그레이, 스탬프 임팩트 순간 흰 섬광",
+      "inSceneText": "TEMPORARY BAN · OCT 1977",
+      "references": [],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "도장 글자가 깨지지 않고 판독되는지",
+        "날짜가 1977년 10월로 맞는지",
+        "스탬프 기구 크기가 과도하지 않은지"
+      ],
+      "en": {
+        "staging": "A regulation-chamber worktable holds a large metal stamping mechanism descending onto a document, alongside a calendar dial engraved with date markings.",
+        "subjectMotion": "The stamp comes down, striking 'TEMPORARY BAN' onto the document as the calendar dial stops on October.",
+        "cameraAngle": "Low angle facing the stamp head-on",
+        "shotSize": "Close-up",
+        "cameraMove": "Tilt down following the stamp's descent, pushing in at the moment of impact (continuous to the end of the cut)",
+        "tone": "Cool blue-gray, a flash of white light at the stamp's impact"
+      }
+    },
+    {
+      "cut": 13,
+      "title": "영구 금지 확정",
+      "durationSec": 3.4,
+      "actionType": "측정",
+      "staging": "규정실 옆 투표 집계대, 놋쇠 카운터 숫자판이 세워져 있고 찬성 막대가 눈금을 따라 차오른다. 옆에는 새 캘린더 다이얼이 7월에 멈춰 있다.",
+      "cameraAngle": "정면에서 살짝 위",
+      "shotSize": "미디엄 클로즈업",
+      "lens": "50mm",
+      "cameraMove": "카운터 숫자판이 차오르는 것을 따라 서서히 틸업 (끝까지 지속)",
+      "subjectMotion": "찬성 막대 눈금이 빠르게 상단까지 차오르고 정지한다.",
+      "tone": "쿨 블루그레이 심화",
+      "inSceneText": "PERMANENT BAN · JUL 1978",
+      "references": [],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "연도·월 표기가 1978년 7월로 정확한지",
+        "카운터가 투표 집계처럼 읽히는지",
+        "글자가 깨지지 않는지"
+      ],
+      "en": {
+        "staging": "A vote-tally stand beside the chamber holds a brass counter dial with a bar climbing along its scale as votes are cast; a new calendar dial beside it has stopped on July.",
+        "subjectMotion": "The approval bar races up the scale and comes to rest at the top.",
+        "cameraAngle": "Front, slightly elevated",
+        "shotSize": "Medium close-up",
+        "cameraMove": "Slow tilt-up following the rising counter (continuous to the end of the cut)",
+        "tone": "Deepening cool blue-gray"
+      }
+    },
+    {
+      "cut": 14,
+      "title": "라켓의 정의가 새겨지다",
+      "durationSec": 3.9,
+      "actionType": "단면",
+      "staging": "규정실 중앙, 두꺼운 규칙서가 스스로 펼쳐지며 페이지가 조각된 돌 명판처럼 라켓 구조 정의 도해를 부조로 드러낸다.",
+      "cameraAngle": "규칙서 페이지를 위에서 내려다보는 탑다운",
+      "shotSize": "클로즈업",
+      "lens": "65mm",
+      "cameraMove": "페이지 위를 크레인 하강하며 부조 도해로 푸시인 (끝까지 지속)",
+      "subjectMotion": "페이지가 펼쳐지며 부조 도해가 조명을 받아 떠오르듯 드러난다.",
+      "tone": "쿨 블루그레이에 대리석 질감의 미색 하이라이트",
+      "inSceneText": "DEFINITION OF A RACKET",
+      "references": [],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "부조 도해가 실제 스트링 교차 구조를 닮았는지",
+        "DEFINITION OF A RACKET 글자가 판독되는지",
+        "페이지가 과도하게 장식적이지 않은지"
+      ],
+      "en": {
+        "staging": "At the center of the chamber, a thick rulebook opens on its own, its page revealing a carved stone-relief diagram defining the structure of a racket.",
+        "subjectMotion": "The page opens and the relief diagram rises into the light as if emerging from the stone.",
+        "cameraAngle": "Top-down over the page",
+        "shotSize": "Close-up",
+        "cameraMove": "Crane down over the page, pushing in on the relief diagram (continuous to the end of the cut)",
+        "tone": "Cool blue-gray with marble-toned off-white highlights"
+      }
+    },
+    {
+      "cut": 15,
+      "title": "얽히거나 묶여야 한다",
+      "durationSec": 4.1,
+      "actionType": "단면",
+      "staging": "규칙서 부조 도해에서 이어지는 초정밀 매크로 세트, 왼쪽에는 서로 얽혀 고정된 표준 교차점(허용), 오른쪽에는 얽히지 않고 원통형 튜브로 미끄러지는 피셔식 교차점(금지, 붉은 X 스탬프)이 나란히 단면으로 놓인다.",
+      "cameraAngle": "정면 매크로",
+      "shotSize": "익스트림 클로즈업",
+      "lens": "100mm 매크로",
+      "cameraMove": "왼쪽 허용 교차점에서 오른쪽 금지 교차점으로 슬라이드 (끝까지 지속)",
+      "subjectMotion": "오른쪽 금지 교차점 위로 붉은 스탬프가 내려와 X 도장을 찍는다.",
+      "tone": "좌측 미색 허용 / 우측 붉은 경고의 대비",
+      "inSceneText": "INTERLACED",
+      "references": [],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "왼쪽은 인터레이스(교차 고정), 오른쪽은 튜브+슬라이딩 구조로 명확히 구분되는지",
+        "오른쪽 튜브가 매듭이 아닌 원통형인지",
+        "X 스탬프가 자막처럼 보이지 않는지"
+      ],
+      "en": {
+        "staging": "Continuing from the relief diagram, an extreme macro cross-section set places a standard interlaced, locked crossing point (permitted) on the left beside Fischer's unwoven, tube-slid crossing point (forbidden, stamped with a red X) on the right.",
+        "subjectMotion": "A red stamp descends onto the forbidden crossing point on the right, marking it with an X.",
+        "cameraAngle": "Straight-on macro",
+        "shotSize": "Extreme close-up",
+        "cameraMove": "Slide from the permitted crossing on the left to the forbidden one on the right (continuous to the end of the cut)",
+        "tone": "Off-white permission on the left contrasted against red warning on the right"
+      }
+    },
+    {
+      "cut": 16,
+      "title": "회전량이 아니라 방식",
+      "durationSec": 3.5,
+      "actionType": "측정",
+      "staging": "규정실 저울대 세트, 왼쪽 접시에는 'RPM 제한'이라 새겨진 빈 추, 오른쪽 접시에는 '스트링 결속 방식'이라 새겨진 무거운 추가 놓여 저울이 오른쪽으로 완전히 기운다.",
+      "cameraAngle": "정면 아이레벨",
+      "shotSize": "미디엄",
+      "lens": "50mm",
+      "cameraMove": "저울 축을 중심으로 도는 아크샷 + 기울어진 쪽으로 푸시인 (끝까지 지속)",
+      "subjectMotion": "저울이 오른쪽으로 서서히 완전히 기울며 정지한다.",
+      "tone": "쿨 블루그레이에서 미색으로 밝아지기 시작",
+      "inSceneText": "WEAVE, NOT SPIN",
+      "references": [],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "저울이 확실히 오른쪽(결속 방식)으로 기우는지",
+        "글자 새김이 판독되는지",
+        "추 형태가 과도하게 복잡하지 않은지"
+      ],
+      "en": {
+        "staging": "A scale set in the regulation chamber holds an empty weight engraved 'RPM LIMIT' on the left pan and a heavy weight engraved 'STRING-BINDING METHOD' on the right, the scale tipping fully to the right.",
+        "subjectMotion": "The scale slowly tips all the way to the right and settles.",
+        "cameraAngle": "Front eye-level",
+        "shotSize": "Medium",
+        "cameraMove": "Arc around the scale's pivot, pushing in toward the tipped side (continuous to the end of the cut)",
+        "tone": "Cool blue-gray beginning to warm toward off-white"
+      }
+    },
+    {
+      "cut": 17,
+      "title": "소재는 바뀌어도 남은 것",
+      "durationSec": 4.6,
+      "actionType": "시뮬레이션",
+      "staging": "회전 진열 캐러셀 세트, 목재 라켓·알루미늄 라켓·그래파이트 라켓이 시대순으로 서서히 회전하며 지나가고, 모든 라켓의 스트링베드에는 동일한 표준 인터레이스 격자 패턴만이 하이라이트로 강조된다.",
+      "cameraAngle": "캐러셀을 따라 도는 측면 트래킹",
+      "shotSize": "미디엄 와이드",
+      "lens": "35mm",
+      "cameraMove": "캐러셀 회전과 같은 속도로 따라 도는 트래킹샷 (끝까지 지속)",
+      "subjectMotion": "라켓들이 차례로 회전하며 지나가고 각 스트링베드의 격자 부분만 밝게 발광한다.",
+      "tone": "미색 웜톤으로 점차 회복",
+      "inSceneText": "",
+      "references": [],
+      "tedori": false,
+      "logo": false,
+      "verify": [
+        "세 라켓의 소재·형태가 시대에 맞게 구분되는지",
+        "스트링 격자 패턴이 세 라켓 모두 동일하게(표준 인터레이스로) 유지되는지",
+        "금지된 피셔식 이중 구조가 여기 재등장하지 않는지"
+      ],
+      "en": {
+        "staging": "A rotating carousel display set shows a wooden racket, an aluminum racket, and a graphite racket standing in chronological order, slowly turning past the camera; on every racket's string bed, only the identical interlaced grid pattern glows in highlight.",
+        "subjectMotion": "The rackets rotate past one by one as each string bed's grid pattern lights up in turn.",
+        "cameraAngle": "Side tracking along the carousel",
+        "shotSize": "Medium wide",
+        "cameraMove": "Tracking shot matching the carousel's rotation speed (continuous to the end of the cut)",
+        "tone": "Gradually recovering to a warm off-white"
+      }
+    },
+    {
+      "cut": 18,
+      "title": "규칙의 얼굴",
+      "durationSec": 5.9,
+      "actionType": "단면",
+      "staging": "1번 컷과 대칭되는 화이트 스튜디오, 현재의 표준 스트링베드가 다시 중앙에 걸려 있고 이번에는 인터레이스 교차점이 선명하게 강조된다. 테돌이가 프레임 하단 구석에서 스트링베드를 올려다보며 서 있고, 배경 벽면에는 tennisnote 로고 판이 놓여 있다.",
+      "cameraAngle": "정면에서 살짝 낮은 아이레벨",
+      "shotSize": "미디엄 클로즈업 → 와이드로 풀아웃",
+      "lens": "50mm",
+      "cameraMove": "스트링베드에서 서서히 풀아웃하여 테돌이와 로고까지 프레임에 담는 트랙아웃 (끝까지 지속)",
+      "subjectMotion": "테돌이가 스트링베드를 올려다보며 살짝 고개를 끄덕인다.",
+      "tone": "미색 웜 뉴트럴, 1번 컷과 색온도 대칭",
+      "inSceneText": "",
+      "references": [
+        "tedori_character_sheet_final.png",
+        "테니스노트로고.png",
+        "tennisnote_icon.png"
+      ],
+      "tedori": true,
+      "logo": true,
+      "verify": [
+        "테돌이가 핵심 피사체(스트링베드)를 가리지 않는지",
+        "로고가 tennisnote 정품 로고인지",
+        "1번 컷과 구도·색이 대칭적으로 연결되는지",
+        "테돌이 프레임 비율이 15~20%인지"
+      ],
+      "en": {
+        "staging": "A white studio set mirrors Cut 1: today's standard string bed again hangs at the center, its interlaced crossing points now sharply emphasized. Tedori stands at the lower corner of frame looking up at the string bed, with a tennisnote logo panel on the wall behind.",
+        "subjectMotion": "Tedori looks up at the string bed and gives a small nod.",
+        "cameraAngle": "Front, slightly low eye-level",
+        "shotSize": "Medium close-up widening out to wide",
+        "cameraMove": "Track out from the string bed to reveal Tedori and the logo (continuous to the end of the cut)",
+        "tone": "Warm off-white neutral, mirroring Cut 1's color temperature"
+      }
+    }
+  ]
+}

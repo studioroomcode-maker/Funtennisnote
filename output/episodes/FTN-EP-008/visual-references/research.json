@@ -1,8 +1,8 @@
 {
   "episodeId": "FTN-PILOT-02",
   "completedAt": "2026-08-27T12:00:00.000Z",
-  "updatedAt": "2026-08-27T12:00:00.000Z",
-  "approvedAt": null,
+  "updatedAt": "2026-08-27T08:23:38.667Z",
+  "approvedAt": "2026-08-27T08:23:38.667Z",
   "provider": "claude-research",
   "geometry": {
     "subjectKo": "옵틱 옐로 테니스공과 그 시인성 서사에 필요한 시각 기준: 공의 규격·솔기 형태, 흰/검은 공 시대의 배경 대비, 코트 라인 규격, 그리고 1960~70년대 브라운관 TV 화면 표현.",

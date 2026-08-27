@@ -1490,6 +1490,14 @@ init();
     ["inSceneText", "인-신 텍스트", "input"]
   ];
 
+  const sdVersionChips = (slot, kind, cutNo) => {
+    const versions = slot && Array.isArray(slot.versions) ? slot.versions : [];
+    if (versions.length < 2) return "";
+    return `<div class="sd-state-line sd-versions">${versions.map((item) =>
+      `<button class="sd-version-chip ${item.selected ? "active" : ""}" data-sd-version="${item.version}" data-sd-vkind="${kind}" data-sd-vcut="${cutNo}" type="button" title="버전 ${item.version}${item.model ? " · " + item.model : ""} ${item.selected ? "(사용 중)" : "— 클릭하여 선택"}">V${item.version}</button>`
+    ).join("")}</div>`;
+  };
+
   const sdBadge = (slot) => {
     if (!slot) return "";
     if (slot.status === "running") return '<span class="sd-state running">생성 중</span>';
@@ -1515,7 +1523,9 @@ init();
           <div class="sd-thumb">${still}</div>
           <div class="sd-states">
             <div class="sd-state-line">이미지 ${sdBadge(status.image)}</div>
+            ${sdVersionChips(status.image, "image", cut.cut)}
             <div class="sd-state-line">영상 ${sdBadge(status.video)}</div>
+            ${sdVersionChips(status.video, "video", cut.cut)}
             ${clipLink ? `<div class="sd-state-line">${clipLink}</div>` : ""}
           </div>
         </div>
@@ -1605,22 +1615,66 @@ init();
   });
 
   grid.addEventListener("click", async (event) => {
+    const versionChip = event.target.closest("[data-sd-version]");
+    if (versionChip) {
+      versionChip.disabled = true;
+      try {
+        const response = await fetch("/api/comfy/select-version", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ kind: versionChip.dataset.sdVkind, cut: Number(versionChip.dataset.sdVcut), version: Number(versionChip.dataset.sdVersion) })
+        });
+        const data = await response.json();
+        if (!data.ok) window.alert(data.error || "버전 선택 실패");
+      } finally { sdRefreshStatus(); }
+      return;
+    }
     const button = event.target.closest("[data-sd-gen]");
     if (!button) return;
+    const kind = button.dataset.sdGen;
+    const cutNo = Number(button.dataset.sdCutno);
+    const slot = sdStatus && sdStatus.cuts && sdStatus.cuts[cutNo] ? sdStatus.cuts[cutNo][kind] : null;
+    if (slot && slot.exists && !window.confirm(`CUT ${String(cutNo).padStart(2, "0")}에 이미 생성된 ${kind === "image" ? "이미지" : "영상"}가 있습니다.\n새 버전으로 다시 생성할까요? 기존 결과물은 버전으로 보관되어 나중에 선택할 수 있습니다.`)) return;
     button.disabled = true;
     try {
       const response = await fetch("/api/comfy/generate", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ kind: button.dataset.sdGen, cut: Number(button.dataset.sdCutno), model: sdModel(button.dataset.sdGen) })
+        body: JSON.stringify({ kind, cut: cutNo, model: sdModel(kind) })
       });
       const data = await response.json();
       if (!data.ok) window.alert(data.error || "생성 요청 실패");
       else if (data.manual && data.prompts && data.prompts.length) {
-        const site = data.engine === "chatgpt" ? "ChatGPT 웹 (reference/ 폴더 이미지를 함께 첨부)" : "Flow 웹";
         try { await navigator.clipboard.writeText(data.prompts[0].prompt); } catch (error) {}
-        window.alert(`${site}에서 쓸 프롬프트를 클립보드에 복사했습니다.\n생성한 뒤 안내된 경로에 저장하면 보드에 자동 반영됩니다.\n패키지 파일: ` + data.packageFile);
+        if (data.autoQueue) {
+          window.alert("Flow 자동 실행 대기열에 저장했습니다.\nClaude 채팅에서 \"Flow 대기열 실행해줘\"라고 하면 크롬으로 Flow 웹을 자동 조작해 생성·저장까지 진행합니다.\n(프롬프트는 클립보드에도 복사됨 — 직접 하셔도 됩니다)");
+        } else {
+          window.alert("ChatGPT 웹 (reference/ 폴더 이미지를 함께 첨부)에서 쓸 프롬프트를 클립보드에 복사했습니다.\n생성한 뒤 안내된 경로에 저장하면 보드에 자동 반영됩니다.\n패키지 파일: " + data.packageFile);
+        }
       }
     } finally { sdRefreshStatus(); }
+  });
+
+  const generateDesignButton = document.getElementById("sdGenerateDesign");
+  if (generateDesignButton) generateDesignButton.addEventListener("click", async () => {
+    const hasExisting = sdDesign && Array.isArray(sdDesign.cuts) && sdDesign.cuts.length > 0;
+    if (!window.confirm(hasExisting
+      ? "이미 씬 설계표가 있습니다. AI로 새로 생성하면 현재 설계를 덮어씁니다. 계속할까요?"
+      : "대본·조사 자료를 바탕으로 18컷 씬 설계표를 AI로 생성합니다. 몇 분 걸릴 수 있습니다. 계속할까요?")) return;
+    generateDesignButton.disabled = true;
+    const originalLabel = generateDesignButton.textContent;
+    generateDesignButton.textContent = "설계 생성 중… (수 분)";
+    try {
+      const response = await fetch("/api/scene-design/generate", { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" });
+      const data = await response.json();
+      if (!data.ok) { window.alert(data.error || "씬 설계표 생성 실패"); return; }
+      await sdLoadDesign();
+      sdRefreshStatus();
+      window.alert(data.message || "씬 설계표를 생성했습니다.");
+    } catch (error) {
+      window.alert("씬 설계표 생성 중 오류: " + error.message);
+    } finally {
+      generateDesignButton.disabled = false;
+      generateDesignButton.textContent = originalLabel;
+    }
   });
 
   const saveButton = document.getElementById("sdSaveDesign");
@@ -1645,10 +1699,18 @@ init();
     const data = await response.json();
     if (!data.ok) window.alert(data.error || "생성 요청 실패");
     else if (data.manual) {
-      const site = data.engine === "chatgpt" ? "ChatGPT 웹 (reference/ 폴더 이미지를 함께 첨부)" : "Flow 웹";
-      window.alert(`${site}용 프롬프트 패키지를 만들었습니다.\n` + data.packageFile + "\n생성 후 안내된 경로에 저장하면 보드에 자동 반영됩니다.");
+      if (data.autoQueue) window.alert(`전체 ${label} Flow 자동 실행 대기열에 저장했습니다.\nClaude 채팅에서 "Flow 대기열 실행해줘"라고 하면 크롬으로 순서대로 생성·저장합니다.`);
+      else window.alert("ChatGPT 웹용 프롬프트 패키지를 만들었습니다.\n" + data.packageFile + "\n생성 후 안내된 경로에 저장하면 보드에 자동 반영됩니다.");
     }
-    else if (!data.queued.length) window.alert("모든 컷이 이미 생성되어 있습니다.");
+    else if (!data.queued.length) {
+      if (window.confirm(`모든 컷에 이미 ${label} 결과물이 있습니다.\n전체를 새 버전으로 다시 생성할까요? 기존 결과물은 버전으로 보관됩니다.`)) {
+        const forced = await fetch("/api/comfy/generate", {
+          method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ kind, all: true, force: true, model })
+        });
+        const forcedData = await forced.json();
+        if (!forcedData.ok) window.alert(forcedData.error || "재생성 요청 실패");
+      }
+    }
     sdRefreshStatus();
   };
   const genAllImagesButton = document.getElementById("sdGenAllImages");
@@ -1660,21 +1722,24 @@ init();
 })();
 
 
-// ===== Research provider switch (Codex / Claude Code) =====
+// ===== AI provider switch (Claude Code / Codex·GPT) — 조사·대본 공용, 셀렉트 상호 동기화 =====
 (() => {
-  const select = document.getElementById("researchProviderSelect");
-  if (!select) return;
+  const selects = [...document.querySelectorAll("[data-provider-select]")];
+  if (!selects.length) return;
+  const applyValue = (provider) => selects.forEach((select) => { select.value = provider; });
   fetch("/api/research-provider").then((response) => response.json()).then((data) => {
-    if (data && data.provider) select.value = data.provider;
+    if (data && data.provider) applyValue(data.provider);
   }).catch(() => {});
-  select.addEventListener("change", async () => {
+  selects.forEach((select) => select.addEventListener("change", async () => {
     const response = await fetch("/api/research-provider", {
       method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ provider: select.value })
     });
     const data = await response.json();
-    if (data.ok) toast(`조사·대본 엔진을 ${data.provider === "claude" ? "Claude Code" : "Codex"}로 전환했습니다.`);
-    else toast(data.error || "엔진 전환 실패", "error");
-  });
+    if (data.ok) {
+      applyValue(data.provider);
+      toast(`조사·대본 AI 엔진을 ${data.provider === "claude" ? "Claude Code" : "Codex (GPT)"}로 전환했습니다.`);
+    } else toast(data.error || "엔진 전환 실패", "error");
+  }));
 })();
 
 // ===== Edit · Subtitle · BGM: final assembly =====

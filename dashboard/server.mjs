@@ -1312,44 +1312,41 @@ async function generateTypecastNarration(state, project) {
   if (!config.voiceId) throw new Error("먼저 Typecast 목소리 목록에서 필재를 선택하거나 voice ID를 입력하세요.");
   const script = project.narration;
   if (!script || script.length > 2000) throw new Error(`내레이션은 1~2000자여야 합니다. 현재 ${script.length}자입니다.`);
-  const endpoint = config.withTimestamps ? "/v1/text-to-speech/with-timestamps?granularity=word" : "/v1/text-to-speech";
-  const payload = {
-    voice_id: config.voiceId,
-    text: script,
-    model: config.model,
-    language: config.language,
-    output: {
-      volume: config.volume,
-      audio_pitch: config.pitch,
-      audio_tempo: config.tempo,
-      audio_format: "wav"
-    }
-  };
-  const response = await typecastRequest(endpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload)
-  });
   const audioFile = typecastOutputPath(state);
   await fs.mkdir(path.dirname(audioFile), { recursive: true });
   let duration = null;
-  if (config.withTimestamps) {
-    const result = await response.json();
-    if (!result.audio) throw new Error("Typecast 응답에 오디오가 없습니다.");
-    await fs.writeFile(audioFile, Buffer.from(result.audio, "base64"));
-    duration = Number(result.audio_duration || 0) || null;
-    await writeJson(path.join(path.dirname(audioFile), "typecast_piljae_timestamps.json"), {
-      generatedAt: new Date().toISOString(),
-      voiceName: config.voiceName,
-      voiceId: config.voiceId,
-      model: config.model,
-      tempo: config.tempo,
-      sentenceGapTargetMs: config.sentenceGapMs,
-      duration,
-      words: result.words || []
-    });
+  const lines = Array.isArray(project.scriptLines) ? project.scriptLines.map((line) => String(line).trim()).filter(Boolean) : [];
+  if (config.withTimestamps && lines.length >= 2) {
+    // 문장별 합성: 각 문장의 마지막 단어 뒤 숨소리·룸톤 꼬리를 잘라내고 균일한 간격으로 연결
+    duration = await generateTypecastPerSentence(lines, config, audioFile);
   } else {
-    await fs.writeFile(audioFile, Buffer.from(await response.arrayBuffer()));
+    const endpoint = config.withTimestamps ? "/v1/text-to-speech/with-timestamps?granularity=word" : "/v1/text-to-speech";
+    const payload = {
+      voice_id: config.voiceId,
+      text: script,
+      model: config.model,
+      language: config.language,
+      output: { volume: config.volume, audio_pitch: config.pitch, audio_tempo: config.tempo, audio_format: "wav" }
+    };
+    const response = await typecastRequest(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+    if (config.withTimestamps) {
+      const result = await response.json();
+      if (!result.audio) throw new Error("Typecast 응답에 오디오가 없습니다.");
+      await fs.writeFile(audioFile, Buffer.from(result.audio, "base64"));
+      duration = Number(result.audio_duration || 0) || null;
+      await writeJson(path.join(path.dirname(audioFile), "typecast_piljae_timestamps.json"), {
+        generatedAt: new Date().toISOString(),
+        voiceName: config.voiceName,
+        voiceId: config.voiceId,
+        model: config.model,
+        tempo: config.tempo,
+        sentenceGapTargetMs: config.sentenceGapMs,
+        duration,
+        words: result.words || []
+      });
+    } else {
+      await fs.writeFile(audioFile, Buffer.from(await response.arrayBuffer()));
+    }
   }
   duration = duration || await probeDuration(audioFile);
   const voiceStage = state.stages.find((stage) => stage.id === "voice");
@@ -1359,6 +1356,78 @@ async function generateTypecastNarration(state, project) {
   }
   await writeJson(stateFile, state);
   return { state, duration, artifact: path.relative(projectRoot, audioFile).replaceAll("\\", "/") };
+}
+
+// 문장별 TTS 파이프라인: 합성 → 마지막 단어+0.12초에서 컷(숨소리 제거) → loudnorm → 균일 간격 연결
+async function generateTypecastPerSentence(lines, config, audioFile) {
+  const gapSeconds = Math.max(0, Math.min(1, (Number(config.sentenceGapMs) || 90) / 1000));
+  const audioDir = path.dirname(audioFile);
+  const segDir = path.join(audioDir, "_tts_segs");
+  await fs.mkdir(segDir, { recursive: true });
+  const gapFile = path.join(segDir, "gap.wav");
+  await runFf("ffmpeg", ["-y", "-loglevel", "error", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono", "-t", gapSeconds.toFixed(3), "-c:a", "pcm_s16le", gapFile]);
+  const segments = [];
+  const globalWords = [];
+  let offset = 0;
+  for (let index = 0; index < lines.length; index += 1) {
+    const text = lines[index];
+    const response = await typecastRequest("/v1/text-to-speech/with-timestamps?granularity=word", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        voice_id: config.voiceId, text, model: config.model, language: config.language,
+        output: { volume: config.volume, audio_pitch: config.pitch, audio_tempo: config.tempo, audio_format: "wav" }
+      })
+    });
+    const result = await response.json();
+    if (!result.audio) throw new Error(`문장 ${index + 1}의 Typecast 오디오가 비어 있습니다.`);
+    const rawFile = path.join(segDir, `raw${String(index + 1).padStart(2, "0")}.wav`);
+    await fs.writeFile(rawFile, Buffer.from(result.audio, "base64"));
+    const words = Array.isArray(result.words) ? result.words : [];
+    const lastWordEnd = words.reduce((max, word) => Math.max(max, Number(word.end) || 0), 0);
+    const segFile = path.join(segDir, `seg${String(index + 1).padStart(2, "0")}.wav`);
+    const trimArgs = ["-y", "-loglevel", "error", "-i", rawFile];
+    if (lastWordEnd > 0.2) trimArgs.push("-t", (lastWordEnd + 0.12).toFixed(3));
+    trimArgs.push("-af", "loudnorm=I=-16:TP=-1.5:LRA=9", "-ar", "44100", "-ac", "1", "-c:a", "pcm_s16le", segFile);
+    await runFf("ffmpeg", trimArgs);
+    const segDuration = await probeDuration(segFile);
+    if (!segDuration) throw new Error(`문장 ${index + 1} 오디오 처리에 실패했습니다.`);
+    segments.push({ index: index + 1, text, duration: segDuration, file: segFile });
+    for (const word of words) {
+      const start = Number(word.start) || 0;
+      if (start > lastWordEnd) continue;
+      globalWords.push({ text: String(word.text || ""), start: Number((start + offset).toFixed(3)), end: Number(((Number(word.end) || 0) + offset).toFixed(3)) });
+    }
+    offset += segDuration + gapSeconds;
+  }
+  const listFile = path.join(segDir, "concat.txt");
+  const listLines = [];
+  segments.forEach((segment, index) => {
+    listLines.push(`file '${segment.file.replaceAll("'", "'\\''")}'`);
+    if (index < segments.length - 1) listLines.push(`file '${gapFile.replaceAll("'", "'\\''")}'`);
+  });
+  await fs.writeFile(listFile, listLines.join("\n"), "utf8");
+  await runFf("ffmpeg", ["-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", listFile, "-c", "copy", audioFile]);
+  const total = await probeDuration(audioFile);
+  await writeJson(path.join(audioDir, "typecast_piljae_timestamps.json"), {
+    generatedAt: new Date().toISOString(),
+    voiceName: config.voiceName,
+    voiceId: config.voiceId,
+    model: config.model,
+    tempo: config.tempo,
+    sentenceGapTargetMs: config.sentenceGapMs,
+    perSentence: true,
+    duration: total,
+    words: globalWords
+  });
+  await writeJson(path.join(audioDir, "narration_timeline.json"), {
+    generatedAt: new Date().toISOString(),
+    tempo: config.tempo,
+    gapSeconds,
+    totalDuration: total,
+    segments: segments.map(({ index, text, duration: segmentDuration }) => ({ index, text, duration: segmentDuration }))
+  });
+  return total;
 }
 
 async function loadState() {
@@ -2124,6 +2193,13 @@ async function downloadVisualReferenceAssets(research) {
       const filename = `vr${String(index + 1).padStart(2, "0")}${extension}`;
       const file = path.join(directory, filename);
       await fs.writeFile(file, buffer);
+      // 프롬프트 레퍼런스로 쓸 수 없는 저해상도 썸네일 차단
+      const probed = await runFf("ffprobe", ["-v", "error", "-show_entries", "stream=width,height", "-of", "csv=p=0", file]).catch(() => "");
+      const [imgWidth, imgHeight] = String(probed).trim().split(",").map(Number);
+      if (!imgWidth || !imgHeight || Math.min(imgWidth, imgHeight) < 300) {
+        await fs.unlink(file).catch(() => {});
+        throw new Error(`해상도 미달(${imgWidth || "?"}x${imgHeight || "?"}) — 300px 이상 원본만 저장합니다.`);
+      }
       item.localFile = path.relative(projectRoot, file).replaceAll("\\", "/");
       item.downloadError = null;
     } catch (error) {
@@ -2363,7 +2439,7 @@ async function runClaudeStructured(prompt, schema, withSearch, timeoutMs, timeou
     ? path.join(process.env.USERPROFILE || "", ".local", "bin", "claude.exe")
     : "claude";
   const args = ["-p", "--model", "sonnet", ...(withSearch ? ["--allowedTools", "WebSearch,WebFetch"] : [])];
-  const fullPrompt = `${prompt}\n\n[출력 형식] 응답 맨 마지막에 아래 JSON 스키마를 정확히 따르는 JSON 객체 하나만 출력하십시오. 답변의 다른 위치에 JSON 객체를 포함하지 마십시오.\n${JSON.stringify(schema)}`;
+  const fullPrompt = `${prompt}\n\n[제약 최우선] 위 지시에 포함된 수치 제약(문장 수, 공백 제외 글자 수 범위, 어미 개수·연속 규칙 등)은 문체보다 우선합니다. 제출 전에 직접 세어 확인하고, 범위를 넘으면 문장을 줄여서 맞추십시오.\n\n[출력 형식] 응답 맨 마지막에 아래 JSON 스키마를 정확히 따르는 JSON 객체 하나만 출력하십시오. 답변의 다른 위치에 JSON 객체를 포함하지 마십시오.\n${JSON.stringify(schema)}`;
   return await new Promise((resolve) => {
     const child = spawn(claudeExecutable, args, { cwd: projectRoot, windowsHide: true });
     let stdout = "";
@@ -2384,7 +2460,19 @@ async function runClaudeStructured(prompt, schema, withSearch, timeoutMs, timeou
     child.on("error", (error) => finish({ ok: false, error: `Claude Code 실행 실패: ${error.message}`, stdout, stderr }));
     child.on("close", (code) => {
       const value = extractLastJsonObject(stdout);
-      finish({ ok: code === 0 && Boolean(value), code, value, stdout, stderr, provider: "claude", error: value ? "" : "Claude Code에서 구조화된 응답을 읽지 못했습니다." });
+      let failMessage = "";
+      if (!value) {
+        const combined = `${stdout}\n${stderr}`;
+        if (/usage limit|rate limit|limit reached|out of.*credits/i.test(combined)) failMessage = "Claude 사용량 한도에 걸렸습니다. 한도 리셋 후 다시 시도하세요.";
+        else {
+          const errLine = combined.split(/\r?\n/).reverse().find((line) => /error/i.test(line.trim()));
+          failMessage = errLine ? `Claude Code 오류: ${errLine.trim().slice(0, 200)}` : "Claude Code에서 구조화된 응답을 읽지 못했습니다.";
+        }
+      }
+      if (!value) {
+        fs.writeFile(path.join(dataDir, "claude-last-fail.log"), `exit=${code}\n--- stdout ---\n${stdout.slice(-8000)}\n--- stderr ---\n${stderr.slice(-8000)}\n`, "utf8").catch(() => {});
+      }
+      finish({ ok: code === 0 && Boolean(value), code, value, stdout, stderr, provider: "claude", error: failMessage });
     });
     child.stdin.end(fullPrompt, "utf8");
   });
@@ -2393,10 +2481,12 @@ async function runClaudeStructured(prompt, schema, withSearch, timeoutMs, timeou
 // 선택된 엔진으로 실행하고, Codex 사용량 한도 초과 시 Claude Code로 자동 폴백
 async function runCodexStructured(prompt, schema, schemaName, withSearch, timeoutMs, timeoutMessage) {
   const provider = await loadResearchProvider();
-  if (provider === "claude") return runClaudeStructured(prompt, schema, withSearch, timeoutMs, timeoutMessage);
+  // Claude CLI는 Codex보다 느려서 제한시간을 넉넉히 잡는다 (최소 8분, 최대 15분)
+  const claudeTimeout = Math.min(Math.max(timeoutMs * 2, 480000), 900000);
+  if (provider === "claude") return runClaudeStructured(prompt, schema, withSearch, claudeTimeout, timeoutMessage);
   const result = await runCodexStructuredRaw(prompt, schema, schemaName, withSearch, timeoutMs, timeoutMessage);
   if (!result.ok && /사용량 한도|usage limit/i.test(String(result.error || ""))) {
-    const fallback = await runClaudeStructured(prompt, schema, withSearch, timeoutMs, timeoutMessage);
+    const fallback = await runClaudeStructured(prompt, schema, withSearch, claudeTimeout, timeoutMessage);
     if (fallback.ok) return { ...fallback, usedFallback: true };
   }
   return result;
@@ -2487,7 +2577,70 @@ function repairGeneratedScriptContinuity(value) {
     lines[8] = `그 결과, ${reaction.replace(/^(그러나|하지만|그런데)\s*,?\s*/, "")}`;
     if (evidence[8]) evidence[8].claim = lines[8];
   }
-  return { ...value, scriptLines: lines, evidence };
+  return { ...value, scriptLines: repairItfIntroduction(softenFormalStreaks(lines, evidence), evidence), evidence };
+}
+
+// ITF 첫 등장 시 '국제테니스연맹' 전체 명칭을 기계적으로 병기
+function repairItfIntroduction(lines, evidence) {
+  if (!Array.isArray(lines) || !lines.length) return lines;
+  const fullText = lines.join(" ");
+  if (!/\bITF\b/.test(fullText)) return lines;
+  if (/국제\s*테니스\s*연맹(?:인|,)?\s*(?:\(\s*)?ITF(?:\s*\))?/.test(fullText)) return lines;
+  for (let index = 0; index < lines.length; index += 1) {
+    if (/\bITF\b/.test(lines[index])) {
+      lines[index] = lines[index].replace(/(?:국제\s*테니스\s*연맹[은는이가의]?\s*)?\bITF\b/, "국제테니스연맹인 ITF");
+      if (Array.isArray(evidence) && evidence[index]) evidence[index].claim = lines[index];
+      break;
+    }
+  }
+  return lines;
+}
+
+// '-습니다/-입니다' 5연속을 검수 전에 기계적으로 해소: 스트릭 중간 한 문장의 어미만 '-죠'로 완화
+function softenFormalStreaks(lines, evidence) {
+  if (!Array.isArray(lines) || lines.length !== 18) return lines;
+  const soften = (line) => {
+    const rules = [
+      [/입니다([.])$/, "이죠$1"], [/합니다([.])$/, "하죠$1"], [/됩니다([.])$/, "되죠$1"],
+      [/있습니다([.])$/, "있죠$1"], [/없습니다([.])$/, "없죠$1"], [/했습니다([.])$/, "했죠$1"],
+      [/였습니다([.])$/, "였죠$1"], [/았습니다([.])$/, "았죠$1"], [/었습니다([.])$/, "었죠$1"]
+    ];
+    for (const [pattern, replacement] of rules) {
+      if (pattern.test(line)) return line.replace(pattern, replacement);
+    }
+    return null;
+  };
+  const isFormal = (line) => /(습니다|입니다)[.]?$/.test(line);
+  const conversationalCount = () => lines.filter((line) => /(까요|나요|죠|네요|는데요)[.!?？]?$/.test(line)).length;
+  for (let guard = 0; guard < 6; guard += 1) {
+    let streakStart = -1;
+    let streak = 0;
+    let found = -1;
+    for (let index = 0; index < lines.length; index += 1) {
+      if (isFormal(lines[index])) {
+        if (streak === 0) streakStart = index;
+        streak += 1;
+        if (streak >= 5) { found = streakStart; break; }
+      } else streak = 0;
+    }
+    if (found < 0) break;
+    if (conversationalCount() >= 6) break;
+    if (lines.filter(isFormal).length <= 7) break; // 격식 어미 최소 7개 규칙 보호
+    let applied = false;
+    for (const offset of [2, 3, 1, 4]) {
+      const index = found + offset;
+      if (index === 17) continue; // 마지막 문장 어미는 유지
+      const softened = soften(lines[index]);
+      if (softened) {
+        lines[index] = softened;
+        if (Array.isArray(evidence) && evidence[index]) evidence[index].claim = softened;
+        applied = true;
+        break;
+      }
+    }
+    if (!applied) break;
+  }
+  return lines;
 }
 
 function validateGeneratedScript(value, episode = null) {
@@ -2890,18 +3043,23 @@ async function comfyLoadDesignCut(episodeId, cut) {
 async function comfyStageReferences(item, context) {
   const nodes = {};
   const links = [];
-  const topicFiles = (context && context.imageFiles ? context.imageFiles : []).map((file) => path.isAbsolute(file) ? file : within(projectRoot, file));
+  // z-image 이미지 조건화는 사진의 배경 노이즈를 패치 모자이크로 그대로 복사한다 (EP-001에서 확인).
+  // ComfyUI 경로에는 reference/ 폴더의 클린 기준 이미지만 사용하고, 조사 수집 사진(.jpg 실물 등)은 제외한다.
   const designFiles = (item.references || []).map((file) => within(projectRoot, path.join("reference", path.basename(file))));
-  const files = [...designFiles, ...topicFiles].slice(0, 3);
+  const files = designFiles.slice(0, 3);
   for (let i = 0; i < files.length; i += 1) {
     const source = files[i];
-    const staged = `ftn_ref_${path.basename(files[i])}`;
+    const staged = `ftn_ref_${path.basename(files[i], path.extname(files[i]))}.png`;
     try {
-      await fs.copyFile(source, path.join(comfyInputDir, staged));
+      // z-image omni의 auto_resize는 약 1MP로 정규화하며 8배수 반올림 → 종횡비에 따라 16배수 정렬이 깨져 KSampler shape 오류 발생.
+      // 레퍼런스를 1024x1024 정사각(흰 패딩)으로 만들어 리사이즈가 항등이 되게 한다.
+      await runFf("ffmpeg", ["-y", "-loglevel", "error", "-i", source,
+        "-vf", "scale=1024:1024:force_original_aspect_ratio=decrease,pad=1024:1024:(ow-iw)/2:(oh-ih)/2:color=white",
+        path.join(comfyInputDir, staged)]);
       const id = `ref${i + 1}`;
       nodes[id] = { class_type: "LoadImage", inputs: { image: staged } };
       links.push([`image${i + 1}`, id]);
-    } catch { /* missing reference file: skip */ }
+    } catch { /* missing or unreadable reference file: skip */ }
   }
   return { nodes, links };
 }
@@ -3274,8 +3432,38 @@ function assTimestamp(seconds) {
   return `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}.${String(cs).padStart(2, "0")}`;
 }
 
+// 한국어: 신비한 건축사전식 1~2어절 의미 단위 분할
+// - 연결형 어미(-아/어/여/게/고/워…)로 끝나는 어절은 다음 어절에 붙인다 (얽혀+있는)
+// - 의존명사·보조용언(것/수/걸/있/없…)으로 시작하는 어절은 앞 어절에 붙인다 (있는+걸까요)
+// - 단독 허용 부사(왜/또/다…)는 홀로 띄운다
+function koSubtitleChunks(text) {
+  const words = String(text || "").trim().split(/\s+/).filter(Boolean);
+  const STANDALONE = new Set(["왜", "또", "다", "곧", "딱", "꼭", "더", "덜", "늘", "안", "못", "그냥", "결국", "사실", "하지만", "그런데", "그래서", "그리고", "급기야", "덕분에", "그렇다면"]);
+  const DEPENDENT_START = /^(있|없|것|수|만큼|뿐|걸(?:까|요|린)?|건|게|겁|때|중|채|셈|번|듯|뻔|바|줄로|든)/;
+  const CONNECTIVE_END = /[,]$|(?:아|어|여|해|게|고|며|서|워|줘|봐|려|혀|와|져|랑|자)$/;
+  const clean = (word) => word.replace(/[.,!?…]+$/, "");
+  const chunks = [];
+  let current = [];
+  const flush = () => { if (current.length) { chunks.push(current.join(" ")); current = []; } };
+  for (let index = 0; index < words.length; index += 1) {
+    const word = words[index];
+    const next = words[index + 1];
+    if (!current.length && STANDALONE.has(clean(word)) && next) { chunks.push(word); continue; }
+    current.push(word);
+    if (!next) break;
+    if (/[,]$/.test(word)) { flush(); continue; } // 쉼표는 항상 끊는 지점
+    const joinNext = CONNECTIVE_END.test(clean(word)) || DEPENDENT_START.test(next);
+    if (joinNext) continue;
+    if (STANDALONE.has(clean(next))) { flush(); continue; }
+    if (current.join(" ").length + 1 + next.length > 9) flush();
+  }
+  flush();
+  return chunks;
+}
+
 function subtitleChunks(text, lang) {
-  const limit = lang === "en" ? 32 : 14;
+  if (lang !== "en") return koSubtitleChunks(text);
+  const limit = 32;
   const words = String(text || "").trim().split(/\s+/).filter(Boolean);
   const chunks = [];
   let current = "";
@@ -3319,13 +3507,67 @@ function buildAssSubtitles(rows, lang, starts, durations, speechDurations, scrip
     let cursor = starts[index] + 0.05;
     for (const chunk of chunks) {
       if (cursor >= segmentEnd - 0.2) break;
-      const share = Math.max(0.55, speech * (chunk.length / totalChars));
+      const share = Math.max(0.35, speech * (chunk.length / totalChars));
       const end = Math.min(segmentEnd, cursor + share);
       events.push(`Dialogue: 0,${assTimestamp(cursor)},${assTimestamp(end)},Cap,,0,0,0,,{\\fad(60,60)}${chunk}`);
       cursor = end;
     }
   }
   return `${header}\n${events.join("\n")}\n`;
+}
+
+function sceneDesignSchema() {
+  const str = { type: "string" };
+  return {
+    type: "object",
+    additionalProperties: false,
+    required: ["name", "colorArc", "cuts"],
+    properties: {
+      name: str,
+      colorArc: str,
+      cuts: {
+        type: "array", minItems: 18, maxItems: 18,
+        items: {
+          type: "object", additionalProperties: false,
+          required: ["title", "actionType", "staging", "cameraAngle", "shotSize", "lens", "cameraMove", "subjectMotion", "tone", "inSceneText", "references", "tedori", "logo", "verify", "en"],
+          properties: {
+            title: str,
+            actionType: { type: "string", enum: ["측정", "시뮬레이션", "단면"] },
+            staging: str, cameraAngle: str, shotSize: str, lens: str, cameraMove: str, subjectMotion: str, tone: str, inSceneText: str,
+            references: { type: "array", minItems: 1, maxItems: 4, items: str },
+            tedori: { type: "boolean" }, logo: { type: "boolean" },
+            verify: { type: "array", minItems: 1, maxItems: 5, items: str },
+            en: {
+              type: "object", additionalProperties: false,
+              required: ["staging", "subjectMotion", "cameraAngle", "shotSize", "cameraMove", "tone"],
+              properties: { staging: str, subjectMotion: str, cameraAngle: str, shotSize: str, cameraMove: str, tone: str }
+            }
+          }
+        }
+      }
+    }
+  };
+}
+
+function sceneDesignPrompt(project, lines, context, referenceFiles) {
+  return `당신은 유튜브 쇼츠 '재미있는 테니스 노트'의 촬영 감독입니다. 에피소드 "${project.title}"의 18문장 내레이션에 대해, 문장당 1컷씩 총 18컷의 씬 설계표를 만드십시오. 스타일 레퍼런스는 '신비한 건축사전' — 내용을 분석·해석·설명하는 포토리얼 3D 모션그래픽입니다.
+
+[내레이션 대본]
+${lines.map((line, index) => `${index + 1}) ${line}`).join("\n")}
+
+${context.anchorKo ? `[주제 형태 기준 — staging에 반영]\n${context.anchorKo}\n` : ""}${context.avoidKo ? `[조사로 확인된 금지 형태]\n${context.avoidKo}\n` : ""}
+[설계 규칙]
+- 각 컷은 문장 내용을 시각적으로 '설명'하는 장면입니다. actionType: 측정(게이지·눈금·비교 리그), 시뮬레이션(재현·경로·변화 과정), 단면(절개·분해·구조 노출) 중 하나.
+- staging: 장소·구조물·피사체 배치를 구체적으로 씁니다. 사람은 등장하지 않습니다(테돌이 캐릭터 제외). 클린 아키비즈 3D 톤.
+- cameraMove: 컷의 끝 프레임까지 이어지는 하나의 카메라 움직임 (예: 크레인 하강 + 푸시인 (끝까지 지속)).
+- 연속 컷이 같은 장소·같은 구도로 반복되지 않게 하고, 18컷 전체에 색·채도 흐름(colorArc)을 설계합니다.
+- inSceneText: 장면 속 사물에 새겨질 글자만 지정합니다(연도·짧은 단어). 필요 없으면 빈 문자열. 화면 위 설명 자막·화살표는 금지.
+- references: 아래 파일명 중 그 컷과 관련된 것만 1~4개 고릅니다: ${referenceFiles.join(", ")}
+- 테돌이(tedori=true)는 최소 한 컷 — 마지막 컷 권장 — 에 엑스트라 또는 설명 캐릭터로 등장하고, 브랜드 로고가 보이는 컷은 logo=true로 표시합니다. 로고·브랜드는 tennisnote만 사용합니다.
+- verify: 생성 후 사람이 검수할 항목 1~5개 (예: 코트 라인 규격, 각인 글자 판독).
+- en: staging·subjectMotion·cameraAngle·shotSize·cameraMove·tone의 자연스러운 영어 번역 (생성 프롬프트에 사용).
+
+지정된 JSON 스키마만 출력하십시오.`;
 }
 
 async function comfyRunnerLoop() {
@@ -3337,6 +3579,7 @@ async function comfyRunnerLoop() {
       const slot = comfyResult(job.cut)[job.kind];
       slot.status = "running"; slot.message = ""; slot.model = job.model;
       try {
+        await comfyArchiveVersion(job.episodeId, job.kind, job.cut); // 기존 결과물을 버전으로 보관
         if (job.kind === "image") {
           if (job.model === "nano-banana-2-lite") await sdHiggsfieldImage(job.episodeId, job.cut);
           else if (job.model === "chatgpt-image") await sdChatgptImage(job.episodeId, job.cut);
@@ -3344,6 +3587,13 @@ async function comfyRunnerLoop() {
         } else {
           if (job.model === "kling-3-motion" || job.model === "seedance-2" || job.model === "cinema-studio-4") await sdHiggsfieldVideo(job.episodeId, job.cut, job.model);
           else await comfyGenerateVideo(job.episodeId, job.cut);
+        }
+        {
+          // 새 결과물을 사용 프롬프트·모델과 함께 버전으로 등록
+          const doneItem = await comfyLoadDesignCut(job.episodeId, job.cut).catch(() => null);
+          const doneContext = doneItem ? await sdResearchContext(job.episodeId) : null;
+          const donePrompt = doneItem ? (job.kind === "image" ? comfyImagePromptText(doneItem, doneContext) : comfyVideoPromptText(doneItem, doneContext)) : "";
+          await comfyArchiveVersion(job.episodeId, job.kind, job.cut, { model: job.model, prompt: donePrompt });
         }
         slot.status = "done";
       } catch (error) {
@@ -3367,17 +3617,79 @@ function comfyEnqueue(episodeId, kind, cuts, model) {
   comfyRunnerLoop();
 }
 
+// ===== 생성 결과 버전 관리: 재생성 시 기존본을 vN으로 보관, 캐노니컬 파일이 '선택된 버전' =====
+function comfyCanonicalPath(episodeId, kind, cut) {
+  return kind === "image" ? comfyStillPath(episodeId, cut) : comfyClipPath(episodeId, cut);
+}
+
+function comfyVersionName(kind, cut, version) {
+  const pad = String(cut).padStart(2, "0");
+  return kind === "image" ? `c${pad}_v${version}.png` : `c${pad}_v${version}_silent.mp4`;
+}
+
+async function comfyListVersions(episodeId, kind, cut) {
+  const dir = path.dirname(comfyCanonicalPath(episodeId, kind, cut));
+  const pad = String(cut).padStart(2, "0");
+  const pattern = kind === "image" ? new RegExp(`^c${pad}_v(\\d+)\\.png$`) : new RegExp(`^c${pad}_v(\\d+)_silent\\.mp4$`);
+  let entries = [];
+  try { entries = await fs.readdir(dir); } catch {}
+  return entries
+    .map((name) => { const match = name.match(pattern); return match ? { version: Number(match[1]), file: path.join(dir, name) } : null; })
+    .filter(Boolean)
+    .sort((a, b) => a.version - b.version);
+}
+
+async function comfyArchiveVersion(episodeId, kind, cut, meta = null) {
+  const canonical = comfyCanonicalPath(episodeId, kind, cut);
+  const stat = await fs.stat(canonical).catch(() => null);
+  if (!stat) return;
+  const versions = await comfyListVersions(episodeId, kind, cut);
+  for (const item of versions) {
+    const versionStat = await fs.stat(item.file).catch(() => null);
+    if (versionStat && versionStat.size === stat.size) {
+      // 이미 보관된 버전 — 메타(프롬프트)가 새로 주어졌고 아직 없다면 채워 둔다
+      if (meta) {
+        const sidecar = `${item.file}.meta.json`;
+        if (!await fs.access(sidecar).then(() => true).catch(() => false)) {
+          await writeJson(sidecar, { savedAt: new Date().toISOString(), model: meta.model || "", prompt: meta.prompt || "" });
+        }
+      }
+      return;
+    }
+  }
+  const next = versions.length ? versions[versions.length - 1].version + 1 : 1;
+  const versionFile = path.join(path.dirname(canonical), comfyVersionName(kind, cut, next));
+  await fs.copyFile(canonical, versionFile);
+  // 버전별 사용 프롬프트·모델 기록 (사이드카)
+  await writeJson(`${versionFile}.meta.json`, { savedAt: new Date().toISOString(), model: meta?.model || "", prompt: meta?.prompt || "" });
+}
+
 async function comfySceneStatus(episodeId) {
   const cuts = {};
   for (let cut = 1; cut <= 18; cut += 1) {
     const still = comfyStillPath(episodeId, cut);
     const clip = comfyClipPath(episodeId, cut);
-    const hasStill = await fs.access(still).then(() => true).catch(() => false);
-    const hasClip = await fs.access(clip).then(() => true).catch(() => false);
+    const stillStat = await fs.stat(still).catch(() => null);
+    const clipStat = await fs.stat(clip).catch(() => null);
     const jobs = comfyResult(cut);
+    const versionInfo = async (kind, canonicalStat) => {
+      const versions = await comfyListVersions(episodeId, kind, cut);
+      const result = [];
+      for (const item of versions) {
+        const stat = await fs.stat(item.file).catch(() => null);
+        const meta = await readJson(`${item.file}.meta.json`, null);
+        result.push({
+          version: item.version,
+          selected: Boolean(canonicalStat && stat && stat.size === canonicalStat.size),
+          model: meta?.model || "",
+          mediaUrl: `/media?path=${encodeURIComponent(path.relative(projectRoot, item.file).replaceAll("\\", "/"))}&v=${stat ? stat.mtimeMs : 1}`
+        });
+      }
+      return result;
+    };
     cuts[cut] = {
-      image: { ...jobs.image, exists: hasStill, mediaUrl: hasStill ? `/media?path=${encodeURIComponent(path.relative(projectRoot, still).replaceAll("\\", "/"))}&v=${Date.now()}` : null },
-      video: { ...jobs.video, exists: hasClip, mediaUrl: hasClip ? `/media?path=${encodeURIComponent(path.relative(projectRoot, clip).replaceAll("\\", "/"))}` : null }
+      image: { ...jobs.image, exists: Boolean(stillStat), mediaUrl: stillStat ? `/media?path=${encodeURIComponent(path.relative(projectRoot, still).replaceAll("\\", "/"))}&v=${stillStat.mtimeMs}` : null, versions: await versionInfo("image", stillStat) },
+      video: { ...jobs.video, exists: Boolean(clipStat), mediaUrl: clipStat ? `/media?path=${encodeURIComponent(path.relative(projectRoot, clip).replaceAll("\\", "/"))}&v=${clipStat.mtimeMs}` : null, versions: await versionInfo("video", clipStat) }
     };
   }
   let serverOk = false;
@@ -3402,6 +3714,58 @@ async function ensureOfficialResearchComplete(project, state) {
   return research;
 }
 
+// 파이프라인 단계 상태를 활성 에피소드의 실제 산출물에서 계산 — 에피소드 전환 시에도 정확하게 표시
+async function refreshStageStatuses(state, project) {
+  const episodeId = project.episodeId;
+  const dir = episodeProjectDir(episodeId);
+  const set = (id, status, note) => {
+    const stage = state.stages.find((item) => item.id === id);
+    if (stage) { stage.status = status; stage.note = note; }
+  };
+  const exists = (file) => fs.access(file).then(() => true).catch(() => false);
+  const stored = await readJson(episodeScriptFile(episodeId), null);
+  const research = await loadEpisodeResearch(episodeId, stored);
+  const officialOk = researchSummary(research).complete;
+  const visual = await loadVisualReferenceResearch(episodeId);
+  const visualOk = visualReferenceSummary(visual).complete;
+  const visualApproved = Boolean(visual?.approvedAt);
+  if (officialOk && visualOk) set("brief", visualApproved ? "complete" : "ready_review", `공식 출처 ${research.sources.length}개 · 시각 ${visual.references.length}개${visualApproved ? " · 승인 완료" : " · 레퍼런스 승인 필요"}`);
+  else if (officialOk) set("brief", "planned", "공식자료 완료 · 시각 조사 필요");
+  else set("brief", "not_started", "공식+시각 자료 조사 필요");
+  if (project.readyForProduction) set("shots", "complete", "18문장 대본 저장 완료");
+  else if (Array.isArray(stored?.scriptLines) && stored.scriptLines.length) set("shots", "planned", "대본 작성 중");
+  else set("shots", "not_started", "AI 대본 필요");
+  const narrationFile = path.join(dir, "audio", "typecast_piljae.wav");
+  if (await exists(narrationFile)) {
+    const timeline = await readJson(path.join(dir, "audio", "narration_timeline.json"), null);
+    set("voice", "complete", `더빙 생성 완료${timeline?.totalDuration ? ` · ${Number(timeline.totalDuration).toFixed(1)}초` : ""}`);
+  } else set("voice", project.readyForProduction ? "planned" : "not_started", "Typecast 더빙 필요");
+  const design = await readJson(path.join(dir, "scene_design.json"), null);
+  const designOk = Array.isArray(design?.cuts) && design.cuts.length === 18;
+  let stillCount = 0;
+  let clipCount = 0;
+  for (let cut = 1; cut <= 18; cut += 1) {
+    if (await exists(comfyStillPath(episodeId, cut))) stillCount += 1;
+    if (await exists(comfyClipPath(episodeId, cut))) clipCount += 1;
+  }
+  if (designOk && stillCount === 18) set("keyframes", "complete", "씬 설계표 + 이미지 18/18 완료");
+  else if (designOk && stillCount > 0) set("keyframes", "running", `설계 완료 · 이미지 ${stillCount}/18`);
+  else if (designOk) set("keyframes", "ready_review", "씬 설계표 완료 · 검토 후 이미지 생성");
+  else set("keyframes", "not_started", "씬 설계표 생성 필요");
+  if (clipCount === 18) set("video", "complete", "영상 18/18 완료");
+  else if (clipCount > 0) set("video", "running", `영상 ${clipCount}/18`);
+  else if (stillCount === 18) set("video", "planned", "이미지 완료 · 영상 생성 대기");
+  else set("video", "not_started", "이미지 생성 후 진행");
+  const finalDir = path.join(dir, "final");
+  let masters = [];
+  try { masters = (await fs.readdir(finalDir)).filter((name) => /^master_edit.*\.mp4$/i.test(name)); } catch {}
+  if (masters.length) set("edit", "complete", `최종 마스터 ${masters.length}개 렌더링 완료`);
+  else if (clipCount === 18) set("edit", "planned", "조립·자막·BGM 대기");
+  else set("edit", "not_started", "영상 완료 후 진행");
+  const qaStage = state.stages.find((item) => item.id === "qa");
+  if (qaStage && qaStage.status !== "complete") { qaStage.status = masters.length ? "planned" : "not_started"; qaStage.note = masters.length ? "마스터 검수 대기" : "최종 마스터 렌더링 후 진행"; }
+}
+
 async function api(req, res, url) {
   if (["POST", "PUT", "PATCH", "DELETE"].includes(req.method || "")) {
     if (!allowedLocalMutation(req)) return json(res, 403, { error: "로컬 대시보드에서 시작한 요청만 허용됩니다." });
@@ -3410,6 +3774,7 @@ async function api(req, res, url) {
   if (req.method === "GET" && url.pathname === "/api/bootstrap") {
     const { state, sourceShots } = await loadState();
     const project = await loadActiveProject(state, sourceShots);
+    await refreshStageStatuses(state, project);
     project.storyboardSheets = await storyboardSheetStatus(project);
     const narrationScript = project.narration;
     return json(res, 200, {
@@ -3631,7 +3996,9 @@ async function api(req, res, url) {
     if (draftLines.length !== 18) draftLines = project.scriptLines;
     let checked = null;
     let correctionMessage = "";
-    for (let attempt = 0; attempt < 2; attempt += 1) {
+    const pastCorrections = [];
+    const maxAttempts = 4;
+    for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
       const generated = await runCodexScriptRewrite(project.episode, research, draftLines, state.settings.scriptRhythmProfile, correctionMessage);
       if (!generated.ok) {
         const detail = String(generated.error || generated.stderr || "알 수 없는 문장 수정 오류").trim().split(/\r?\n/).slice(-3).join(" ");
@@ -3645,10 +4012,29 @@ async function api(req, res, url) {
         }), project.episode);
         break;
       } catch (error) {
-        correctionMessage = error instanceof Error ? error.message : String(error);
+        let latest = error instanceof Error ? error.message : String(error);
+        const failedLines = Array.isArray(generated.value?.scriptLines) ? generated.value.scriptLines.map(String) : [];
+        // 길이 초과 반려: 모델은 글자 수를 못 세므로 서버가 계산한 목표를 구체적으로 전달
+        if (/650~850자/.test(latest) && failedLines.length === 18) {
+          const lengths = failedLines.map((line, index) => ({ cut: index + 1, length: line.replace(/\s+/g, "").length }));
+          const total = lengths.reduce((sum, item) => sum + item.length, 0);
+          if (total > 850) {
+            const longest = [...lengths].sort((a, b) => b.length - a.length).slice(0, 5).map((item) => `${item.cut}번(${item.length}자)`).join(", ");
+            latest += ` 공백 제외 ${total - 850 + 25}자 이상 줄이십시오. 가장 긴 문장: ${longest}. 문장 수 18과 각 문장의 어미는 그대로 두고, 수식어·중복 표현만 삭제해 줄이십시오.`;
+          } else if (total < 650) {
+            latest += ` 공백 제외 ${650 - total + 25}자 이상 늘리십시오. 문장 수 18과 어미는 유지하십시오.`;
+          }
+        }
+        if (/650~850자/.test(latest)) {
+          const priorLengthIndex = pastCorrections.findIndex((item) => /650~850자/.test(item));
+          if (priorLengthIndex >= 0) pastCorrections.splice(priorLengthIndex, 1);
+        }
+        if (!pastCorrections.includes(latest)) pastCorrections.push(latest);
+        // 이전 반려 사유를 모두 누적 전달 — 하나를 고치며 앞서 고친 규칙을 다시 깨는 순환을 막는다
+        correctionMessage = pastCorrections.map((item, index) => `${index + 1}) ${item}`).join(" ") + " — 위 지적을 전부 동시에 지키십시오.";
         const retryLines = Array.isArray(generated.value?.scriptLines) ? generated.value.scriptLines.map(String) : [];
         if (retryLines.length === 18) draftLines = retryLines;
-        if (attempt === 1) return json(res, 422, { error: `문장 자동 교정을 두 번 시도했지만 검수를 통과하지 못했습니다. ${correctionMessage}` });
+        if (attempt === maxAttempts - 1) return json(res, 422, { error: `문장 자동 교정을 ${maxAttempts}번 시도했지만 검수를 통과하지 못했습니다. ${latest}` });
       }
     }
     let polishApplied = false;
@@ -3713,6 +4099,86 @@ async function api(req, res, url) {
     if (shotsStage) { shotsStage.status = project.readyForProduction ? "planned" : "blocked"; shotsStage.note = project.readyForProduction ? "18문장 저장 · 컷 프롬프트 실행 가능" : "대본 빈칸을 완성하세요."; }
     await writeJson(stateFile, state);
     return json(res, 200, { ok: true, state, project, message: project.readyForProduction ? "18문장 대본을 저장했습니다." : "구조 초안을 저장했습니다." });
+  }
+  if (req.method === "POST" && url.pathname === "/api/scene-design/generate") {
+    const { state, sourceShots } = await loadState();
+    const project = await loadActiveProject(state, sourceShots);
+    const episodeId = project.episodeId;
+    const stored = await readJson(episodeScriptFile(episodeId), null);
+    const lines = Array.isArray(stored?.scriptLines) ? stored.scriptLines.map(String) : [];
+    if (lines.length !== 18) return json(res, 409, { error: "18문장 대본을 먼저 완성·저장하세요." });
+    const context = await sdResearchContext(episodeId);
+    const timeline = await readJson(path.join(episodeProjectDir(episodeId), "audio", "narration_timeline.json"), null);
+    let referenceFiles = [];
+    try { referenceFiles = (await fs.readdir(path.join(projectRoot, "reference"))).filter((name) => /\.png$/i.test(name)); } catch {}
+    const generated = await runCodexStructured(
+      sceneDesignPrompt(project, lines, context, referenceFiles),
+      sceneDesignSchema(),
+      "scene-design.schema.json",
+      false,
+      420000,
+      "씬 설계표 생성 시간이 7분을 초과했습니다."
+    );
+    if (!generated.ok) {
+      const detail = String(generated.error || generated.stderr || "알 수 없는 설계 오류").trim().split(/\r?\n/).slice(-2).join(" ");
+      return json(res, 502, { error: `씬 설계표 생성 실패: ${detail}` });
+    }
+    const value = generated.value || {};
+    const rawCuts = Array.isArray(value.cuts) ? value.cuts : [];
+    if (rawCuts.length !== 18) return json(res, 422, { error: `AI가 18컷을 반환하지 않았습니다 (${rawCuts.length}컷).` });
+    const gap = Number(timeline?.gapSeconds || 0.09);
+    const segments = Array.isArray(timeline?.segments) ? timeline.segments : [];
+    const design = {
+      version: 1,
+      episodeId,
+      name: String(value.name || `씬 설계표 — ${project.title}`).slice(0, 120),
+      updatedAt: new Date().toISOString(),
+      specs: {
+        imageResolution: "1080x1920 (FullHD)",
+        videoResolution: "704x1280 (HD 테스트)",
+        fps: 24,
+        colorArc: String(value.colorArc || "").slice(0, 500)
+      },
+      cuts: rawCuts.map((cutItem, offset) => {
+        const index = offset + 1;
+        const speech = Number(segments[offset]?.duration || 0);
+        const durationSec = speech > 0 ? Number((speech + (index === 18 ? 0.8 : gap)).toFixed(1)) : 5.0;
+        const references = (Array.isArray(cutItem.references) ? cutItem.references : [])
+          .map((file) => path.basename(String(file)))
+          .filter((file) => referenceFiles.includes(file))
+          .slice(0, 4);
+        const tedori = index === 18 ? true : cutItem.tedori === true;
+        const logo = index === 18 ? true : cutItem.logo === true;
+        if (tedori && referenceFiles.includes("tedori_character_sheet_final.png") && !references.includes("tedori_character_sheet_final.png")) references.push("tedori_character_sheet_final.png");
+        if (logo && referenceFiles.includes("tennisnote_icon.png") && !references.includes("tennisnote_icon.png")) references.push("tennisnote_icon.png");
+        return {
+          cut: index,
+          title: String(cutItem.title || "").slice(0, 200),
+          durationSec,
+          actionType: String(cutItem.actionType || "시뮬레이션").slice(0, 40),
+          staging: String(cutItem.staging || "").slice(0, 2000),
+          cameraAngle: String(cutItem.cameraAngle || "").slice(0, 200),
+          shotSize: String(cutItem.shotSize || "").slice(0, 200),
+          lens: String(cutItem.lens || "35mm").slice(0, 100),
+          cameraMove: String(cutItem.cameraMove || "").slice(0, 400),
+          subjectMotion: String(cutItem.subjectMotion || "").slice(0, 2000),
+          tone: String(cutItem.tone || "").slice(0, 400),
+          inSceneText: String(cutItem.inSceneText || "").slice(0, 400),
+          references: references.length ? references : referenceFiles.filter((file) => /^basicrefer_/.test(file)).slice(0, 2),
+          tedori,
+          logo,
+          verify: (Array.isArray(cutItem.verify) ? cutItem.verify : []).map((item) => String(item).slice(0, 300)).slice(0, 10),
+          en: cutItem.en && typeof cutItem.en === "object"
+            ? Object.fromEntries(Object.entries(cutItem.en).filter(([, entry]) => typeof entry === "string" && entry.trim()).map(([key, entry]) => [key, String(entry).slice(0, 2000)]))
+            : undefined
+        };
+      })
+    };
+    await writeJson(path.join(episodeProjectDir(episodeId), "scene_design.json"), design);
+    const keyframesStage = state.stages.find((stage) => stage.id === "keyframes");
+    if (keyframesStage) { keyframesStage.status = "ready_review"; keyframesStage.note = `씬 설계표 18컷 생성 완료${generated.usedFallback ? " (Claude 폴백)" : ""} · 검토 후 이미지 생성`; }
+    await writeJson(stateFile, state);
+    return json(res, 200, { ok: true, episodeId, cuts: design.cuts.length, message: `씬 설계표 18컷을 생성했습니다. 내용을 검토·수정한 뒤 이미지 생성을 시작하세요.` });
   }
   if (req.method === "POST" && url.pathname === "/api/flow/prompts") {
     const body = await readBody(req);
@@ -3881,6 +4347,20 @@ async function api(req, res, url) {
     await writeJson(file, design);
     return json(res, 200, { ok: true, episodeId, cuts: design.cuts.length });
   }
+  if (req.method === "POST" && url.pathname === "/api/comfy/select-version") {
+    const body = await readBody(req);
+    const { state } = await loadState();
+    const episodeId = state.planning.activeEpisodeId;
+    const kind = body.kind === "video" ? "video" : "image";
+    const cut = Number(body.cut);
+    const version = Number(body.version);
+    if (!Number.isInteger(cut) || cut < 1 || cut > 18) return json(res, 400, { error: "컷 번호가 잘못됐습니다." });
+    const versions = await comfyListVersions(episodeId, kind, cut);
+    const target = versions.find((item) => item.version === version);
+    if (!target) return json(res, 404, { error: `버전 ${version}을 찾을 수 없습니다.` });
+    await fs.copyFile(target.file, comfyCanonicalPath(episodeId, kind, cut));
+    return json(res, 200, { ok: true, kind, cut, version });
+  }
   if (req.method === "GET" && url.pathname === "/api/comfy/status") {
     const { state } = await loadState();
     return json(res, 200, await comfySceneStatus(state.planning.activeEpisodeId));
@@ -3931,7 +4411,37 @@ async function api(req, res, url) {
         await fs.writeFile(path.join(engineDir, `c${String(cut).padStart(2, "0")}_${kind}.txt`), block, "utf8");
       }
       await fs.writeFile(path.join(engineDir, `${engine}_${kind}_package.md`), prompts.map((entry) => entry.prompt).join("\n\n---\n\n"), "utf8");
-      return json(res, 200, { ok: true, manual: true, kind, model, engine, queued: [], prompts, packageFile: `output/episodes/${episodeFolderName(episodeId)}/mg/${engine}/${engine}_${kind}_package.md` });
+      if (engine === "flow") {
+        // Claude 세션이 Claude in Chrome으로 Flow 웹을 자동 조작할 때 읽는 실행 대기열
+        const queueJobs = [];
+        for (const cut of cuts) {
+          const item = await comfyLoadDesignCut(episodeId, cut);
+          const promptText = kind === "image" ? comfyImagePromptText(item, manualContext) : comfyVideoPromptText(item, manualContext);
+          const jobReferences = (item.references || []).map((file) => `reference/${path.basename(file)}`);
+          for (const topicFile of (manualContext.imageFiles || [])) {
+            if (jobReferences.length >= 6) break;
+            const relative = String(topicFile).replaceAll("\\", "/");
+            if (!jobReferences.includes(relative)) jobReferences.push(relative);
+          }
+          queueJobs.push({
+            cut,
+            status: "pending",
+            prompt: promptText,
+            references: jobReferences,
+            startFrame: kind === "video" ? path.relative(projectRoot, comfyStillPath(episodeId, cut)).replaceAll("\\", "/") : null,
+            savePath: path.relative(projectRoot, kind === "image" ? comfyStillPath(episodeId, cut) : comfyClipPath(episodeId, cut)).replaceAll("\\", "/")
+          });
+        }
+        await writeJson(path.join(engineDir, `flow_${kind}_queue.json`), {
+          createdAt: new Date().toISOString(),
+          episodeId,
+          kind,
+          recommendedModel: kind === "image" ? "Nano Banana Pro" : "Veo 3.1 (티어 제한 시 Omni Flash)",
+          aspectRatio: "9:16",
+          jobs: queueJobs
+        });
+      }
+      return json(res, 200, { ok: true, manual: true, kind, model, engine, queued: [], prompts, autoQueue: engine === "flow", packageFile: `output/episodes/${episodeFolderName(episodeId)}/mg/${engine}/${engine}_${kind}_package.md` });
     }
     const isLocal = model === "z-image-turbo" || model === "minimax-h3";
     if (isLocal) {

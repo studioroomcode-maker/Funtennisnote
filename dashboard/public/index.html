@@ -140,9 +140,9 @@
           <div class="visual-research-actions">
             <span class="reference-ready-badge" id="visualResearchStatus">조사 전</span>
             <label class="compact-field"><span class="sr-only">조사·대본 AI 엔진</span>
-              <select id="researchProviderSelect" aria-label="조사·대본 AI 엔진" title="조사·대본 생성에 쓸 AI 엔진 (Codex 한도 초과 시 Claude Code로 자동 전환)">
-                <option value="codex">Codex</option>
+              <select id="researchProviderSelect" data-provider-select aria-label="조사·대본 AI 엔진" title="조사·대본 생성에 쓸 AI 엔진 (Codex 한도 초과 시 Claude Code로 자동 전환)">
                 <option value="claude">Claude Code</option>
+                <option value="codex">Codex (GPT)</option>
               </select>
             </label>
             <button class="button button-outline" id="researchVisualReferencesButton" type="button">자료 조사 시작 (공식+시각)</button>
@@ -241,6 +241,13 @@
             <p>공식·1차 자료 조사 후 한국어 낭독 흐름을 다시 편집해, 자연스러운 18문장과 컷별 근거를 함께 저장합니다.</p>
           </div>
           <div class="script-editor-tools">
+            <label class="rhythm-field" for="scriptProviderSelect">
+              <span>AI 엔진</span>
+              <select id="scriptProviderSelect" data-provider-select aria-label="대본 생성 AI 엔진">
+                <option value="claude">Claude Code</option>
+                <option value="codex">Codex (GPT)</option>
+              </select>
+            </label>
             <label class="rhythm-field" for="scriptRhythmProfile">
               <span>슬롯 리듬</span>
               <select id="scriptRhythmProfile">
@@ -423,6 +430,7 @@
                   </optgroup>
                 </select>
               </label>
+              <button class="button button-small button-outline" id="sdGenerateDesign" type="button">씬설계표 생성 (AI)</button>
               <button class="button button-small button-outline" id="sdSaveDesign" type="button">설계 저장</button>
               <button class="button button-small button-outline" id="sdGenAllImages" type="button">전체 이미지 생성</button>
               <button class="button button-small button-dark" id="sdGenAllVideos" type="button">전체 영상 생성</button>

@@ -4,7 +4,7 @@ const stageMeta = {
   voice: { title: "더빙 생성", short: "더빙", icon: "i-audio", description: "문장별 TTS로 컷 길이 확정 (씬 설계 전 필수)" },
   keyframes: { title: "씬 설계표 · 이미지", short: "씬설계표", icon: "i-layers", description: "컷별 설계 확정 후 이미지 생성·검수 (솔기·라인·텍스트 QC)" },
   video: { title: "영상 제작", short: "영상", icon: "i-film", description: "승인된 이미지 기반 컷별 영상 생성" },
-  edit: { title: "편집 · BGM", short: "편집", icon: "i-film", description: "리타이밍 조립 + 내레이션 + BGM/SFX" },
+  edit: { title: "편집 · 자막 · BGM", short: "편집", icon: "i-film", description: "리타이밍 조립 + 요약 자막(한/영) + 내레이션 + BGM 믹스" },
   qa: { title: "최종 검수", short: "검수", icon: "i-shield", description: "기하·텍스트·로고·길이 전체 프레임 검사" }
 };
 const statusText = {
@@ -862,6 +862,11 @@ async function runStage(stageId) {
     try { await generateVideoMedia(); } catch (error) { toast(error.message, "error"); }
     return;
   }
+  if (stageId === "edit") {
+    document.querySelector(".edit-bgm-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    toast("편집 패널에서 자막·BGM을 선택하고 '최종 영상 조립'을 누르세요.");
+    return;
+  }
   const stage = state.stages.find((item) => item.id === stageId);
   if (stage.status === "ready_review" && stageId !== "keyframes") {
     stage.status = "complete";
@@ -1444,27 +1449,33 @@ init();
   let sdResearchCtx = { anchorKo: "", avoidKo: "" };
 
   // 서버(comfyImagePromptText/comfyVideoPromptText)와 동일한 조합식 — 서버 수정 시 함께 갱신할 것
+  // 서버 comfyImagePromptText/comfyVideoPromptText와 동일하게 유지할 것 — 영문 프롬프트, en 번역 우선
   function sdImagePrompt(cut) {
+    const f = (key) => (cut.en && cut.en[key]) || cut[key];
+    const anchor = sdResearchCtx.anchorEn || sdResearchCtx.anchorKo;
+    const avoid = sdResearchCtx.avoidEn || sdResearchCtx.avoidKo;
     return [
-      cut.staging,
-      `카메라: ${cut.cameraAngle}, ${cut.shotSize}, ${cut.lens}.`,
-      `조명과 톤: ${cut.tone}.`,
+      f("staging"),
+      `Camera: ${f("cameraAngle")}, ${f("shotSize")}, ${f("lens")}.`,
+      `Lighting and tone: ${f("tone")}.`,
       cut.inSceneText
-        ? `장면 안 텍스트: ${cut.inSceneText} — 이 글자만 정확한 철자로 장면의 사물에 새겨지듯 선명하게 렌더링하고, 그 외 어떤 글자·숫자도 만들지 않습니다.`
-        : "글자·숫자·자막·로고를 일절 생성하지 않습니다.",
-      "첨부된 레퍼런스 이미지의 테니스공 솔기 형태, 코트 라인 규격, 네트 구조를 정확히 따릅니다.",
-      sdResearchCtx.anchorKo ? `주제 조사 형태 기준: ${sdResearchCtx.anchorKo}` : "",
-      sdResearchCtx.avoidKo ? `조사로 확인된 금지 형태: ${sdResearchCtx.avoidKo}` : "",
-      "포토리얼 아키텍처 시각화 3D 렌더, 신비한 건축사전 스타일의 설명형 장면, 세로 9:16, 사람 없음, 워터마크 없음."
+        ? `In-scene text: ${cut.inSceneText} — render only this text, spelled exactly, as if engraved or printed on objects in the scene; do not create any other letters or numbers.`
+        : "Do not generate any letters, numbers, captions, or logos.",
+      "Follow the attached reference images exactly for tennis-ball seam shape, court line layout, and net structure.",
+      anchor ? `Subject geometry from research: ${anchor}` : "",
+      avoid ? `Forbidden shapes confirmed by research: ${avoid}` : "",
+      "Photoreal archviz-style 3D render, explanatory documentary motion-graphic scene, vertical 9:16, no people, no watermark."
     ].filter(Boolean).join(" ");
   }
   function sdVideoPrompt(cut) {
+    const f = (key) => (cut.en && cut.en[key]) || cut[key];
+    const avoid = sdResearchCtx.avoidEn || sdResearchCtx.avoidKo;
     return [
-      `피사체 움직임: ${cut.subjectMotion}.`,
-      `카메라 모션: ${cut.cameraMove}. 카메라는 마지막 프레임까지 멈추지 않습니다.`,
-      cut.inSceneText ? `장면 속 글자(${cut.inSceneText})는 형태를 유지하며 뭉개지지 않습니다.` : "글자를 새로 만들지 않습니다.",
-      sdResearchCtx.avoidKo ? `형태 유지 — 조사로 확인된 금지 형태: ${sdResearchCtx.avoidKo}` : "",
-      "한 장소의 연속 숏, 컷 없음, 무음, 모핑 금지, 스케일 드리프트 금지."
+      `Subject motion: ${f("subjectMotion")}.`,
+      `Camera motion: ${f("cameraMove")}. The camera keeps moving until the final frame.`,
+      cut.inSceneText ? `Existing in-scene text (${cut.inSceneText}) keeps its exact shape and never smears.` : "Do not create any new text.",
+      avoid ? `Preserve geometry — forbidden shapes confirmed by research: ${avoid}` : "",
+      "One continuous shot in a single location, no cuts, silent, no morphing, no scale drift."
     ].filter(Boolean).join(" ");
   }
 
@@ -1566,6 +1577,12 @@ init();
       else state.textContent = "ComfyUI 준비됨";
       state.dataset.ok = sdStatus && sdStatus.serverOk ? "1" : "0";
     }
+    const higgsBadge = document.getElementById("sdHiggsState");
+    if (higgsBadge) {
+      const hf = data && data.higgsfield;
+      higgsBadge.textContent = hf && hf.authenticated ? `Higgsfield ${Number(hf.credits || 0).toFixed(1)}cr` : "Higgsfield 미연결";
+      higgsBadge.dataset.ok = hf && hf.authenticated ? "1" : "0";
+    }
     sdRender();
     const active = sdStatus && (sdStatus.busy || sdStatus.pending > 0);
     clearTimeout(sdPollTimer);
@@ -1577,6 +1594,7 @@ init();
     if (!target.dataset || !target.dataset.sdKey) return;
     const index = Number(target.dataset.sdCut);
     sdDesign.cuts[index][target.dataset.sdKey] = target.value;
+    if (sdDesign.cuts[index].en && sdDesign.cuts[index].en[target.dataset.sdKey]) delete sdDesign.cuts[index].en[target.dataset.sdKey];
     const row = target.closest("[data-sd-row]");
     if (row) {
       const imageBox = row.querySelector(".sd-prompt-image");
@@ -1598,8 +1616,9 @@ init();
       const data = await response.json();
       if (!data.ok) window.alert(data.error || "생성 요청 실패");
       else if (data.manual && data.prompts && data.prompts.length) {
+        const site = data.engine === "chatgpt" ? "ChatGPT 웹 (reference/ 폴더 이미지를 함께 첨부)" : "Flow 웹";
         try { await navigator.clipboard.writeText(data.prompts[0].prompt); } catch (error) {}
-        window.alert("Flow 수동 생성용 프롬프트를 클립보드에 복사했습니다.\nFlow 웹에서 생성한 뒤 안내된 경로에 저장하면 보드에 자동 반영됩니다.\n패키지 파일: " + data.packageFile);
+        window.alert(`${site}에서 쓸 프롬프트를 클립보드에 복사했습니다.\n생성한 뒤 안내된 경로에 저장하면 보드에 자동 반영됩니다.\n패키지 파일: ` + data.packageFile);
       }
     } finally { sdRefreshStatus(); }
   });
@@ -1616,14 +1635,19 @@ init();
 
   const sdGenAll = (kind) => async () => {
     const label = kind === "image" ? "이미지" : "영상";
-    const eta = kind === "image" ? "수십 초" : "약 20~40분";
-    if (!window.confirm(`미생성 컷의 ${label}를 로컬 ComfyUI로 전체 생성합니다. (컷당 ${eta}) 계속할까요?`)) return;
+    const model = sdModel(kind);
+    const select = document.getElementById(kind === "image" ? "sdImageModel" : "sdVideoModel");
+    const modelLabel = select && select.selectedOptions[0] ? select.selectedOptions[0].textContent.trim() : model;
+    if (!window.confirm(`미생성 컷의 ${label}를 "${modelLabel}"로 전체 생성합니다. 계속할까요?`)) return;
     const response = await fetch("/api/comfy/generate", {
-      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ kind, all: true, model: sdModel(kind) })
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ kind, all: true, model })
     });
     const data = await response.json();
     if (!data.ok) window.alert(data.error || "생성 요청 실패");
-    else if (data.manual) window.alert("Flow 수동 생성용 프롬프트 패키지를 만들었습니다.\n" + data.packageFile + "\nFlow 웹에서 생성 후 안내된 경로에 저장하면 보드에 자동 반영됩니다.");
+    else if (data.manual) {
+      const site = data.engine === "chatgpt" ? "ChatGPT 웹 (reference/ 폴더 이미지를 함께 첨부)" : "Flow 웹";
+      window.alert(`${site}용 프롬프트 패키지를 만들었습니다.\n` + data.packageFile + "\n생성 후 안내된 경로에 저장하면 보드에 자동 반영됩니다.");
+    }
     else if (!data.queued.length) window.alert("모든 컷이 이미 생성되어 있습니다.");
     sdRefreshStatus();
   };
@@ -1635,6 +1659,138 @@ init();
   sdLoadDesign().then(sdRefreshStatus);
 })();
 
+
+// ===== Edit · Subtitle · BGM: final assembly =====
+(() => {
+  const bgmSelect = document.getElementById("bgmSelect");
+  if (!bgmSelect) return;
+  const volumeInput = document.getElementById("bgmVolume");
+  const uploadInput = document.getElementById("bgmUploadInput");
+  const subtitleMode = document.getElementById("subtitleMode");
+  const assembleButton = document.getElementById("assembleButton");
+  const stateBadge = document.getElementById("assembleState");
+  const resultBox = document.getElementById("assembleResult");
+  const subtitleRowsBox = document.getElementById("subtitleRows");
+  const subtitleSaveButton = document.getElementById("subtitleSave");
+  let subtitleData = [];
+  let pollTimer = null;
+
+  async function loadBgmList() {
+    try {
+      const data = await (await fetch("/api/bgm/list")).json();
+      const current = bgmSelect.value;
+      bgmSelect.innerHTML = '<option value="">BGM 없음 (내레이션만)</option>' +
+        (data.files || []).map((file) => `<option value="${file.replaceAll('"', "&quot;")}">${file}</option>`).join("");
+      if ([...bgmSelect.options].some((option) => option.value === current)) bgmSelect.value = current;
+    } catch (error) {}
+  }
+
+  if (uploadInput) uploadInput.addEventListener("change", async () => {
+    const files = [...uploadInput.files].slice(0, 5);
+    if (!files.length) return;
+    const payload = [];
+    for (const file of files) {
+      const dataBase64 = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result).split(",")[1] || "");
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+      payload.push({ name: file.name, dataBase64 });
+    }
+    const response = await fetch("/api/bgm/upload", {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ files: payload })
+    });
+    const data = await response.json();
+    if (!data.ok) { window.alert(data.error || "BGM 업로드 실패"); return; }
+    await loadBgmList();
+    if (data.saved && data.saved.length) bgmSelect.value = data.saved[0];
+    uploadInput.value = "";
+  });
+
+  async function loadSubtitles() {
+    try {
+      const data = await (await fetch("/api/subtitles")).json();
+      const byCut = new Map((data.rows || []).map((row) => [row.cut, row]));
+      const lines = data.scriptLines || [];
+      subtitleData = Array.from({ length: Math.max(lines.length, 18) }, (_, index) => {
+        const cut = index + 1;
+        const row = byCut.get(cut) || {};
+        return { cut, ko: row.ko || "", en: row.en || "", line: lines[index] || "" };
+      });
+      subtitleRowsBox.innerHTML = subtitleData.map((row, index) => `<div class="subtitle-row">
+        <strong>C${String(row.cut).padStart(2, "0")}</strong>
+        <div class="subtitle-row-fields">
+          <small>${row.line.replaceAll("<", "&lt;")}</small>
+          <input data-sub-index="${index}" data-sub-lang="ko" value="${row.ko.replaceAll('"', "&quot;")}" placeholder="비우면 대본 문장 그대로" maxlength="240">
+          <input data-sub-index="${index}" data-sub-lang="en" value="${row.en.replaceAll('"', "&quot;")}" placeholder="English translation" maxlength="320">
+        </div>
+      </div>`).join("");
+    } catch (error) { subtitleRowsBox.textContent = "자막을 불러오지 못했습니다."; }
+  }
+
+  subtitleRowsBox.addEventListener("input", (event) => {
+    const target = event.target;
+    if (!target.dataset || target.dataset.subIndex === undefined) return;
+    subtitleData[Number(target.dataset.subIndex)][target.dataset.subLang] = target.value;
+  });
+
+  if (subtitleSaveButton) subtitleSaveButton.addEventListener("click", async () => {
+    const response = await fetch("/api/subtitles", {
+      method: "PUT", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ rows: subtitleData.map(({ cut, ko, en }) => ({ cut, ko, en })) })
+    });
+    const data = await response.json();
+    window.alert(data.ok ? `자막 ${data.rows}컷 저장 완료` : (data.error || "자막 저장 실패"));
+  });
+
+  function renderAssembleStatus(job) {
+    if (!job) { stateBadge.textContent = "상태 확인 실패"; return; }
+    if (job.status === "running") { stateBadge.textContent = `${job.step} · ${job.progress}%`; stateBadge.dataset.ok = "0"; }
+    else if (job.status === "done") { stateBadge.textContent = `완료 · ${job.message}`; stateBadge.dataset.ok = "1"; }
+    else if (job.status === "error") { stateBadge.textContent = "오류"; stateBadge.dataset.ok = "0"; }
+    else { stateBadge.textContent = "대기"; stateBadge.dataset.ok = "0"; }
+    const files = job.outputFiles || [];
+    if (job.status === "done" && files.length) {
+      resultBox.hidden = false;
+      resultBox.innerHTML = files.map((file) => {
+        const name = file.split("/").pop();
+        return `<a href="/media?path=${encodeURIComponent(file)}&v=${Date.now()}" target="_blank" rel="noreferrer">${name}</a>`;
+      }).join(" · ");
+    } else if (job.status === "error") {
+      resultBox.hidden = false;
+      resultBox.textContent = job.message || "조립 실패";
+    }
+  }
+
+  async function pollAssemble() {
+    clearTimeout(pollTimer);
+    let job = null;
+    try { job = await (await fetch("/api/assemble/status")).json(); } catch (error) {}
+    renderAssembleStatus(job);
+    if (job && job.status === "running") pollTimer = setTimeout(pollAssemble, 3000);
+  }
+
+  if (assembleButton) assembleButton.addEventListener("click", async () => {
+    const modeMap = { none: ["none"], ko: ["ko"], en: ["en"], koen: ["ko", "en"], all: ["none", "ko", "en"] };
+    const subtitles = modeMap[subtitleMode ? subtitleMode.value : "none"] || ["none"];
+    const bgm = bgmSelect.value || null;
+    const summary = `자막: ${subtitles.map((lang) => lang === "none" ? "무자막" : lang === "ko" ? "한글" : "영어").join("+")} · BGM: ${bgm || "없음"}`;
+    if (!window.confirm(`18컷을 리타이밍 조립하고 마스터를 렌더링합니다.\n${summary}\n계속할까요?`)) return;
+    const response = await fetch("/api/assemble", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ bgm, bgmDb: Number(volumeInput ? volumeInput.value : -20), subtitles })
+    });
+    const data = await response.json();
+    if (!data.ok) { window.alert(data.error || "조립 시작 실패"); return; }
+    resultBox.hidden = true;
+    pollAssemble();
+  });
+
+  loadBgmList();
+  loadSubtitles();
+  pollAssemble();
+})();
 
 // ===== Reference library: add new reference files =====
 (() => {

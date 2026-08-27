@@ -2884,37 +2884,46 @@ async function comfyStageReferences(item, context) {
 
 async function sdResearchContext(episodeId) {
   const research = await loadVisualReferenceResearch(episodeId);
-  if (!visualReferenceSummary(research).complete) return { anchorKo: "", avoidKo: "", imageFiles: [] };
+  if (!visualReferenceSummary(research).complete) return { anchorKo: "", avoidKo: "", anchorEn: "", avoidEn: "", imageFiles: [] };
   const inv = (research.geometry?.invariantsKo || []).slice(0, 4).join(" ");
   const anchorKo = [research.promptAnchorKo || "", inv].filter(Boolean).join(" ");
   const avoidKo = (research.geometry?.commonErrorsKo || []).slice(0, 4).join(" ");
+  const invEn = (research.geometry?.invariantsEn || []).slice(0, 4).join(" ");
+  const anchorEn = [research.promptAnchorEn || "", invEn].filter(Boolean).join(" ");
+  const avoidEn = (research.geometry?.commonErrorsEn || []).slice(0, 4).join(" ");
   const imageFiles = selectedVisualReferenceFiles(research);
-  return { anchorKo, avoidKo, imageFiles };
+  return { anchorKo, avoidKo, anchorEn, avoidEn, imageFiles };
 }
 
+// 프롬프트는 영문으로 합성 (필드에 en 번역이 있으면 사용, 없으면 원문 유지 — 필요한 부분은 한글 허용)
 function comfyImagePromptText(item, context) {
+  const f = (key) => (item.en && item.en[key]) || item[key];
+  const anchor = context && (context.anchorEn || context.anchorKo);
+  const avoid = context && (context.avoidEn || context.avoidKo);
   const parts = [
-    item.staging,
-    `카메라: ${item.cameraAngle}, ${item.shotSize}, ${item.lens}.`,
-    `조명과 톤: ${item.tone}.`,
+    f("staging"),
+    `Camera: ${f("cameraAngle")}, ${f("shotSize")}, ${f("lens")}.`,
+    `Lighting and tone: ${f("tone")}.`,
     item.inSceneText
-      ? `장면 안 텍스트: ${item.inSceneText} — 이 글자만 정확한 철자로 장면의 사물에 새겨지듯 선명하게 렌더링하고, 그 외 어떤 글자·숫자도 만들지 않습니다.`
-      : "글자·숫자·자막·로고를 일절 생성하지 않습니다.",
-    "첨부된 레퍼런스 이미지의 테니스공 솔기 형태, 코트 라인 규격, 네트 구조를 정확히 따릅니다.",
-    context && context.anchorKo ? `주제 조사 형태 기준: ${context.anchorKo}` : "",
-    context && context.avoidKo ? `조사로 확인된 금지 형태: ${context.avoidKo}` : "",
-    "포토리얼 아키텍처 시각화 3D 렌더, 신비한 건축사전 스타일의 설명형 장면, 세로 9:16, 사람 없음, 워터마크 없음."
+      ? `In-scene text: ${item.inSceneText} — render only this text, spelled exactly, as if engraved or printed on objects in the scene; do not create any other letters or numbers.`
+      : "Do not generate any letters, numbers, captions, or logos.",
+    "Follow the attached reference images exactly for tennis-ball seam shape, court line layout, and net structure.",
+    anchor ? `Subject geometry from research: ${anchor}` : "",
+    avoid ? `Forbidden shapes confirmed by research: ${avoid}` : "",
+    "Photoreal archviz-style 3D render, explanatory documentary motion-graphic scene, vertical 9:16, no people, no watermark."
   ];
   return parts.filter(Boolean).join(" ");
 }
 
 function comfyVideoPromptText(item, context) {
+  const f = (key) => (item.en && item.en[key]) || item[key];
+  const avoid = context && (context.avoidEn || context.avoidKo);
   return [
-    `피사체 움직임: ${item.subjectMotion}.`,
-    `카메라 모션: ${item.cameraMove}. 카메라는 마지막 프레임까지 멈추지 않습니다.`,
-    item.inSceneText ? `장면 속 글자(${item.inSceneText})는 형태를 유지하며 뭉개지지 않습니다.` : "글자를 새로 만들지 않습니다.",
-    context && context.avoidKo ? `형태 유지 — 조사로 확인된 금지 형태: ${context.avoidKo}` : "",
-    "한 장소의 연속 숏, 컷 없음, 무음, 모핑 금지, 스케일 드리프트 금지."
+    `Subject motion: ${f("subjectMotion")}.`,
+    `Camera motion: ${f("cameraMove")}. The camera keeps moving until the final frame.`,
+    item.inSceneText ? `Existing in-scene text (${item.inSceneText}) keeps its exact shape and never smears.` : "Do not create any new text.",
+    avoid ? `Preserve geometry — forbidden shapes confirmed by research: ${avoid}` : "",
+    "One continuous shot in a single location, no cuts, silent, no morphing, no scale drift."
   ].filter(Boolean).join(" ");
 }
 
@@ -3048,6 +3057,253 @@ async function sdHiggsfieldVideo(episodeId, cut, model) {
   return destination;
 }
 
+async function sdChatgptImage(episodeId, cut) {
+  const key = process.env.OPENAI_API_KEY;
+  if (!key) throw new Error("OPENAI_API_KEY가 없습니다.");
+  const item = await comfyLoadDesignCut(episodeId, cut);
+  const context = await sdResearchContext(episodeId);
+  const prompt = comfyImagePromptText(item, context);
+  const refs = [];
+  for (const ref of (item.references || []).slice(0, 4)) {
+    const abs = within(projectRoot, path.join("reference", path.basename(ref)));
+    if (await fs.access(abs).then(() => true).catch(() => false)) refs.push(abs);
+  }
+  for (const file of (context.imageFiles || [])) {
+    if (refs.length >= 6) break;
+    const abs = within(projectRoot, file);
+    if (await fs.access(abs).then(() => true).catch(() => false)) refs.push(abs);
+  }
+  const mimeTypes = { ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp" };
+  let payload;
+  if (refs.length) {
+    const boundary = "----ftnchatgpt" + Date.now().toString(16);
+    const parts = [];
+    const field = (name, value) => parts.push(Buffer.from(`--${boundary}\r\nContent-Disposition: form-data; name="${name}"\r\n\r\n${value}\r\n`));
+    field("model", "gpt-image-1");
+    field("prompt", prompt);
+    field("size", "1024x1536");
+    field("quality", "high");
+    field("n", "1");
+    for (const abs of refs) {
+      const mime = mimeTypes[path.extname(abs).toLowerCase()] || "image/png";
+      parts.push(Buffer.from(`--${boundary}\r\nContent-Disposition: form-data; name="image[]"; filename="${path.basename(abs)}"\r\nContent-Type: ${mime}\r\n\r\n`));
+      parts.push(await fs.readFile(abs));
+      parts.push(Buffer.from("\r\n"));
+    }
+    parts.push(Buffer.from(`--${boundary}--\r\n`));
+    const response = await fetch("https://api.openai.com/v1/images/edits", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${key}`, "Content-Type": `multipart/form-data; boundary=${boundary}` },
+      body: Buffer.concat(parts)
+    });
+    payload = await response.json();
+    if (!response.ok) throw new Error(payload?.error?.message || `OpenAI 오류 ${response.status}`);
+  } else {
+    const response = await fetch("https://api.openai.com/v1/images/generations", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ model: "gpt-image-1", prompt, size: "1024x1536", quality: "high", n: 1 })
+    });
+    payload = await response.json();
+    if (!response.ok) throw new Error(payload?.error?.message || `OpenAI 오류 ${response.status}`);
+  }
+  const b64 = payload?.data?.[0]?.b64_json;
+  if (!b64) throw new Error("OpenAI 이미지 응답이 비어 있습니다.");
+  const destination = comfyStillPath(episodeId, cut);
+  await fs.mkdir(path.dirname(destination), { recursive: true });
+  await fs.writeFile(destination, Buffer.from(b64, "base64"));
+  return destination;
+}
+
+// ===== 편집 · BGM: 최종 영상 조립 =====
+const assembleJob = { status: "idle", step: "", progress: 0, message: "", outputFile: null, outputFiles: [] };
+const bgmDir = path.join(projectRoot, "assets", "bgm");
+
+function runFf(bin, args, spawnOptions = {}) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(bin, args, { windowsHide: true, ...spawnOptions });
+    let stderr = "";
+    let stdout = "";
+    child.stdout.on("data", (chunk) => { stdout += chunk; });
+    child.stderr.on("data", (chunk) => { stderr += chunk; if (stderr.length > 20000) stderr = stderr.slice(-10000); });
+    child.on("error", reject);
+    child.on("close", (code) => code === 0 ? resolve(stdout) : reject(new Error(`${bin} 종료 코드 ${code}: ${stderr.slice(-400)}`)));
+  });
+}
+
+async function ffprobeDuration(file) {
+  const out = await runFf("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", file]);
+  const value = parseFloat(String(out).trim());
+  if (!Number.isFinite(value) || value <= 0) throw new Error(`길이를 읽지 못했습니다: ${path.basename(file)}`);
+  return value;
+}
+
+async function runAssembly(episodeId, options) {
+  const dir = episodeProjectDir(episodeId);
+  const timeline = await readJson(path.join(dir, "audio", "narration_timeline.json"), null);
+  if (!timeline || !Array.isArray(timeline.segments) || !timeline.segments.length) {
+    throw new Error("narration_timeline.json이 없습니다. 더빙을 먼저 생성하세요.");
+  }
+  const narration = path.join(dir, "audio", "typecast_piljae.wav");
+  await fs.access(narration).catch(() => { throw new Error("내레이션 오디오(typecast_piljae.wav)가 없습니다."); });
+  const segments = timeline.segments;
+  const gap = Number(timeline.gapSeconds || 0);
+  const tail = 0.8;
+  const durations = segments.map((segment, index) => index < segments.length - 1 ? segment.duration + gap : segment.duration + tail);
+  const total = durations.reduce((sum, value) => sum + value, 0);
+  const missing = [];
+  for (let cut = 1; cut <= segments.length; cut += 1) {
+    const clip = comfyClipPath(episodeId, cut);
+    if (!await fs.access(clip).then(() => true).catch(() => false)) missing.push(cut);
+  }
+  if (missing.length) throw new Error(`영상이 없는 컷: ${missing.join(", ")} — 영상 제작을 먼저 완료하세요.`);
+  const segDir = path.join(dir, "final", "_segs");
+  await fs.mkdir(segDir, { recursive: true });
+  const listLines = [];
+  for (let cut = 1; cut <= segments.length; cut += 1) {
+    assembleJob.step = `컷 ${cut}/${segments.length} 리타이밍`;
+    assembleJob.progress = Math.round((cut - 1) / segments.length * 70);
+    const src = comfyClipPath(episodeId, cut);
+    const target = durations[cut - 1];
+    const clipDur = await ffprobeDuration(src);
+    const factor = target / clipDur;
+    const out = path.join(segDir, `seg${String(cut).padStart(2, "0")}.mp4`);
+    const vf = `scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setpts=${factor.toFixed(5)}*PTS,fps=30,setsar=1`;
+    await runFf("ffmpeg", ["-y", "-loglevel", "error", "-i", src, "-vf", vf, "-t", target.toFixed(3), "-an", "-c:v", "libx264", "-preset", "fast", "-crf", "18", "-pix_fmt", "yuv420p", out]);
+    listLines.push(`file '${out.replaceAll("'", "'\\''")}'`);
+  }
+  assembleJob.step = "컷 연결";
+  assembleJob.progress = 75;
+  const concatFile = path.join(segDir, "concat.txt");
+  await fs.writeFile(concatFile, listLines.join("\n"), "utf8");
+  const silent = path.join(segDir, "concat_silent.mp4");
+  await runFf("ffmpeg", ["-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", concatFile, "-c", "copy", silent]);
+  const starts = [];
+  let acc = 0;
+  for (const value of durations) { starts.push(acc); acc += value; }
+  const variants = Array.isArray(options.subtitles) && options.subtitles.length ? options.subtitles : ["none"];
+  let subtitleRows = [];
+  let subtitleScript = [];
+  const speechDurations = segments.map((segment) => Number(segment.duration) || 0);
+  if (variants.some((lang) => lang === "ko" || lang === "en")) {
+    const stored = await readJson(subtitlesFile(episodeId), null);
+    subtitleRows = Array.isArray(stored?.rows) ? stored.rows : [];
+    const script = await readJson(episodeScriptFile(episodeId), null);
+    subtitleScript = Array.isArray(script?.scriptLines) ? script.scriptLines.map(String) : [];
+    if (variants.includes("en") && !subtitleRows.some((row) => (row.en || "").trim())) {
+      throw new Error("영어 자막 번역이 비어 있습니다. 편집 패널의 자막 편집에서 영어 문장을 채워주세요.");
+    }
+    if (variants.includes("ko") && !subtitleScript.length && !subtitleRows.some((row) => (row.ko || "").trim())) {
+      throw new Error("한글 자막에 쓸 대본이 없습니다.");
+    }
+  }
+  let bgmFile = null;
+  let db = -20;
+  if (options.bgm) {
+    bgmFile = within(bgmDir, path.basename(options.bgm));
+    await fs.access(bgmFile).catch(() => { throw new Error(`BGM 파일이 없습니다: ${options.bgm}`); });
+    db = Number.isFinite(options.bgmDb) ? Math.max(-40, Math.min(0, options.bgmDb)) : -20;
+  }
+  const fadeStart = Math.max(0, total - 2.5);
+  const bgmChain = `[2:a]volume=${db}dB,atrim=0:${total.toFixed(3)},afade=t=out:st=${fadeStart.toFixed(3)}:d=2.5[bg];[1:a][bg]amix=inputs=2:duration=first:normalize=0[aout]`;
+  const outputs = [];
+  for (let index = 0; index < variants.length; index += 1) {
+    const lang = variants[index];
+    const suffix = lang === "none" ? "" : `_${lang}`;
+    const master = path.join(dir, "final", `master_edit${suffix}.mp4`);
+    assembleJob.step = `${lang === "none" ? "무자막" : lang === "ko" ? "한글 자막" : "영어 자막"} 마스터 렌더링`;
+    assembleJob.progress = 85 + Math.round(index / variants.length * 14);
+    const args = ["-y", "-loglevel", "error", "-i", silent, "-i", narration];
+    if (bgmFile) args.push("-stream_loop", "-1", "-i", bgmFile);
+    if (lang === "none") {
+      if (bgmFile) args.push("-filter_complex", bgmChain, "-map", "0:v", "-map", "[aout]");
+      else args.push("-map", "0:v", "-map", "1:a");
+      args.push("-c:v", "copy");
+    } else {
+      const assName = `subs_${lang}.ass`;
+      await fs.writeFile(path.join(segDir, assName), buildAssSubtitles(subtitleRows, lang, starts, durations, speechDurations, subtitleScript), "utf8");
+      const videoChain = `[0:v]subtitles=${assName}[vsub]`;
+      if (bgmFile) args.push("-filter_complex", `${videoChain};${bgmChain}`, "-map", "[vsub]", "-map", "[aout]");
+      else args.push("-filter_complex", videoChain, "-map", "[vsub]", "-map", "1:a");
+      args.push("-c:v", "libx264", "-preset", "fast", "-crf", "18", "-pix_fmt", "yuv420p");
+    }
+    args.push("-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", master);
+    await runFf("ffmpeg", args, { cwd: segDir });
+    outputs.push(`output/episodes/${episodeFolderName(episodeId)}/final/master_edit${suffix}.mp4`);
+  }
+  const duration = await ffprobeDuration(path.join(dir, "final", path.basename(outputs[0])));
+  assembleJob.progress = 100;
+  assembleJob.step = "완료";
+  return { files: outputs, duration };
+}
+
+function subtitlesFile(episodeId) {
+  return path.join(episodeProjectDir(episodeId), "subtitles.json");
+}
+
+function assTimestamp(seconds) {
+  const clamped = Math.max(0, seconds);
+  const h = Math.floor(clamped / 3600);
+  const m = Math.floor((clamped % 3600) / 60);
+  const s = Math.floor(clamped % 60);
+  const cs = Math.round((clamped - Math.floor(clamped)) * 100);
+  return `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}.${String(cs).padStart(2, "0")}`;
+}
+
+function subtitleChunks(text, lang) {
+  const limit = lang === "en" ? 32 : 14;
+  const words = String(text || "").trim().split(/\s+/).filter(Boolean);
+  const chunks = [];
+  let current = "";
+  for (const word of words) {
+    const candidate = current ? `${current} ${word}` : word;
+    if (current && candidate.length > limit) { chunks.push(current); current = word; }
+    else current = candidate;
+    if (current && /[,.!?…:;]$/.test(word) && current.length >= 6) { chunks.push(current); current = ""; }
+  }
+  if (current) chunks.push(current);
+  for (let index = chunks.length - 1; index > 0; index -= 1) {
+    if (chunks[index].length <= 4) {
+      chunks[index - 1] = `${chunks[index - 1]} ${chunks[index]}`;
+      chunks.splice(index, 1);
+    }
+  }
+  return chunks;
+}
+
+// 신비한 건축사전 스타일: 대사 전체를 짧은 구절로 잘라 발화 속도에 맞춰 순차 표시, 상단 2/3 지점
+function buildAssSubtitles(rows, lang, starts, durations, speechDurations, scriptLines) {
+  const header = [
+    "[Script Info]", "ScriptType: v4.00+", "PlayResX: 1080", "PlayResY: 1920", "WrapStyle: 2", "",
+    "[V4+ Styles]",
+    "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
+    "Style: Cap,Malgun Gothic,62,&H00FFFFFF,&H00FFFFFF,&HD2000000,&H64000000,1,0,0,0,100,100,0,0,1,4,0,2,60,60,640,1", "",
+    "[Events]",
+    "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"
+  ].join("\n");
+  const events = [];
+  for (let index = 0; index < starts.length; index += 1) {
+    const cut = index + 1;
+    const row = rows.find((item) => Number(item.cut) === cut) || {};
+    const raw = String(row[lang] || (lang === "ko" ? scriptLines[index] || "" : "")).trim();
+    if (!raw) continue;
+    const chunks = subtitleChunks(raw.replace(/[{}\\]/g, "").replace(/\r?\n/g, " "), lang);
+    if (!chunks.length) continue;
+    const totalChars = chunks.reduce((sum, chunk) => sum + chunk.length, 0) || 1;
+    const speech = Math.max(1, speechDurations[index] || durations[index]);
+    const segmentEnd = starts[index] + durations[index] - 0.05;
+    let cursor = starts[index] + 0.05;
+    for (const chunk of chunks) {
+      if (cursor >= segmentEnd - 0.2) break;
+      const share = Math.max(0.55, speech * (chunk.length / totalChars));
+      const end = Math.min(segmentEnd, cursor + share);
+      events.push(`Dialogue: 0,${assTimestamp(cursor)},${assTimestamp(end)},Cap,,0,0,0,,{\\fad(60,60)}${chunk}`);
+      cursor = end;
+    }
+  }
+  return `${header}\n${events.join("\n")}\n`;
+}
+
 async function comfyRunnerLoop() {
   if (comfyJobs.running) return;
   comfyJobs.running = true;
@@ -3059,6 +3315,7 @@ async function comfyRunnerLoop() {
       try {
         if (job.kind === "image") {
           if (job.model === "nano-banana-2-lite") await sdHiggsfieldImage(job.episodeId, job.cut);
+          else if (job.model === "chatgpt-image") await sdChatgptImage(job.episodeId, job.cut);
           else await comfyGenerateImage(job.episodeId, job.cut);
         } else {
           if (job.model === "kling-3-motion" || job.model === "seedance-2" || job.model === "cinema-studio-4") await sdHiggsfieldVideo(job.episodeId, job.cut, job.model);
@@ -3559,7 +3816,7 @@ async function api(req, res, url) {
     const stored = await readJson(episodeScriptFile(episodeId), null);
     const scriptLines = Array.isArray(stored?.scriptLines) ? stored.scriptLines : [];
     const researchContext = await sdResearchContext(episodeId);
-    return json(res, 200, { episodeId, design, scriptLines, researchContext: { anchorKo: researchContext.anchorKo, avoidKo: researchContext.avoidKo, imageCount: researchContext.imageFiles.length } });
+    return json(res, 200, { episodeId, design, scriptLines, researchContext: { anchorKo: researchContext.anchorKo, avoidKo: researchContext.avoidKo, anchorEn: researchContext.anchorEn, avoidEn: researchContext.avoidEn, imageCount: researchContext.imageFiles.length } });
   }
   if (req.method === "PUT" && url.pathname === "/api/scene-design") {
     const body = await readBody(req);
@@ -3590,7 +3847,10 @@ async function api(req, res, url) {
         references: Array.isArray(cutItem.references) ? cutItem.references.map((r) => String(r).slice(0, 200)).slice(0, 8) : [],
         tedori: cutItem.tedori === true,
         logo: cutItem.logo === true,
-        verify: Array.isArray(cutItem.verify) ? cutItem.verify.map((v) => String(v).slice(0, 300)).slice(0, 10) : []
+        verify: Array.isArray(cutItem.verify) ? cutItem.verify.map((v) => String(v).slice(0, 300)).slice(0, 10) : [],
+        ...(cutItem.en && typeof cutItem.en === "object"
+          ? { en: Object.fromEntries(Object.entries(cutItem.en).filter(([, value]) => typeof value === "string" && value.trim()).map(([key, value]) => [key, String(value).slice(0, 2000)])) }
+          : {})
       }))
     };
     const file = path.join(episodeProjectDir(episodeId), "scene_design.json");
@@ -3618,39 +3878,117 @@ async function api(req, res, url) {
       if (!Number.isInteger(cut) || cut < 1 || cut > 18) return json(res, 400, { error: "컷 번호는 1~18 정수여야 합니다." });
       cuts = [cut];
     }
-    const imageModels = ["z-image-turbo", "nano-banana-2-lite", "flow-image"];
+    const imageModels = ["z-image-turbo", "nano-banana-2-lite", "chatgpt-image", "flow-image"];
     const videoModels = ["minimax-h3", "kling-3-motion", "seedance-2", "cinema-studio-4", "flow-video"];
     const model = kind === "image"
       ? (imageModels.includes(body.model) ? body.model : "z-image-turbo")
       : (videoModels.includes(body.model) ? body.model : "minimax-h3");
-    if (model.startsWith("flow-")) {
-      const flowDir = path.join(episodeProjectDir(episodeId), "mg", "flow");
-      await fs.mkdir(flowDir, { recursive: true });
+    const chatgptManual = model === "chatgpt-image" && !process.env.OPENAI_API_KEY;
+    if (model.startsWith("flow-") || chatgptManual) {
+      const engine = model.startsWith("flow-") ? "flow" : "chatgpt";
+      const engineDir = path.join(episodeProjectDir(episodeId), "mg", engine);
+      await fs.mkdir(engineDir, { recursive: true });
       const prompts = [];
-      const flowContext = await sdResearchContext(episodeId);
+      const manualContext = await sdResearchContext(episodeId);
+      const engineLabel = engine === "flow"
+        ? (kind === "image" ? "Google Flow · Nano Banana Pro 권장" : "Google Flow · Veo 3.1 권장 (티어 제한 시 Omni Flash)")
+        : "ChatGPT · GPT Image (reference/ 이미지 첨부)";
       for (const cut of cuts) {
         const item = await comfyLoadDesignCut(episodeId, cut);
-        const promptText = kind === "image" ? comfyImagePromptText(item, flowContext) : comfyVideoPromptText(item, flowContext);
-        const refNote = (item.references || []).length ? `\nFlow Ingredients/Frames 첨부: ${item.references.join(", ")}` : "";
+        const promptText = kind === "image" ? comfyImagePromptText(item, manualContext) : comfyVideoPromptText(item, manualContext);
+        const refNote = (item.references || []).length
+          ? `\n${engine === "flow" ? "Flow Ingredients/Frames 첨부" : "ChatGPT에 reference/ 폴더 이미지 첨부"}: ${item.references.join(", ")}`
+          : "";
         const saveNote = kind === "image"
           ? `\n생성 후 저장 위치: output/episodes/${episodeFolderName(episodeId)}/mg/stills/c${String(cut).padStart(2, "0")}.png`
           : `\n생성 후 저장 위치: output/episodes/${episodeFolderName(episodeId)}/mg/clips/c${String(cut).padStart(2, "0")}_silent.mp4`;
-        const block = `[CUT ${String(cut).padStart(2, "0")} · ${kind === "image" ? "이미지" : "영상"} · Omni Flash 권장 · 9:16 · 무음]\n${promptText}${refNote}${saveNote}`;
+        const block = `[CUT ${String(cut).padStart(2, "0")} · ${kind === "image" ? "이미지" : "영상"} · ${engineLabel} · 9:16${kind === "video" ? " · 무음" : ""}]\n${promptText}${refNote}${saveNote}`;
         prompts.push({ cut, prompt: block });
-        await fs.writeFile(path.join(flowDir, `c${String(cut).padStart(2, "0")}_${kind}.txt`), block, "utf8");
+        await fs.writeFile(path.join(engineDir, `c${String(cut).padStart(2, "0")}_${kind}.txt`), block, "utf8");
       }
-      await fs.writeFile(path.join(flowDir, `flow_${kind}_package.md`), prompts.map((entry) => entry.prompt).join("\n\n---\n\n"), "utf8");
-      return json(res, 200, { ok: true, manual: true, kind, model, queued: [], prompts, packageFile: `output/episodes/${episodeFolderName(episodeId)}/mg/flow/flow_${kind}_package.md` });
+      await fs.writeFile(path.join(engineDir, `${engine}_${kind}_package.md`), prompts.map((entry) => entry.prompt).join("\n\n---\n\n"), "utf8");
+      return json(res, 200, { ok: true, manual: true, kind, model, engine, queued: [], prompts, packageFile: `output/episodes/${episodeFolderName(episodeId)}/mg/${engine}/${engine}_${kind}_package.md` });
     }
     const isLocal = model === "z-image-turbo" || model === "minimax-h3";
     if (isLocal) {
       try { await comfyHttp("/queue", undefined, 4000); } catch { return json(res, 503, { error: "ComfyUI 서버(127.0.0.1:8188)가 꺼져 있습니다. ComfyUI Desktop을 실행하세요." }); }
+    } else if (model === "chatgpt-image") {
+      if (!process.env.OPENAI_API_KEY) return json(res, 503, { error: "OPENAI_API_KEY가 없습니다." });
     } else {
       const hf = await higgsfieldStatus();
       if (!hf.authenticated) return json(res, 503, { error: "Higgsfield CLI 인증이 필요합니다." });
     }
     comfyEnqueue(episodeId, kind, cuts, model);
     return json(res, 200, { ok: true, queued: cuts, kind, model });
+  }
+  if (req.method === "GET" && url.pathname === "/api/bgm/list") {
+    await fs.mkdir(bgmDir, { recursive: true });
+    const files = (await fs.readdir(bgmDir)).filter((name) => /\.(mp3|wav|m4a|flac)$/i.test(name)).sort();
+    return json(res, 200, { ok: true, files });
+  }
+  if (req.method === "POST" && url.pathname === "/api/bgm/upload") {
+    const body = await readBody(req);
+    const files = Array.isArray(body.files) ? body.files.slice(0, 5) : [];
+    if (!files.length) return json(res, 400, { error: "업로드할 파일이 없습니다." });
+    await fs.mkdir(bgmDir, { recursive: true });
+    const saved = [];
+    for (const file of files) {
+      const base = path.basename(String(file.name || "")).replace(/[^\w.\-가-힣 ]/g, "_");
+      if (!/\.(mp3|wav|m4a|flac)$/i.test(base)) return json(res, 400, { error: `허용되지 않는 형식: ${base}` });
+      const buffer = Buffer.from(String(file.dataBase64 || ""), "base64");
+      if (!buffer.length || buffer.length > 40 * 1024 * 1024) return json(res, 400, { error: `파일 크기 오류: ${base}` });
+      await fs.writeFile(within(bgmDir, base), buffer);
+      saved.push(base);
+    }
+    return json(res, 200, { ok: true, saved });
+  }
+  if (req.method === "GET" && url.pathname === "/api/assemble/status") {
+    return json(res, 200, { ...assembleJob });
+  }
+  if (req.method === "GET" && url.pathname === "/api/subtitles") {
+    const { state } = await loadState();
+    const episodeId = state.planning.activeEpisodeId;
+    const stored = await readJson(subtitlesFile(episodeId), null);
+    const script = await readJson(episodeScriptFile(episodeId), null);
+    return json(res, 200, { ok: true, rows: Array.isArray(stored?.rows) ? stored.rows : [], scriptLines: Array.isArray(script?.scriptLines) ? script.scriptLines : [] });
+  }
+  if (req.method === "PUT" && url.pathname === "/api/subtitles") {
+    const body = await readBody(req);
+    const { state } = await loadState();
+    const episodeId = state.planning.activeEpisodeId;
+    const rows = (Array.isArray(body.rows) ? body.rows : [])
+      .filter((row) => Number.isInteger(Number(row.cut)))
+      .slice(0, 40)
+      .map((row) => ({ cut: Number(row.cut), ko: String(row.ko || "").slice(0, 240), en: String(row.en || "").slice(0, 320) }));
+    await writeJson(subtitlesFile(episodeId), { episodeId, updatedAt: new Date().toISOString(), rows });
+    return json(res, 200, { ok: true, rows: rows.length });
+  }
+  if (req.method === "POST" && url.pathname === "/api/assemble") {
+    if (assembleJob.status === "running") return json(res, 409, { error: "이미 조립이 진행 중입니다." });
+    const body = await readBody(req);
+    const { state } = await loadState();
+    const episodeId = state.planning.activeEpisodeId;
+    assembleJob.status = "running";
+    assembleJob.step = "준비";
+    assembleJob.progress = 0;
+    assembleJob.message = "";
+    assembleJob.outputFile = null;
+    assembleJob.outputFiles = [];
+    const subtitleLangs = Array.isArray(body.subtitles)
+      ? body.subtitles.filter((lang) => ["none", "ko", "en"].includes(lang)).slice(0, 3)
+      : ["none"];
+    runAssembly(episodeId, { bgm: body.bgm ? String(body.bgm) : null, bgmDb: Number(body.bgmDb), subtitles: subtitleLangs })
+      .then((result) => {
+        assembleJob.status = "done";
+        assembleJob.outputFile = result.files[0];
+        assembleJob.outputFiles = result.files;
+        assembleJob.message = `길이 ${result.duration.toFixed(1)}초 · ${result.files.length}개 파일`;
+      })
+      .catch((error) => {
+        assembleJob.status = "error";
+        assembleJob.message = String(error.message || error).slice(0, 300);
+      });
+    return json(res, 200, { ok: true });
   }
   if (req.method === "POST" && url.pathname === "/api/reference/upload") {
     const body = await readBody(req);

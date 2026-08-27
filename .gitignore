@@ -10,3 +10,4 @@ output/**/*.svg
 # local state temp
 dashboard/data/state.json.tmp
 node_modules/
+output/**/final/_segs/

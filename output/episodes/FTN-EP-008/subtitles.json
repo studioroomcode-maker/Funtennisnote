@@ -1,0 +1,25 @@
+{
+  "episodeId": "FTN-PILOT-02",
+  "updatedAt": "2026-08-27T00:00:00.000Z",
+  "note": "ko를 비우면 대본 문장을 그대로 사용. 자막은 짧은 구절로 자동 분할되어 발화 속도에 맞춰 순차 표시됩니다.",
+  "rows": [
+    { "cut": 1, "ko": "", "en": "This neon yellow ball ruling courts worldwide is actually a newcomer, just past fifty." },
+    { "cut": 2, "ko": "", "en": "Tennis history spans well over a century, and for most of it the stars were white and black balls." },
+    { "cut": 3, "ko": "", "en": "Black balls on bright grass, white balls on dark courts. The color changed with the background." },
+    { "cut": 4, "ko": "", "en": "But when tennis stepped into the living-room TV, a strange problem appeared." },
+    { "cut": 5, "ko": "", "en": "On black-and-white screens, a white ball crossing a white line simply vanished." },
+    { "cut": 6, "ko": "", "en": "Cameras chased it, viewers squinted, but the star of the show was invisible." },
+    { "cut": 7, "ko": "", "en": "Researchers hunted for the color that survived best on screen. The answer: fluorescent yellow." },
+    { "cut": 8, "ko": "", "en": "On court and on screen, it stayed sharp against any background." },
+    { "cut": 9, "ko": "", "en": "But one more problem: the rulebook recognized white balls only." },
+    { "cut": 10, "ko": "", "en": "A better ball was found, yet the rules blocked its way in." },
+    { "cut": 11, "ko": "", "en": "So why didn't the rules open the door right away?" },
+    { "cut": 12, "ko": "", "en": "The ITF spent two full years rolling yellow balls in real matches." },
+    { "cut": 13, "ko": "", "en": "And in 1972, the yellow ball finally entered the rulebook." },
+    { "cut": 14, "ko": "", "en": "The rules didn't erase white, they added yellow. White balls are still legal today." },
+    { "cut": 15, "ko": "", "en": "Cut them open and they are identical inside. Only the coat changed color." },
+    { "cut": 16, "ko": "", "en": "Even Wimbledon, loyal to white, finally gave in, in 1986, after 108 years." },
+    { "cut": 17, "ko": "", "en": "In the end it wasn't players who made yellow the standard. It was the viewers' eyes." },
+    { "cut": 18, "ko": "", "en": "That yellow ball bouncing across your screen tonight was a color approved for the viewer." }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "episodeId": "FTN-PILOT-01",
+  "title": "너무 강한 회전 때문에 금지된 라켓",
+  "updatedAt": "2026-08-26T01:26:06.248Z",
+  "researchCompletedAt": "2026-08-25T17:49:59.948Z",
+  "scriptSource": "ai-codex-rewrite",
+  "generationProvider": "codex-cached-research",
+  "scriptLines": [
+    "왜 요즘 라켓의 세로줄과 가로줄은 평평한 한 겹으로 엮여 있을까요?",
+    "손에 익은 모양이라 라켓은 처음부터 이 구조였을 것 같죠.",
+    "그런데 1977년, 이중 스트링 라켓이 기존 규칙이 다루지 못한 빈틈을 드러냈습니다.",
+    "보통 라켓은 세로줄과 가로줄이 평평한 한 면에서 맞물려 교차하는 구조입니다.",
+    "스파게티 라켓은 프레임이 아니라 스트링을 바꿔, 중앙 가로줄 층 앞뒤에 세로줄 층을 따로 놓았습니다.",
+    "공이 닿으면 서로 엮이지 않은 바깥 세로줄이 가로줄 위에서 옆으로 밀리는데요.",
+    "접촉부를 감싼 저마찰 플라스틱 관이 마찰을 낮춰 세로줄을 더 쉽게 움직이게 합니다.",
+    "덕분에 밀린 세로줄이 제자리로 튕겨 돌아오며 공에 복원력을 보태 회전을 더 키웁니다.",
+    "그 결과, 그 회전에 항의한 선수들은 파업하고 코트를 떠났고, 프랑스 선수권 보이콧까지 경고했습니다.",
+    "평범해 보인 라켓 한 자루가 대회 운영을 꽤 골치 아프게 했어요.",
+    "그래서 국제테니스연맹인 ITF는 공이 아니라 라켓의 스트링 배치를 규칙으로 막기로 했습니다.",
+    "ITF는 1977년 10월 3일부터 공식 대회에서 이중 스트링 라켓을 임시로 금지했습니다.",
+    "그동안 ITF는 이 라켓이 경기와 대회 운영을 어떻게 바꾸는지 살피고 연구 자료를 모았습니다.",
+    "이어 1978년 7월 채택된 규칙 4는 타구면을 평평한 단일 교차 패턴으로 제한했습니다.",
+    "쉽게 말해 세로줄과 가로줄은 교차하는 자리마다 번갈아 엮이거나 결합돼야 해요.",
+    "그렇다고 ITF가 공의 회전량에 별도의 RPM 상한을 정한 건 아니죠.",
+    "결국 금지된 것은 회전 자체가 아니라, 과도한 회전을 가능하게 한 다층 비직조 스트링 구조입니다.",
+    "요즘 라켓의 줄이 평평한 한 겹으로 엮인 이유는 그 다층 구조를 막도록 규칙이 바뀌었기 때문입니다."
+  ],
+  "evidence": [
+    {
+      "cut": 1,
+      "claim": "현대의 합법적인 스트링 면은 하나의 평평한 교차 패턴으로 구성됩니다.",
+      "proof": "ITF 규칙 4의 판정은 둘 이상의 스트링 세트와 여러 평면의 패턴을 허용하지 않습니다.",
+      "graphic": "ONE STRING PLANE",
+      "visualKo": "표준 테니스 라켓의 평평한 스트링 면을 정면에서 보여주는 깨끗한 클로즈업, 이미지 내부 글자 없음",
+      "visualEn": "Clean frontal close-up of a standard tennis racket with a flat string bed, no text in the image",
+      "motionKo": "테니스공 하나가 스트링 면 가까이 다가오고 카메라는 천천히 줌인합니다.",
+      "motionEn": "A tennis ball approaches the string bed while the camera slowly zooms in.",
+      "cameraKo": "정면 아이레벨 클로즈업",
+      "cameraEn": "Front eye-level close-up"
+    },
+    {
+      "cut": 2,
+      "claim": "현재의 단일 평면 스트링 면은 의도적으로 규정된 결과입니다.",
+      "proof": "현행 ITF 규칙 4와 부록 II는 하나의 평평하고 균일한 교차 스트링 패턴을 계속 요구합니다.",
+      "graphic": "ONE FLAT PATTERN",
+      "visualKo": "손에 들린 익숙한 현대식 라켓의 전체 형태, 중립적인 실내 배경, 이미지 내부 글자 없음",
+      "visualEn": "A familiar modern tennis racket held in one hand against a neutral indoor background, no text in the image",
+      "motionKo": "손이 라켓을 가볍게 돌리고 카메라는 짧게 옆으로 이동합니다.",
+      "motionEn": "The hand gently rotates the racket while the camera makes a short lateral move.",
+      "cameraKo": "사선 아이레벨 미디엄 클로즈업",
+      "cameraEn": "Oblique eye-level medium close-up"
+    },
+    {
+      "cut": 3,
+      "claim": "이중 스트링 논란은 1977년 기존 라켓 규칙의 공백을 드러냈습니다.",
+      "proof": "ITF 공식 연혁은 1977년 이중 스트링 라켓에 대한 불만이 나오자 새로운 스트링 개념의 감시를 시작했다고 기록합니다.",
+      "graphic": "1977",
+      "visualKo": "평범한 라켓 옆에 놓인 두꺼운 다층 스트링 라켓, 어두운 전시대, 이미지 내부 글자 없음",
+      "visualEn": "A thick multi-layer string racket beside a conventional racket on a dark display table, no text in the image",
+      "motionKo": "다층 라켓이 천천히 앞쪽으로 기울고 카메라는 두 라켓 사이로 돌리인합니다.",
+      "motionEn": "The multi-layer racket slowly tilts forward while the camera dollies in between the two rackets.",
+      "cameraKo": "낮은 사선 미디엄 샷",
+      "cameraEn": "Low oblique medium shot"
+    },
+    {
+      "cut": 4,
+      "claim": "일반적인 스트링 면은 세로줄과 가로줄이 한 평면에서 교차해 엮입니다.",
+      "proof": "피셔 특허는 기존 라켓을 세로줄과 가로줄이 서로 맞물린 구조로 비교하며, 현행 ITF 규칙도 평평한 교차 패턴을 요구합니다.",
+      "graphic": "1 PLANE / INTERLACED",
+      "visualKo": "한 평면에서 촘촘히 맞물린 세로줄과 가로줄의 매크로 이미지, 이미지 내부 글자 없음",
+      "visualEn": "Macro view of vertical and horizontal racket strings interlaced on one plane, no text in the image",
+      "motionKo": "한 줄이 교차점에서 미세하게 눌리고 카메라는 스트링 면을 따라 천천히 트래킹합니다.",
+      "motionEn": "One string flexes slightly at an intersection while the camera slowly tracks across the string bed.",
+      "cameraKo": "정면 매크로 클로즈업",
+      "cameraEn": "Front-facing macro close-up"
+    },
+    {
+      "cut": 5,
+      "claim": "피셔 구조는 중앙 가로줄 층의 앞뒤에 세로줄 층을 배치했습니다.",
+      "proof": "미국 특허 4,190,249는 중앙의 가로줄 층과 그 양쪽에 놓인 두 개의 세로줄 층을 명시합니다.",
+      "graphic": "3 STRING LAYERS",
+      "visualKo": "가로줄 한 층을 가운데 두고 앞뒤에 세로줄 층이 분리된 라켓 단면, 이미지 내부 글자 없음",
+      "visualEn": "Racket cross-section with a central horizontal-string layer separated between front and rear vertical-string layers, no text in the image",
+      "motionKo": "세 스트링 층이 서로 조금 벌어지고 카메라는 단면 쪽으로 천천히 줌인합니다.",
+      "motionEn": "The three string layers separate slightly while the camera slowly zooms toward the cross-section.",
+      "cameraKo": "측면 매크로 클로즈업",
+      "cameraEn": "Side macro close-up"
+    },
+    {
+      "cut": 6,
+      "claim": "각 스트링 층은 서로 엮이지 않아 세로줄의 횡방향 이동이 가능했습니다.",
+      "proof": "특허는 세 층이 횡방향으로 독립적이며 바깥 세로줄들이 중앙 가로줄 위에서 제어된 측면 이동을 한다고 설명합니다.",
+      "graphic": "LATERAL SLIDE",
+      "visualKo": "테니스공이 바깥 세로줄 층에 막 닿은 순간의 초근접 단면, 이미지 내부 글자 없음",
+      "visualEn": "Extreme close cross-section at the instant a tennis ball touches the outer vertical-string layer, no text in the image",
+      "motionKo": "충격을 받은 세로줄이 한쪽으로 미끄러지고 카메라는 그 방향을 따라 짧게 패닝합니다.",
+      "motionEn": "The impacted vertical strings slide sideways while the camera briefly pans in the same direction.",
+      "cameraKo": "측면 초근접 매크로 샷",
+      "cameraEn": "Side extreme macro shot"
+    },
+    {
+      "cut": 7,
+      "claim": "플라스틱 관은 스트링 접촉부의 마찰을 낮추는 역할을 했습니다.",
+      "proof": "특허는 접촉점의 저마찰 나일론 피복을 활주 수단으로 제시하며, 고속영상 연구도 이 관이 마찰을 줄였다고 설명합니다.",
+      "graphic": "LOW FRICTION",
+      "visualKo": "스트링 접촉부를 감싼 작은 반투명 플라스틱 관 하나의 매크로 이미지, 이미지 내부 글자 없음",
+      "visualEn": "Macro view of one small translucent plastic tube wrapped around a string contact point, no text in the image",
+      "motionKo": "관을 통과한 세로줄이 부드럽게 옆으로 움직이고 카메라는 천천히 틸트다운합니다.",
+      "motionEn": "The vertical string glides smoothly sideways through the tube while the camera slowly tilts down.",
+      "cameraKo": "사선 매크로 클로즈업",
+      "cameraEn": "Oblique macro close-up"
+    },
+    {
+      "cut": 8,
+      "claim": "밀린 세로줄의 복원력이 공에 추가 회전을 전달했습니다.",
+      "proof": "고속영상 연구는 세로줄이 옆으로 늘어났다 되돌아올 때 스트링 면과 평행한 복원력이 추가 회전을 만든다고 확인했습니다.",
+      "graphic": "STRING SNAPBACK",
+      "visualKo": "옆으로 휘어진 세로줄과 맞닿은 테니스공의 고속 촬영풍 초근접 장면, 이미지 내부 글자 없음",
+      "visualEn": "High-speed-style extreme close-up of a tennis ball touching laterally bent vertical strings, no text in the image",
+      "motionKo": "휘어진 세로줄이 원위치로 튕기며 공을 회전시키고 카메라는 공을 따라 짧게 트래킹합니다.",
+      "motionEn": "The bent strings snap back and spin the ball while the camera briefly tracks the ball.",
+      "cameraKo": "측면 초근접 클로즈업",
+      "cameraEn": "Side extreme close-up"
+    },
+    {
+      "cut": 9,
+      "claim": "그 결과, 그 회전에 항의한 선수들은 파업하고 코트를 떠났고, 프랑스 선수권 보이콧까지 경고했습니다.",
+      "proof": "연방법원 판결문은 실제 선수 파업과 퇴장, 프랑스 선수권 보이콧 위협이 ITF의 임시 조치 근거에 포함됐다고 기록합니다.",
+      "graphic": "PLAYER PROTESTS",
+      "visualKo": "라켓을 내린 여러 테니스 선수들이 코트 가장자리에 멈춰 선 한순간, 로고와 글자 없음",
+      "visualEn": "Several tennis players standing still at the edge of a court with their rackets lowered, no logos or text",
+      "motionKo": "선수 한 명이 코트 밖으로 걸음을 옮기고 카메라는 천천히 뒤로 물러납니다.",
+      "motionEn": "One player steps away from the court while the camera slowly pulls back.",
+      "cameraKo": "후면 아이레벨 와이드 샷",
+      "cameraEn": "Rear eye-level wide shot"
+    },
+    {
+      "cut": 10,
+      "claim": "스트링 구조의 차이가 경기 운영과 경기 양상에 영향을 주었습니다.",
+      "proof": "법원은 과장된 톱스핀이 경기의 전통적 성격과 질서 있는 대회 운영을 위협한다고 본 ITF 판단에 합리적 근거가 있었다고 판시했습니다.",
+      "graphic": "GAME DISRUPTION",
+      "visualKo": "비어 있는 코트와 네트 옆 의자에 홀로 놓인 다층 스트링 라켓, 이미지 내부 글자 없음",
+      "visualEn": "An empty court with a multi-layer string racket resting alone on a chair beside the net, no text in the image",
+      "motionKo": "라켓 줄이 잔진동하고 카메라는 아주 천천히 줌아웃합니다.",
+      "motionEn": "The racket strings faintly vibrate while the camera very slowly zooms out.",
+      "cameraKo": "아이레벨 와이드 샷",
+      "cameraEn": "Eye-level wide shot"
+    },
+    {
+      "cut": 11,
+      "claim": "규제는 공이 아니라 라켓의 스트링 배치를 대상으로 삼았습니다.",
+      "proof": "ITF가 채택한 규칙 4는 공의 규격을 바꾸지 않고 타구면의 평면성·교차 방식·균일성을 규정했습니다.",
+      "graphic": "STRING PATTERN RULE",
+      "visualKo": "같은 테니스공 옆에 서로 다른 스트링 배치의 라켓 두 개가 놓인 검사대, 이미지 내부 글자 없음",
+      "visualEn": "An inspection table with the same tennis ball beside two rackets with different string arrangements, no text in the image",
+      "motionKo": "검사자의 손이 다층 스트링 라켓을 옆으로 밀고 카메라는 손을 따라 패닝합니다.",
+      "motionEn": "An inspector's hand slides the multi-layer racket aside while the camera pans with the hand.",
+      "cameraKo": "탑다운 미디엄 샷",
+      "cameraEn": "Top-down medium shot"
+    },
+    {
+      "cut": 12,
+      "claim": "ITF는 1977년 10월 3일부터 이중 스트링 라켓을 임시로 금지했습니다.",
+      "proof": "판결문은 ITF 관리위원회가 1977년 10월 3일부터 공식 대회에서 이중 스트링과 돌출부가 있는 라켓을 일시적으로 금지했다고 기록합니다.",
+      "graphic": "OCT 3, 1977",
+      "visualKo": "공식 경기용 장비 검사대 위에 격리된 이중 스트링 라켓 한 자루, 문서 글자와 로고 없음",
+      "visualEn": "A single double-strung racket isolated on an official equipment inspection table, no document text or logos",
+      "motionKo": "검사자의 손이 라켓을 검사 구역 밖으로 옮기고 카메라는 짧게 돌리아웃합니다.",
+      "motionEn": "An inspector's hand moves the racket out of the inspection area while the camera briefly dollies out.",
+      "cameraKo": "높은 사선 미디엄 샷",
+      "cameraEn": "High oblique medium shot"
+    },
+    {
+      "cut": 13,
+      "claim": "임시 조치의 목적은 경기 영향에 관한 자료와 연구를 모으는 것이었습니다.",
+      "proof": "ITF 발표문에 기록된 임시 동결의 목적은 이 라켓이 경기 운영에 미치는 영향을 조사하고 연구 결과를 취합하는 것이었습니다.",
+      "graphic": "TECHNICAL REVIEW",
+      "visualKo": "실험대에 고정된 다층 스트링 라켓과 옆에 놓인 측정 장비, 화면과 종이에 글자 없음",
+      "visualEn": "A multi-layer string racket secured on a test bench beside measuring equipment, with no text on screens or paper",
+      "motionKo": "시험 공이 스트링 면을 한 번 누르고 카메라는 장비 쪽으로 천천히 이동합니다.",
+      "motionEn": "A test ball presses the string bed once while the camera slowly moves toward the equipment.",
+      "cameraKo": "측면 아이레벨 미디엄 샷",
+      "cameraEn": "Side eye-level medium shot"
+    },
+    {
+      "cut": 14,
+      "claim": "1978년 채택된 규칙 4는 타구면을 평평한 단일 패턴으로 제한했습니다.",
+      "proof": "판결문은 1978년 7월 ITF 총회가 규칙 4를 승인했다고 기록하며, 현행 규칙도 하나의 평평한 교차 패턴을 요구합니다.",
+      "graphic": "1978 / RULE 4",
+      "visualKo": "검사 틀 위에 수평으로 놓인 평평한 단일 스트링 면의 라켓, 이미지 내부 글자 없음",
+      "visualEn": "A racket with a flat single string bed resting horizontally on an inspection frame, no text in the image",
+      "motionKo": "검사 막대가 스트링 면 위를 곧게 지나가고 카메라는 막대를 따라 트래킹합니다.",
+      "motionEn": "An inspection bar passes straight across the string bed while the camera tracks alongside it.",
+      "cameraKo": "낮은 측면 클로즈업",
+      "cameraEn": "Low side close-up"
+    },
+    {
+      "cut": 15,
+      "claim": "합법적인 교차점은 번갈아 엮이거나 결합되어야 합니다.",
+      "proof": "현행 ITF 부록 II는 교차 스트링이 만나는 곳마다 번갈아 엮이거나 결합되어야 한다고 규정합니다.",
+      "graphic": "INTERLACED / BONDED",
+      "visualKo": "세로줄과 가로줄이 위아래로 번갈아 맞물린 교차점 하나의 초근접 이미지, 이미지 내부 글자 없음",
+      "visualEn": "Extreme close-up of one intersection where vertical and horizontal strings alternate over and under, no text in the image",
+      "motionKo": "가로줄이 교차점에서 살짝 당겨졌다 놓이고 카메라는 미세하게 줌인합니다.",
+      "motionEn": "The horizontal string is gently pulled and released at the intersection while the camera subtly zooms in.",
+      "cameraKo": "정면 초근접 매크로 샷",
+      "cameraEn": "Front extreme macro shot"
+    },
+    {
+      "cut": 16,
+      "claim": "ITF 규칙에는 허용 회전량을 RPM으로 정한 수치 한계가 없습니다.",
+      "proof": "현행 라켓 규격은 타구면의 구조와 배치를 정의하며 공의 회전수 상한을 별도로 제시하지 않습니다.",
+      "graphic": "NO RPM LIMIT",
+      "visualKo": "회전하는 테니스공과 그 뒤의 표준 단일 평면 라켓, 계기판과 글자 없음",
+      "visualEn": "A spinning tennis ball in front of a standard single-plane racket, with no gauges or text",
+      "motionKo": "공이 일정하게 회전하고 카메라는 공 둘레를 짧게 오빗합니다.",
+      "motionEn": "The ball spins steadily while the camera makes a short orbit around it.",
+      "cameraKo": "측면 아이레벨 클로즈업",
+      "cameraEn": "Side eye-level close-up"
+    },
+    {
+      "cut": 17,
+      "claim": "규칙은 과도한 회전을 가능하게 한 다층 비직조 스트링 구조를 배제했습니다.",
+      "proof": "법원은 규칙 4가 과장된 톱스핀을 전달하는 구조를 겨냥했다고 설명하며, 현행 규칙은 다중 스트링 세트와 다중 평면을 명시적으로 불허합니다.",
+      "graphic": "MULTI-PLANE: ILLEGAL",
+      "visualKo": "분리된 여러 스트링 평면이 뚜렷한 다층 라켓의 측면 단면, 이미지 내부 글자 없음",
+      "visualEn": "Side cross-section of a multi-layer racket with clearly separated string planes, no text in the image",
+      "motionKo": "다층 라켓이 검사대 밖으로 밀려나고 카메라는 반대편 표준 라켓 쪽으로 패닝합니다.",
+      "motionEn": "The multi-layer racket slides out of the inspection area while the camera pans toward a standard racket opposite it.",
+      "cameraKo": "측면 아이레벨 미디엄 클로즈업",
+      "cameraEn": "Side eye-level medium close-up"
+    },
+    {
+      "cut": 18,
+      "claim": "현재의 단일 평면 스트링 면은 다층 구조를 배제하도록 규정된 결과입니다.",
+      "proof": "현행 ITF 규칙 4와 부록 II는 하나의 평평하고 균일한 교차 스트링 패턴을 계속 요구합니다.",
+      "graphic": "ONE FLAT PATTERN",
+      "visualKo": "현대식 테니스 라켓의 평평한 한 겹 스트링 면을 또렷하게 보여주는 정면 이미지, 이미지 내부 글자 없음",
+      "visualEn": "Clear frontal view of the flat single-layer string bed of a modern tennis racket, no text in the image",
+      "motionKo": "라켓이 정면에서 안정적으로 멈추고 카메라는 스트링 면으로 천천히 돌리인합니다.",
+      "motionEn": "The racket settles steadily in a frontal position while the camera slowly dollies toward the string bed.",
+      "cameraKo": "정면 아이레벨 클로즈업",
+      "cameraEn": "Front eye-level close-up"
+    }
+  ],
+  "sources": [
+    {
+      "title": "ITF 2026 Rules of Tennis",
+      "url": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf",
+      "supports": "규칙 4와 부록 II의 단일 스트링 패턴, 평면성, 교차·결합 방식 및 균일성 요건을 뒷받침합니다."
+    },
+    {
+      "title": "ITF 공식 연혁 및 FAQ",
+      "url": "https://www.itftennis.com/en/about-us/organisation/faqs/?type=world-tennis",
+      "supports": "ITF가 1977년 이중 스트링 라켓에 대한 불만 이후 새로운 스트링 방식을 감시하기 시작했다는 기록을 제공합니다."
+    },
+    {
+      "title": "Werner Fischer 미국 특허 US4190249A",
+      "url": "https://patents.google.com/patent/US4190249A/en",
+      "supports": "중앙 가로줄 층, 앞뒤 세로줄 층, 저마찰 피복, 횡방향 이동과 각운동량 전달 원리를 설명합니다."
+    },
+    {
+      "title": "Mechanism of Tennis Racket Spin Performance",
+      "url": "https://www.jstage.jst.go.jp/article/jsdd/6/2/6_2_200/_article",
+      "supports": "저마찰 조건에서 세로줄의 측면 이동과 복원력이 공에 추가 회전을 전달하는 메커니즘을 고속영상으로 분석합니다."
+    },
+    {
+      "title": "Gunter Harz Sports v. United States Tennis Association",
+      "url": "https://law.justia.com/cases/federal/district-courts/FSupp/511/1103/1429737/",
+      "supports": "1977년 임시 금지의 시점과 배경, 선수 항의, 기술 검토, 1978년 규칙 4 채택 및 규제 목적을 기록한 연방법원 판결문입니다."
+    }
+  ],
+  "factWarnings": [
+    "제목의 ‘회전 때문에 금지’는 요약 표현입니다. 회전수 자체에 수치 상한을 둔 것이 아니라, 과장된 회전을 가능하게 한 이중·다층 스트링 구조를 규칙으로 배제했습니다.",
+    "1977년 10월 조치는 연구를 위한 임시 금지였고, 스트링 면을 정의한 규칙 4의 정식 채택은 1978년 7월이므로 ‘등장하자마자 규칙이 바뀌었다’고 문자 그대로 표현하지 않았습니다.",
+    "당시 자료에는 일반 라켓 대비 회전 증가량이 17% 또는 충돌 위치에 따라 20~60%로 다르게 보고됩니다. 시험 조건이 다르고 일부는 소송 대비 연구이므로 대본의 핵심 수치에서 제외했습니다.",
+    "‘스파게티 라켓’은 널리 쓰이는 통칭이며, ITF 기록과 판결문에서 주로 사용한 공식적 표현은 ‘double-strung racket’입니다.",
+    "공이 스트링 사이에 물리적으로 끼이거나 멈춘다고 묘사하면 과장될 수 있습니다. 영상에서는 짧아진 속도의 접촉과 세로줄의 측면 이동·복원을 보여주는 편이 정확합니다.",
+    "프로젝트 규칙상 먼저 읽어야 하는 로컬 기준 문서들은 실행 환경의 읽기 제한 때문에 열지 못했으며, 이번 결과는 웹에서 확인한 ITF 규칙·특허·논문·판결문에 근거했습니다."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "episode_id": "FTN-EP-001",
+  "revision": "arthur_male_announcer",
+  "voice": {
+    "name": "Arthur",
+    "voice_id": "30fc8796-ceb6-4a66-b3a7-4a145ef7f346",
+    "voice_type": "preset",
+    "model": "seed_audio",
+    "delivery": "신뢰감 있는 한국어 남성 아나운서, 낮고 단단한 중저음, 공영방송 과학 다큐멘터리 톤, 정확한 발음, 감정 절제, 차분한 호기심, 군더더기 없는 속도"
+  },
+  "credits": {
+    "before": 805.4,
+    "after": 796.8,
+    "used": 8.6
+  },
+  "takes": [
+    {"index":1,"duration_seconds":4,"text":"지금 우리가 사용하는 테니스공은 원래 노란색이 아니었습니다.","job_id":"b4f262af-a65b-49d5-b709-714bda4aeaab","result_url":"https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_111847_b4f262af-a65b-49d5-b709-714bda4aeaab.wav","local_file":"output/audio/arthur/voice01.wav","long_pauses":0,"gate_pass":true},
+    {"index":2,"duration_seconds":5,"text":"과거에는 코트의 배경에 따라 검은 공이나 흰 공을 사용했습니다.","job_id":"67645304-f7a9-4566-88a6-91edd36c9746","result_url":"https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_111847_67645304-f7a9-4566-88a6-91edd36c9746.wav","local_file":"output/audio/arthur/voice02.wav","long_pauses":0,"gate_pass":true},
+    {"index":3,"duration_seconds":5,"text":"하지만 빠르게 움직이는 공을 TV 화면에서 따라가기는 쉽지 않았습니다.","job_id":"b6b711bf-9605-4426-8e9b-0fcf8d8fb1ee","result_url":"https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_111847_b6b711bf-9605-4426-8e9b-0fcf8d8fb1ee.wav","local_file":"output/audio/arthur/voice03.wav","long_pauses":0,"gate_pass":true},
+    {"index":4,"duration_seconds":6,"text":"연구 결과 노란 공이 TV 시청자에게 더 잘 보이는 것으로 나타났습니다.","job_id":"a92d19de-ee2a-48f7-928b-4733662a8649","result_url":"https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_111847_a92d19de-ee2a-48f7-928b-4733662a8649.wav","local_file":"output/audio/arthur/voice04.wav","long_pauses":0,"gate_pass":true},
+    {"index":5,"duration_seconds":6,"text":"그래서 국제테니스연맹은 1972년 노란 테니스공을 공식 규칙에 도입했습니다.","job_id":"70088864-74af-49ed-8c81-02c29b9d9ff3","result_url":"https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_111846_70088864-74af-49ed-8c81-02c29b9d9ff3.wav","local_file":"output/audio/arthur/voice05.wav","long_pauses":0,"gate_pass":true},
+    {"index":6,"duration_seconds":8,"text":"하지만 모든 대회가 바로 바뀐 것은 아니어서 윔블던은 흰 공을 계속 쓰다가 1986년에야 노란 공을 채택했습니다.","job_id":"c44c2d21-8a5d-49af-81bd-c601fd03939b","result_url":"https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_111847_c44c2d21-8a5d-49af-81bd-c601fd03939b.wav","local_file":"output/audio/arthur/voice06.wav","long_pauses":0,"gate_pass":true},
+    {"index":7,"duration_seconds":9,"text":"우리가 당연하게 보는 노란 테니스공은 경기장뿐 아니라 화면 밖 관중이 공을 더 잘 보도록 탄생했습니다. 다음 테니스 노트에서 또 만나요.","job_id":"1ad3bcb8-224e-47f9-9279-7972cd84e037","result_url":"https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_111947_1ad3bcb8-224e-47f9-9279-7972cd84e037.wav","local_file":"output/audio/arthur/voice07.wav","long_pauses":0,"gate_pass":true}
+  ],
+  "reused_audio": {
+    "bgm": "output/audio/bgm_mystery_documentary.wav",
+    "sfx": "output/audio/sfx_mystery_documentary.wav"
+  },
+  "final_master": {
+    "file": "output/FTN_EP01_yellow_tennis_ball_no_subtitles_with_sound_arthur_mastered.mp4",
+    "duration_seconds": 43,
+    "video": "H.264 1080x1920 30fps yuv420p",
+    "audio": "AAC stereo 48kHz 192kbps",
+    "integrated_loudness_lufs": -16.7,
+    "true_peak_dbfs": -4.2,
+    "subtitles": false
+  }
+}

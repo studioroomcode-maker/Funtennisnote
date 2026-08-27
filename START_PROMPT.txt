@@ -1,0 +1,2 @@
+AGENTS.md와 CODEX_TASK.md를 먼저 전부 읽고 episode_manifest.json의 7개 장면을 확인해줘. 승인된 키프레임은 다시 만들지 말고 Higgsfield 이미지→영상 생성의 시작 프레임으로 사용해. 먼저 활성 Higgsfield 워크스페이스와 실제 크레딧, 모델별 예상 총비용을 확인해 보고해. 사용 가능한 1,200크레딧 계정이 확인되면 7개 장면을 장면별 지정 길이로 생성하고, 실패한 장면만 재시도한 뒤 1080×1920 30fps 약 43초 MP4로 편집해. 최종 영상에는 자막, 제목, 로고, 워터마크, UI, 임의의 생성 문자, 생성 음성을 절대 넣지 마. 결과는 output/FTN_EP01_yellow_tennis_ball_no_subtitles.mp4로 저장하고 generation_manifest.json에 모델, 작업 ID, 비용, 재시도 내역을 기록해. 작업 중 중요한 선택이나 비용 문제가 생기면 먼저 나에게 물어봐.
+

@@ -1,0 +1,18 @@
+{
+  "id": "ftn-script-dna-v3",
+  "name": "재미있는 테니스 노트 SCRIPT DNA V3",
+  "targetSeconds": 90,
+  "sentenceCount": { "min": 16, "max": 18 },
+  "charactersPerSentence": { "min": 25, "max": 35 },
+  "parts": [
+    { "id": "point_and_flip", "label": "지시·전복", "start": 0, "end": 12, "signature": "평범한 {대상} 하나를 먼저 보겠습니다." },
+    { "id": "double_obstacle", "label": "두 겹 난관", "start": 12, "end": 40, "signature": "문제는 여기서 완전히 꼬입니다." },
+    { "id": "reverse_solution", "label": "역전 해결", "start": 40, "end": 72, "signature": "답은 정반대에 있었습니다." },
+    { "id": "compressed_recap", "label": "압축 요약", "start": 72, "end": 90, "signature": "익숙한 {대상}에는 이런 계산이 숨어 있습니다." }
+  ],
+  "required": ["one_sentence_one_cut", "two_obstacles", "counterintuitive_solution", "object_as_subject", "opening_angle_reprise"],
+  "bannedEndings": ["거든요", "셈입니다", "그렇죠", "이죠"],
+  "bannedAudienceCalls": ["여러분", "구독자", "보이시나요"],
+  "numberLimits": { "hook": 1, "solution": 1 },
+  "endingEmotions": ["admiration", "warning", "relief"]
+}

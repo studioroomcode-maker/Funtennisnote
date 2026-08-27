@@ -1,0 +1,105 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scriptLines",
+    "evidence",
+    "sources",
+    "factWarnings"
+  ],
+  "properties": {
+    "scriptLines": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "cut",
+          "claim",
+          "proof",
+          "graphic",
+          "visualKo",
+          "visualEn",
+          "motionKo",
+          "motionEn",
+          "cameraKo",
+          "cameraEn"
+        ],
+        "properties": {
+          "cut": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 18
+          },
+          "claim": {
+            "type": "string"
+          },
+          "proof": {
+            "type": "string"
+          },
+          "graphic": {
+            "type": "string"
+          },
+          "visualKo": {
+            "type": "string"
+          },
+          "visualEn": {
+            "type": "string"
+          },
+          "motionKo": {
+            "type": "string"
+          },
+          "motionEn": {
+            "type": "string"
+          },
+          "cameraKo": {
+            "type": "string"
+          },
+          "cameraEn": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "url",
+          "supports"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "supports": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "factWarnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

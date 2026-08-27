@@ -1,0 +1,33 @@
+{
+  "selectedAt": "2026-08-26T03:24:22.659Z",
+  "episode": {
+    "id": "FTN-PILOT-02",
+    "number": 8,
+    "series": "pilot",
+    "title": "테니스공이 노란색이 된 진짜 이유",
+    "hook": "노란 테니스공은 선수가 아니라 TV 시청자를 위해 등장했습니다.",
+    "core": "1972년 옵틱 옐로 공 도입",
+    "category": "history",
+    "categoryLabel": "역사·인물",
+    "tone": "방송이 바꾼 색",
+    "visual": "흑백 텔레비전 화면과 코트 디오라마를 분할해 흰 공과 옵틱 옐로 공의 시인성을 비교",
+    "sourceHint": "ITF 공인구 역사 자료, 윔블던 공식 기록",
+    "score": 99,
+    "verification": "verified",
+    "targetSeconds": 78,
+    "recommendedProvider": "flow",
+    "tags": [
+      "파일럿",
+      "옵틱 옐로",
+      "1972"
+    ],
+    "sourceNumber": 2,
+    "curation": "pilot"
+  },
+  "productionStatus": "ready_for_script",
+  "nextSteps": [
+    "공식·1차 자료 팩트 검증",
+    "60~90초 내레이션 설계",
+    "멀티컷 영상 프롬프트 설계"
+  ]
+}

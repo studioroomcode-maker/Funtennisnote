@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-08-25T16:48:30.655Z",
+  "episode": {
+    "id": "FTN-IDEA-030",
+    "number": 115,
+    "title": "라켓을 길게 만들면 서브가 빨라질까",
+    "category": "racket",
+    "categoryLabel": "라켓 공학",
+    "tone": "구조공학",
+    "hook": "현장에서는 보이지 않던 결정적 차이를 단면과 수치로 보여줍니다. 라켓을 길게 만들면 서브가 빨라질까.",
+    "sourceHint": "ITF 라켓 기술자료·제조사 사양서·스포츠공학 연구",
+    "visual": "라켓 프레임 단면·진동·관성모멘트 디오라마",
+    "score": 98,
+    "verification": "research_required",
+    "targetSeconds": 75,
+    "recommendedProvider": "higgsfield",
+    "tags": [
+      "라켓 공학",
+      "구조공학",
+      "비교"
+    ],
+    "sourceNumber": 30,
+    "curation": "library"
+  },
+  "researchStatus": "research_required",
+  "sourcePlan": "ITF 라켓 기술자료·제조사 사양서·스포츠공학 연구",
+  "scriptDNA": "SCRIPT DNA V3.1 · FACT → WHY → PROOF · one evidence per cut",
+  "nextAction": "공식·1차 자료 팩트 검증"
+}

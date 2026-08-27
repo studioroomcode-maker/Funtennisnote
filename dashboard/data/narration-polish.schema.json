@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scriptLines"
+  ],
+  "properties": {
+    "scriptLines": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

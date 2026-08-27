@@ -1,0 +1,120 @@
+{
+  "id": "ftn-script-dna-v4",
+  "name": "재미있는 테니스 노트 SCRIPT DNA V4 (반전 다큐 아크)",
+  "targetSeconds": 90,
+  "sentenceCount": {
+    "min": 18,
+    "max": 18
+  },
+  "charactersPerSentence": {
+    "min": 16,
+    "max": 44
+  },
+  "parts": [
+    {
+      "id": "twist_hook",
+      "label": "반전 훅·뜻밖의 과거",
+      "start": 0,
+      "end": 18,
+      "signature": "{익숙한 대상}, 사실 {뜻밖의 정체}입니다. (질문 금지, 선언으로 시작)"
+    },
+    {
+      "id": "mystery_problem",
+      "label": "미스터리 발생·해답 발견",
+      "start": 18,
+      "end": 45,
+      "signature": "{계기}가 생기며 묘한 문제가 하나 생깁니다 → 감각적 현상 → 해답 발견"
+    },
+    {
+      "id": "second_twist",
+      "label": "두 번째 반전·유일한 질문·해소",
+      "start": 45,
+      "end": 72,
+      "signature": "그런데 문제가 하나 더 있었습니다 → 왜 바로 ~하지 않았을까요? → 신중한 해소와 전환점"
+    },
+    {
+      "id": "documentary_close",
+      "label": "잔여 사실·회수·다큐 종결",
+      "start": 72,
+      "end": 100,
+      "signature": "오해 교정 → 진짜 이유 선언 → 대상 재호명 + 알고 보면 ~였던 것이었습니다"
+    }
+  ],
+  "evidenceLayer": {
+    "formula": [
+      "fact",
+      "mechanism",
+      "screenEvidence"
+    ],
+    "minimumEvidencePerKeyClaim": 1,
+    "allowedEvidence": [
+      "official",
+      "primary-study",
+      "inference"
+    ],
+    "requiredMetadata": [
+      "claim",
+      "mechanism",
+      "evidence",
+      "confidence",
+      "graphic"
+    ],
+    "numbersInNarrationPerPart": 1,
+    "numbersOnScreenPerCut": 2,
+    "englishLabelWordsMax": 3,
+    "inventedPrecision": false
+  },
+  "voice": {
+    "defaultEndings": [
+      "습니다",
+      "입니다",
+      "까요?",
+      "죠",
+      "네요"
+    ],
+    "bannedEndings": [
+      "거든요",
+      "셈입니다",
+      "그렇죠"
+    ],
+    "audienceCalls": false,
+    "selfQuestioning": false
+  },
+  "bannedBareClaims": [
+    "눈에 잘 띄지 않았습니다",
+    "더 잘 보인다는 결과가 나왔습니다",
+    "연구 끝에 해결했습니다"
+  ],
+  "graphicRules": {
+    "technicalRed": "#FF2A2A",
+    "labels": "short English technical terms",
+    "preferred": [
+      "section",
+      "vector",
+      "side-by-side",
+      "signal-path",
+      "measured-scale"
+    ],
+    "audio": "none"
+  },
+  "attentionBudget": {
+    "evidencePerCut": 1,
+    "evidenceGraphicSeconds": {
+      "min": 0.8,
+      "max": 1.5
+    },
+    "consecutiveTechnicalCutsMax": 2,
+    "technicalTermsPerCutMax": 2,
+    "narrationUsesPlainMechanism": true,
+    "graphicCarriesSpecifications": true
+  },
+  "narrativeFlow": {
+    "opening": "CUT 01은 의외의 사실을 단정하는 반전 훅 (의문문 금지, 질문은 CUT 11 부근 1회)",
+    "causalChain": "CUT 04~13은 미스터리 발생→해답 발견→두 번째 반전→해소의 원인 사슬",
+    "answer": "CUT 17은 첫 훅을 회수하는 진짜 이유 선언",
+    "closing": "CUT 18은 대상 재호명 + '알고 보면 ~였던 것이었습니다' 다큐식 종결",
+    "conversationalEndingsMin": 3,
+    "conversationalEndingsMax": 6,
+    "formalEndingStreakMax": 4
+  }
+}

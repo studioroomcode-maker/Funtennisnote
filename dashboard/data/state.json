@@ -1,0 +1,442 @@
+{
+  "version": 3,
+  "updatedAt": "2026-08-26T15:06:46.243Z",
+  "planning": {
+    "activeEpisodeId": "FTN-PILOT-02",
+    "shortlist": [
+      "FTN-PILOT-02",
+      "FTN-IDEA-021",
+      "FTN-PILOT-01",
+      "FTN-IDEA-030"
+    ]
+  },
+  "settings": {
+    "defaultProvider": "flow",
+    "variants": 2,
+    "flowPlan": "Google AI Pro",
+    "flowCredits": 1000,
+    "higgsfieldCredits": 0,
+    "higgsfieldCostPerGeneration": 0,
+    "language": "en",
+    "addTechnicalLabelsInPost": true,
+    "silentGeneration": false,
+    "scriptRhythmProfile": "auto",
+    "typecast": {
+      "voiceName": "Piljae",
+      "voiceId": "tc_68257f68bc6e3c161ab5078d",
+      "model": "ssfm-v30",
+      "language": "kor",
+      "tempo": 1.2,
+      "pitch": 0,
+      "volume": 100,
+      "sentenceGapMs": 90,
+      "withTimestamps": true
+    }
+  },
+  "stages": [
+    {
+      "id": "brief",
+      "mode": "auto",
+      "status": "complete",
+      "note": "공식자료 조사 완료 · 출처 6개 · 사실 11개"
+    },
+    {
+      "id": "shots",
+      "mode": "review",
+      "status": "complete",
+      "note": "18컷 프롬프트 승인 완료 (사용자 확인)"
+    },
+    {
+      "id": "voice",
+      "mode": "manual",
+      "status": "complete",
+      "note": "Typecast Piljae 81.9초 승인 · 길이 목표 60~100초로 완화"
+    },
+    {
+      "id": "keyframes",
+      "mode": "review",
+      "status": "running",
+      "note": "CUT 18 실제 이미지 생성 완료"
+    },
+    {
+      "id": "video",
+      "mode": "review",
+      "status": "running",
+      "note": "CUT 18 변형 1 실제 영상 생성 완료"
+    },
+    {
+      "id": "edit",
+      "mode": "auto",
+      "status": "not_started",
+      "note": ""
+    },
+    {
+      "id": "qa",
+      "mode": "auto",
+      "status": "not_started",
+      "note": ""
+    }
+  ],
+  "shots": [
+    {
+      "index": 1,
+      "generationMode": "keyframe",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 2,
+      "generationMode": "direct",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 3,
+      "generationMode": "keyframe",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 4,
+      "generationMode": "direct",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 5,
+      "generationMode": "keyframe",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 6,
+      "generationMode": "direct",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 7,
+      "generationMode": "keyframe",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 8,
+      "generationMode": "direct",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 9,
+      "generationMode": "direct",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 10,
+      "generationMode": "keyframe",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 11,
+      "generationMode": "direct",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 12,
+      "generationMode": "direct",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 13,
+      "generationMode": "direct",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 14,
+      "generationMode": "keyframe",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": false,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 15,
+      "generationMode": "direct",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": false,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 16,
+      "generationMode": "direct",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 17,
+      "generationMode": "direct",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": true,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    },
+    {
+      "index": 18,
+      "generationMode": "keyframe",
+      "imageProvider": "higgsfield",
+      "imageModel": "nano-banana-2-lite",
+      "keyframeStatus": "ready_review",
+      "keyframeApproved": false,
+      "provider": "higgsfield",
+      "model": "kling-3-motion",
+      "status": "ready_review",
+      "attempts": 0,
+      "selected": false,
+      "flowPromptOverrides": {
+        "imageKo": "",
+        "imageEn": "",
+        "videoKo": "",
+        "videoEn": "",
+        "visualPlanGeneratedAt": ""
+      }
+    }
+  ]
+}

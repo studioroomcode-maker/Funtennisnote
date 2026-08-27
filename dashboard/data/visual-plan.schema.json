@@ -1,0 +1,294 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "designs"
+  ],
+  "properties": {
+    "designs": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "cut",
+          "narrativeFunction",
+          "presentationMode",
+          "cameraAngle",
+          "shotSize",
+          "lens",
+          "cameraMove",
+          "startFrameKo",
+          "startFrameEn",
+          "actionKo",
+          "actionEn",
+          "movementKo",
+          "movementEn",
+          "infographic",
+          "mustShowKo",
+          "mustShowEn",
+          "mustAvoidKo",
+          "mustAvoidEn",
+          "evidenceFactIds",
+          "tedoriExtra"
+        ],
+        "properties": {
+          "cut": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 18
+          },
+          "narrativeFunction": {
+            "type": "string"
+          },
+          "presentationMode": {
+            "type": "string",
+            "enum": [
+              "hero-object",
+              "historical-diorama",
+              "comparison",
+              "macro",
+              "cross-section",
+              "exploded-view",
+              "mechanism-simulation",
+              "wide-context",
+              "archive-review",
+              "rule-diagram"
+            ]
+          },
+          "cameraAngle": {
+            "type": "string",
+            "enum": [
+              "eye-level",
+              "high-angle",
+              "low-angle",
+              "top-down",
+              "isometric",
+              "side-orthographic",
+              "oblique-macro"
+            ]
+          },
+          "shotSize": {
+            "type": "string",
+            "enum": [
+              "extreme-wide",
+              "wide",
+              "full",
+              "medium",
+              "close-up",
+              "extreme-close-up",
+              "section-detail"
+            ]
+          },
+          "lens": {
+            "type": "string",
+            "enum": [
+              "18mm",
+              "24mm",
+              "35mm",
+              "50mm",
+              "85mm",
+              "100mm-macro",
+              "orthographic"
+            ]
+          },
+          "cameraMove": {
+            "type": "string",
+            "enum": [
+              "locked",
+              "dolly-in",
+              "dolly-out",
+              "orbit",
+              "top-down-drop",
+              "macro-track",
+              "path-follow",
+              "rack-focus",
+              "tilt-reveal"
+            ]
+          },
+          "startFrameKo": {
+            "type": "string"
+          },
+          "startFrameEn": {
+            "type": "string"
+          },
+          "actionKo": {
+            "type": "string"
+          },
+          "actionEn": {
+            "type": "string"
+          },
+          "movementKo": {
+            "type": "string"
+          },
+          "movementEn": {
+            "type": "string"
+          },
+          "mustShowKo": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 6,
+            "items": {
+              "type": "string"
+            }
+          },
+          "mustShowEn": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 6,
+            "items": {
+              "type": "string"
+            }
+          },
+          "mustAvoidKo": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 6,
+            "items": {
+              "type": "string"
+            }
+          },
+          "mustAvoidEn": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 6,
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidenceFactIds": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "string"
+            }
+          },
+          "infographic": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "labelEnglish",
+              "factKo",
+              "factEn",
+              "placementKo",
+              "placementEn"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "leader-line",
+                  "force-vector",
+                  "motion-path",
+                  "section-highlight",
+                  "comparison-bracket",
+                  "timeline-marker",
+                  "ban-marker",
+                  "measurement"
+                ]
+              },
+              "labelEnglish": {
+                "type": "string"
+              },
+              "factKo": {
+                "type": "string"
+              },
+              "factEn": {
+                "type": "string"
+              },
+              "placementKo": {
+                "type": "string"
+              },
+              "placementEn": {
+                "type": "string"
+              }
+            }
+          },
+          "playfulBridge": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "enabled",
+              "openingImageKo",
+              "openingImageEn",
+              "transitionKo",
+              "transitionEn",
+              "factualBoundaryKo",
+              "factualBoundaryEn",
+              "maxSeconds"
+            ],
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "openingImageKo": {
+                "type": "string"
+              },
+              "openingImageEn": {
+                "type": "string"
+              },
+              "transitionKo": {
+                "type": "string"
+              },
+              "transitionEn": {
+                "type": "string"
+              },
+              "factualBoundaryKo": {
+                "type": "string"
+              },
+              "factualBoundaryEn": {
+                "type": "string"
+              },
+              "maxSeconds": {
+                "type": "number",
+                "minimum": 0.6,
+                "maximum": 1.2
+              }
+            }
+          },
+          "tedoriExtra": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "enabled",
+              "roleKo",
+              "roleEn",
+              "placementKo",
+              "placementEn",
+              "actionKo",
+              "actionEn"
+            ],
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "roleKo": {
+                "type": "string"
+              },
+              "roleEn": {
+                "type": "string"
+              },
+              "placementKo": {
+                "type": "string"
+              },
+              "placementEn": {
+                "type": "string"
+              },
+              "actionKo": {
+                "type": "string"
+              },
+              "actionEn": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

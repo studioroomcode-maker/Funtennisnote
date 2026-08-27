@@ -1,0 +1,987 @@
+{
+ "version": 4,
+ "episodeId": "FTN-PILOT-02",
+ "generatedAt": "2026-08-26T15:05:24.328Z",
+ "provider": "claude-visual-director",
+ "scriptLines": [
+  "전 세계 코트를 점령한 이 형광 노란 테니스공, 사실 이제 쉰 살을 갓 넘긴 신입입니다.",
+  "테니스의 역사는 백 년을 훌쩍 넘는데, 그 긴 세월 코트의 주인공은 뜻밖에도 흰 공과 검은 공이었죠.",
+  "밝은 잔디 위에서는 검은 공, 어두운 코트 위에서는 흰 공. 배경에 따라 공 색을 바꿔 쓰던 시절이었습니다.",
+  "그런데 테니스가 안방 텔레비전 속으로 들어오면서, 묘한 문제가 하나 생깁니다.",
+  "흑백 화면 속 흰 공이 흰 라인 위를 지나는 순간, 공이 감쪽같이 사라져 버린 겁니다.",
+  "카메라가 공을 쫓고 시청자가 화면을 노려봐도, 정작 주인공이 보이지 않는 이상한 중계였죠.",
+  "연구자들은 화면에서 가장 잘 살아남는 색을 찾아 나섰고, 그 답이 바로 형광 노란색이었습니다.",
+  "코트에서도 화면에서도, 어떤 배경 위에서도 끝까지 또렷하게 남는 색이었기 때문입니다.",
+  "그런데 문제가 하나 더 있었습니다. 당시 규칙서는 흰 공만 인정하고 있었던 겁니다.",
+  "더 잘 보이는 공을 찾아냈는데, 정작 규칙이 그 공의 입장을 막아선 상황이었죠.",
+  "그렇다면 규칙은 왜 바로 문을 열어주지 않았을까요?",
+  "국제테니스연맹은 무려 2년 동안 실제 경기에서 노란 공을 굴려 보며 신중하게 검증했습니다.",
+  "그리고 1972년, 노란 공은 마침내 규칙서에 정식으로 이름을 올립니다.",
+  "규칙은 흰 공을 지운 게 아니라 노란색에 한 자리를 내준 것뿐이라, 흰 공은 지금도 합법입니다.",
+  "반으로 갈라 보면 속은 완전히 같은 공. 바뀐 건 오직 겉옷 색깔 하나뿐이었죠.",
+  "끝까지 흰 공을 고집하던 윔블던도 108년 만인 1986년, 결국 노란 공에 자리를 내줍니다.",
+  "결국 노란 공을 코트의 표준으로 만든 건 선수가 아니라, 화면 앞 시청자의 눈이었습니다.",
+  "오늘 저녁 화면 속을 통통 튀어 다니는 저 노란 공, 알고 보면 보는 사람을 위해 허용된 색이었던 것이었습니다."
+ ],
+ "sourceReferences": [],
+ "diversity": {
+  "presentationModes": 9,
+  "cameraAngles": 7,
+  "shotSizes": 7,
+  "cameraMoves": 9,
+  "centeredProductShots": 0,
+  "playfulBridges": 0,
+  "tedoriExtras": 1,
+  "modeSequence": [
+   "wide-context",
+   "macro",
+   "rule-diagram",
+   "historical-diorama",
+   "wide-context",
+   "comparison",
+   "mechanism-simulation",
+   "macro",
+   "archive-review",
+   "historical-diorama",
+   "hero-object",
+   "mechanism-simulation",
+   "archive-review",
+   "rule-diagram",
+   "cross-section",
+   "historical-diorama",
+   "comparison",
+   "hero-object"
+  ]
+ },
+ "designs": [
+  {
+   "cut": 1,
+   "narrativeFunction": "문장 1의 근거 시각화",
+   "presentationMode": "wide-context",
+   "cameraAngle": "high-angle",
+   "shotSize": "extreme-wide",
+   "lens": "18mm",
+   "cameraMove": "dolly-in",
+   "startFrameKo": "야간 조명이 켜진 현대 하드코트 경기장 전경 미니어처. 코트 곳곳과 볼보이 카트에 옵틱 옐로 공들만 놓여 있고, 관중석은 저채도 실루엣이다.",
+   "startFrameEn": "A miniature modern hard-court stadium at night under floodlights. Optic-yellow balls rest across the court and in a ball trolley; the crowd stands are desaturated silhouettes.",
+   "actionKo": "볼 카트에서 노란 공 하나가 굴러 나와 서비스 라인 근처에서 멈춘다.",
+   "actionEn": "One yellow ball rolls out of the trolley and settles near the service line.",
+   "movementKo": "높은 곳에서 코트 중앙으로 천천히 내려가며 다가간다.",
+   "movementEn": "Slow high descent pushing toward center court.",
+   "mustShowKo": [
+    "야간 경기장 전체",
+    "여러 개의 옵틱 옐로 공",
+    "정확한 코트 라인"
+   ],
+   "mustShowEn": [
+    "the whole night stadium",
+    "multiple optic-yellow balls",
+    "accurate court lines"
+   ],
+   "mustAvoidKo": [
+    "흰 공",
+    "관중 얼굴 디테일",
+    "전광판 글자"
+   ],
+   "mustAvoidEn": [
+    "white balls",
+    "readable crowd faces",
+    "scoreboard lettering"
+   ],
+   "infographic": {
+    "type": "none",
+    "labelEnglish": "",
+    "factKo": "",
+    "factEn": "",
+    "placementKo": "",
+    "placementEn": ""
+   },
+   "evidenceFactIds": [
+    "F01"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 2,
+   "narrativeFunction": "문장 2의 근거 시각화",
+   "presentationMode": "macro",
+   "cameraAngle": "oblique-macro",
+   "shotSize": "extreme-close-up",
+   "lens": "100mm-macro",
+   "cameraMove": "macro-track",
+   "startFrameKo": "옵틱 옐로 테니스공 펠트 표면의 익스트림 매크로. 형광 노랑 섬유 한 올 한 올과 흰 곡선 솔기의 가장자리가 화면을 가득 채운다.",
+   "startFrameEn": "Extreme macro of optic-yellow tennis-ball felt: individual fluorescent fibers and the edge of one white curved seam fill the frame.",
+   "actionKo": "공이 아주 느리게 반 바퀴 미만으로 구르며 섬유 결이 빛을 따라 반짝인다.",
+   "actionEn": "The ball rotates a fraction of a turn; fiber nap glints as it catches the light.",
+   "movementKo": "솔기 곡선을 따라 매크로 트래킹으로 미끄러진다.",
+   "movementEn": "Macro-track slides along the seam curve.",
+   "mustShowKo": [
+    "형광 펠트 질감",
+    "흰 솔기 단일 곡선"
+   ],
+   "mustShowEn": [
+    "fluorescent felt texture",
+    "one white seam curve"
+   ],
+   "mustAvoidKo": [
+    "로고",
+    "다른 색 공"
+   ],
+   "mustAvoidEn": [
+    "logos",
+    "balls of any other color"
+   ],
+   "infographic": {
+    "type": "none",
+    "labelEnglish": "",
+    "factKo": "",
+    "factEn": "",
+    "placementKo": "",
+    "placementEn": ""
+   },
+   "evidenceFactIds": [
+    "F02"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 3,
+   "narrativeFunction": "문장 3의 근거 시각화",
+   "presentationMode": "rule-diagram",
+   "cameraAngle": "top-down",
+   "shotSize": "full",
+   "lens": "orthographic",
+   "cameraMove": "locked",
+   "startFrameKo": "탑다운 규칙 도해 디오라마: 글자가 보이지 않는 규칙서 펼침면을 본뜬 회색 보드 위, 같은 크기의 원형 자리 두 곳에 흰 공과 노란 공이 나란히 놓여 있다.",
+   "startFrameEn": "Top-down rule-diagram diorama: on a gray board shaped like an open rulebook spread with no legible text, a white ball and a yellow ball sit in two identical circular slots side by side.",
+   "actionKo": "두 공이 제자리에서 같은 속도로 살짝 구르며 완전히 동등하게 정렬된다.",
+   "actionEn": "Both balls make the same tiny roll in place, settling perfectly level with each other.",
+   "movementKo": "카메라 고정. 물리 동작만 정보를 전달한다.",
+   "movementEn": "Camera locked; only the physical action reads.",
+   "mustShowKo": [
+    "동일한 두 자리",
+    "흰 공과 노란 공의 동등한 배치"
+   ],
+   "mustShowEn": [
+    "two identical slots",
+    "white and yellow balls placed as equals"
+   ],
+   "mustAvoidKo": [
+    "글자",
+    "체크 표시",
+    "도장"
+   ],
+   "mustAvoidEn": [
+    "letters",
+    "check marks",
+    "stamps"
+   ],
+   "infographic": {
+    "type": "comparison-bracket",
+    "labelEnglish": "WHITE OR YELLOW",
+    "factKo": "현행 ITF 규칙은 흰색과 노란색을 모두 허용한다.",
+    "factEn": "The current ITF rule allows both white and yellow.",
+    "placementKo": "두 공을 묶는 상단 브래킷",
+    "placementEn": "a bracket spanning both balls, added in post"
+   },
+   "evidenceFactIds": [
+    "F01",
+    "F03"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 4,
+   "narrativeFunction": "문장 4의 근거 시각화",
+   "presentationMode": "historical-diorama",
+   "cameraAngle": "eye-level",
+   "shotSize": "wide",
+   "lens": "35mm",
+   "cameraMove": "orbit",
+   "startFrameKo": "19세기풍 잔디 코트 역사 디오라마: 밝은 잔디 위에 검은 공, 그 옆 어두운 흙바닥 코너에 흰 공이 놓여 있다. 목재 네트 기둥과 빛바랜 롤러가 배경이다.",
+   "startFrameEn": "A 19th-century grass-court diorama: a black ball on pale grass and a white ball on a dark clay corner nearby, with wooden net posts and a faded lawn roller behind.",
+   "actionKo": "검은 공이 잔디 위를 짧게 굴러 밝은 배경 위에서 또렷해진다.",
+   "actionEn": "The black ball rolls briefly, reading clearly against the pale grass.",
+   "movementKo": "두 공 주위를 낮게 도는 오비트로 배경 대비를 보여준다.",
+   "movementEn": "A low orbit reveals how each ball contrasts with its ground.",
+   "mustShowKo": [
+    "검은 공과 밝은 잔디",
+    "흰 공과 어두운 바닥"
+   ],
+   "mustShowEn": [
+    "black ball on pale grass",
+    "white ball on dark ground"
+   ],
+   "mustAvoidKo": [
+    "노란 공",
+    "현대 장비"
+   ],
+   "mustAvoidEn": [
+    "yellow balls",
+    "modern equipment"
+   ],
+   "infographic": {
+    "type": "none",
+    "labelEnglish": "",
+    "factKo": "",
+    "factEn": "",
+    "placementKo": "",
+    "placementEn": ""
+   },
+   "evidenceFactIds": [
+    "F04"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 5,
+   "narrativeFunction": "문장 5의 근거 시각화",
+   "presentationMode": "wide-context",
+   "cameraAngle": "low-angle",
+   "shotSize": "medium",
+   "lens": "24mm",
+   "cameraMove": "dolly-out",
+   "startFrameKo": "1970년대 거실 미니어처: 카펫 높이 로우앵글로, 소파 앞 브라운관 TV가 흑백에 가까운 테니스 중계를 비춘다. 화면 속 흰 공은 흰 라인 사이에서 흐릿하다.",
+   "startFrameEn": "A 1970s living-room miniature from carpet height: a CRT television in front of a sofa plays a near-monochrome tennis broadcast where the white ball blurs into the white court lines.",
+   "actionKo": "화면 속 흰 공이 라인을 지나는 순간 배경과 거의 구분되지 않는다.",
+   "actionEn": "On screen, the white ball crosses a line and almost vanishes against it.",
+   "movementKo": "TV 화면에서 거실 전체로 천천히 물러나 시청 맥락을 드러낸다.",
+   "movementEn": "Slow dolly-out from the screen to reveal the living-room context.",
+   "mustShowKo": [
+    "브라운관 TV",
+    "시청 거리의 소파",
+    "화면 속 흐릿한 흰 공"
+   ],
+   "mustShowEn": [
+    "the CRT set",
+    "a sofa at viewing distance",
+    "the faint white ball on screen"
+   ],
+   "mustAvoidKo": [
+    "사람 얼굴",
+    "채널 자막"
+   ],
+   "mustAvoidEn": [
+    "human faces",
+    "channel captions"
+   ],
+   "infographic": {
+    "type": "none",
+    "labelEnglish": "",
+    "factKo": "",
+    "factEn": "",
+    "placementKo": "",
+    "placementEn": ""
+   },
+   "evidenceFactIds": [
+    "F05"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 6,
+   "narrativeFunction": "문장 6의 근거 시각화",
+   "presentationMode": "comparison",
+   "cameraAngle": "isometric",
+   "shotSize": "close-up",
+   "lens": "50mm",
+   "cameraMove": "rack-focus",
+   "startFrameKo": "방송 조정실의 모니터 두 대: 왼쪽 흑백 화면에서는 흰 공이 흰 라인과 정확히 겹치는 순간이고, 오른쪽 컬러 화면에서는 같은 장면의 노란 공이 파란 코트 위에서 도드라진다.",
+   "startFrameEn": "Two control-room monitors: on the left monochrome screen the white ball is exactly overlapping a white court line; on the right color screen the same play shows the yellow ball popping against the blue court.",
+   "actionKo": "왼쪽 화면의 흰 공이 라인 위를 지나며 한순간 배경에 완전히 묻혀 보이지 않게 되고, 같은 순간 오른쪽 노란 공은 끝까지 또렷하게 계속 보인다.",
+   "actionEn": "The white ball crosses the line and visibly disappears into the background for a beat, while at the same instant the yellow ball on the right stays clearly visible throughout.",
+   "movementKo": "왼쪽 화면에서 오른쪽 화면으로 랙 포커스 한 번. 이동은 샷의 마지막 프레임까지 이어진다.",
+   "movementEn": "One rack-focus from the left screen to the right, continuing until the very last frame.",
+   "mustShowKo": [
+    "동일 장면의 두 모니터",
+    "시인성 차이"
+   ],
+   "mustShowEn": [
+    "two monitors with identical plays",
+    "the visibility gap"
+   ],
+   "mustAvoidKo": [
+    "숫자 그래프",
+    "UI 오버레이"
+   ],
+   "mustAvoidEn": [
+    "numeric graphs",
+    "UI overlays"
+   ],
+   "infographic": {
+    "type": "leader-line",
+    "labelEnglish": "BETTER ON TV",
+    "factKo": "연구는 노란 공이 TV 시청자에게 더 잘 보인다는 결과를 냈다.",
+    "factEn": "Research found yellow balls easier for TV viewers to see.",
+    "placementKo": "오른쪽 모니터의 노란 공에 고정된 리더선",
+    "placementEn": "a post leader-line anchored to the yellow ball on the right monitor"
+   },
+   "evidenceFactIds": [
+    "F05",
+    "F06"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 7,
+   "narrativeFunction": "문장 7의 근거 시각화",
+   "presentationMode": "mechanism-simulation",
+   "cameraAngle": "side-orthographic",
+   "shotSize": "wide",
+   "lens": "24mm",
+   "cameraMove": "dolly-out",
+   "startFrameKo": "테니스 코트 중계 화면이 프레임을 가득 채운 첫 장면. 코트 옆 관중석의 미니어처 관중까지 보인다.",
+   "startFrameEn": "The first frame is filled edge-to-edge by a televised tennis court, including miniature spectators in the courtside stands.",
+   "actionKo": "카메라가 계속 뒤로 빠지면 그 코트 전체가 사실은 거실 TV 화면 속 중계였음이 드러나고, 소파에 앉은 시청자 실루엣과 거실이 프레임에 들어온다.",
+   "actionEn": "As the camera keeps pulling back, the whole court is revealed to be a broadcast inside a living-room TV, and viewer silhouettes on a sofa enter the frame.",
+   "movementKo": "한 번의 연속 풀백. 마지막 프레임까지 멈추지 않는다.",
+   "movementEn": "One continuous pull-back that never stops until the final frame.",
+   "mustShowKo": [
+    "경기장→송신탑→도시 창문의 연결"
+   ],
+   "mustShowEn": [
+    "the stadium-to-tower-to-city connection"
+   ],
+   "mustAvoidKo": [
+    "글자 표지판",
+    "실존 방송사 상징"
+   ],
+   "mustAvoidEn": [
+    "signage text",
+    "real broadcaster marks"
+   ],
+   "infographic": {
+    "type": "motion-path",
+    "labelEnglish": "TO VIEWERS",
+    "factKo": "경기를 보는 자리가 코트 옆에서 TV 앞까지 넓어졌다.",
+    "factEn": "The audience expanded from courtside to television.",
+    "placementKo": "광선 경로를 따라 붙는 모션 패스",
+    "placementEn": "a post motion-path along the beam"
+   },
+   "evidenceFactIds": [
+    "F05"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 8,
+   "narrativeFunction": "문장 8의 근거 시각화",
+   "presentationMode": "macro",
+   "cameraAngle": "oblique-macro",
+   "shotSize": "extreme-close-up",
+   "lens": "100mm-macro",
+   "cameraMove": "macro-track",
+   "startFrameKo": "브라운관 유리 표면의 익스트림 매크로: RGB 형광체 도트들이 보이고, 그 격자 위에서 노란 공 픽셀 무리가 파란 코트 픽셀들 사이에서 선명하게 뭉쳐 있다.",
+   "startFrameEn": "Extreme macro of CRT glass: visible RGB phosphor dots, where a cluster of yellow-ball pixels stands out sharply against blue court pixels.",
+   "actionKo": "노란 픽셀 무리가 격자 위를 천천히 이동해도 덩어리째 또렷이 읽힌다.",
+   "actionEn": "The yellow pixel cluster drifts across the grid yet stays legible as one bright mass.",
+   "movementKo": "픽셀 무리를 따라가는 짧은 매크로 트래킹.",
+   "movementEn": "A short macro-track follows the pixel cluster.",
+   "mustShowKo": [
+    "형광체 도트 격자",
+    "노란 픽셀 덩어리"
+   ],
+   "mustShowEn": [
+    "the phosphor grid",
+    "the yellow pixel mass"
+   ],
+   "mustAvoidKo": [
+    "문자 픽셀",
+    "스코어 그래픽"
+   ],
+   "mustAvoidEn": [
+    "text pixels",
+    "score graphics"
+   ],
+   "infographic": {
+    "type": "none",
+    "labelEnglish": "",
+    "factKo": "",
+    "factEn": "",
+    "placementKo": "",
+    "placementEn": ""
+   },
+   "evidenceFactIds": [
+    "F06"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 9,
+   "narrativeFunction": "문장 9의 근거 시각화",
+   "presentationMode": "mechanism-simulation",
+   "cameraAngle": "high-angle",
+   "shotSize": "medium",
+   "lens": "50mm",
+   "cameraMove": "tilt-reveal",
+   "startFrameKo": "공 검사대 컨베이어 미니어처: 흰 공들이 열린 게이트를 차례로 통과해 승인 트레이로 굴러가고, 노란 공 하나가 내려진 차단봉 앞에 멈춰 있다.",
+   "startFrameEn": "A ball-inspection conveyor miniature: white balls roll one by one through an open gate into an approved tray, while a single yellow ball waits before a lowered barrier arm.",
+   "actionKo": "흰 공 하나가 게이트를 통과하는 동안 노란 공이 차단봉에 닿아 막히고 살짝 뒤로 굴러난다.",
+   "actionEn": "While another white ball passes the gate, the yellow ball bumps the barrier, is blocked, and rolls back slightly.",
+   "movementKo": "통과하는 흰 공에서 막힌 노란 공으로 틸트. 마지막 프레임까지 이어진다.",
+   "movementEn": "Tilt from the passing white ball to the blocked yellow ball, continuing to the last frame.",
+   "mustShowKo": [
+    "받침대 위의 흰 공",
+    "받침대 밖의 노란 공"
+   ],
+   "mustShowEn": [
+    "the white ball on the stand",
+    "the yellow ball kept off it"
+   ],
+   "mustAvoidKo": [
+    "글자",
+    "붉은 도장"
+   ],
+   "mustAvoidEn": [
+    "letters",
+    "red stamps"
+   ],
+   "infographic": {
+    "type": "ban-marker",
+    "labelEnglish": "WHITE ONLY",
+    "factKo": "당시 규칙은 흰 공만 요구해 노란 공을 곧장 쓸 수 없었다.",
+    "factEn": "The old rule required white balls only, blocking immediate use of yellow.",
+    "placementKo": "받침대 문턱에 고정된 금지 마커",
+    "placementEn": "a post ban-marker anchored at the stand threshold"
+   },
+   "evidenceFactIds": [
+    "F07"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 10,
+   "narrativeFunction": "문장 10의 근거 시각화",
+   "presentationMode": "historical-diorama",
+   "cameraAngle": "eye-level",
+   "shotSize": "full",
+   "lens": "35mm",
+   "cameraMove": "dolly-in",
+   "startFrameKo": "1970년대 중계석 디오라마: 카메라맨 미니어처가 대형 방송 카메라로 코트를 겨누고, 뷰파인더 옆 모니터에는 흰 공이 라인에 묻힌 프레임이 걸려 있다.",
+   "startFrameEn": "A 1970s broadcast-booth diorama: a camera-operator miniature aims a large TV camera at the court, while the side monitor freezes a frame of the white ball lost in the lines.",
+   "actionKo": "카메라맨이 카메라를 미세하게 좌우로 흔들며 화면 속 공을 찾는다.",
+   "actionEn": "The operator pans the camera in small hunting movements, searching for the ball on screen.",
+   "movementKo": "중계석 전경에서 모니터 프레임으로 서서히 다가간다.",
+   "movementEn": "Slow dolly-in from the booth toward the monitor frame.",
+   "mustShowKo": [
+    "대형 방송 카메라",
+    "공을 놓친 모니터 화면"
+   ],
+   "mustShowEn": [
+    "the large TV camera",
+    "the monitor losing the ball"
+   ],
+   "mustAvoidKo": [
+    "얼굴 클로즈업",
+    "방송사 로고"
+   ],
+   "mustAvoidEn": [
+    "face close-ups",
+    "broadcaster logos"
+   ],
+   "infographic": {
+    "type": "none",
+    "labelEnglish": "",
+    "factKo": "",
+    "factEn": "",
+    "placementKo": "",
+    "placementEn": ""
+   },
+   "evidenceFactIds": [
+    "F05",
+    "F07"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 11,
+   "narrativeFunction": "문장 11의 근거 시각화",
+   "presentationMode": "hero-object",
+   "cameraAngle": "low-angle",
+   "shotSize": "close-up",
+   "lens": "85mm",
+   "cameraMove": "locked",
+   "startFrameKo": "로우앵글 히어로 클로즈업: 닫힌 두꺼운 규칙서 앞에 옵틱 옐로 공 하나가 정면이 아닌 사선으로 놓여 기다린다. 규칙서 표지는 무지 가죽 질감이다.",
+   "startFrameEn": "Low-angle hero close-up: a single optic-yellow ball waits at an oblique angle before a thick closed rulebook with a plain leather cover.",
+   "actionKo": "공이 제자리에서 아주 작게 흔들리고, 규칙서는 미동도 없다.",
+   "actionEn": "The ball rocks almost imperceptibly; the rulebook does not move at all.",
+   "movementKo": "카메라 고정으로 대치 관계를 유지한다.",
+   "movementEn": "Locked camera holds the standoff.",
+   "mustShowKo": [
+    "닫힌 규칙서",
+    "기다리는 노란 공"
+   ],
+   "mustShowEn": [
+    "the closed rulebook",
+    "the waiting yellow ball"
+   ],
+   "mustAvoidKo": [
+    "글자",
+    "저울·망치 같은 상징물"
+   ],
+   "mustAvoidEn": [
+    "letters",
+    "symbolic scales or gavels"
+   ],
+   "infographic": {
+    "type": "none",
+    "labelEnglish": "",
+    "factKo": "",
+    "factEn": "",
+    "placementKo": "",
+    "placementEn": ""
+   },
+   "evidenceFactIds": [
+    "F08"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 12,
+   "narrativeFunction": "문장 12의 근거 시각화",
+   "presentationMode": "mechanism-simulation",
+   "cameraAngle": "top-down",
+   "shotSize": "wide",
+   "lens": "24mm",
+   "cameraMove": "path-follow",
+   "startFrameKo": "탑다운 시험 코트: 노란 공이 랠리 중이고 코트에 이른 아침의 긴 그림자가 드리워 있다.",
+   "startFrameEn": "Top-down trial court: a yellow ball mid-rally, with long early-morning shadows across the court.",
+   "actionKo": "노란 공이 실제 랠리 궤적으로 코트를 오가는 동안 해 그림자가 시계바늘처럼 코트를 크게 돌아 여러 날의 시간이 흐른 것을 보여준다.",
+   "actionEn": "While the yellow ball repeats real rally paths, the sun shadow sweeps around the court like a clock hand, showing many days passing.",
+   "movementKo": "랠리 궤적을 따라가는 패스 팔로우. 끝까지 이어진다.",
+   "movementEn": "Path-follow along the rally routes, continuing to the end.",
+   "mustShowKo": [
+    "시험 코트",
+    "반복되는 랠리 궤적"
+   ],
+   "mustShowEn": [
+    "the trial court",
+    "repeated rally paths"
+   ],
+   "mustAvoidKo": [
+    "숫자 기록",
+    "심판 인물 클로즈업"
+   ],
+   "mustAvoidEn": [
+    "numeric records",
+    "official close-ups"
+   ],
+   "infographic": {
+    "type": "timeline-marker",
+    "labelEnglish": "2 YEARS",
+    "factKo": "ITF는 규칙 개정 전 2년간 노란 공 사용을 시험했다.",
+    "factEn": "The ITF trialed yellow balls for two years before changing the rule.",
+    "placementKo": "코트 옆에 붙는 기간 마커",
+    "placementEn": "a post duration marker beside the court"
+   },
+   "evidenceFactIds": [
+    "F09"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 13,
+   "narrativeFunction": "문장 13의 근거 시각화",
+   "presentationMode": "archive-review",
+   "cameraAngle": "eye-level",
+   "shotSize": "medium",
+   "lens": "50mm",
+   "cameraMove": "rack-focus",
+   "startFrameKo": "기록실 책상: 펼친 규칙서 페이지 왼쪽 원형 홈에 흰 공이 이미 박혀 있고, 오른쪽에는 빈 원형 홈이 파여 있으며 노란 공이 페이지 가장자리에 대기 중이다.",
+   "startFrameEn": "Archive desk: on an open rulebook page, a white ball already sits in the left circular recess; the right recess is empty, and a yellow ball waits at the page edge.",
+   "actionKo": "노란 공이 페이지 위를 굴러와 빈 홈에 정확히 안착하고 도장이 찍히듯 지그시 눌린다.",
+   "actionEn": "The yellow ball rolls across the page, seats exactly into the empty recess, and is pressed gently like a stamp.",
+   "movementKo": "흰 공에서 안착하는 노란 공으로 랙 포커스. 끝까지 이어진다.",
+   "movementEn": "Rack-focus from the white ball to the seating yellow ball, continuing to the end.",
+   "mustShowKo": [
+    "같은 페이지 위의 두 공"
+   ],
+   "mustShowEn": [
+    "both balls on the same page"
+   ],
+   "mustAvoidKo": [
+    "글자",
+    "서명"
+   ],
+   "mustAvoidEn": [
+    "letters",
+    "signatures"
+   ],
+   "infographic": {
+    "type": "none",
+    "labelEnglish": "",
+    "factKo": "",
+    "factEn": "",
+    "placementKo": "",
+    "placementEn": ""
+   },
+   "evidenceFactIds": [
+    "F09",
+    "F10"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 14,
+   "narrativeFunction": "문장 14의 근거 시각화",
+   "presentationMode": "historical-diorama",
+   "cameraAngle": "low-angle",
+   "shotSize": "full",
+   "lens": "35mm",
+   "cameraMove": "path-follow",
+   "startFrameKo": "1970년대 클래식 코트 미니어처: 심판 의자와 관중 실루엣을 배경으로, 서비스 코트 위에 옵틱 옐로 공이 처음 등장해 막 바운드하려는 순간이다.",
+   "startFrameEn": "A 1970s classic tennis-court miniature with an umpire chair and spectator silhouettes: an optic-yellow ball appears for the first time, about to bounce inside the service court.",
+   "actionKo": "노란 공이 서비스 코트에 힘차게 한 번 바운드해 위로 솟구치고, 선명한 그림자가 함께 움직인다. 규칙에 정식으로 들어온 첫 순간처럼 보여야 한다.",
+   "actionEn": "The yellow ball takes one strong bounce inside the service court and rises, its crisp shadow moving with it, reading as the moment yellow officially entered the rules.",
+   "movementKo": "바운드 궤적을 따라가는 패스 팔로우. 마지막 프레임까지 이어진다.",
+   "movementEn": "Path-follow tracing the bounce arc, continuing to the last frame.",
+   "mustShowKo": [
+    "클래식 코트",
+    "첫 바운드하는 노란 공"
+   ],
+   "mustShowEn": [
+    "the classic court",
+    "the first-bounce yellow ball"
+   ],
+   "mustAvoidKo": [
+    "새겨진 연도 숫자",
+    "현대 장비"
+   ],
+   "mustAvoidEn": [
+    "engraved year numerals",
+    "modern equipment"
+   ],
+   "infographic": {
+    "type": "timeline-marker",
+    "labelEnglish": "1972",
+    "factKo": "노란 공 허용이 테니스 규칙에 들어간 해는 1972년이다.",
+    "factEn": "Yellow balls entered the rules of tennis in 1972.",
+    "placementKo": "안착 슬롯 위 연도 마커",
+    "placementEn": "a post year marker above the seated slot"
+   },
+   "evidenceFactIds": [
+    "F10"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 15,
+   "narrativeFunction": "문장 15의 근거 시각화",
+   "presentationMode": "cross-section",
+   "cameraAngle": "side-orthographic",
+   "shotSize": "section-detail",
+   "lens": "100mm-macro",
+   "cameraMove": "orbit",
+   "startFrameKo": "정밀 단면 무대: 흰 공의 반구 단면과 노란 공의 반구 단면이 마주 보고 서 있고, 두 단면의 고무 코어와 펠트 두께가 완전히 동일하게 보인다.",
+   "startFrameEn": "Precision cross-section stage: a white half-ball and a yellow half-ball face each other, their rubber cores and felt thickness visibly identical.",
+   "actionKo": "두 반구가 천천히 다가와 딱 맞물리며 하나의 완전한 공이 되고, 단면 경계가 정확히 일치한다.",
+   "actionEn": "The two halves slowly close together into one complete ball, their section boundaries matching perfectly.",
+   "movementKo": "맞물리는 순간을 도는 짧은 오비트. 끝까지 이어진다.",
+   "movementEn": "A short orbit around the joining moment, continuing to the end.",
+   "mustShowKo": [
+    "동일한 코어",
+    "동일한 펠트 두께"
+   ],
+   "mustShowEn": [
+    "identical cores",
+    "identical felt thickness"
+   ],
+   "mustAvoidKo": [
+    "성분 표기",
+    "두께 숫자"
+   ],
+   "mustAvoidEn": [
+    "ingredient labels",
+    "thickness numerals"
+   ],
+   "infographic": {
+    "type": "comparison-bracket",
+    "labelEnglish": "SAME BALL",
+    "factKo": "노란색은 성능 등급이 아니라 같은 공에 더해진 허용 색이다.",
+    "factEn": "Yellow is not a performance grade; it is another allowed color of the same ball.",
+    "placementKo": "두 단면을 묶는 브래킷",
+    "placementEn": "a post bracket spanning both sections"
+   },
+   "evidenceFactIds": [
+    "F03",
+    "F11"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 16,
+   "narrativeFunction": "문장 16의 근거 시각화",
+   "presentationMode": "historical-diorama",
+   "cameraAngle": "low-angle",
+   "shotSize": "wide",
+   "lens": "35mm",
+   "cameraMove": "dolly-out",
+   "startFrameKo": "잔디 코트: 그라운즈키퍼 카트 짐칸에 클래식한 흰 공들이 가득 실려 있고, 코트 바닥에는 옵틱 옐로 공들이 하나씩 놓이고 있다.",
+   "startFrameEn": "A grass court: a groundskeeper cart loaded with classic white balls, while optic-yellow balls are being placed one by one on the court.",
+   "actionKo": "카트가 마지막 흰 공을 싣고 베이스라인 밖으로 굴러 나가는 동안, 노란 공 하나가 코트 마크 위에 정확히 놓인다.",
+   "actionEn": "As the cart rolls out past the baseline with the last white ball, one yellow ball is set precisely on a court mark.",
+   "movementKo": "교대 장면에서 잔디 코트 전경으로 달리 아웃. 끝까지 이어진다.",
+   "movementEn": "Dolly-out from the handover to the whole grass court, continuing to the end.",
+   "mustShowKo": [
+    "잔디 코트",
+    "흰 공과 노란 공의 교대"
+   ],
+   "mustShowEn": [
+    "the grass court",
+    "the white-to-yellow handover"
+   ],
+   "mustAvoidKo": [
+    "대회 로고",
+    "보라·초록 상징 배색"
+   ],
+   "mustAvoidEn": [
+    "tournament logos",
+    "signature purple-green branding"
+   ],
+   "infographic": {
+    "type": "timeline-marker",
+    "labelEnglish": "1986",
+    "factKo": "윔블던은 108년간 흰 공을 쓰다 1986년 노란 공을 채택했다.",
+    "factEn": "Wimbledon used white balls for 108 years before adopting yellow in 1986.",
+    "placementKo": "교대 지점 옆 연도 마커",
+    "placementEn": "a post year marker beside the handover spot"
+   },
+   "evidenceFactIds": [
+    "F11"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 17,
+   "narrativeFunction": "문장 17의 근거 시각화",
+   "presentationMode": "comparison",
+   "cameraAngle": "eye-level",
+   "shotSize": "medium",
+   "lens": "50mm",
+   "cameraMove": "rack-focus",
+   "startFrameKo": "거실 선반 위 브라운관 두 대: 왼쪽 화면은 흰 공 시대의 중계로 공이 라인에 묻히고, 오른쪽 화면은 같은 코트에서 노란 공이 또렷한 현대 중계를 보여준다.",
+   "startFrameEn": "Two CRTs on a living-room shelf: the left plays a white-ball-era broadcast losing the ball in the lines; the right shows the same court with a clearly visible yellow ball.",
+   "actionKo": "두 화면이 같은 랠리를 재생하고, 시선이 자연히 오른쪽 노란 공을 따라간다.",
+   "actionEn": "Both screens replay the same rally; the eye naturally locks onto the yellow ball on the right.",
+   "movementKo": "왼쪽 화면에서 오른쪽 화면으로 랙 포커스.",
+   "movementEn": "Rack-focus from the left screen to the right.",
+   "mustShowKo": [
+    "두 브라운관",
+    "같은 랠리의 다른 시인성"
+   ],
+   "mustShowEn": [
+    "both CRTs",
+    "one rally, two visibilities"
+   ],
+   "mustAvoidKo": [
+    "채널 번호",
+    "자막"
+   ],
+   "mustAvoidEn": [
+    "channel numbers",
+    "captions"
+   ],
+   "infographic": {
+    "type": "leader-line",
+    "labelEnglish": "EASIER TO SEE",
+    "factKo": "노란 공이 표준처럼 자리 잡은 핵심 이유는 TV 시인성이다.",
+    "factEn": "TV visibility is the core reason yellow became the norm.",
+    "placementKo": "오른쪽 화면 노란 공에 고정된 리더선",
+    "placementEn": "a post leader-line anchored to the yellow ball on the right screen"
+   },
+   "evidenceFactIds": [
+    "F06",
+    "F11"
+   ],
+   "tedoriExtra": {
+    "enabled": false,
+    "roleKo": "",
+    "roleEn": "",
+    "placementKo": "",
+    "placementEn": "",
+    "actionKo": "",
+    "actionEn": ""
+   }
+  },
+  {
+   "cut": 18,
+   "narrativeFunction": "문장 18의 근거 시각화",
+   "presentationMode": "wide-context",
+   "cameraAngle": "high-angle",
+   "shotSize": "wide",
+   "lens": "24mm",
+   "cameraMove": "dolly-in",
+   "startFrameKo": "저녁의 아늑한 거실 부감 미니어처: TV 화면에는 노란 공 테니스 중계가 나오고, 소파 팔걸이 위에 실제 옵틱 옐로 공이 놓여 있다. 테돌이가 소파 구석에 앉아 화면을 본다.",
+   "startFrameEn": "A cozy evening living-room miniature from a high angle: the TV shows a yellow-ball tennis broadcast, a real optic-yellow ball rests on the sofa armrest, and Tedori sits at the sofa corner watching.",
+   "actionKo": "TV 속 노란 공이 랠리를 이어가는 동안 팔걸이의 실제 공이 살짝 굴러 멈추고, 테돌이가 그 공을 지그시 바라본다.",
+   "actionEn": "While the on-screen yellow ball keeps rallying, the real ball on the armrest rolls slightly and stops, and Tedori looks fondly at it.",
+   "movementKo": "TV와 공 쪽으로 아주 천천히 다가가는 달리 인. 마지막 프레임까지 멈추지 않는다.",
+   "movementEn": "A very slow dolly-in toward the TV and the ball, never stopping until the final frame.",
+   "mustShowKo": [
+    "노란 공 중계가 나오는 TV",
+    "팔걸이 위 실제 노란 공"
+   ],
+   "mustShowEn": [
+    "the TV playing a yellow-ball broadcast",
+    "the real yellow ball on the armrest"
+   ],
+   "mustAvoidKo": [
+    "엔드카드",
+    "글자"
+   ],
+   "mustAvoidEn": [
+    "end cards",
+    "text"
+   ],
+   "infographic": {
+    "type": "none",
+    "labelEnglish": "",
+    "factKo": "",
+    "factEn": "",
+    "placementKo": "",
+    "placementEn": ""
+   },
+   "evidenceFactIds": [
+    "F06",
+    "F11"
+   ],
+   "tedoriExtra": {
+    "enabled": true,
+    "roleKo": "테돌이는 소파에서 조용히 시청하는 마무리 엑스트라입니다.",
+    "roleEn": "Tedori is a quiet closing extra watching from the sofa.",
+    "placementKo": "소파 구석, 프레임 높이의 15~18%, TV 화면과 팔걸이의 공을 가리지 않습니다.",
+    "placementEn": "Sofa corner, 15-18% of frame height, never blocking the TV screen or the armrest ball.",
+    "actionKo": "화면을 보다가 팔걸이의 공으로 시선을 옮기고 끝에 살짝 고개를 기울입니다.",
+    "actionEn": "Tedori shifts gaze from the screen to the armrest ball and tilts its head slightly at the end."
+   }
+  }
+ ]
+}

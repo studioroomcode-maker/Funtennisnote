@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f5ef">
+  <title>Fun Tennis Note Studio</title>
+  <link rel="stylesheet" href="/styles.css?v=20260826-flow1">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-ball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M6.2 5.8c3.3 2.2 5.1 5.2 5.1 8.9M17.8 18.2c-3.3-2.2-5.1-5.2-5.1-8.9"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 7 8 5-8 5V7Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"/></symbol>
+    <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 3v12m0-12 4 4m-4-4L8 7"/><path d="M5 13v7h14v-7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></symbol>
+    <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4m10 0h4M3 15h4m10 0h4"/></symbol>
+    <symbol id="i-audio" viewBox="0 0 24 24"><path d="M5 10v4h4l5 4V6l-5 4H5Z"/><path d="M18 9a4 4 0 0 1 0 6M20 6a8 8 0 0 1 0 12"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 5-3.4 7.8-8 9-4.6-1.2-8-4-8-9V6l8-3Z"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+  </svg>
+
+  <div class="app-shell">
+    <header class="app-header">
+      <a class="brand" href="/" aria-label="Fun Tennis Note Studio 홈">
+        <span class="brand-mark"><svg><use href="#i-ball"></use></svg></span>
+        <span><strong>FTN Studio</strong><small>Production control</small></span>
+      </a>
+      <nav class="global-nav" aria-label="스튜디오 화면">
+        <button class="global-nav-button active" data-view="planning" type="button">에피소드 기획</button>
+        <button class="global-nav-button" data-view="pipeline" type="button">제작 파이프라인</button>
+        <a class="global-nav-button" href="/scene-design.html">씬 설계표</a>
+      </nav>
+      <div class="header-status" aria-label="프로젝트 상태">
+        <span class="live-dot"></span>
+        <span id="saveState">로컬 상태 동기화 중</span>
+      </div>
+      <div class="header-actions">
+        <button class="button button-ghost" id="validateButton" type="button">
+          <svg><use href="#i-shield"></use></svg><span>환경 검사</span>
+        </button>
+        <button class="button button-primary" id="exportButton" type="button">
+          <svg><use href="#i-export"></use></svg><span>작업 계획 내보내기</span>
+        </button>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="pipelineSidebar" aria-label="제작 단계" hidden>
+      <div class="sidebar-heading">
+        <span>PIPELINE</span>
+        <strong id="pipelinePercent">0%</strong>
+      </div>
+      <nav id="stageNav" class="stage-nav"></nav>
+      <div class="sidebar-footer">
+        <span class="eyebrow">PROJECT</span>
+        <strong>FTN-EP-001-V2</strong>
+        <span>9:16 · 78 sec · 18 cuts</span>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section id="planningView" class="app-view planning-view">
+        <section class="page-heading planning-heading">
+          <div>
+            <div class="eyebrow-row"><span class="eyebrow">CONTENT LIBRARY</span><span class="version-chip">279 BALANCED EPISODES</span></div>
+            <h1>다음 테니스 이야기를 고르세요</h1>
+            <p>파일럿·강력 후보·기존 아이디어를 흥미도와 주제 균형에 맞춰 하나의 번호 체계로 정리했습니다.</p>
+          </div>
+          <button class="button button-dark" id="continueSelectedButton" type="button">
+            <svg><use href="#i-play"></use></svg><span>선택작 제작으로 이동</span>
+          </button>
+        </section>
+
+        <section class="planning-summary" aria-label="에피소드 라이브러리 요약">
+          <article><span>통합 에피소드</span><strong id="catalogCount">279</strong><small>balanced numbering</small></article>
+          <article><span>찜한 후보</span><strong id="shortlistCount">0</strong><small>shortlist</small></article>
+          <article class="active-episode-summary"><span>현재 선택</span><strong id="activeEpisodeTitle">불러오는 중</strong><small id="activeEpisodeStatus">planning</small></article>
+        </section>
+
+        <section class="panel catalog-panel" aria-labelledby="catalogTitle">
+          <div class="panel-header catalog-header">
+            <div><span class="eyebrow">UNIFIED EPISODE CATALOG</span><h2 id="catalogTitle">흥미를 고르게 섞은 279편</h2></div>
+            <div class="catalog-toolbar">
+              <label class="search-field catalog-search"><svg><use href="#i-search"></use></svg><span class="sr-only">에피소드 검색</span><input id="episodeSearch" type="search" placeholder="제목·키워드 검색"></label>
+              <label class="compact-field"><span class="sr-only">정렬</span><select id="episodeSort"><option value="number">균형 번호순</option><option value="score">추천 점수순</option><option value="title">제목순</option></select></label>
+              <label class="compact-field"><span class="sr-only">검증 상태</span><select id="verificationFilter"><option value="all">모든 검증 상태</option><option value="verified">검증 완료</option><option value="research_required">리서치 필요</option></select></label>
+            </div>
+          </div>
+          <div id="categoryChips" class="category-chips" aria-label="에피소드 카테고리"></div>
+          <div id="episodeGrid" class="episode-grid"></div>
+          <div id="episodeEmpty" class="empty-state" hidden>조건에 맞는 에피소드가 없습니다.</div>
+          <div class="catalog-footer"><span id="catalogResultCount">0개 표시</span><button class="button button-outline" id="loadMoreEpisodes" type="button">더 보기</button></div>
+        </section>
+      </section>
+
+      <div id="pipelineView" class="app-view" hidden>
+      <section class="page-heading">
+        <div>
+          <div class="eyebrow-row"><span class="eyebrow">재미있는 테니스 노트</span><span class="version-chip" id="pipelineVersion">RUNTIME V1</span></div>
+          <h1 id="pipelineTitle">선택한 에피소드 불러오는 중</h1>
+          <p id="pipelineSubtitle">기획부터 최종 검수까지, 자동 실행과 승인 지점을 한 화면에서 관리합니다.</p>
+        </div>
+        <button class="button button-dark" id="runNextButton" type="button">
+          <svg><use href="#i-play"></use></svg>
+          <span>다음 단계 실행</span>
+        </button>
+      </section>
+
+      <section class="metric-grid" id="metricGrid" aria-label="프로젝트 요약"></section>
+
+      <section class="panel script-dna-panel" aria-labelledby="scriptDnaTitle">
+        <div class="panel-header script-dna-header">
+          <div>
+            <span class="eyebrow">SCRIPT DNA V3.2</span>
+            <h2 id="scriptDnaTitle">질문에서 답으로 이어지는 4파트 문법</h2>
+            <p>첫 질문을 18문장의 인과 흐름으로 풀고, 기술 정보는 쉬운 설명과 한 개의 근거로 정리합니다.</p>
+          </div>
+          <span class="script-lock">RULES LOCKED</span>
+        </div>
+        <div class="script-part-grid">
+          <article class="script-part-card">
+            <div class="script-part-meta"><b>01</b><span>0–12초</span></div>
+            <h3>궁금증·전복</h3>
+            <p>친숙한 대상에 관한 질문을 던지고 자연스러운 예상을 뒤집습니다.</p>
+            <blockquote>“익숙한 {대상}, 왜 이렇게 만들어졌을까요?”</blockquote>
+          </article>
+          <article class="script-part-card">
+            <div class="script-part-meta"><b>02</b><span>12–40초</span></div>
+            <h3>원인 사슬·위기</h3>
+            <p>달라진 한 가지가 움직임과 결과를 바꾸는 순서를 차근차근 잇습니다.</p>
+            <blockquote>“작은 차이는 결국 경기 전체를 흔듭니다.”</blockquote>
+          </article>
+          <article class="script-part-card">
+            <div class="script-part-meta"><b>03</b><span>40–72초</span></div>
+            <h3>해결·검증</h3>
+            <p>관점을 바꾼 해결책과 공식 근거를 처음 듣는 말로 설명합니다.</p>
+            <blockquote>“해결은 힘이 아니라 조건을 바꾸는 데 있었습니다.”</blockquote>
+          </article>
+          <article class="script-part-card">
+            <div class="script-part-meta"><b>04</b><span>72–90초</span></div>
+            <h3>답변·다정한 회수</h3>
+            <p>첫 질문에 명확히 답하고 새로운 정보 없이 편안하게 마무리합니다.</p>
+            <blockquote>“이제 익숙한 모습이 왜 그렇게 정해졌는지 설명할 수 있습니다.”</blockquote>
+          </article>
+        </div>
+
+        <div class="evidence-layer" aria-labelledby="evidenceLayerTitle">
+          <div class="evidence-layer-copy">
+            <span class="eyebrow">EVIDENCE LAYER</span>
+            <h3 id="evidenceLayerTitle">전문성은 한 컷에 한 근거만</h3>
+            <p>원리는 쉽게 읽고, 규격과 수치는 0.8~1.5초 그래픽으로 보완합니다.</p>
+          </div>
+          <div class="evidence-flow" aria-label="근거 표현 순서">
+            <div><b>FACT</b><span>무슨 일이 있었나</span></div>
+            <i aria-hidden="true">→</i>
+            <div><b>WHY</b><span>원리 한 가지</span></div>
+            <i aria-hidden="true">→</i>
+            <div><b>PROOF</b><span>규격·단면·비교</span></div>
+          </div>
+          <div class="evidence-limits">
+            <span>기술 컷 연속 2개 이하</span>
+            <span>전문용어 최대 2개</span>
+            <span>출처 없는 정밀 수치 금지</span>
+          </div>
+        </div>
+        <div class="script-guardrails" aria-label="대본 고정 규칙">
+          <span>정확히 18문장</span>
+          <span>CUT 01 · 궁금증 질문</span>
+          <span>CUT 10 · 위기 비트</span>
+          <span>CUT 11 · 전환 선언</span>
+          <span>CUT 18 · 첫 질문의 답</span>
+          <span>한 문장 = 한 컷</span>
+          <span>말투: -습니다 중심 · -까요?/-죠/-네요 포인트</span>
+          <span>핵심 주장 = 원리 또는 근거 1개</span>
+          <span class="script-ban">금지: 거든요 · 셈입니다 · 그렇죠 · 청자 호명</span>
+        </div>
+      </section>
+
+
+      <section class="panel script-editor-panel" aria-labelledby="scriptEditorTitle">
+        <div class="panel-header script-editor-header">
+          <div>
+            <span class="eyebrow">WORKING SCRIPT</span>
+            <h2 id="scriptEditorTitle">18문장 대본 작업실</h2>
+            <p>공식·1차 자료 조사 후 한국어 낭독 흐름을 다시 편집해, 자연스러운 18문장과 컷별 근거를 함께 저장합니다.</p>
+          </div>
+          <div class="script-editor-tools">
+            <label class="rhythm-field" for="scriptRhythmProfile">
+              <span>슬롯 리듬</span>
+              <select id="scriptRhythmProfile">
+                <option value="auto">자동 순환 · 권장</option>
+                <option value="time">시간 압축</option>
+                <option value="object">무관심 대상</option>
+                <option value="rule">규정 인용</option>
+                <option value="result">결과 선행</option>
+                <option value="physics">물리 한계</option>
+                <option value="history">인물·역사</option>
+              </select>
+              <small id="slotRhythmNote">에피소드마다 다른 슬롯 계열을 배정합니다.</small>
+            </label>
+            <span class="readiness-badge" id="projectReadiness">상태 확인 중</span>
+          </div>
+        </div>
+        <textarea id="scriptEditor" class="script-editor" rows="18" spellcheck="false" aria-describedby="scriptEditorHelp"></textarea>
+        <div class="operation-progress" id="scriptProgress" data-status="running" aria-live="polite" hidden>
+          <div class="operation-progress-head"><span class="operation-progress-dot" aria-hidden="true"></span><strong id="scriptProgressLabel">대본 생성 준비</strong><b id="scriptProgressPercent">0%</b></div>
+          <div class="operation-progress-track" id="scriptProgressBar" role="progressbar" aria-label="대본 작업 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+          <small id="scriptProgressDetail">작업을 준비하고 있습니다.</small>
+        </div>
+        <div class="script-editor-footer">
+          <p id="scriptEditorHelp">공식자료는 한 번 저장하고, 문장만 반복해서 다듬을 수 있습니다.</p>
+          <div class="script-action-flow" aria-label="대본 제작 단계">
+            <div class="script-action-step" id="researchActionStep" data-state="pending">
+              <span class="script-action-index" aria-hidden="true">1</span>
+              <div>
+                <button class="button button-outline" id="researchScriptButton" type="button">공식자료 조사</button>
+                <small id="researchScriptStatus">에피소드마다 한 번</small>
+              </div>
+            </div>
+            <div class="script-action-step" id="rewriteActionStep" data-state="locked">
+              <span class="script-action-index" aria-hidden="true">2</span>
+              <div>
+                <button class="button button-outline" id="rewriteScriptButton" type="button">문장 다듬기</button>
+                <small id="rewriteScriptStatus">조사 완료 후 반복 가능</small>
+              </div>
+            </div>
+            <button class="button button-primary" id="saveScriptButton" type="button">대본 저장</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel reference-library-panel" aria-labelledby="referenceLibraryTitle">
+        <div class="panel-header reference-library-header">
+          <div>
+            <span class="eyebrow">REFERENCE LOCK</span>
+            <h2 id="referenceLibraryTitle">테니스 형태·캐릭터·브랜드 기준</h2>
+            <p>형태 4종은 모든 이미지·영상의 기준입니다. 테돌이와 테니스노트 브랜드는 필요할 때만 사용합니다.</p>
+          </div>
+          <span class="reference-ready-badge" id="referenceLibraryStatus">확인 중</span>
+        </div>
+        <div class="reference-asset-grid" id="referenceLibraryCards"></div>
+        <div class="reference-policy-strip">
+          <span><b>ALWAYS</b> 코트 · 공 · 네트 · 라켓 형태 잠금</span>
+          <span><b>IF CHARACTER</b> 테돌이만 사용</span>
+          <span><b>IF BRAND</b> 테니스노트 로고·아이콘만 사용</span>
+        </div>
+      </section>
+
+      <section class="panel visual-research-panel" aria-labelledby="visualResearchTitle">
+        <div class="panel-header visual-research-header">
+          <div>
+            <span class="eyebrow">SUBJECT RESEARCH</span>
+            <h2 id="visualResearchTitle">주제별 형태 레퍼런스</h2>
+            <p>낯선 장비와 구조는 특허·공식 자료·논문·실물 기록을 한 번 조사합니다. 선택하고 승인한 구조만 이미지와 영상 프롬프트에 사용합니다.</p>
+          </div>
+          <div class="visual-research-actions">
+            <span class="reference-ready-badge" id="visualResearchStatus">조사 전</span>
+            <button class="button button-outline" id="researchVisualReferencesButton" type="button">시각 레퍼런스 조사</button>
+            <button class="button button-primary" id="approveVisualReferencesButton" type="button" disabled>선택 레퍼런스 승인</button>
+          </div>
+        </div>
+        <div class="operation-progress" id="visualResearchProgress" data-status="running" aria-live="polite" hidden>
+          <div class="operation-progress-head"><span class="operation-progress-dot" aria-hidden="true"></span><strong id="visualResearchProgressLabel">시각 조사 준비</strong><b id="visualResearchProgressPercent">0%</b></div>
+          <div class="operation-progress-track" id="visualResearchProgressBar" role="progressbar" aria-label="시각 레퍼런스 조사 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+          <small id="visualResearchProgressDetail">조사 범위를 준비하고 있습니다.</small>
+        </div>
+        <div class="visual-research-empty" id="visualResearchEmpty">
+          <span class="visual-research-empty-icon" aria-hidden="true"><svg><use href="#i-search"></use></svg></span>
+          <div><strong>아직 주제 전용 레퍼런스가 없습니다.</strong><p>먼저 공식자료 조사를 끝낸 뒤 실행하세요. 공개 사용이 확인된 이미지만 로컬에 저장하고, 나머지는 출처 링크로 검토합니다.</p></div>
+        </div>
+        <div class="visual-geometry-summary" id="visualGeometrySummary" hidden></div>
+        <div class="visual-reference-grid" id="visualReferenceCards" hidden></div>
+        <div class="visual-research-warnings" id="visualResearchWarnings" hidden></div>
+      </section>
+
+      <div class="workspace-grid">
+        <section class="panel provider-panel" aria-labelledby="providerTitle">
+          <div class="panel-header">
+            <div>
+              <span class="eyebrow">GENERATION ENGINE</span>
+              <h2 id="providerTitle">생성 엔진</h2>
+            </div>
+            <span class="help-text">기본값이며 컷별 변경 가능</span>
+          </div>
+          <div id="providerCards" class="provider-cards"></div>
+          <div class="provider-controls">
+            <label class="field">
+              <span>컷당 후보 수</span>
+              <select id="variantSelect">
+                <option value="1">1개</option>
+                <option value="2">2개</option>
+                <option value="3">3개</option>
+                <option value="4">4개</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>프롬프트 언어</span>
+              <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="ko">한국어</option>
+              </select>
+            </label>
+            <button class="button button-outline" id="applyProviderAll" type="button">기본 엔진을 전체 컷에 적용</button>
+          </div>
+          <div class="guardrail-row">
+            <label class="switch-control">
+              <input id="silentToggle" type="checkbox">
+              <span class="switch-ui" aria-hidden="true"></span>
+              <span><strong>무음 생성</strong><small>음성·음악·효과음 생성 금지</small></span>
+            </label>
+            <label class="switch-control">
+              <input id="labelsToggle" type="checkbox">
+              <span class="switch-ui" aria-hidden="true"></span>
+              <span><strong>기술 라벨 후반 삽입</strong><small>생성 영상의 깨진 글자 방지</small></span>
+            </label>
+          </div>
+        </section>
+
+        <section class="panel automation-panel" aria-labelledby="automationTitle">
+          <div class="panel-header">
+            <div>
+              <span class="eyebrow">AUTOMATION</span>
+              <h2 id="automationTitle">단계별 실행 방식</h2>
+            </div>
+            <button class="text-button" id="saveButton" type="button">지금 저장</button>
+          </div>
+          <div class="mode-legend" aria-label="실행 방식 설명">
+            <span><i class="legend-auto"></i>자동</span>
+            <span><i class="legend-review"></i>검토 후</span>
+            <span><i class="legend-manual"></i>수동</span>
+          </div>
+          <div id="automationList" class="automation-list"></div>
+        </section>
+      </div>
+
+      <section class="panel voice-panel" aria-labelledby="voiceTitle">
+        <div class="panel-header voice-header">
+          <div><span class="eyebrow">TYPECAST TTS</span><h2 id="voiceTitle">필재 목소리 더빙</h2></div>
+          <span class="connection-badge" id="typecastConnection">연결 확인 중</span>
+        </div>
+        <div class="voice-layout">
+          <div class="voice-settings">
+            <div class="voice-callout" id="typecastCallout"></div>
+            <div class="voice-fields">
+              <label class="field"><span>목소리</span><select id="typecastVoiceSelect"><option value="">필재 · 목록 새로고침 필요</option></select></label>
+              <label class="field"><span>Voice ID</span><input id="typecastVoiceId" type="text" placeholder="tc_... 또는 uc_..." autocomplete="off"></label>
+              <label class="field"><span>모델</span><select id="typecastModel"><option value="ssfm-v30">SSFM v3.0 · 권장</option><option value="ssfm-v21">SSFM v2.1</option></select></label>
+              <label class="field"><span>발화 속도</span><input id="typecastTempo" type="number" min="0.5" max="2" step="0.01"></label>
+              <label class="field"><span>문장 간격 목표</span><div class="suffix-input"><input id="sentenceGapMs" type="number" min="0" max="1000" step="10"><span>ms</span></div></label>
+            </div>
+            <p class="voice-note">문장 간격은 생성 후 편집 목표값입니다. Typecast API에는 문장 간 무음 길이를 직접 고정하는 옵션이 없어, 생성본을 듣고 70~110ms 범위로 정리합니다.</p>
+            <div class="voice-actions">
+              <button class="button button-outline" id="refreshVoicesButton" type="button">목소리 목록 새로고침</button>
+              <a class="button button-ghost" id="openTypecastApiConsole" href="https://typecast.ai/developers/api/" target="_blank" rel="noreferrer">API 콘솔 열기</a>
+              <a class="button button-ghost" id="openTypecastStudio" href="https://studio.typecast.ai/text-to-speech" target="_blank" rel="noreferrer">Typecast Studio 열기</a>
+              <button class="button button-ghost" id="checkVoiceFileButton" type="button">내보낸 WAV 확인</button>
+              <button class="button button-primary" id="generateVoiceButton" type="button">더빙 생성</button>
+            </div>
+            <div class="operation-progress" id="voiceProgress" data-status="running" aria-live="polite" hidden>
+              <div class="operation-progress-head"><span class="operation-progress-dot" aria-hidden="true"></span><strong id="voiceProgressLabel">더빙 생성 준비</strong><b id="voiceProgressPercent">0%</b></div>
+              <div class="operation-progress-track" id="voiceProgressBar" role="progressbar" aria-label="Typecast 더빙 생성 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+              <small id="voiceProgressDetail">Typecast 요청을 준비하고 있습니다.</small>
+            </div>
+          </div>
+          <div class="script-preview">
+            <div class="script-meta"><span>최종 내레이션</span><strong id="scriptCharacters">0자</strong></div>
+            <div id="narrationScript" class="script-text"></div>
+            <div class="audio-result" id="voiceResult"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel production-launch-panel" aria-labelledby="productionLaunchTitle">
+        <div class="panel-header production-launch-header">
+          <div><span class="eyebrow">PRODUCTION LAUNCH</span><h2 id="productionLaunchTitle">스토리보드 · 영상 제작</h2><p>Higgsfield 연결 컷은 실제 파일을 생성하고, Flow 컷은 웹 실행용 대기열로 분리합니다.</p></div>
+          <span class="production-sequence">더빙 → 스토리보드 → 영상</span>
+        </div>
+        <div class="production-launch-grid">
+          <article class="production-launch-card" id="storyboardLaunchCard">
+            <span class="production-launch-number">04</span>
+            <span class="production-launch-icon" aria-hidden="true"><svg><use href="#i-layers"></use></svg></span>
+            <div class="production-launch-copy"><span id="storyboardLaunchStatus" class="production-launch-status">상태 확인 중</span><h3>스토리보드 제작</h3><p id="storyboardLaunchNote">18컷의 첫 장면 이미지를 실제 생성하고 검토 시트 2장으로 묶습니다.</p></div>
+            <button class="button button-primary production-launch-button" id="buildStoryboardButton" data-run-stage="keyframes" type="button">스토리보드 실제 생성</button>
+          </article>
+          <div class="production-launch-arrow" aria-hidden="true"><svg><use href="#i-chevron"></use></svg></div>
+          <article class="production-launch-card" id="videoLaunchCard">
+            <span class="production-launch-number">05</span>
+            <span class="production-launch-icon" aria-hidden="true"><svg><use href="#i-film"></use></svg></span>
+            <div class="production-launch-copy"><span id="videoLaunchStatus" class="production-launch-status">상태 확인 중</span><h3>영상 제작</h3><p id="videoLaunchNote">Higgsfield 컷은 실제 영상을 생성하며 Flow 컷은 웹 수동 실행으로 남깁니다.</p></div>
+            <button class="button button-primary production-launch-button" id="buildVideoButton" data-run-stage="video" type="button">영상 실제 생성</button>
+          </article>
+        </div>
+        <div class="operation-progress" id="videoProgress" data-status="idle" aria-live="polite" hidden>
+          <div class="operation-progress-head"><span class="operation-progress-dot" aria-hidden="true"></span><strong id="videoProgressLabel">영상 생성 준비</strong><b id="videoProgressPercent">0%</b></div>
+          <div class="operation-progress-track" id="videoProgressBar" role="progressbar" aria-label="Higgsfield 영상 생성 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+          <small id="videoProgressDetail">Higgsfield로 설정한 컷만 실제 생성합니다.</small>
+        </div>
+      </section>
+
+      <section class="panel flow-prompt-panel" aria-labelledby="flowPromptTitle">
+        <div class="flow-prompt-header">
+          <div class="flow-prompt-heading">
+            <span class="flow-prompt-mark" aria-hidden="true"><svg><use href="#i-layers"></use></svg></span>
+            <div><span class="eyebrow">FLOW HANDOFF</span><h2 id="flowPromptTitle">Flow 이미지·영상 프롬프트</h2><p>긴 공통 앵커를 컷마다 한 장면·한 동작으로 압축하고, 첨부할 Ingredients와 시작 프레임을 따로 안내합니다.</p></div>
+          </div>
+          <div class="flow-prompt-actions">
+            <button class="button button-outline flow-prompt-build" id="flowVisualDesignButton" type="button"><svg><use href="#i-refresh"></use></svg><span>시각 설계 다시 만들기</span></button>
+            <button class="button button-dark flow-prompt-build" id="buildFlowPromptsButton" type="button"><svg><use href="#i-export"></use></svg><span>Flow 프롬프트 패키지 만들기</span></button>
+          </div>
+        </div>
+        <div class="flow-prompt-steps" aria-label="Flow 적용 순서">
+          <span><b>01</b> 이미지 프롬프트</span><span><b>02</b> Ingredients 첨부</span><span><b>03</b> 시작 프레임 → 영상</span>
+        </div>
+        <p class="flow-prompt-status" id="flowPromptStatus" aria-live="polite">영어 프롬프트 권장 · 컷 상세에서 한국어/영어를 전환하고 바로 복사할 수 있습니다.</p>
+        <div class="operation-progress flow-operation-progress" id="flowPromptProgress" data-status="idle" aria-live="polite" hidden>
+          <div class="operation-progress-head"><span class="operation-progress-dot" aria-hidden="true"></span><strong id="flowPromptProgressLabel">시각 설계 준비</strong><b id="flowPromptProgressPercent">0%</b></div>
+          <div class="operation-progress-track" id="flowPromptProgressBar" role="progressbar" aria-label="18컷 시각 설계와 Flow 프롬프트 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+          <small id="flowPromptProgressDetail">공식자료와 구조 레퍼런스를 다시 사용합니다.</small>
+        </div>
+      </section>
+
+      <section class="panel shot-panel" aria-labelledby="shotTitle">
+        <div class="panel-header shot-header">
+          <div>
+            <span class="eyebrow">SHOT QUEUE</span>
+            <h2 id="shotTitle">18컷 제작 대기열</h2>
+          </div>
+          <div class="shot-toolbar">
+            <label class="search-field">
+              <svg><use href="#i-search"></use></svg>
+              <span class="sr-only">컷 검색</span>
+              <input id="shotSearch" type="search" placeholder="내레이션 검색">
+            </label>
+            <label class="compact-field">
+              <span class="sr-only">엔진 필터</span>
+              <select id="providerFilter">
+                <option value="all">모든 엔진</option>
+                <option value="flow">Flow</option>
+                <option value="higgsfield">Higgsfield</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="bulk-bar">
+          <span><strong id="selectedCount">0</strong>개 선택</span>
+          <div class="bulk-group" aria-label="선택 컷 생성 방식 일괄 변경">
+            <label class="compact-field">
+              <span class="sr-only">선택 컷 생성 방식</span>
+              <select id="bulkGenerationMode">
+                <option value="keyframe">키프레임 → 영상</option>
+                <option value="direct">바로 영상</option>
+              </select>
+            </label>
+            <button class="button button-small button-outline" id="applyBulkMode" type="button">방식 적용</button>
+          </div>
+          <div class="bulk-group" aria-label="선택 스토리보드 이미지 모델 일괄 변경">
+            <label class="compact-field bulk-image-model-field">
+              <span class="sr-only">선택 컷 이미지 모델</span>
+              <select id="bulkImageModel">
+                <option value="nano-banana-2-lite">Nano Banana 2 Lite</option>
+                <option value="nano-banana-2">Nano Banana 2</option>
+                <option value="nano-banana-pro">Nano Banana Pro</option>
+              </select>
+            </label>
+            <button class="button button-small button-outline" id="applyBulkImageModel" type="button">이미지 모델 적용</button>
+          </div>
+          <div class="bulk-group" aria-label="선택 컷 영상 엔진과 모델 일괄 변경">
+          <label class="compact-field">
+            <span class="sr-only">선택 컷 엔진</span>
+            <select id="bulkProvider">
+              <option value="flow">Flow로 변경</option>
+              <option value="higgsfield">Higgsfield로 변경</option>
+            </select>
+          </label>
+          <label class="compact-field bulk-model-field">
+            <span class="sr-only">선택 컷 모델</span>
+            <select id="bulkModel" aria-label="선택한 컷에 적용할 모델"></select>
+          </label>
+          <button class="button button-small button-outline" id="applyBulkProvider" type="button">선택 엔진·모델 적용</button>
+          </div>
+        </div>
+        <div class="operation-progress operation-progress-static" id="imageProgress" data-status="idle" aria-live="polite">
+          <div class="operation-progress-head"><span class="operation-progress-dot" aria-hidden="true"></span><strong id="imageProgressLabel">스토리보드 준비 전</strong><b id="imageProgressPercent">0%</b></div>
+          <div class="operation-progress-track" id="imageProgressBar" role="progressbar" aria-label="스토리보드 제작 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+          <small id="imageProgressDetail">대기열·파일 등록·승인 상태를 실제 완료 수로 표시합니다.</small>
+        </div>
+        <section class="storyboard-overview" aria-labelledby="storyboardOverviewTitle">
+          <div class="storyboard-overview-header">
+            <div><span class="eyebrow">STORYBOARD SHEETS</span><h3 id="storyboardOverviewTitle">18컷 시작 프레임 · 2장</h3><p>각 컷의 첫 장면을 1–9컷과 10–18컷으로 묶어 한눈에 검토합니다.</p></div>
+            <span id="storyboardOverviewStatus" class="storyboard-overview-status">2장 예정</span>
+          </div>
+          <div id="storyboardSheetGrid" class="storyboard-sheet-grid"></div>
+        </section>
+        <details class="model-credit-samples">
+          <summary class="model-credit-summary">
+            <div class="model-credit-header"><div><span class="eyebrow">CREDIT SAMPLE</span><h3 id="modelCreditTitle">모델별 소모 크레딧 수준</h3></div><span id="creditSampleUpdated"></span></div>
+            <span class="model-credit-toggle" aria-hidden="true"><svg><use href="#i-chevron"></use></svg></span>
+          </summary>
+          <div class="model-credit-body" aria-labelledby="modelCreditTitle">
+            <div id="modelCreditSamples"></div>
+            <p>1개 결과 기준입니다. 후보 수가 2개면 두 배로 계산되며 실제 실행 직전 서비스 화면의 단가를 다시 확인하세요.</p>
+          </div>
+        </details>
+        <div class="shot-table-wrap">
+          <table class="shot-table">
+            <thead>
+              <tr>
+                <th class="check-cell"><label><span class="sr-only">전체 선택</span><input id="selectAllShots" type="checkbox"></label></th>
+                <th>컷</th>
+                <th>구간·내레이션</th>
+                <th>생성 방식</th>
+                <th>이미지 모델</th>
+                <th>영상 엔진</th>
+                <th>영상 모델</th>
+                <th>스토리보드</th>
+                <th><span class="sr-only">상세</span></th>
+              </tr>
+            </thead>
+            <tbody id="shotTableBody"></tbody>
+          </table>
+        </div>
+        <div id="shotEmpty" class="empty-state" hidden>조건에 맞는 컷이 없습니다.</div>
+      </section>
+
+      <div class="lower-grid">
+        <section class="panel budget-panel" aria-labelledby="budgetTitle">
+          <div class="panel-header">
+            <div><span class="eyebrow">CREDIT PLAN</span><h2 id="budgetTitle">예상 사용량</h2></div>
+          </div>
+          <div id="budgetContent"></div>
+        </section>
+        <section class="panel artifact-panel" aria-labelledby="artifactTitle">
+          <div class="panel-header">
+            <div><span class="eyebrow">RECENT OUTPUT</span><h2 id="artifactTitle">최근 산출물</h2></div>
+          </div>
+          <div id="artifactList" class="artifact-list"></div>
+        </section>
+      </div>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="shotDialog" class="dialog">
+    <div class="dialog-shell">
+      <div class="dialog-header">
+        <div><span class="eyebrow" id="dialogEyebrow">CUT</span><h2 id="dialogTitle">컷 상세</h2></div>
+        <button class="icon-button" data-close-dialog="shotDialog" type="button" aria-label="컷 상세 닫기"><svg><use href="#i-close"></use></svg></button>
+      </div>
+      <div id="shotDialogBody" class="dialog-body"></div>
+    </div>
+  </dialog>
+
+  <dialog id="validationDialog" class="dialog">
+    <div class="dialog-shell dialog-small">
+      <div class="dialog-header">
+        <div><span class="eyebrow">ENVIRONMENT</span><h2>제작 환경 검사</h2></div>
+        <button class="icon-button" data-close-dialog="validationDialog" type="button" aria-label="환경 검사 닫기"><svg><use href="#i-close"></use></svg></button>
+      </div>
+      <div id="validationBody" class="dialog-body"></div>
+    </div>
+  </dialog>
+
+  <dialog id="episodeDialog" class="dialog">
+    <div class="dialog-shell dialog-small">
+      <div class="dialog-header">
+        <div><span class="eyebrow" id="episodeDialogEyebrow">EPISODE</span><h2 id="episodeDialogTitle">에피소드 상세</h2></div>
+        <button class="icon-button" data-close-dialog="episodeDialog" type="button" aria-label="에피소드 상세 닫기"><svg><use href="#i-close"></use></svg></button>
+      </div>
+      <div id="episodeDialogBody" class="dialog-body"></div>
+    </div>
+  </dialog>
+
+  <div id="toastRegion" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <script src="/app.js?v=20260826-flow1" type="module"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

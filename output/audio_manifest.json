@@ -1,0 +1,111 @@
+{
+  "episode_id": "FTN-EP-001",
+  "style_direction": "Low, restrained Korean mystery-exploration documentary; original sound design, not a reproduction of any existing program audio.",
+  "voice": {
+    "name": "이토",
+    "voice_id": "77e850b8-3bca-46d3-9fa9-7c1fbfcf054d",
+    "voice_type": "element",
+    "model": "seed_audio",
+    "delivery": "낮고 차분한 한국어 미스터리 탐구 다큐 내레이션, 중성적인 성인 음색, 절제된 호기심, 또렷하고 자연스러운 속도"
+  },
+  "credits": {
+    "before_audio_generation": 813,
+    "after_audio_generation": 805.4,
+    "used": 7.6
+  },
+  "takes": [
+    {
+      "index": 1,
+      "window_seconds": 4,
+      "text": "지금 우리가 사용하는 테니스공은 원래 노란색이 아니었습니다.",
+      "job_id": "eab88afa-1d7b-4d01-bef9-97c4985023f1",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_110359_eab88afa-1d7b-4d01-bef9-97c4985023f1.wav",
+      "local_file": "output/audio/voice01.wav",
+      "file_duration_seconds": 4,
+      "internal_pauses_over_0_8s": 0,
+      "gate_pass": true
+    },
+    {
+      "index": 2,
+      "window_seconds": 5,
+      "text": "과거에는 코트의 배경에 따라 검은 공이나 흰 공을 사용했습니다.",
+      "job_id": "b8dc3bf6-c058-4158-a7ca-c03a1a313c1f",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_110358_b8dc3bf6-c058-4158-a7ca-c03a1a313c1f.wav",
+      "local_file": "output/audio/voice02.wav",
+      "file_duration_seconds": 5,
+      "internal_pauses_over_0_8s": 0,
+      "gate_pass": true
+    },
+    {
+      "index": 3,
+      "window_seconds": 5,
+      "text": "하지만 빠르게 움직이는 공을 TV 화면에서 따라가기는 쉽지 않았습니다.",
+      "job_id": "7fbf8e2a-e78b-48a4-bf99-db224df35d97",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_110358_7fbf8e2a-e78b-48a4-bf99-db224df35d97.wav",
+      "local_file": "output/audio/voice03.wav",
+      "file_duration_seconds": 5,
+      "internal_pauses_over_0_8s": 0,
+      "gate_pass": true
+    },
+    {
+      "index": 4,
+      "window_seconds": 6,
+      "text": "연구 결과 노란 공이 TV 시청자에게 더 잘 보이는 것으로 나타났습니다.",
+      "job_id": "dc948dee-8cee-4384-974a-1777042904b9",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_110358_dc948dee-8cee-4384-974a-1777042904b9.wav",
+      "local_file": "output/audio/voice04.wav",
+      "file_duration_seconds": 6,
+      "internal_pauses_over_0_8s": 0,
+      "gate_pass": true
+    },
+    {
+      "index": 5,
+      "window_seconds": 6,
+      "text": "그래서 국제테니스연맹은 1972년 노란 테니스공을 공식 규칙에 도입했습니다.",
+      "job_id": "587d3d91-a66e-4fe7-9abc-37bb480da194",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_110358_587d3d91-a66e-4fe7-9abc-37bb480da194.wav",
+      "local_file": "output/audio/voice05.wav",
+      "file_duration_seconds": 6,
+      "internal_pauses_over_0_8s": 0,
+      "gate_pass": true
+    },
+    {
+      "index": 6,
+      "window_seconds": 8,
+      "text": "하지만 모든 대회가 바로 바뀐 것은 아니어서 윔블던은 흰 공을 계속 쓰다가 1986년에야 노란 공을 채택했습니다.",
+      "job_id": "6c857f3a-5db2-467c-b5fa-8a9d14b93ccb",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_110400_6c857f3a-5db2-467c-b5fa-8a9d14b93ccb.wav",
+      "local_file": "output/audio/voice06.wav",
+      "file_duration_seconds": 8,
+      "internal_pauses_over_0_8s": 0,
+      "gate_pass": true
+    },
+    {
+      "index": 7,
+      "window_seconds": 9,
+      "text": "우리가 당연하게 보는 노란 테니스공은 경기장뿐 아니라 화면 밖 관중이 공을 더 잘 보도록 탄생했습니다. 다음 테니스 노트에서 또 만나요.",
+      "job_id": "09d1da10-1d95-4e9e-befc-00be00a6e422",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_110504_09d1da10-1d95-4e9e-befc-00be00a6e422.wav",
+      "local_file": "output/audio/voice07.wav",
+      "file_duration_seconds": 9,
+      "internal_pauses_over_0_8s": 0,
+      "gate_pass": true
+    }
+  ],
+  "audio_assets": {
+    "narration": "output/audio/narration.wav",
+    "bgm": "output/audio/bgm_mystery_documentary.wav",
+    "sfx": "output/audio/sfx_mystery_documentary.wav",
+    "bgm_description": "Original low harmonic drone, filtered air texture, and restrained pulsing motif.",
+    "sfx_description": "Original CRT hum/static, inspection sweep, comparison beep, mechanical clicks, grass roller texture, tennis-ball bounce, and ending chime."
+  },
+  "final_master": {
+    "file": "output/FTN_EP01_yellow_tennis_ball_no_subtitles_with_sound_mastered.mp4",
+    "duration_seconds": 43,
+    "video": "H.264 1080x1920 30fps yuv420p",
+    "audio": "AAC stereo 48kHz 192kbps",
+    "integrated_loudness_lufs": -16.8,
+    "true_peak_dbfs": -1.5,
+    "subtitles": false
+  }
+}

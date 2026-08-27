@@ -1,0 +1,149 @@
+{
+  "episodeId": "FTN-PILOT-02",
+  "completedAt": "2026-08-26T03:49:27.124Z",
+  "provider": "codex-search",
+  "facts": [
+    {
+      "id": "F01",
+      "fact": "노란 공 도입 이전의 테니스공은 코트 배경색에 따라 검은색 또는 흰색이었다.",
+      "proof": "ITF의 테니스공 역사 문서는 과거 공의 색이 코트 배경에 맞춰 검은색이나 흰색으로 선택됐다고 설명한다.",
+      "graphic": "BLACK / WHITE",
+      "sourceUrls": [
+        "https://www.itftennis.com/media/2280/balls-history-of-tennis-balls.pdf"
+      ]
+    },
+    {
+      "id": "F02",
+      "fact": "테니스 중계가 확대되자 국제 규칙에 노란 공을 허용하기 전에 2년간의 실험이 진행됐다.",
+      "proof": "ITF 공식 연혁은 TV 중계 증가를 배경으로 2년간 실험한 뒤 노란 공 사용이 허용됐으며, 그전까지는 흰 공이 요구됐다고 기록한다.",
+      "graphic": "2-YEAR TRIAL",
+      "sourceUrls": [
+        "https://www.itftennis.com/en/about-us/organisation/faqs/?type=world-tennis"
+      ]
+    },
+    {
+      "id": "F03",
+      "fact": "ITF가 기록한 노란 공 도입 근거는 TV 시청자에게 더 잘 보인다는 연구 결과였다.",
+      "proof": "ITF의 테니스공 역사 문서는 연구 결과 노란 공이 텔레비전 시청자에게 더 잘 보였기 때문에 규칙에 도입됐다고 명시한다.",
+      "graphic": "TV VISIBILITY",
+      "sourceUrls": [
+        "https://www.itftennis.com/media/2280/balls-history-of-tennis-balls.pdf"
+      ]
+    },
+    {
+      "id": "F04",
+      "fact": "ITF는 1972년에 노란 테니스공을 테니스 규칙에 도입했다.",
+      "proof": "ITF 공식 역사 자료와 연혁이 모두 1972년을 노란 공의 규칙 도입·허용 시점으로 기록한다.",
+      "graphic": "1972",
+      "sourceUrls": [
+        "https://www.itftennis.com/media/2280/balls-history-of-tennis-balls.pdf",
+        "https://www.itftennis.com/en/about-us/organisation/faqs/?type=world-tennis"
+      ]
+    },
+    {
+      "id": "F05",
+      "fact": "윔블던은 ITF의 1972년 변경 뒤에도 흰 공을 유지하다가 1986년에 처음 노란 공을 사용했다.",
+      "proof": "ITF 역사 문서와 윔블던 공식 자료가 모두 윔블던의 노란 공 채택 연도를 1986년으로 확인한다. 윔블던 자료는 흰 공을 108년간 사용했다고 설명한다.",
+      "graphic": "WIMBLEDON 1986",
+      "sourceUrls": [
+        "https://www.itftennis.com/media/2280/balls-history-of-tennis-balls.pdf",
+        "https://www.wimbledon.com/pdf/Online_Pack_Bouncing_Along.pdf"
+      ]
+    },
+    {
+      "id": "F06",
+      "fact": "윔블던은 흰 공에서 노란 공으로 바꾼 결과 컬러 텔레비전에서 공을 더 쉽게 볼 수 있었다고 설명한다.",
+      "proof": "윔블던 공식 교육 자료는 1986년의 색상 변경과 컬러 TV에서의 가시성 향상을 직접 연결한다.",
+      "graphic": "COLOUR TV",
+      "sourceUrls": [
+        "https://www.wimbledon.com/pdf/Online_Pack_Bouncing_Along.pdf"
+      ]
+    },
+    {
+      "id": "F07",
+      "fact": "현행 ITF 규칙은 성인 경기용 공의 색을 노란색으로만 한정하지 않고 흰색 또는 노란색으로 허용한다.",
+      "proof": "2026 ITF Rules of Tennis 부록 I의 색상 항목은 Type 1, Type 2, Type 3 및 고지대용 공 모두에 대해 ‘White or Yellow’라고 규정한다.",
+      "graphic": "WHITE OR YELLOW",
+      "sourceUrls": [
+        "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+      ]
+    },
+    {
+      "id": "F08",
+      "fact": "현행 규칙에서 흰 공과 노란 공은 별개의 속도·무게 등급이 아니라 동일한 공 유형 안에서 허용되는 두 색상이다.",
+      "proof": "ITF 규격표는 각 공 유형별 질량·크기·반발·변형 범위를 먼저 정하고, 동일한 행에서 색상을 흰색 또는 노란색으로 허용한다. 따라서 색상 자체가 별도의 성능 등급을 뜻하지 않는다.",
+      "graphic": "SAME PERFORMANCE CLASS",
+      "sourceUrls": [
+        "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+      ]
+    },
+    {
+      "id": "F09",
+      "fact": "일반 테니스공은 속이 빈 고무 코어와 울·나일론·면으로 구성된 직물 커버로 이루어지며, 코어는 가압식 또는 무압식일 수 있다.",
+      "proof": "ITF 2026 기술 책자는 Stage 3 폼 공을 제외한 테니스공의 기본 구조를 속이 빈 고무 코어와 직물 커버로 정의한다.",
+      "graphic": "HOLLOW RUBBER CORE",
+      "sourceUrls": [
+        "https://www.itftennis.com/media/15639/2026-technical-booklet.pdf"
+      ]
+    },
+    {
+      "id": "F10",
+      "fact": "공식 대회용 공의 적합성은 색상만으로 결정되지 않으며 질량, 크기, 변형, 반발 및 내구성 등의 시험을 통과해야 한다.",
+      "proof": "ITF 공 승인 문서는 순서대로 환경 적응, 사전 압축·컨디셔닝, 질량, 크기, 변형, 반발, 내구성을 시험하며 하나라도 실패하면 승인을 부여하지 않는다고 설명한다. 현행 규칙도 ITF 승인 목록에 등재된 공을 요구한다.",
+      "graphic": "7 TEST STEPS",
+      "sourceUrls": [
+        "https://www.itftennis.com/media/2100/balls-ball-approval-tests.pdf",
+        "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+      ]
+    },
+    {
+      "id": "F11",
+      "fact": "현행 규칙은 선수의 시야를 방해할 수 있는 흰색·노란색 또는 기타 밝은 색 광고물을 코트 주변에 사용하는 것도 제한한다.",
+      "proof": "2026 ITF Rules of Tennis 부록 V는 네트, 코트 뒤·옆 및 코트 바깥 표면의 광고나 표시가 선수 시야 또는 경기 조건을 방해할 수 있는 흰색·노란색·기타 밝은 색을 포함해서는 안 된다고 규정한다.",
+      "graphic": "VISUAL CONTRAST",
+      "sourceUrls": [
+        "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "History of Tennis Balls",
+      "url": "https://www.itftennis.com/media/2280/balls-history-of-tennis-balls.pdf",
+      "supports": "과거의 검은색·흰색 공, TV 시청자 가시성 연구, 1972년 노란 공 규칙 도입, 윔블던의 1986년 채택을 뒷받침한다."
+    },
+    {
+      "title": "World Tennis Frequently Asked Questions — Historical Timeline",
+      "url": "https://www.itftennis.com/en/about-us/organisation/faqs/?type=world-tennis",
+      "supports": "TV 중계 증가, 2년간의 실험, 1972년 노란 공 허용 및 이전의 흰 공 요구를 뒷받침한다."
+    },
+    {
+      "title": "Wimbledon — Bouncing Along: New Balls Please",
+      "url": "https://www.wimbledon.com/pdf/Online_Pack_Bouncing_Along.pdf",
+      "supports": "윔블던이 흰 공을 108년간 사용한 뒤 1986년에 노란 공으로 바꿨으며 컬러 TV 가시성이 향상됐다는 설명을 뒷받침한다."
+    },
+    {
+      "title": "2026 Rules of Tennis",
+      "url": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf",
+      "supports": "현행 성인용 공의 허용 색상인 흰색 또는 노란색, 공 유형별 성능 규격, ITF 승인 요건 및 시야를 방해하는 밝은 광고 색상 제한을 뒷받침한다."
+    },
+    {
+      "title": "2026 ITF Technical Booklet",
+      "url": "https://www.itftennis.com/media/15639/2026-technical-booklet.pdf",
+      "supports": "테니스공의 고무 코어·직물 커버 구조와 성능 일관성을 위한 통제 시험 원칙을 뒷받침한다."
+    },
+    {
+      "title": "ITF Ball Approval Tests",
+      "url": "https://www.itftennis.com/media/2100/balls-ball-approval-tests.pdf",
+      "supports": "공식 대회용 공의 승인 시험 항목과 하나의 시험이라도 실패하면 승인받을 수 없다는 절차를 뒷받침한다."
+    }
+  ],
+  "factWarnings": [
+    "에피소드 훅의 ‘선수가 아니라 TV 시청자를 위해’에서 TV 시청자 부분은 공식 자료로 확인되지만, 선수 가시성이나 다른 동기가 전혀 없었다는 배타적 의미까지는 공식 자료가 입증하지 않는다. ‘TV 시청자에게 더 잘 보인다는 연구가 공식 도입 근거였다’로 표현하는 것이 안전하다.",
+    "ITF 자료는 2년간 실험했다고 기록하지만 실험의 정확한 시작일, 기관, 표본, 측정 방식 및 수치 결과는 제시하지 않는다. 이를 임의로 복원해서는 안 된다.",
+    "노란 공을 특정 개인이 발명하거나 도입했다는 주장, 특히 David Attenborough가 직접 발명했다는 일화는 이번에 확인한 공식 자료에서 입증되지 않았다.",
+    "‘옵틱 옐로’, 형광색, 연두색이라는 명칭 논쟁이나 특정 파장·명도 수치는 이번 공식 자료에서 검증되지 않았으므로 사실로 단정하지 않는다.",
+    "1972년에 모든 대회가 즉시 노란 공으로 전환한 것은 아니다. 윔블던처럼 1986년까지 흰 공을 유지한 대회가 있었고, 현행 규칙도 흰색을 여전히 허용한다."
+  ],
+  "migratedFromScript": false
+}

@@ -1,0 +1,56 @@
+{
+  "episode_id": "FTN-EP-001",
+  "created_at": "2026-08-25T21:00:00+09:00",
+  "voice_provider": "Typecast",
+  "typecast_project_id": "6a8d7e4c5a16b507546117b9",
+  "typecast_project_name": "FTN EP01 테니스공 노란색 - 필재",
+  "voice": {
+    "name": "필재",
+    "language": "ko-KR",
+    "speed": "1.0x",
+    "quality": "high",
+    "format": "wav",
+    "credit_cost": 227,
+    "credits_before": 30000,
+    "credits_after": 29773
+  },
+  "narration": {
+    "source_file": "output/audio/typecast/piljae_narration.wav",
+    "source_duration_seconds": 33.050136,
+    "sample_rate_hz": 44100,
+    "channels": 1,
+    "timing_method": "Natural 1.0x speech preserved; seven paragraphs trimmed at detected paragraph silences and positioned inside their matching scene windows without time-stretching.",
+    "scene_start_seconds": [0.6, 4.5, 9.7, 14.75, 20.5, 26.6, 34.4],
+    "script": [
+      "테니스공은 원래 노란색이 아니었습니다.",
+      "과거에는 코트 배경에 따라 검은 공과 흰 공을 썼습니다.",
+      "빠른 공은 TV 화면에서 따라가기 어려웠습니다.",
+      "연구 결과 노란 공이 TV에서 더 잘 보였습니다.",
+      "국제테니스연맹은 1972년 노란 공을 규칙에 도입했습니다.",
+      "윔블던은 흰 공을 고수하다 1986년에야 노란 공을 채택했습니다.",
+      "노란 테니스공은 화면 밖 관중도 공을 잘 보게 하려고 탄생했습니다. 다음 테니스 노트에서 만나요."
+    ]
+  },
+  "mix": {
+    "video_source": "output/FTN_EP01_yellow_tennis_ball_no_subtitles.mp4",
+    "background_music": "output/audio/bgm_mystery_documentary.wav",
+    "sound_effects": "output/audio/sfx_mystery_documentary.wav",
+    "music_ducking": "Sidechain compression keyed by narration",
+    "voice_processing": "70 Hz high-pass, 11 kHz low-pass, loudness normalization",
+    "final_master": "output/FTN_EP01_yellow_tennis_ball_no_subtitles_with_sound_piljae_mastered.mp4"
+  },
+  "validation": {
+    "duration_seconds": 43.0,
+    "video_codec": "h264",
+    "resolution": "1080x1920",
+    "frame_rate": "30/1",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_sample_rate_hz": 48000,
+    "audio_channels": 2,
+    "integrated_loudness_lufs": -16.4,
+    "loudness_range_lu": 5.6,
+    "true_peak_dbfs": -1.4,
+    "subtitles": false
+  }
+}

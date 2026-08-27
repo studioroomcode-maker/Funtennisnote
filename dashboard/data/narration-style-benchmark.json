@@ -1,0 +1,66 @@
+{
+  "checkedAt": "2026-08-25T20:53:24.3203113Z",
+  "purpose": "High-level narration rhythm benchmark; no signature phrasing is copied.",
+  "channelUrl": "https://www.youtube.com/channel/UCeEM8XgdgUyaWE1Z6_5sHbQ/shorts",
+  "samples": [
+    {
+      "videoId": "R5ygrxWNAbQ",
+      "viewsLabel": "227만",
+      "seconds": 90.9,
+      "characters": 900,
+      "formalEndings": 11,
+      "jyo": 6,
+      "geodeunyo": 0,
+      "connectors": 3
+    },
+    {
+      "videoId": "bGwaraiOVRw",
+      "viewsLabel": "171만",
+      "seconds": 83.6,
+      "characters": 917,
+      "formalEndings": 11,
+      "jyo": 4,
+      "geodeunyo": 2,
+      "connectors": 2
+    },
+    {
+      "videoId": "ql7MmZEwffU",
+      "viewsLabel": "137만",
+      "seconds": 90.6,
+      "characters": 942,
+      "formalEndings": 9,
+      "jyo": 1,
+      "geodeunyo": 1,
+      "connectors": 1
+    },
+    {
+      "videoId": "OO6bwTN4q7o",
+      "viewsLabel": "111만",
+      "seconds": 93.5,
+      "characters": 964,
+      "formalEndings": 12,
+      "jyo": 7,
+      "geodeunyo": 0,
+      "connectors": 2
+    },
+    {
+      "videoId": "sc0eoD1bSrE",
+      "viewsLabel": "97만",
+      "seconds": 127.4,
+      "characters": 1337,
+      "formalEndings": 12,
+      "jyo": 5,
+      "geodeunyo": 2,
+      "connectors": 4
+    }
+  ],
+  "appliedRules": [
+    "concrete subject and visible verbs",
+    "2-3 sentence narrative groups",
+    "8-12 formal endings",
+    "2-5 conversational endings",
+    "geodeunyo at most once",
+    "650-850 Korean characters for Tennisnote",
+    "no copied signature phrase"
+  ]
+}

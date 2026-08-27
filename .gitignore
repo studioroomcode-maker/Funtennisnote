@@ -1,0 +1,12 @@
+# generated media outputs (regenerable, large) — keep JSON/MD plans & manifests
+output/**/*.mp4
+output/**/*.wav
+output/**/*.jpg
+output/**/*.jpeg
+output/**/*.png
+output/**/*.webp
+output/**/*.svg
+
+# local state temp
+dashboard/data/state.json.tmp
+node_modules/

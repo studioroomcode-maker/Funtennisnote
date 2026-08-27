@@ -1,0 +1,47 @@
+{
+  "episode_id": "FTN-EP-001",
+  "created_at": "2026-08-25T21:30:00+09:00",
+  "revision": "faster pacing and tighter sentence gaps",
+  "voice_provider": "Typecast",
+  "typecast_project_id": "6a8d7e4c5a16b507546117b9",
+  "voice": {
+    "name": "필재",
+    "source_speed": "1.0x",
+    "final_local_speed": "1.15x",
+    "rate_change_authorized_by_user": true,
+    "source_file": "output/audio/typecast/piljae_narration.wav",
+    "processed_file": "output/audio/typecast/piljae_narration_fast_1.15x_tight.wav",
+    "processing": "Pitch-preserving FFmpeg atempo applied independently to seven detected speech paragraphs; head, tail, and paragraph-boundary silence removed.",
+    "new_typecast_credits_used": 0,
+    "typecast_credits_remaining": 29773,
+    "note": "Typecast 1.2x export required a Plus plan, so no additional export or credit charge was made."
+  },
+  "timing": {
+    "original_video_duration_seconds": 43.0,
+    "final_video_duration_seconds": 32.0,
+    "scene_durations_seconds": [3.0, 3.8, 3.5, 4.2, 4.5, 5.5, 7.5],
+    "narration_start_seconds": [0.15, 3.15, 6.95, 10.45, 14.65, 19.15, 24.65],
+    "inter_sentence_gap_design": "approximately 0.4 to 1.0 seconds",
+    "visual_speed_range": "1.20x to 1.45x"
+  },
+  "mix": {
+    "background_music": "output/audio/bgm_mystery_documentary.wav",
+    "sound_effects": "output/audio/sfx_mystery_documentary.wav",
+    "music_ducking": "Sidechain compression keyed by narration",
+    "final_master": "output/FTN_EP01_yellow_tennis_ball_no_subtitles_with_sound_piljae_fast_mastered.mp4"
+  },
+  "validation": {
+    "duration_seconds": 32.0,
+    "video_codec": "h264",
+    "resolution": "1080x1920",
+    "frame_rate": "30/1",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_sample_rate_hz": 48000,
+    "audio_channels": 2,
+    "integrated_loudness_lufs": -15.97,
+    "true_peak_dbfs": -1.48,
+    "loudness_range_lu": 4.3,
+    "subtitles": false
+  }
+}

@@ -1,0 +1,787 @@
+{
+  "generatedAt": "2026-08-25T16:31:59.358Z",
+  "episodeId": "FTN-IDEA-030",
+  "title": "라켓을 길게 만들면 서브가 빨라질까",
+  "targetDurationSeconds": 75,
+  "aspectRatio": "9:16",
+  "note": "자격증명은 포함되지 않습니다. Flow 또는 Higgsfield에서 실행 후 결과 파일만 지정 경로에 저장하세요.",
+  "jobs": [
+    {
+      "id": "FTN-IDEA-030-C01",
+      "cut": 1,
+      "time": "00:00.0–00:04.2",
+      "durationSeconds": 4.2,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c01.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c01_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 01. Visualize the meaning of the narration “서브 한 번. 라켓 길이 하나로 결과가 달라질 수 있습니다.” with the most direct camera angle and shot size. Allow only the evidence label “SUBJECT” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C02",
+      "cut": 2,
+      "time": "00:04.2–00:08.3",
+      "durationSeconds": 4.1,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c02.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c02_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 02. Visualize the meaning of the narration “길어질수록 빨라질 것 같지만, 실제로는 반대가 될 수 있습니다.” with the most direct camera angle and shot size. Allow only the evidence label “COMMON VIEW” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C03",
+      "cut": 3,
+      "time": "00:08.3–00:12.5",
+      "durationSeconds": 4.2,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c03.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c03_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 03. Visualize the meaning of the narration “손에서 헤드까지 거리가 늘어나면 라켓 끝은 더 큰 원을 그립니다.” with the most direct camera angle and shot size. Allow only the evidence label “ACTUAL” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C04",
+      "cut": 4,
+      "time": "00:12.5–00:16.7",
+      "durationSeconds": 4.2,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c04.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c04_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 04. Visualize the meaning of the narration “같은 각속도라면 헤드의 선속도도 자연히 높아집니다.” with the most direct camera angle and shot size. Allow only the evidence label “BEFORE” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C05",
+      "cut": 5,
+      "time": "00:16.7–00:20.8",
+      "durationSeconds": 4.1,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c05.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c05_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 05. Visualize the meaning of the narration “하지만 ITF 규정은 전체 길이를 73.7센티미터 이하로 제한합니다.” with the most direct camera angle and shot size. Allow only the evidence label “FUNCTION” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C06",
+      "cut": 6,
+      "time": "00:20.8–00:25.0",
+      "durationSeconds": 4.2,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c06.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c06_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 06. Visualize the meaning of the narration “더 큰 문제는 길이가 질량도 회전축에서 멀리 밀어낸다는 점입니다.” with the most direct camera angle and shot size. Allow only the evidence label “PROBLEM” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C07",
+      "cut": 7,
+      "time": "00:25.0–00:29.2",
+      "durationSeconds": 4.2,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c07.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c07_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 07. Visualize the meaning of the narration “그러면 회전 저항, 즉 스윙웨이트가 함께 커지기 쉽습니다.” with the most direct camera angle and shot size. Allow only the evidence label “WHY” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C08",
+      "cut": 8,
+      "time": "00:29.2–00:33.3",
+      "durationSeconds": 4.1,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c08.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c08_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 08. Visualize the meaning of the narration “커진 스윙웨이트를 같은 속도로 돌리려면 더 큰 토크가 필요합니다.” with the most direct camera angle and shot size. Allow only the evidence label “SPEC” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C09",
+      "cut": 9,
+      "time": "00:33.3–00:37.5",
+      "durationSeconds": 4.2,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c09.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c09_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 09. Visualize the meaning of the narration “선수가 그 힘을 더 내지 못하면 라켓의 각속도부터 떨어집니다.” with the most direct camera angle and shot size. Allow only the evidence label “NO EASY FIX” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C10",
+      "cut": 10,
+      "time": "00:37.5–00:41.7",
+      "durationSeconds": 4.2,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c10.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c10_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 10. Visualize the meaning of the narration “헤드는 멀어졌는데, 손이 따라오지 못합니다.” with the most direct camera angle and shot size. Allow only the evidence label “DILEMMA” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C11",
+      "cut": 11,
+      "time": "00:41.7–00:45.8",
+      "durationSeconds": 4.1,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c11.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c11_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 11. Visualize the meaning of the narration “그래서 기준을 길이에서 충돌 순간으로 옮깁니다.” with the most direct camera angle and shot size. Allow only the evidence label “REVERSAL” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C12",
+      "cut": 12,
+      "time": "00:45.8–00:50.0",
+      "durationSeconds": 4.2,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c12.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c12_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 12. Visualize the meaning of the narration “스윙웨이트를 낮추면 헤드 속도는 얻어도 유효질량을 잃을 수 있습니다.” with the most direct camera angle and shot size. Allow only the evidence label “MECHANISM” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C13",
+      "cut": 13,
+      "time": "00:50.0–00:54.2",
+      "durationSeconds": 4.2,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c13.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c13_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 13. Visualize the meaning of the narration “반대로 유효질량을 키우면 충돌에는 유리하지만 스윙은 느려질 수 있습니다.” with the most direct camera angle and shot size. Allow only the evidence label “PROOF” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C14",
+      "cut": 14,
+      "time": "00:54.2–00:58.3",
+      "durationSeconds": 4.1,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c14.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c14_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 14. Visualize the meaning of the narration “소규모 실험에서는 관성을 낮춘 라켓의 헤드 속도가 유의하게 높아졌습니다.” with the most direct camera angle and shot size. Allow only the evidence label “RESULT” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C15",
+      "cut": 15,
+      "time": "00:58.3–01:02.5",
+      "durationSeconds": 4.2,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c15.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c15_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 15. Visualize the meaning of the narration “다른 실험에서는 스윙웨이트를 높여도 공 속도가 빨라지지 않았습니다.” with the most direct camera angle and shot size. Allow only the evidence label “PROBLEM” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C16",
+      "cut": 16,
+      "time": "01:02.5–01:06.7",
+      "durationSeconds": 4.2,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c16.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c16_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 16. Visualize the meaning of the narration “결국 서브 속도는 헤드 속도와 충돌 효율이 함께 결정합니다.” with the most direct camera angle and shot size. Allow only the evidence label “SOLUTION” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C17",
+      "cut": 17,
+      "time": "01:06.7–01:10.8",
+      "durationSeconds": 4.1,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c17.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c17_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 17. Visualize the meaning of the narration “따라서 라켓은 길이표보다 실제 서브 속도와 정확도로 비교해야 합니다.” with the most direct camera angle and shot size. Allow only the evidence label “OUTCOME” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    },
+    {
+      "id": "FTN-IDEA-030-C18",
+      "cut": 18,
+      "time": "01:10.8–01:15.0",
+      "durationSeconds": 4.2,
+      "provider": "flow",
+      "model": "veo-3.1-fast",
+      "variants": 2,
+      "inputFrame": "output/episodes/FTN-IDEA-030/stills/c18.png",
+      "outputFile": "output/episodes/FTN-IDEA-030/clips/c18_silent.mp4",
+      "silent": true,
+      "promptLanguage": "en",
+      "prompt": "Vertical 9:16, 8K cinematic photoreal 3D miniature diorama. Topic: “라켓을 길게 만들면 서브가 빨라질까”. Visual focus: 라켓 프레임 단면·진동·관성모멘트 디오라마. Keep the main subject in full color and secondary backgrounds low-saturation neutral, with technical-red leader lines and rapid MULTI-CUT / MULTI-SHOT flow. Use exactly one evidence layer—mechanism, specification or comparison—per cut, with at most two short English technical terms and two sourced numbers. Never invent precise metrics. No narration, voice-over, dialogue, music, sound effects or generated audio.\n\nCUT-SPECIFIC DIRECTION — CUT 18. Visualize the meaning of the narration “긴 라켓의 서브는 결국 길이가 아니라 균형으로 완성됩니다.” with the most direct camera angle and shot size. Allow only the evidence label “HIDDEN DESIGN” and keep it readable for 0.8–1.5 seconds.\n\n[REFERENCE LOCK] The supplied reference images are authoritative geometry, proportion and identity guides, not scenes to copy.\nUse reference/basicrefer_court.png, basicrefer_tennisball.png, basicrefer_net.png and basicrefer_racket.png as input references.\nMatch court markings and proportions, the ball sphere/seam/felt, net mesh/top band/posts, and racket frame/grip/string plane to the references.\nNo warped, melted, duplicated or asymmetric tennis equipment and no frame-to-frame topology or scale drift.\nOnly when a narrative mascot or presenter is needed, use Tedori from tedori_character_sheet_final.png and tedori_original_reference.png. Otherwise show no character.\nWhenever signage or a brand mark is needed, use only the Tennisnote logo or icon references. Never invent a third-party or fictional brand/logo.",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_racket.png"
+      ],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "referenceUploadGuide": "키프레임과 우선 형태 레퍼런스를 Flow ingredients/reference inputs에 첨부합니다.",
+      "estimatedCredits": 40,
+      "creditEstimateBasis": "Google AI Pro · 비 Ultra · 1회 생성 기준",
+      "requiresExternalGeneration": true
+    }
+  ]
+}

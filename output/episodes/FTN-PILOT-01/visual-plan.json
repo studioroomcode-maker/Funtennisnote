@@ -1,0 +1,972 @@
+{
+  "version": 4,
+  "episodeId": "FTN-PILOT-01",
+  "generatedAt": "2026-08-26T03:19:46.226Z",
+  "provider": "verified-fallback",
+  "scriptLines": [
+    "왜 요즘 라켓의 세로줄과 가로줄은 평평한 한 겹으로 엮여 있을까요?",
+    "손에 익은 모양이라 라켓은 처음부터 이 구조였을 것 같죠.",
+    "그런데 1977년, 이중 스트링 라켓이 기존 규칙이 다루지 못한 빈틈을 드러냈습니다.",
+    "보통 라켓은 세로줄과 가로줄이 평평한 한 면에서 맞물려 교차하는 구조입니다.",
+    "스파게티 라켓은 프레임이 아니라 스트링을 바꿔, 중앙 가로줄 층 앞뒤에 세로줄 층을 따로 놓았습니다.",
+    "공이 닿으면 서로 엮이지 않은 바깥 세로줄이 가로줄 위에서 옆으로 밀리는데요.",
+    "접촉부를 감싼 저마찰 플라스틱 관이 마찰을 낮춰 세로줄을 더 쉽게 움직이게 합니다.",
+    "덕분에 밀린 세로줄이 제자리로 튕겨 돌아오며 공에 복원력을 보태 회전을 더 키웁니다.",
+    "그 결과, 그 회전에 항의한 선수들은 파업하고 코트를 떠났고, 프랑스 선수권 보이콧까지 경고했습니다.",
+    "평범해 보인 라켓 한 자루가 대회 운영을 꽤 골치 아프게 했어요.",
+    "그래서 국제테니스연맹인 ITF는 공이 아니라 라켓의 스트링 배치를 규칙으로 막기로 했습니다.",
+    "ITF는 1977년 10월 3일부터 공식 대회에서 이중 스트링 라켓을 임시로 금지했습니다.",
+    "그동안 ITF는 이 라켓이 경기와 대회 운영을 어떻게 바꾸는지 살피고 연구 자료를 모았습니다.",
+    "이어 1978년 7월 채택된 규칙 4는 타구면을 평평한 단일 교차 패턴으로 제한했습니다.",
+    "쉽게 말해 세로줄과 가로줄은 교차하는 자리마다 번갈아 엮이거나 결합돼야 해요.",
+    "그렇다고 ITF가 공의 회전량에 별도의 RPM 상한을 정한 건 아니죠.",
+    "결국 금지된 것은 회전 자체가 아니라, 과도한 회전을 가능하게 한 다층 비직조 스트링 구조입니다.",
+    "요즘 라켓의 줄이 평평한 한 겹으로 엮인 이유는 그 다층 구조를 막도록 규칙이 바뀌었기 때문입니다."
+  ],
+  "sourceReferences": [
+    "https://www.youtube.com/shorts/YOXXmgy-02s",
+    "https://www.youtube.com/shorts/uUN1Bw0elY8",
+    "https://www.youtube.com/shorts/Ht6FCXabKYM"
+  ],
+  "diversity": {
+    "presentationModes": 10,
+    "cameraAngles": 7,
+    "shotSizes": 7,
+    "cameraMoves": 8,
+    "centeredProductShots": 0,
+    "playfulBridges": 1,
+    "tedoriExtras": 1,
+    "modeSequence": [
+      "wide-context",
+      "historical-diorama",
+      "exploded-view",
+      "macro",
+      "cross-section",
+      "mechanism-simulation",
+      "macro",
+      "mechanism-simulation",
+      "historical-diorama",
+      "wide-context",
+      "comparison",
+      "archive-review",
+      "comparison",
+      "rule-diagram",
+      "macro",
+      "comparison",
+      "cross-section",
+      "hero-object"
+    ]
+  },
+  "designs": [
+    {
+      "cut": 1,
+      "narrativeFunction": "CUT 1의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "wide-context",
+      "cameraAngle": "isometric",
+      "shotSize": "wide",
+      "lens": "35mm",
+      "cameraMove": "dolly-in",
+      "startFrameKo": "현대 코트 옆 선수 벤치를 3/4로 내려다봅니다. 평범한 라켓 한 자루가 수건 옆에 기대 있고, 한 평면의 균일한 스트링 면이 주변 코트 맥락과 함께 읽힙니다.",
+      "startFrameEn": "A three-quarter view looks down on a players’ bench beside a modern tennis court. One ordinary racket leans beside a towel, and its uniform single-plane string bed remains readable within the real court context.",
+      "actionKo": "수건 가장자리에서 라켓 스트링 면으로 시선이 이어집니다.",
+      "actionEn": "Guide attention from the towel edge to the ordinary string bed.",
+      "movementKo": "벤치와 코트 맥락에서 스트링 면으로 짧게 달리 인합니다.",
+      "movementEn": "Make one short dolly-in from the bench and court context to the string bed.",
+      "infographic": {
+        "type": "leader-line",
+        "labelEnglish": "ONE STRING PLANE",
+        "factKo": "ITF 규칙 4의 판정은 둘 이상의 스트링 세트와 여러 평면의 패턴을 허용하지 않습니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "현대 코트 옆 선수 벤치를 3/4로 내려다봅니다. 평범한 라켓 한 자루가 수건 옆에 기대 있고, 한 평면의 균일한 스트링 면이 주변 코트 맥락과 함께 읽힙니다."
+      ],
+      "mustShowEn": [
+        "A three-quarter view looks down on a players’ bench beside a modern tennis court. One ordinary racket leans beside a towel, and its uniform single-plane string bed remains readable within the real court context."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F01"
+      ],
+      "narration": "왜 요즘 라켓의 세로줄과 가로줄은 평평한 한 겹으로 엮여 있을까요?",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 2,
+      "narrativeFunction": "CUT 2의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "historical-diorama",
+      "cameraAngle": "high-angle",
+      "shotSize": "medium",
+      "lens": "50mm",
+      "cameraMove": "rack-focus",
+      "startFrameKo": "1977년 장비 검사실의 목재 테이블 위에 다층 스트링 라켓이 옆으로 놓여 있습니다. 얕은 측면 시선에서 헤드 안의 서로 다른 깊이만 처음 드러납니다.",
+      "startFrameEn": "On a wooden inspection table in a restrained 1977 equipment room, a multilayer-string racket lies sideways. A shallow side view reveals the separate string depths for the first time.",
+      "actionKo": "랙 포커스가 프레임에서 층 사이 간격으로 옮겨갑니다.",
+      "actionEn": "Rack focus once from the unchanged frame to the gap between string planes.",
+      "movementKo": "프레임에서 스트링 깊이로 한 번 랙 포커스합니다.",
+      "movementEn": "Rack focus once from the frame to the string-layer depth.",
+      "infographic": {
+        "type": "timeline-marker",
+        "labelEnglish": "ONE FLAT PATTERN",
+        "factKo": "현행 ITF 규칙 4와 부록 II는 하나의 평평하고 균일한 교차 스트링 패턴을 계속 요구합니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "1977년 장비 검사실의 목재 테이블 위에 다층 스트링 라켓이 옆으로 놓여 있습니다. 얕은 측면 시선에서 헤드 안의 서로 다른 깊이만 처음 드러납니다."
+      ],
+      "mustShowEn": [
+        "On a wooden inspection table in a restrained 1977 equipment room, a multilayer-string racket lies sideways. A shallow side view reveals the separate string depths for the first time."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F02"
+      ],
+      "narration": "손에 익은 모양이라 라켓은 처음부터 이 구조였을 것 같죠.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 3,
+      "narrativeFunction": "CUT 3의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "exploded-view",
+      "cameraAngle": "side-orthographic",
+      "shotSize": "section-detail",
+      "lens": "orthographic",
+      "cameraMove": "orbit",
+      "startFrameKo": "같은 정상 프레임 하나를 공간 분해도로 보여줍니다. 프레임은 그대로 두고 단일 스트링 면과 다층 스트링 구조가 프레임 밖으로 단계적으로 분리돼, 바뀐 곳이 스트링뿐임을 보여줍니다.",
+      "startFrameEn": "A spatial exploded view uses one unchanged conventional frame. The legal single string bed and the multilayer construction separate step by step along the same frame axis, proving that the changed element is the stringing rather than the frame.",
+      "actionKo": "분리된 스트링 구조가 같은 프레임 축을 따라 제자리에 정렬됩니다.",
+      "actionEn": "Align the separated string constructions back onto the same frame axis.",
+      "movementKo": "프레임 축을 중심으로 25도만 오비트합니다.",
+      "movementEn": "Orbit only 25 degrees around the shared frame axis.",
+      "infographic": {
+        "type": "section-highlight",
+        "labelEnglish": "1977",
+        "factKo": "ITF 공식 연혁은 1977년 이중 스트링 라켓에 대한 불만이 나오자 새로운 스트링 개념의 감시를 시작했다고 기록합니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "같은 정상 프레임 하나를 공간 분해도로 보여줍니다. 프레임은 그대로 두고 단일 스트링 면과 다층 스트링 구조가 프레임 밖으로 단계적으로 분리돼, 바뀐 곳이 스트링뿐임을 보여줍니다."
+      ],
+      "mustShowEn": [
+        "A spatial exploded view uses one unchanged conventional frame. The legal single string bed and the multilayer construction separate step by step along the same frame axis, proving that the changed element is the stringing rather than the frame."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F03"
+      ],
+      "narration": "그런데 1977년, 이중 스트링 라켓이 기존 규칙이 다루지 못한 빈틈을 드러냈습니다.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 4,
+      "narrativeFunction": "CUT 4의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "macro",
+      "cameraAngle": "oblique-macro",
+      "shotSize": "extreme-close-up",
+      "lens": "100mm-macro",
+      "cameraMove": "macro-track",
+      "startFrameKo": "합법적인 현대 스트링 교차점 하나를 재료 매크로로 봅니다. 세로줄과 가로줄이 같은 평면에서 위아래로 번갈아 지나가며 실제 접촉점이 선명합니다.",
+      "startFrameEn": "Material macro of one legal modern string intersection. A main and a cross alternate over and under within the same plane, with the real contact point in crisp focus.",
+      "actionKo": "한 교차점에서 다음 교차점까지 실제 직조 순서를 따라갑니다.",
+      "actionEn": "Follow the real over-under order from one legal crossing to the next.",
+      "movementKo": "실제 교차점을 따라 짧게 매크로 트래킹합니다.",
+      "movementEn": "Macro-track briefly along the real intersections.",
+      "infographic": {
+        "type": "leader-line",
+        "labelEnglish": "1 PLANE / INTERLACED",
+        "factKo": "피셔 특허는 기존 라켓을 세로줄과 가로줄이 서로 맞물린 구조로 비교하며, 현행 ITF 규칙도 평평한 교차 패턴을 요구합니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "합법적인 현대 스트링 교차점 하나를 재료 매크로로 봅니다. 세로줄과 가로줄이 같은 평면에서 위아래로 번갈아 지나가며 실제 접촉점이 선명합니다."
+      ],
+      "mustShowEn": [
+        "Material macro of one legal modern string intersection. A main and a cross alternate over and under within the same plane, with the real contact point in crisp focus."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F04"
+      ],
+      "narration": "보통 라켓은 세로줄과 가로줄이 평평한 한 면에서 맞물려 교차하는 구조입니다.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 5,
+      "narrativeFunction": "CUT 5의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "cross-section",
+      "cameraAngle": "isometric",
+      "shotSize": "close-up",
+      "lens": "orthographic",
+      "cameraMove": "top-down-drop",
+      "startFrameKo": "스파게티 스트링의 얇은 헤드 단면을 아이소메트릭으로 절개합니다. 전면의 촘촘한 세로줄, 중앙의 매우 성긴 가로줄 쌍, 후면의 촘촘한 세로줄이 정확히 세 평면으로 배열됩니다.",
+      "startFrameEn": "An isometric cutaway slices through a shallow spaghetti-strung racket head. Dense front mains, extremely sparse paired central crosses and dense rear mains occupy exactly three distinct parallel planes.",
+      "actionKo": "세 층이 앞–중앙–뒤 순서로 짧게 벌어져 깊이가 드러납니다.",
+      "actionEn": "Separate the three planes slightly in front-center-rear order to reveal depth.",
+      "movementKo": "정면에서 단면으로 탑다운 전환합니다.",
+      "movementEn": "Use one top-down drop from the face view into the section.",
+      "infographic": {
+        "type": "section-highlight",
+        "labelEnglish": "3 STRING LAYERS",
+        "factKo": "미국 특허 4,190,249는 중앙의 가로줄 층과 그 양쪽에 놓인 두 개의 세로줄 층을 명시합니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "스파게티 스트링의 얇은 헤드 단면을 아이소메트릭으로 절개합니다. 전면의 촘촘한 세로줄, 중앙의 매우 성긴 가로줄 쌍, 후면의 촘촘한 세로줄이 정확히 세 평면으로 배열됩니다."
+      ],
+      "mustShowEn": [
+        "An isometric cutaway slices through a shallow spaghetti-strung racket head. Dense front mains, extremely sparse paired central crosses and dense rear mains occupy exactly three distinct parallel planes."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F05"
+      ],
+      "playfulBridge": {
+        "enabled": true,
+        "maxSeconds": 0.9,
+        "openingImageKo": "어두운 기술 작업대 위에 금빛의 삶지 않은 스파게티 면발 여러 가닥이 느슨하고 불규칙하게 놓여 있습니다. 아직 라켓이나 테니스공은 보이지 않습니다.",
+        "openingImageEn": "Several golden uncooked spaghetti strands lie loose and irregular on a dark technical workbench. No racket or tennis ball is visible yet.",
+        "transitionKo": "0.9초 안에 면발이 빠르게 곧게 펴지며 금빛 식품 질감이 흰 나일론 스트링 재질로 바뀝니다. 곧아진 줄은 전면 세로줄–중앙의 성긴 가로줄 쌍–후면 세로줄의 정확한 세 평면으로 갈라지고, 동일 축의 정상 라켓 프레임이 매치컷으로 드러납니다.",
+        "transitionEn": "Within 0.9 seconds, the pasta strands snap straight as their golden food texture changes into white nylon racket string. The straightened strings separate into the exact front-main, sparse paired central-cross and rear-main planes, while a conventional racket frame is revealed on the same axis by a clean match cut.",
+        "factualBoundaryKo": "스파게티 면발은 이름을 기억시키는 짧은 시각적 말장난일 뿐입니다. 0.9초 이후에는 음식이 완전히 사라지고 특허 구조와 일치하는 라켓만 남아야 합니다.",
+        "factualBoundaryEn": "The pasta is only a brief visual pun for the name. After 0.9 seconds all food must disappear, leaving only the patent-accurate racket construction."
+      },
+      "narration": "스파게티 라켓은 프레임이 아니라 스트링을 바꿔, 중앙 가로줄 층 앞뒤에 세로줄 층을 따로 놓았습니다.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 6,
+      "narrativeFunction": "CUT 6의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "mechanism-simulation",
+      "cameraAngle": "side-orthographic",
+      "shotSize": "section-detail",
+      "lens": "85mm",
+      "cameraMove": "path-follow",
+      "startFrameKo": "라켓 면과 나란한 측면 기술 시뮬레이션입니다. 공이 전면 세로줄에 닿기 직전이고, 그 세로줄 묶음이 중앙 가로줄 위에서 옆으로 이동할 실제 여유가 보입니다.",
+      "startFrameEn": "Side-orthographic mechanism view parallel to the racket face. A ball is about to contact the front main layer, and the mains have visible physical clearance to slide sideways over the central crosses.",
+      "actionKo": "공이 닿자 전면 세로줄 묶음만 가로줄 방향으로 옆으로 밀립니다.",
+      "actionEn": "As the ball contacts, slide only the front-main group laterally along the cross direction.",
+      "movementKo": "세로줄의 실제 횡이동 경로를 따라갑니다.",
+      "movementEn": "Path-follow the mains’ real lateral displacement.",
+      "infographic": {
+        "type": "motion-path",
+        "labelEnglish": "LATERAL SLIDE",
+        "factKo": "특허는 세 층이 횡방향으로 독립적이며 바깥 세로줄들이 중앙 가로줄 위에서 제어된 측면 이동을 한다고 설명합니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "라켓 면과 나란한 측면 기술 시뮬레이션입니다. 공이 전면 세로줄에 닿기 직전이고, 그 세로줄 묶음이 중앙 가로줄 위에서 옆으로 이동할 실제 여유가 보입니다."
+      ],
+      "mustShowEn": [
+        "Side-orthographic mechanism view parallel to the racket face. A ball is about to contact the front main layer, and the mains have visible physical clearance to slide sideways over the central crosses."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F06"
+      ],
+      "narration": "공이 닿으면 서로 엮이지 않은 바깥 세로줄이 가로줄 위에서 옆으로 밀리는데요.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 7,
+      "narrativeFunction": "CUT 7의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "macro",
+      "cameraAngle": "oblique-macro",
+      "shotSize": "extreme-close-up",
+      "lens": "100mm-macro",
+      "cameraMove": "macro-track",
+      "startFrameKo": "중앙의 성긴 가로줄과 전면 세로줄이 만나는 한 접촉부를 초근접으로 봅니다. 짧은 중공 플라스틱 슬리브가 세로줄을 감싸며 주변 매듭과 고정줄 일부만 보입니다.",
+      "startFrameEn": "Extreme macro of one contact between a sparse central cross and a front main. A short hollow plastic sleeve surrounds the main; show only the nearby tie cord, knot and minimum required strings.",
+      "actionKo": "세로줄이 중공 슬리브 안에서 짧게 활주합니다.",
+      "actionEn": "Let the main string make one short passive slide inside the hollow sleeve.",
+      "movementKo": "슬리브 길이만큼만 매크로 트래킹합니다.",
+      "movementEn": "Macro-track no farther than the sleeve length.",
+      "infographic": {
+        "type": "leader-line",
+        "labelEnglish": "LOW FRICTION",
+        "factKo": "특허는 접촉점의 저마찰 나일론 피복을 활주 수단으로 제시하며, 고속영상 연구도 이 관이 마찰을 줄였다고 설명합니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "중앙의 성긴 가로줄과 전면 세로줄이 만나는 한 접촉부를 초근접으로 봅니다. 짧은 중공 플라스틱 슬리브가 세로줄을 감싸며 주변 매듭과 고정줄 일부만 보입니다."
+      ],
+      "mustShowEn": [
+        "Extreme macro of one contact between a sparse central cross and a front main. A short hollow plastic sleeve surrounds the main; show only the nearby tie cord, knot and minimum required strings."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F07"
+      ],
+      "narration": "접촉부를 감싼 저마찰 플라스틱 관이 마찰을 낮춰 세로줄을 더 쉽게 움직이게 합니다.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 8,
+      "narrativeFunction": "CUT 8의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "mechanism-simulation",
+      "cameraAngle": "low-angle",
+      "shotSize": "close-up",
+      "lens": "100mm-macro",
+      "cameraMove": "orbit",
+      "startFrameKo": "비스듬히 들어온 공이 전면 세로줄 층을 누른 순간을 느린 물리 시뮬레이션으로 고정합니다. 공은 층 사이에 끼지 않고, 옆으로 밀린 세로줄만 공 표면과 접촉합니다.",
+      "startFrameEn": "Freeze an oblique impact as the ball compresses only the facing front-main layer. The ball is not trapped between layers; only the laterally displaced mains touch its surface.",
+      "actionKo": "밀린 세로줄이 접촉 종료 전에 되돌아오며 공에 접선 방향 힘을 전달합니다.",
+      "actionEn": "Before contact ends, let the displaced mains snap back and apply tangential force to the ball.",
+      "movementKo": "접촉부 둘레를 15도 오비트해 공이 갇히지 않았음을 보입니다.",
+      "movementEn": "Orbit only 15 degrees around the contact to prove that the ball is not trapped.",
+      "infographic": {
+        "type": "force-vector",
+        "labelEnglish": "STRING SNAPBACK",
+        "factKo": "고속영상 연구는 세로줄이 옆으로 늘어났다 되돌아올 때 스트링 면과 평행한 복원력이 추가 회전을 만든다고 확인했습니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "비스듬히 들어온 공이 전면 세로줄 층을 누른 순간을 느린 물리 시뮬레이션으로 고정합니다. 공은 층 사이에 끼지 않고, 옆으로 밀린 세로줄만 공 표면과 접촉합니다."
+      ],
+      "mustShowEn": [
+        "Freeze an oblique impact as the ball compresses only the facing front-main layer. The ball is not trapped between layers; only the laterally displaced mains touch its surface."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F08"
+      ],
+      "narration": "덕분에 밀린 세로줄이 제자리로 튕겨 돌아오며 공에 복원력을 보태 회전을 더 키웁니다.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 9,
+      "narrativeFunction": "CUT 9의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "historical-diorama",
+      "cameraAngle": "eye-level",
+      "shotSize": "full",
+      "lens": "35mm",
+      "cameraMove": "dolly-in",
+      "startFrameKo": "1977년 코트의 네트 근처에서 익명의 선수 두 명이 문제 라켓의 타구면을 가리키고 심판이 살펴봅니다. 불만의 대상인 다층 스트링이 세 사람 사이에서 분명히 보입니다.",
+      "startFrameEn": "Near the net on a 1977 tennis court, two anonymous players point to the disputed hitting surface while an official inspects it. The multilayer stringing is clearly the cause of their complaint.",
+      "actionKo": "한 선수가 스트링 면을 가리키고 심판이 같은 지점을 확인합니다.",
+      "actionEn": "One player points to the multilayer bed while the official inspects that exact area.",
+      "movementKo": "다층 스트링을 가리키는 손으로 짧게 달리 인합니다.",
+      "movementEn": "Dolly in briefly toward the hand indicating the multilayer strings.",
+      "infographic": {
+        "type": "leader-line",
+        "labelEnglish": "PLAYER PROTESTS",
+        "factKo": "연방법원 판결문은 실제 선수 파업과 퇴장, 프랑스 선수권 보이콧 위협이 ITF의 임시 조치 근거에 포함됐다고 기록합니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "1977년 코트의 네트 근처에서 익명의 선수 두 명이 문제 라켓의 타구면을 가리키고 심판이 살펴봅니다. 불만의 대상인 다층 스트링이 세 사람 사이에서 분명히 보입니다."
+      ],
+      "mustShowEn": [
+        "Near the net on a 1977 tennis court, two anonymous players point to the disputed hitting surface while an official inspects it. The multilayer stringing is clearly the cause of their complaint."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F09"
+      ],
+      "narration": "그 결과, 그 회전에 항의한 선수들은 파업하고 코트를 떠났고, 프랑스 선수권 보이콧까지 경고했습니다.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 10,
+      "narrativeFunction": "CUT 10의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "wide-context",
+      "cameraAngle": "top-down",
+      "shotSize": "extreme-wide",
+      "lens": "24mm",
+      "cameraMove": "dolly-out",
+      "startFrameKo": "클레이 코트를 수직에 가깝게 내려다봅니다. 경기는 멈췄고 라켓은 서비스라인 근처에 놓여 있으며 선수와 관계자는 양쪽 코트 가장자리에서 대기합니다.",
+      "startFrameEn": "Near-vertical overhead view of a clay court. Play has stopped, the disputed racket lies near the service line, and players and officials wait at opposite court edges.",
+      "actionKo": "멈춘 경기의 규모가 코트 전체로 드러납니다.",
+      "actionEn": "Reveal the scale of the halted match across the full court.",
+      "movementKo": "라켓에서 코트 전체로 달리 아웃합니다.",
+      "movementEn": "Dolly out from the disputed racket to the entire stopped court.",
+      "infographic": {
+        "type": "leader-line",
+        "labelEnglish": "GAME DISRUPTION",
+        "factKo": "법원은 과장된 톱스핀이 경기의 전통적 성격과 질서 있는 대회 운영을 위협한다고 본 ITF 판단에 합리적 근거가 있었다고 판시했습니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "클레이 코트를 수직에 가깝게 내려다봅니다. 경기는 멈췄고 라켓은 서비스라인 근처에 놓여 있으며 선수와 관계자는 양쪽 코트 가장자리에서 대기합니다."
+      ],
+      "mustShowEn": [
+        "Near-vertical overhead view of a clay court. Play has stopped, the disputed racket lies near the service line, and players and officials wait at opposite court edges."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F10"
+      ],
+      "narration": "평범해 보인 라켓 한 자루가 대회 운영을 꽤 골치 아프게 했어요.",
+      "tedoriExtra": {
+        "enabled": true,
+        "roleKo": "테돌이는 설명자가 아니라 장면을 조용히 구경하는 숨은 엑스트라입니다.",
+        "roleEn": "Tedori is a quiet hidden background extra, never the presenter or the source of evidence.",
+        "placementKo": "기존 배경의 화면 가장자리 3분할 지점에 두고, 프레임 높이의 15~20%만 차지하며 핵심 피사체와 인포그래픽 여백을 가리지 않습니다.",
+        "placementEn": "Place Tedori near an existing background edge on a rule-of-thirds point, only 15–20% of frame height, never blocking the primary evidence or infographic space.",
+        "actionKo": "핵심 피사체를 바라보다가 끝에 고개를 아주 살짝 기울입니다. 말하기·립싱크·설명 제스처·물건 접촉은 없습니다.",
+        "actionEn": "Tedori watches the primary subject and makes one tiny head tilt near the end. No speech, lip-sync, explanatory gesture or contact with the evidence object."
+      }
+    },
+    {
+      "cut": 11,
+      "narrativeFunction": "CUT 11의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "comparison",
+      "cameraAngle": "isometric",
+      "shotSize": "medium",
+      "lens": "50mm",
+      "cameraMove": "tilt-reveal",
+      "startFrameKo": "테이블 위 테니스공 하나는 그대로 두고, 그 옆에 단일 평면 스트링 단면과 다층 스트링 단면을 실물 모형처럼 나란히 둡니다. 규제 대상이 공이 아니라 줄 배치임이 한눈에 보입니다.",
+      "startFrameEn": "Keep one tennis ball unchanged on an inspection table beside two physical string-bed sections: one flat legal plane and one multilayer arrangement. Make it immediately clear that the regulated variable is string layout, not the ball.",
+      "actionKo": "강조가 공에서 두 스트링 단면으로 옮겨갑니다.",
+      "actionEn": "Move visual emphasis from the unchanged ball to the two string-bed sections.",
+      "movementKo": "공에서 스트링 단면으로 짧게 틸트합니다.",
+      "movementEn": "Tilt once from the unchanged ball to the string sections.",
+      "infographic": {
+        "type": "comparison-bracket",
+        "labelEnglish": "STRING PATTERN RULE",
+        "factKo": "ITF가 채택한 규칙 4는 공의 규격을 바꾸지 않고 타구면의 평면성·교차 방식·균일성을 규정했습니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "테이블 위 테니스공 하나는 그대로 두고, 그 옆에 단일 평면 스트링 단면과 다층 스트링 단면을 실물 모형처럼 나란히 둡니다. 규제 대상이 공이 아니라 줄 배치임이 한눈에 보입니다."
+      ],
+      "mustShowEn": [
+        "Keep one tennis ball unchanged on an inspection table beside two physical string-bed sections: one flat legal plane and one multilayer arrangement. Make it immediately clear that the regulated variable is string layout, not the ball."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F11"
+      ],
+      "narration": "그래서 국제테니스연맹인 ITF는 공이 아니라 라켓의 스트링 배치를 규칙으로 막기로 했습니다.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 12,
+      "narrativeFunction": "CUT 12의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "archive-review",
+      "cameraAngle": "high-angle",
+      "shotSize": "full",
+      "lens": "35mm",
+      "cameraMove": "rack-focus",
+      "startFrameKo": "1977년 규정 검토 책상입니다. 익명의 관계자 손이 다층 스트링 헤드를 검사하고, 달력의 날짜 칸 위치에 후반 편집용 표시 여백만 남깁니다. 읽을 수 있는 문서는 생성하지 않습니다.",
+      "startFrameEn": "A restrained 1977 rules-review desk. An anonymous official’s hand inspects a multilayer racket head while clean space remains beside an unlabelled calendar cell for a later editorial date marker. Render no readable document text.",
+      "actionKo": "검사하는 손이 다층 스트링 헤드에서 멈춥니다.",
+      "actionEn": "The inspecting hand stops over the multilayer racket head.",
+      "movementKo": "라켓과 날짜 표시 여백 사이를 랙 포커스합니다.",
+      "movementEn": "Rack focus between the racket and the empty date-marker space.",
+      "infographic": {
+        "type": "ban-marker",
+        "labelEnglish": "OCT 3, 1977",
+        "factKo": "판결문은 ITF 관리위원회가 1977년 10월 3일부터 공식 대회에서 이중 스트링과 돌출부가 있는 라켓을 일시적으로 금지했다고 기록합니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "1977년 규정 검토 책상입니다. 익명의 관계자 손이 다층 스트링 헤드를 검사하고, 달력의 날짜 칸 위치에 후반 편집용 표시 여백만 남깁니다. 읽을 수 있는 문서는 생성하지 않습니다."
+      ],
+      "mustShowEn": [
+        "A restrained 1977 rules-review desk. An anonymous official’s hand inspects a multilayer racket head while clean space remains beside an unlabelled calendar cell for a later editorial date marker. Render no readable document text."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F12"
+      ],
+      "narration": "ITF는 1977년 10월 3일부터 공식 대회에서 이중 스트링 라켓을 임시로 금지했습니다.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 13,
+      "narrativeFunction": "CUT 13의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "comparison",
+      "cameraAngle": "top-down",
+      "shotSize": "wide",
+      "lens": "24mm",
+      "cameraMove": "top-down-drop",
+      "startFrameKo": "1977년 기록 검토 책상을 탑다운으로 봅니다. 특허 단면 도면, 다층 스트링 실물 표본, 경기 보고서 사진을 서로 대응하는 구조 지점에 맞춰 정렬하며 별도의 측정·실험 장비는 두지 않습니다.",
+      "startFrameEn": "Top-down evidence-comparison table with a patent section drawing, a physical multilayer string sample and a match-report photograph aligned by corresponding construction points. No measurement or test apparatus is present.",
+      "actionKo": "도면의 세 층과 실물 표본의 세 층이 붉은 점 세 개로 대응됩니다.",
+      "actionEn": "Align three restrained red evidence points between the patent section and physical sample.",
+      "movementKo": "기록 세 종류를 위에서 아래로 한 번 연결합니다.",
+      "movementEn": "Make one top-down move linking the three evidence items.",
+      "infographic": {
+        "type": "leader-line",
+        "labelEnglish": "TECHNICAL REVIEW",
+        "factKo": "ITF 발표문에 기록된 임시 동결의 목적은 이 라켓이 경기 운영에 미치는 영향을 조사하고 연구 결과를 취합하는 것이었습니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "1977년 기록 검토 책상을 탑다운으로 봅니다. 특허 단면 도면, 다층 스트링 실물 표본, 경기 보고서 사진을 서로 대응하는 구조 지점에 맞춰 정렬하며 별도의 측정·실험 장비는 두지 않습니다."
+      ],
+      "mustShowEn": [
+        "Top-down evidence-comparison table with a patent section drawing, a physical multilayer string sample and a match-report photograph aligned by corresponding construction points. No measurement or test apparatus is present."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F13"
+      ],
+      "narration": "그동안 ITF는 이 라켓이 경기와 대회 운영을 어떻게 바꾸는지 살피고 연구 자료를 모았습니다.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 14,
+      "narrativeFunction": "CUT 14의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "rule-diagram",
+      "cameraAngle": "side-orthographic",
+      "shotSize": "section-detail",
+      "lens": "orthographic",
+      "cameraMove": "orbit",
+      "startFrameKo": "합법적인 라켓 헤드를 정면과 얕은 측면이 함께 읽히는 직교 기술 모형으로 보여줍니다. 모든 스트링 교차가 하나의 평평한 단일 패턴 안에 머뭅니다.",
+      "startFrameEn": "Orthographic technical model of a legal racket head, readable simultaneously from the front and a shallow side section. Every string crossing stays within one flat, single pattern.",
+      "actionKo": "정면 스트링 면이 얕은 측면으로 돌아가도 한 평면을 유지합니다.",
+      "actionEn": "Rotate from frontal to shallow side view while the bed remains one plane.",
+      "movementKo": "정면에서 측면으로 20도만 오비트합니다.",
+      "movementEn": "Orbit only 20 degrees from frontal to shallow side view.",
+      "infographic": {
+        "type": "section-highlight",
+        "labelEnglish": "1978 / RULE 4",
+        "factKo": "판결문은 1978년 7월 ITF 총회가 규칙 4를 승인했다고 기록하며, 현행 규칙도 하나의 평평한 교차 패턴을 요구합니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "합법적인 라켓 헤드를 정면과 얕은 측면이 함께 읽히는 직교 기술 모형으로 보여줍니다. 모든 스트링 교차가 하나의 평평한 단일 패턴 안에 머뭅니다."
+      ],
+      "mustShowEn": [
+        "Orthographic technical model of a legal racket head, readable simultaneously from the front and a shallow side section. Every string crossing stays within one flat, single pattern."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F14"
+      ],
+      "narration": "이어 1978년 7월 채택된 규칙 4는 타구면을 평평한 단일 교차 패턴으로 제한했습니다.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 15,
+      "narrativeFunction": "CUT 15의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "macro",
+      "cameraAngle": "oblique-macro",
+      "shotSize": "extreme-close-up",
+      "lens": "100mm-macro",
+      "cameraMove": "macro-track",
+      "startFrameKo": "합법적인 교차점 두 개를 익스트림 매크로로 연결합니다. 세로줄과 가로줄이 이웃 교차점마다 위아래 순서를 번갈아 바꾸며 한 격자를 만듭니다.",
+      "startFrameEn": "Extreme macro links two legal intersections. The main and cross alternate their over-under order at neighboring crossings to form one continuous interlaced grid.",
+      "actionKo": "교차 순서가 이웃 접점으로 이어집니다.",
+      "actionEn": "Continue the alternating weave order to the neighboring crossing.",
+      "movementKo": "두 교차점 사이를 매크로 트래킹합니다.",
+      "movementEn": "Macro-track between the two legal intersections.",
+      "infographic": {
+        "type": "motion-path",
+        "labelEnglish": "INTERLACED / BONDED",
+        "factKo": "현행 ITF 부록 II는 교차 스트링이 만나는 곳마다 번갈아 엮이거나 결합되어야 한다고 규정합니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "합법적인 교차점 두 개를 익스트림 매크로로 연결합니다. 세로줄과 가로줄이 이웃 교차점마다 위아래 순서를 번갈아 바꾸며 한 격자를 만듭니다."
+      ],
+      "mustShowEn": [
+        "Extreme macro links two legal intersections. The main and cross alternate their over-under order at neighboring crossings to form one continuous interlaced grid."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F15"
+      ],
+      "narration": "쉽게 말해 세로줄과 가로줄은 교차하는 자리마다 번갈아 엮이거나 결합돼야 해요.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 16,
+      "narrativeFunction": "CUT 16의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "comparison",
+      "cameraAngle": "isometric",
+      "shotSize": "medium",
+      "lens": "50mm",
+      "cameraMove": "path-follow",
+      "startFrameKo": "공의 회전 궤적은 배경에 작고 흐리게 두고, 앞쪽에는 단일 평면과 다층 단면을 선명하게 배치합니다. 빨간 강조는 회전 수치가 아니라 층의 개수와 배치만 가리킵니다.",
+      "startFrameEn": "Keep a ball-spin path small and subdued in the background while single-plane and multilayer sections remain crisp in the foreground. The red editorial emphasis identifies only the number and arrangement of planes, not an RPM value.",
+      "actionKo": "회전 궤적의 강조가 사라지고 다층 단면의 분리 지점이 강조됩니다.",
+      "actionEn": "Fade the spin-path emphasis and shift it to the separated string planes.",
+      "movementKo": "작은 회전 궤적에서 층 단면으로 경로를 옮깁니다.",
+      "movementEn": "Path-follow from the subdued spin path to the layer section.",
+      "infographic": {
+        "type": "comparison-bracket",
+        "labelEnglish": "NO RPM LIMIT",
+        "factKo": "현행 라켓 규격은 타구면의 구조와 배치를 정의하며 공의 회전수 상한을 별도로 제시하지 않습니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "공의 회전 궤적은 배경에 작고 흐리게 두고, 앞쪽에는 단일 평면과 다층 단면을 선명하게 배치합니다. 빨간 강조는 회전 수치가 아니라 층의 개수와 배치만 가리킵니다."
+      ],
+      "mustShowEn": [
+        "Keep a ball-spin path small and subdued in the background while single-plane and multilayer sections remain crisp in the foreground. The red editorial emphasis identifies only the number and arrangement of planes, not an RPM value."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F16"
+      ],
+      "narration": "그렇다고 ITF가 공의 회전량에 별도의 RPM 상한을 정한 건 아니죠.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 17,
+      "narrativeFunction": "CUT 17의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "cross-section",
+      "cameraAngle": "low-angle",
+      "shotSize": "close-up",
+      "lens": "85mm",
+      "cameraMove": "tilt-reveal",
+      "startFrameKo": "금지된 다층 비직조 구조의 3/4 단면만 크게 보여줍니다. 전면 세로줄–중앙 성긴 가로줄–후면 세로줄의 분리된 깊이를 실제 구조대로 유지합니다.",
+      "startFrameEn": "Large three-quarter section of the prohibited multilayer non-interlaced construction. Preserve the exact separated depth order: front mains, sparse central crosses, rear mains.",
+      "actionKo": "붉은 브래킷이 세 개의 분리된 평면만 감쌉니다.",
+      "actionEn": "A red editorial bracket identifies only the three separated planes.",
+      "movementKo": "아래에서 위로 틸트해 세 층을 차례로 드러냅니다.",
+      "movementEn": "Tilt upward to reveal the three separated planes in order.",
+      "infographic": {
+        "type": "ban-marker",
+        "labelEnglish": "MULTI-PLANE: ILLEGAL",
+        "factKo": "법원은 규칙 4가 과장된 톱스핀을 전달하는 구조를 겨냥했다고 설명하며, 현행 규칙은 다중 스트링 세트와 다중 평면을 명시적으로 불허합니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "금지된 다층 비직조 구조의 3/4 단면만 크게 보여줍니다. 전면 세로줄–중앙 성긴 가로줄–후면 세로줄의 분리된 깊이를 실제 구조대로 유지합니다."
+      ],
+      "mustShowEn": [
+        "Large three-quarter section of the prohibited multilayer non-interlaced construction. Preserve the exact separated depth order: front mains, sparse central crosses, rear mains."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F17"
+      ],
+      "narration": "결국 금지된 것은 회전 자체가 아니라, 과도한 회전을 가능하게 한 다층 비직조 스트링 구조입니다.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    },
+    {
+      "cut": 18,
+      "narrativeFunction": "CUT 18의 내레이션 근거를 한 장면으로 설명",
+      "presentationMode": "hero-object",
+      "cameraAngle": "eye-level",
+      "shotSize": "full",
+      "lens": "35mm",
+      "cameraMove": "dolly-out",
+      "startFrameKo": "현대 테니스 코트에서 한 선수가 라켓을 자연스럽게 들고 있습니다. 카메라는 비스듬한 3/4 위치이며 한 겹의 평평하고 균일한 스트링 면이 첫 질문의 답으로 선명합니다.",
+      "startFrameEn": "On a modern tennis court, a player holds one racket naturally. From an oblique three-quarter position, the single flat uniform string bed reads clearly as the direct answer to the opening question.",
+      "actionKo": "선수가 라켓을 가볍게 돌려 평평한 스트링 면을 빛에 드러냅니다.",
+      "actionEn": "The player turns the racket slightly so light reveals the flat string bed.",
+      "movementKo": "스트링 면에서 코트 맥락까지 천천히 달리 아웃합니다.",
+      "movementEn": "Dolly out slowly from the flat string bed to the modern court context.",
+      "infographic": {
+        "type": "section-highlight",
+        "labelEnglish": "ONE FLAT PATTERN",
+        "factKo": "현행 ITF 규칙 4와 부록 II는 하나의 평평하고 균일한 교차 스트링 패턴을 계속 요구합니다.",
+        "factEn": "Use only the verified evidence attached to this cut.",
+        "placementKo": "실제 구조 또는 이동 지점 옆 후반 편집 레이어",
+        "placementEn": "later editorial layer physically anchored beside the real structure or motion"
+      },
+      "mustShowKo": [
+        "현대 테니스 코트에서 한 선수가 라켓을 자연스럽게 들고 있습니다. 카메라는 비스듬한 3/4 위치이며 한 겹의 평평하고 균일한 스트링 면이 첫 질문의 답으로 선명합니다."
+      ],
+      "mustShowEn": [
+        "On a modern tennis court, a player holds one racket naturally. From an oblique three-quarter position, the single flat uniform string bed reads clearly as the direct answer to the opening question."
+      ],
+      "mustAvoidKo": [
+        "내용과 무관한 장비·문자·브랜드",
+        "라켓·공·스트링 형태 왜곡"
+      ],
+      "mustAvoidEn": [
+        "unsupported apparatus, text or branding",
+        "warped racket, ball or string geometry"
+      ],
+      "evidenceFactIds": [
+        "F18"
+      ],
+      "narration": "요즘 라켓의 줄이 평평한 한 겹으로 엮인 이유는 그 다층 구조를 막도록 규칙이 바뀌었기 때문입니다.",
+      "tedoriExtra": {
+        "enabled": false,
+        "roleKo": "",
+        "roleEn": "",
+        "placementKo": "",
+        "placementEn": "",
+        "actionKo": "",
+        "actionEn": ""
+      }
+    }
+  ]
+}

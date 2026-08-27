@@ -1,0 +1,130 @@
+{
+  "episode_id": "FTN-EP-001",
+  "provider": "Higgsfield",
+  "workspace": {
+    "type": "private",
+    "plan": "plus",
+    "credits_before": 1200,
+    "credits_after": 813,
+    "credits_used": 387,
+    "free_trial_unlimited_used": false
+  },
+  "generation_config": {
+    "model": "seedance_2_5",
+    "mode": "omni_reference",
+    "resolution": "1080p",
+    "aspect_ratio": "9:16",
+    "bitrate_mode": "standard",
+    "generate_audio": false,
+    "count_per_scene": 1
+  },
+  "estimated_total_cost_credits": 387,
+  "actual_total_cost_credits": 387,
+  "scenes": [
+    {
+      "index": 1,
+      "duration_seconds": 4,
+      "estimated_cost_credits": 36,
+      "start_image": "assets/scene_01_half_white_half_yellow.png",
+      "media_id": "9100a1e0-42cb-474c-8dd4-11f9821e87ac",
+      "job_id": "669eb8bb-5272-4b7e-844d-b9464938a930",
+      "status": "completed",
+      "prompt": "Create one seamless continuous 4-second vertical 9:16 shot using the supplied image as the exact first frame and visual identity reference. The camera slowly dollies toward the giant half-white, half-optic-yellow regulation tennis ball. Tedori walks two tiny steps along the inspection platform, raises the magnifying glass toward the felt boundary, and looks up with quiet curiosity. The ball rotates extremely slowly while the accurate curved tennis-ball seam remains attached to the felt. Preserve Tedori's exact spherical body, symmetric black oval eyes, tiny mouth, two white curved seams, short limbs and cel-shaded style. Stable premium miniature engineering documentary look. No cuts, no camera reset, no text, no subtitles, no captions, no logo, no watermark, no UI, no racket, no extra limbs, no character transformation, no generated audio.",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_104803_669eb8bb-5272-4b7e-844d-b9464938a930.mp4",
+      "local_file": "output/scene_01.mp4"
+    },
+    {
+      "index": 2,
+      "duration_seconds": 5,
+      "estimated_cost_credits": 45,
+      "start_image": "assets/scene_02_black_and_white_balls.png",
+      "media_id": "be99b4b6-73f2-4202-a67a-5f77253bac11",
+      "job_id": "c3f84974-fd1d-4d78-b5be-d1650cbc63b1",
+      "status": "completed",
+      "prompt": "Create one seamless continuous 5-second vertical 9:16 shot using the supplied image as the exact first frame. Descend slowly over the split historical miniature tennis display. The black ball rolls gently across the pale court and the white ball rolls gently across the dark court. Tedori turns its head from one side to the other and makes one small clipboard mark. Preserve the exact diorama, lighting, court geometry, ball surfaces and Tedori identity. This is an educational reconstruction, not literal archival footage. No cuts, no text, no subtitles, no captions, no logo, no watermark, no UI, no invented historical people, no extra objects, no generated audio.",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_104803_c3f84974-fd1d-4d78-b5be-d1650cbc63b1.mp4",
+      "local_file": "output/scene_02.mp4"
+    },
+    {
+      "index": 3,
+      "duration_seconds": 5,
+      "estimated_cost_credits": 45,
+      "start_image": "assets/scene_03_white_ball_on_crt.png",
+      "media_id": "23060909-76f2-43d2-a3b5-3d9012ae8501",
+      "job_id": "976057f1-6e6a-47f0-a687-afcfc61d3b9a",
+      "status": "completed",
+      "prompt": "Create one seamless continuous 5-second vertical 9:16 shot using the supplied image as the exact first frame. The white tennis ball crosses the CRT tennis image naturally and becomes briefly difficult to distinguish over a bright part of the low-resolution broadcast. Tedori leans slightly closer and squints once. Add only subtle analog scanline flicker and warm CRT glow. The ball must not disappear magically. Preserve all miniature equipment and Tedori's exact face and proportions. No cuts, no text, no subtitles, no captions, no logos, no UI changes, no generated audio.",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_104803_976057f1-6e6a-47f0-a687-afcfc61d3b9a.mp4",
+      "local_file": "output/scene_03.mp4"
+    },
+    {
+      "index": 4,
+      "duration_seconds": 6,
+      "estimated_cost_credits": 54,
+      "start_image": "assets/scene_04_crt_visibility_comparison.png",
+      "media_id": "b94aea5d-2dc2-4afe-8094-b95da9defb2d",
+      "job_id": "85dc91e5-62aa-418a-b4dc-3dac05dc136f",
+      "status": "completed",
+      "prompt": "Create one seamless continuous 6-second frontal vertical 9:16 shot using the supplied image as the exact first frame. Identical natural ball trajectories play simultaneously on both CRT monitors. The white ball becomes less distinct over bright court areas while the optic-yellow ball stays clearly visible. Tedori follows both paths with its eyes, then points once toward the yellow-ball screen. Keep the symmetrical composition, monitor contents, miniature console and character design stable. No cuts, no text, no subtitles, no captions, no numerical overlays, no logos, no UI, no generated audio.",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_104803_85dc91e5-62aa-418a-b4dc-3dac05dc136f.mp4",
+      "local_file": "output/scene_04.mp4"
+    },
+    {
+      "index": 5,
+      "duration_seconds": 6,
+      "estimated_cost_credits": 54,
+      "start_image": "assets/scene_05_itf_1972_rule.png",
+      "media_id": "84fa2add-3b8e-49a2-9b75-208b5b66e1c3",
+      "job_id": "bcc9ecac-6bcb-4fd2-b4ac-1df9f5fb6b92",
+      "status": "completed",
+      "prompt": "Create one seamless continuous 6-second vertical 9:16 shot using the supplied image as the exact first frame. Use a gentle overhead-to-three-quarter camera drift. The miniature crane slowly lowers the optic-yellow tennis ball into the open rulebook display recess and Tedori presses one confirmation lever. Preserve the symbolic archival desk, brass mechanisms, paper texture and the existing 1972 marker exactly; do not create any new writing or dates. No ceremony, no magical effects, no cuts, no subtitles, no captions, no logo, no watermark, no UI, no generated audio.",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_104804_bcc9ecac-6bcb-4fd2-b4ac-1df9f5fb6b92.mp4",
+      "local_file": "output/scene_05.mp4"
+    },
+    {
+      "index": 6,
+      "duration_seconds": 8,
+      "estimated_cost_credits": 72,
+      "start_image": "assets/scene_06_wimbledon_1972_1986.png",
+      "media_id": "c96ba38c-928f-4c2e-bfa4-2e159f4e84f4",
+      "job_id": "4e6c6771-5ce9-4f09-ad7b-32a11fa72515",
+      "status": "completed",
+      "prompt": "Create one seamless continuous 8-second lateral tracking shot in vertical 9:16 using the supplied image as the exact first frame. Track slowly along the miniature grass court. The explanatory timeline mechanism advances smoothly from the existing 1972 end toward the existing 1986 end while Tedori groundskeepers carefully roll away the white ball and place the optic-yellow ball in the same position. Treat it as a symbolic educational timeline, not literal historical footage. Preserve exact court geometry, net, grass, lighting, existing markers and Tedori designs. No protected tournament logos, no new text, no subtitles, no captions, no cuts, no UI, no generated audio.",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_104803_4e6c6771-5ce9-4f09-ad7b-32a11fa72515.mp4",
+      "local_file": "output/scene_06.mp4"
+    },
+    {
+      "index": 7,
+      "duration_seconds": 9,
+      "estimated_cost_credits": 81,
+      "start_image": "assets/scene_07_broadcast_to_modern_court.png",
+      "media_id": "3ae6e831-34ee-4389-84f5-bb4277a89b85",
+      "job_id": "a948f6a2-f401-4d91-9489-7fe330a36372",
+      "status": "completed",
+      "submission_retries": 1,
+      "retry_reason": "Initial submission returned HTTP 429 rate_limit_reached while six earlier scenes were active; retried once after capacity became available.",
+      "prompt": "Create one seamless continuous 9-second vertical 9:16 ending shot using the supplied image as the exact first frame. Track the optic-yellow tennis ball as its trajectory visually continues from the vintage CRT image into the modern sunlit court through a restrained conceptual match move. The ball bounces once with believable tennis-ball physics and comes to rest beside Tedori. Tedori gives one gentle wave. Hold the clean final composition for one second. Preserve Tedori's exact identity, the CRT, machinery and court. No cuts, no text, no subtitles, no captions, no title, no end card, no logo, no watermark, no app interface, no advertising, no UI, no generated audio.",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gx1HRfMXOUB7nmoNbjOyllJdXO/hf_20260825_105134_a948f6a2-f401-4d91-9489-7fe330a36372.mp4",
+      "local_file": "output/scene_07.mp4"
+    }
+  ],
+  "final_output": {
+    "file": "output/FTN_EP01_yellow_tennis_ball_no_subtitles.mp4",
+    "duration_seconds": 43,
+    "resolution": "1080x1920",
+    "fps": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_sample_rate": 48000,
+    "audio_channels": 2,
+    "audio_content": "silence",
+    "faststart": true
+  },
+  "qc": {
+    "sample_times_seconds": [0, 4, 9, 14, 20, 26, 34, 42],
+    "contact_sheet": "output/qc_contact_sheet.jpg",
+    "result": "pass",
+    "notes": "Scene order, Tedori identity, tennis-ball form, and absence of newly generated subtitles, logos, watermarks, and UI were verified from the required frame samples. Existing 1972 and 1986 markers are intentional source-frame content."
+  }
+}

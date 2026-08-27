@@ -1,0 +1,307 @@
+{
+  "episodeId": "FTN-PILOT-01",
+  "completedAt": "2026-08-25T20:19:29.884Z",
+  "updatedAt": "2026-08-25T20:26:13.714Z",
+  "approvedAt": "2026-08-25T20:26:13.714Z",
+  "provider": "codex-search",
+  "geometry": {
+    "subjectKo": "‘스파게티 라켓’은 특정 프레임 제품명이 아니라 1977년 논란이 된 비직조 다층 스트링 방식의 통칭이다. 형태 기준은 Werner Fischer의 US4190249A 특허 구조이며, Fischer/Adidas 박물관 실물은 그 구체적 제품 사례다.",
+    "subjectEn": "“Spaghetti racket” is a generic name for the controversial non-interlaced, multilayer stringing method, not one specific racket-frame model. The geometry baseline is Werner Fischer’s US4190249A construction; the museum-held Fischer/Adidas racket is one product implementation.",
+    "invariantsKo": [
+      "핵심은 프레임 모양이 아니라 서로 평행한 세 개의 독립 스트링 층이다.",
+      "정확한 앞뒤 순서는 전면 세로줄 층–중앙 가로줄 층–후면 세로줄 층이다.",
+      "두 바깥 세로줄 층은 서로 대칭이며 각 앞뒤 세로줄은 대체로 일대일로 포개진다.",
+      "세로줄과 가로줄은 바둑판처럼 위아래로 번갈아 엮이지 않는다.",
+      "중앙 가로줄은 일반 라켓보다 매우 성기며 특허 실시예에서는 서로 인접한 두 줄씩 짝을 이룬 가로줄 행이다.",
+      "각 바깥 세로줄에는 중앙 가로줄과 만나는 위치마다 짧은 원통형 저마찰 슬리브가 끼워진다.",
+      "별도의 가는 고정줄이 각 바깥 세로줄 층의 세로줄들을 가로질러 묶지만 프레임까지 장력 연결되지는 않는다.",
+      "공은 충돌 순간 한쪽 바깥 세로줄 층과 접촉한다. 공 전체가 두 스트링 면 사이에 끼이거나 정지하지 않는다.",
+      "합법적인 현대 스트링 면과 비교할 때는 단일 평면의 균일한 교차 격자와 명확히 구별해야 한다."
+    ],
+    "invariantsEn": [
+      "The defining feature is not the frame shape but three independent, mutually parallel string strata.",
+      "The exact front-to-back order is front main-string layer, central cross-string layer, rear main-string layer.",
+      "The two outer main-string layers are approximately symmetrical, with corresponding front and rear mains generally aligned one-to-one.",
+      "The mains and crosses are not alternately woven over and under like a conventional checkerboard string bed.",
+      "The central crosses are extremely sparse compared with a conventional racket; in the patent embodiment they form rows of closely adjacent cross-string pairs.",
+      "Short cylindrical low-friction sleeves surround each outer main string at its contact positions with the central crosses.",
+      "Separate thin holding cords link the mains within each outer layer but are not tension-connected to the frame.",
+      "During impact, the ball contacts the outer main-string layer facing it. The entire ball is not trapped or stopped between two string faces.",
+      "For a legal modern comparison, show one flat, generally uniform interlaced grid, clearly distinct from the multilayer construction."
+    ],
+    "constructionKo": [
+      "일반적인 타원형 폐쇄 헤드와 손잡이를 가진 목재 또는 금속 라켓 프레임을 사용한다. 특허는 프레임 자체를 발명의 핵심으로 한정하지 않는다.",
+      "프레임 중앙 대칭면에 성긴 가로줄 층을 먼저 설치한다. 특허 도면의 가로줄은 평행한 인접 쌍으로 묶여 있고, 쌍과 쌍 사이는 넓다.",
+      "중앙층의 앞뒤에 촘촘한 세로줄 층 두 개를 별도로 설치한다. 세 층은 가까이 붙어 있지만 동일 평면이 아니다.",
+      "세로줄의 각 가로줄 접촉부에 짧은 중공 원통 슬리브를 끼우고 접착제로 세로줄에 고정한다.",
+      "각 외부 세로줄 층의 중앙 타구 영역에 가는 고정줄 행을 매듭으로 묶어 여러 세로줄이 하나의 배열처럼 함께 이동하게 한다.",
+      "돌기·클램프·접착 수지 덩어리 또는 슬리브 가장자리가 고정줄 매듭이 세로 방향으로 미끄러지는 것을 막는다.",
+      "특허 실시예는 하나의 프레임 구멍 평면을 사용할 수 있어 바깥 세로줄 층이 중앙 가로줄 층 쪽으로 눌리는 힘을 만든다.",
+      "Fischer/Adidas 박물관 실물은 알루미늄 프레임과 플라스틱 스로트, 18개의 세로줄과 5개의 성긴 가로 위치를 가진 제품 사례다. 다른 역사적 재현에는 16개의 세로줄이 보고되므로 이를 모든 스파게티 스트링의 보편 치수로 일반화하지 않는다."
+    ],
+    "constructionEn": [
+      "Use a conventional oval closed-head racket with a handle, made with a wood or metal frame. The patent does not make the frame itself the defining invention.",
+      "Install the sparse cross-string layer in the central symmetry plane of the head. In the patent embodiment, adjacent crosses form parallel pairs with broad gaps between paired rows.",
+      "Install two denser main-string layers separately, one immediately in front of and one immediately behind the central layer. The three layers are close but not coplanar.",
+      "Thread a short hollow cylindrical sleeve over each main at every central-cross contact and secure the sleeve to the main with adhesive.",
+      "Tie rows of thin holding cord across the central hitting region of each outer main layer so that multiple mains can shift as a coordinated array.",
+      "Projections, clamps, adhesive-polymer blobs, or sleeve edges prevent the holding-cord knots from migrating along the mains.",
+      "The illustrated patent embodiment can use a single plane of frame holes, producing force vectors that press the outer main layers toward the central cross layer.",
+      "The museum Fischer/Adidas artifact is one product example with an aluminum frame, plastic throat, 18 mains, and five sparse cross positions. Research reproductions also report 16 mains, so do not universalize one count to every spaghetti stringing."
+    ],
+    "materialsKo": [
+      "프레임: 특허상 일반 목재 또는 금속 프레임이 가능하며, Fischer/Adidas 박물관 실물은 알루미늄 프레임이다.",
+      "스로트: 박물관 실물 사례는 플라스틱이다. 모든 역사적 개조 라켓에 필수인 재료는 아니다.",
+      "중앙 가로줄: 표준 굵기의 일반 나일론 라켓 스트링을 사용할 수 있다.",
+      "바깥 세로줄: 표준 라켓 스트링이며 특허는 특정 단일 재질로 제한하지 않는다.",
+      "슬리브: 나일론 11과 같거나 그보다 낮은 마찰계수를 가진 단단한 저마찰 플라스틱 관이다.",
+      "고정줄: 세로줄들을 서로 묶는 가는 유연한 코드이며, 접착제로 강화된 매듭을 사용할 수 있다.",
+      "접착부: 슬리브와 고정줄 위치를 유지하는 에폭시 또는 적합한 접착성 고분자다."
+    ],
+    "materialsEn": [
+      "Frame: the patent permits a conventional wood or metal frame; the museum Fischer/Adidas artifact has an aluminum frame.",
+      "Throat: the museum artifact uses plastic, but this is not mandatory for every historical conversion.",
+      "Central crosses: conventional racket strings of standard nylon composition and gauge may be used.",
+      "Outer mains: standard racket strings; the patent does not restrict them to one universal material.",
+      "Sleeves: hard, low-friction plastic tubing such as nylon 11, with a coefficient of friction no greater than nylon 11.",
+      "Holding cords: thin flexible cords tying neighboring mains together, optionally reinforced at the knots with adhesive.",
+      "Fixing material: epoxy or another suitable adhesive polymer used to retain sleeves and holding-cord positions."
+    ],
+    "mechanismKo": [
+      "비스듬한 충돌에서 공이 먼저 한쪽 바깥 세로줄 층을 누르고, 그 층의 세로줄 배열을 가로줄 방향으로 옆으로 민다.",
+      "저마찰 슬리브는 세로줄이 중앙 가로줄 위를 활주하게 하며, 중앙 가로줄은 활주 레일이자 충격을 받는 탄성 지지층으로 기능한다.",
+      "고정줄은 개별 세로줄이 제각각 벌어지는 것을 줄이고 여러 세로줄이 한 배열처럼 측면 변위하도록 한다.",
+      "옆으로 밀린 세로줄은 탄성 에너지를 저장했다가 접촉 종료 전에 원래 위치로 되돌아오는 스냅백을 일으킨다.",
+      "복원력의 스트링 면과 평행한 성분이 공의 접선 방향 힘과 회전 토크를 증가시킨다.",
+      "영상 시뮬레이션은 접근–공과 바깥 세로줄의 압축–세로줄의 측면 이동–복원–공 이탈과 회전 증가 순서로 보여준다.",
+      "앞쪽 면으로 칠 때는 앞쪽 세로줄 층만 회전에 직접 관여하고, 뒤쪽 세로줄 층과 중앙층은 전진 방향 운동량 전달에도 기여한다.",
+      "접촉은 짧은 충돌 과정이다. 슬리브가 공을 붙잡거나 세 층이 공을 주머니처럼 감싸는 메커니즘이 아니다."
+    ],
+    "mechanismEn": [
+      "In an oblique impact, the ball first loads the facing outer main-string layer and pushes that main-string array sideways in the direction of the crosses.",
+      "The low-friction sleeves let the mains slide over the central crosses; the central crosses act both as glide rails and as a resilient impact-support layer.",
+      "Holding cords reduce uncontrolled differential spreading and make multiple mains displace laterally as a coordinated array.",
+      "The displaced mains store elastic energy and snap back toward their neutral position before contact ends.",
+      "The component of restoring force parallel to the string face increases tangential force and rotational torque on the ball.",
+      "Animate the sequence as approach, ball and outer-main compression, lateral main displacement, elastic return, then ball release with increased spin.",
+      "For a strike on the front face, only the front main layer directly supplies the spin-producing contact, while the rear mains and central layer still contribute to forward momentum transfer.",
+      "Contact remains a brief collision. The sleeves do not grab the ball, and the three layers do not wrap around it like a pocket."
+    ],
+    "commonErrorsKo": [
+      "세로줄과 가로줄을 일반 라켓처럼 한 평면에서 위아래로 교차 직조하는 오류.",
+      "두 층만 그리거나 앞·중앙·뒤의 세 독립 평면 순서를 뒤바꾸는 오류.",
+      "가로줄을 일반 라켓처럼 18~20개의 촘촘한 격자로 채우는 오류. 역사적 구조의 가로줄은 매우 성기다.",
+      "슬리브를 가로줄에 끼우거나 스트링 교점 전체를 큰 고무 구슬·금속 베어링으로 만드는 오류. 짧은 중공 플라스틱 관은 바깥 세로줄을 감싼다.",
+      "고정줄, 매듭, 위치 고정 돌기를 생략하거나 고정줄을 프레임까지 팽팽하게 연결하는 오류.",
+      "두 바깥 세로줄 층을 서로 어긋난 사선 격자 또는 십자망으로 만드는 오류. 기본 실시예는 서로 평행하고 대체로 일대일 정렬된다.",
+      "공을 세 스트링 층 사이에 완전히 끼워 멈추게 하거나 스트링이 공을 포획하는 주머니처럼 묘사하는 오류.",
+      "라켓 프레임을 이중 프레임, 두 개의 헤드 또는 비정상적으로 두꺼운 기계 장치로 만드는 오류. 핵심 변화는 스트링 구조다.",
+      "슬리브를 모터·스프링·기어로 표현하는 오류. 움직이는 요소는 장력 받은 세로줄 배열의 수동적인 측면 활주와 탄성 복원이다.",
+      "Fischer/Adidas 박물관 실물의 알루미늄 프레임·플라스틱 스로트를 모든 스파게티 라켓의 필수 외형으로 일반화하는 오류."
+    ],
+    "commonErrorsEn": [
+      "Weaving mains and crosses over-under in one plane like a conventional racket.",
+      "Showing only two layers or reversing the front–central–rear order of the three independent planes.",
+      "Filling the head with 18–20 dense cross rows like a normal racket. Historical spaghetti crosses are extremely sparse.",
+      "Putting sleeves on the crosses or replacing every contact with large rubber beads or metal bearings. The short hollow plastic tubes surround the outer mains.",
+      "Omitting the holding cords, knots, and locating projections, or tensioning the holding cords all the way to the frame.",
+      "Offsetting the two outer main layers into diagonal or crossed meshes. In the baseline embodiment they are parallel and generally aligned one-to-one.",
+      "Showing the ball fully wedged between the three layers or caught in a pocket formed by the strings.",
+      "Inventing a double frame, twin racket heads, or an abnormally thick mechanical chassis. The defining modification is the string construction.",
+      "Rendering the sleeves as powered motors, gears, or coil springs. Motion comes from passive lateral sliding and elastic return of tensioned mains.",
+      "Treating the aluminum frame and plastic throat of the museum Fischer/Adidas artifact as mandatory features of every spaghetti racket."
+    ]
+  },
+  "references": [
+    {
+      "id": "R01",
+      "title": "US4190249A — Tennis racket and method of making same",
+      "sourceType": "patent",
+      "sourceUrl": "https://patents.google.com/patent/US4190249A/en",
+      "imageUrl": "https://patentimages.storage.googleapis.com/85/b8/ac/be28d5bb52452b/US4190249-drawings-page-2.png",
+      "license": "public-domain",
+      "authorityScore": 5,
+      "whyUsefulKo": "Werner Fischer 구조의 도면 설명과 청구항을 제공하는 핵심 1차 자료다. 세 층의 앞뒤 관계, 가로줄 쌍, 슬리브, 고정줄, 매듭과 측면 이동을 직접 규정한다.",
+      "visualFactsKo": [
+        "도면 1은 일반 타원형 폐쇄 프레임과 세 개의 스트링 층을 표시한다.",
+        "도면 2·3은 중앙 가로줄, 앞뒤 세로줄, 원통 슬리브와 매듭 고정줄의 공간 관계를 보여준다.",
+        "슬리브 외경은 실시예에서 가로줄 지름의 약 두 배이며 길이는 세로줄 간격과 비슷하다.",
+        "앞뒤 세로줄은 중앙 가로줄 층을 기준으로 대칭 배치된다."
+      ],
+      "visualFactsEn": [
+        "Figure 1 shows a conventional oval closed frame carrying three string strata.",
+        "Figures 2 and 3 define the spatial relationship among the central crosses, front and rear mains, cylindrical sleeves, and knotted holding cords.",
+        "In the embodiment, sleeve outside diameter is about twice the cross-string diameter and sleeve length is roughly one main-string spacing.",
+        "Front and rear mains are arranged symmetrically around the central cross layer."
+      ],
+      "selected": true,
+      "localFile": "output/episodes/FTN-PILOT-01/visual-references/assets/vr01.png",
+      "downloadError": null
+    },
+    {
+      "id": "R02",
+      "title": "Fischer / Adidas Spaghetti strung racquet — Australian Tennis Museum",
+      "sourceType": "museum",
+      "sourceUrl": "https://artsandculture.google.com/asset/fischer-adidas-spaghetti-strung-racquet-fischer-adidas/-AHaWrrot0mjow?hl=en",
+      "imageUrl": "",
+      "license": "source-link-only",
+      "authorityScore": 5,
+      "whyUsefulKo": "Australian Tennis Museum 소장 실물의 재질과 스트링 수, 결합 세부를 기록해 특허 도면이 실제 제품에서 어떻게 구현됐는지 확인할 수 있다.",
+      "visualFactsKo": [
+        "실물은 알루미늄 프레임과 플라스틱 스로트를 가진다.",
+        "두 세로줄 세트 사이에 가로줄이 있어 총 세 층을 이룬다.",
+        "기록상 18개의 세로줄과 5개의 가로줄을 사용한다.",
+        "교점의 짧은 플라스틱 관과 세로줄들을 묶는 다섯 개의 가는 줄이 보이는 제품 사례다."
+      ],
+      "visualFactsEn": [
+        "The artifact has an aluminum frame and plastic throat.",
+        "Crosses lie between two sets of mains, creating three layers.",
+        "The catalog records 18 mains and five crosses.",
+        "It is a product example with short plastic tubes at contacts and five thin cords linking the mains."
+      ],
+      "selected": true,
+      "localFile": null,
+      "downloadError": null
+    },
+    {
+      "id": "R03",
+      "title": "ITF 2026 Rules of Tennis",
+      "sourceType": "official",
+      "sourceUrl": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf",
+      "imageUrl": "",
+      "license": "source-link-only",
+      "authorityScore": 5,
+      "whyUsefulKo": "규칙 4의 판정과 부록 II가 합법적인 타구면의 단일성·평면성·균일성·교차 결합 방식을 정의해 금지 구조와의 정확한 비교 기준을 제공한다.",
+      "visualFactsKo": [
+        "합법적 타구면은 평평한 교차 스트링 패턴이다.",
+        "교차점은 번갈아 엮이거나 결합되어야 한다.",
+        "여러 스트링 세트 또는 여러 평면은 허용되지 않는다.",
+        "패턴은 대체로 균일하며 중앙이 다른 곳보다 성겨서는 안 된다."
+      ],
+      "visualFactsEn": [
+        "A legal hitting surface is a flat pattern of crossed strings.",
+        "Crossings must be alternately interlaced or bonded.",
+        "Multiple sets of strings or multiple planes are not allowed.",
+        "The pattern must be generally uniform and cannot be less dense in the center."
+      ],
+      "selected": true,
+      "localFile": null,
+      "downloadError": null
+    },
+    {
+      "id": "R04",
+      "title": "Mechanism of Tennis Racket Spin Performance",
+      "sourceType": "research",
+      "sourceUrl": "https://www.jstage.jst.go.jp/article/jsdd/6/2/6_2_200/_pdf",
+      "imageUrl": "",
+      "license": "source-link-only",
+      "authorityScore": 5,
+      "whyUsefulKo": "고속영상 기반 원 논문으로, 그림 12의 스파게티 스트링 실물·도해와 세로줄 측면 이동 및 복원에 의한 회전 증가 메커니즘을 제공한다.",
+      "visualFactsKo": [
+        "논문 사례는 16개의 세로줄을 두 겹으로 통과시키고 5개의 굵고 성긴 가로줄을 사이에 둔다.",
+        "중공 플라스틱 롤러가 세로줄을 감싸며 세 층 구조의 활주를 돕는다.",
+        "회전 증가의 직접 원인은 세로줄의 측면 활주와 스냅백이다.",
+        "논문 그림은 일반 스트링과 스파게티 스트링의 회전 성능 비교를 포함한다."
+      ],
+      "visualFactsEn": [
+        "The research example doubles 16 mains through the holes and sandwiches five thick sparse crosses between them.",
+        "Hollow plastic rollers surround the mains and facilitate sliding in the three-plane construction.",
+        "The direct spin mechanism is lateral main-string sliding followed by snapback.",
+        "The paper includes a visual comparison of spin from conventional and spaghetti stringing."
+      ],
+      "selected": true,
+      "localFile": null,
+      "downloadError": null
+    },
+    {
+      "id": "R05",
+      "title": "ITF Technical — Strings: Stringing Systems",
+      "sourceType": "official",
+      "sourceUrl": "https://www.itftennis.com/media/2175/rackets-and-strings-strings.pdf",
+      "imageUrl": "",
+      "license": "source-link-only",
+      "authorityScore": 5,
+      "whyUsefulKo": "ITF 기술자료가 합법적 직조면과 스파게티 구조를 직접 비교하고, 평행한 스트링 평면·관형 슬리브·반동 회전의 관계를 설명한다.",
+      "visualFactsKo": [
+        "스파게티 구조의 세로줄과 가로줄은 서로 엮이지 않고 평행한 평면에 놓인다.",
+        "관형 슬리브는 베어링처럼 활주를 돕는다.",
+        "세로줄은 타구면 안에서 변위된 뒤 복원되며 공을 회전시킨다.",
+        "합법적 구조는 평평하고 교차점에서 엮이거나 결합된 패턴이다."
+      ],
+      "visualFactsEn": [
+        "Spaghetti mains and crosses are not interlaced and occupy parallel planes.",
+        "Tubular sleeves assist sliding like bearings.",
+        "Mains deflect within the hitting-surface plane and rotate the ball as they recoil.",
+        "The legal counterpart is flat and interlaced or bonded at crossings."
+      ],
+      "selected": true,
+      "localFile": null,
+      "downloadError": null
+    },
+    {
+      "id": "R06",
+      "title": "Gunter Harz Sports v. United States Tennis Association, 511 F. Supp. 1103",
+      "sourceType": "archive",
+      "sourceUrl": "https://law.justia.com/cases/federal/district-courts/FSupp/511/1103/1429737/",
+      "imageUrl": "",
+      "license": "source-link-only",
+      "authorityScore": 4,
+      "whyUsefulKo": "법원의 사실인정이 1977년 실제 구조를 부품 단위로 기술하고 임시 금지와 1978년 규칙 채택의 시간 관계를 확인해 준다.",
+      "visualFactsKo": [
+        "두 세로줄 층 사이에 가로줄 층이 위치하고 서로 직조되지 않는다.",
+        "다섯 개의 이중 가로줄 접촉부에 짧은 나일론 관이 배치된다.",
+        "각 세로줄 층은 관 바로 아래의 다섯 고정줄 행으로 함께 묶인다.",
+        "에폭시가 관과 고정줄을 제자리에 유지한다."
+      ],
+      "visualFactsEn": [
+        "A cross-string layer sits between two non-interwoven main-string layers.",
+        "Short nylon tubes occur at the five double-cross contact rows.",
+        "Each main layer is linked by five tie-cord rows positioned directly below the tubing.",
+        "Epoxy retains the tubes and tie cords in position."
+      ],
+      "selected": true,
+      "localFile": null,
+      "downloadError": null
+    },
+    {
+      "id": "R07",
+      "title": "ITF official history and FAQs",
+      "sourceType": "official",
+      "sourceUrl": "https://www.itftennis.com/en/about-us/organisation/faqs/?type=world-tennis",
+      "imageUrl": "",
+      "license": "source-link-only",
+      "authorityScore": 4,
+      "whyUsefulKo": "ITF가 1977년 double-strung racket 불만 이후 새로운 스트링 개념을 감시하기 시작했다는 공식 연혁을 제공한다.",
+      "visualFactsKo": [
+        "공식 명칭으로 double-strung racket을 사용한다.",
+        "논란의 대상이 새로운 프레임 형상보다 새로운 스트링 개념이었음을 뒷받침한다."
+      ],
+      "visualFactsEn": [
+        "The official history uses the term double-strung racket.",
+        "It supports treating the controversy as a new stringing concept rather than a novel frame silhouette."
+      ],
+      "selected": true,
+      "localFile": null,
+      "downloadError": null
+    }
+  ],
+  "searchQueries": [
+    "US4190249A patent Figure 1 image",
+    "Werner Fischer spaghetti racket patent drawing nylon tubing",
+    "spaghetti racket museum collection double strung racket",
+    "Fischer Adidas spaghetti strung racquet Australian Tennis Museum",
+    "Mechanism of Tennis Racket Spin Performance spaghetti strings Figure 12",
+    "ITF rackets and strings spaghetti stringing tubular sleeves",
+    "Gunter Harz Sports double-strung racket nylon tubing tie cords"
+  ],
+  "promptAnchorKo": "1977년 Werner Fischer식 스파게티 스트링의 공학적 형태를 고정한다. 일반적인 타원형 테니스 라켓 헤드 안에 서로 매우 가까우나 분명히 분리된 평행한 세 층—전면의 촘촘한 세로줄 층, 중앙의 매우 성긴 가로줄 층, 후면의 촘촘한 세로줄 층—을 정확한 순서로 배치한다. 앞뒤 세로줄은 대체로 일대일 정렬되고 중앙 가로줄과 절대 위아래로 직조되지 않는다. 중앙 가로줄은 넓게 떨어진 소수의 행이며 특허 실시예처럼 인접한 쌍으로 보이게 한다. 각 외부 세로줄에는 가로줄 접촉 위치마다 짧은 중공 원통형 저마찰 플라스틱 슬리브가 끼워지고, 별도의 가는 고정줄 행이 매듭으로 같은 층의 세로줄들을 서로 묶되 프레임까지 이어지지 않는다. 단면에서는 공이 한쪽 바깥 세로줄 층만 누르고 그 세로줄 배열이 중앙 가로줄 위를 옆으로 활주했다가 탄성 복원하는 모습을 보여준다. 공을 층 사이에 끼우지 말고, 이중 프레임·기어·스프링·모터·촘촘한 일반 격자·단일 평면 직조를 추가하지 않는다.",
+  "promptAnchorEn": "Lock the engineering geometry of Werner Fischer-style 1977 spaghetti stringing. Inside a conventional oval tennis-racket head, place three very close but visibly separate parallel strata in the exact order: a dense front main-string layer, an extremely sparse central cross-string layer, and a dense rear main-string layer. Align corresponding front and rear mains generally one-to-one; never weave either main layer over-under with the central crosses. Show only a few widely separated central cross rows, appearing as closely adjacent pairs in the patent embodiment. At every cross-contact position, fit a short hollow cylindrical low-friction plastic sleeve around each outer main. Add separate rows of thin holding cord, knotted around the mains within each outer layer but not extended under tension to the frame. In section, show the ball loading only the facing outer main layer while that main array slides laterally over the central crosses and elastically snaps back. Do not wedge the ball between layers, and do not add a double frame, gears, coil springs, motors, a dense conventional grid, or single-plane interlacing.",
+  "warnings": [
+    "‘Spaghetti racket’은 하나의 고정된 프레임 제품명이 아니라 여러 프레임에 적용된 다층 비직조 스트링 방식의 통칭이다. Fischer/Adidas 박물관 실물과 특허 실시예를 모든 변형의 유일한 외형으로 일반화하지 않는다.",
+    "‘회전 때문에 금지’는 요약 표현이다. ITF 규칙은 RPM 상한을 두지 않고 다중 스트링 세트, 다중 평면, 비직조 구조를 배제한다.",
+    "공이 스트링 사이에 머물거나 물리적으로 끼인다는 묘사는 피한다. 정확한 모션은 짧은 접촉 중 세로줄의 측면 이동과 복원이다.",
+    "1977년 10월 3일 조치는 연구를 위한 임시 동결이었으며, 평평한 교차 스트링 면을 정의한 규칙은 1978년에 정식 채택됐다.",
+    "특허 도면은 공개 도메인으로 분류했지만 박물관 실물 사진과 논문 그림은 별도 권리자가 있으므로 source-link-only로 취급했다.",
+    "직접 열어 확인한 원본 PNG/JPG/WEBP 주소가 없으므로 모든 imageUrl을 빈 문자열로 두었다."
+  ]
+}

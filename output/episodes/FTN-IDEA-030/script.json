@@ -1,0 +1,188 @@
+{
+  "episodeId": "FTN-IDEA-030",
+  "title": "라켓을 길게 만들면 서브가 빨라질까",
+  "updatedAt": "2026-08-25T17:16:56.407Z",
+  "scriptSource": "dashboard-editor",
+  "generationProvider": "codex-search+editorial-pass+slot-frame",
+  "scriptLines": [
+    "라켓이 길어지면, 서브도 정말 빨라질까요?",
+    "얼핏 보면 그럴듯합니다. 긴 라켓은 더 큰 원을 그리니까요.",
+    "같은 각도로 돌아도, 라켓 끝은 더 먼 거리를 움직입니다.",
+    "그러니 이론상 헤드 속도는 조금 더 빨라질 수 있습니다.",
+    "물론 ITF 규정상 라켓은 73.7센티미터를 넘을 수 없습니다.",
+    "그런데 규정보다 먼저, 선수의 팔이 또 다른 한계를 만납니다.",
+    "라켓이 길어질수록 질량도 손에서 멀어지기 때문입니다.",
+    "이때 함께 커지는 회전 저항을 스윙웨이트라고 부릅니다.",
+    "스윙웨이트가 커지면 같은 속도에도 더 큰 힘이 필요합니다.",
+    "그 힘을 감당하지 못하면, 헤드 속도는 오히려 떨어집니다.",
+    "길이로 얻은 이점이 무게 배치에서 사라지기도 하는 거죠.",
+    "그럼 가볍게 만들면 되지 않을까요? 여기에도 작은 함정이 있습니다.",
+    "관성을 낮추면 빨리 휘두르지만, 충돌의 묵직함은 줄어듭니다.",
+    "선수 6명 실험에서는 관성을 12퍼센트 낮춰봤습니다.",
+    "그러자 헤드 속도가 10퍼센트 높아졌습니다.",
+    "반면 11명 연구에서는 스윙웨이트를 높여도 공 속도는 비슷했습니다.",
+    "결국 서브 속도는 헤드 속도와 충돌 효율이 함께 만듭니다.",
+    "정리해보면 이렇습니다. 길이만으로는 서브가 빨라지지 않네요."
+  ],
+  "evidence": [
+    {
+      "cut": 1,
+      "claim": "라켓이 길어지면, 서브도 정말 빨라질까요?",
+      "proof": "라켓 길이는 회전 반경과 관성을 동시에 바꾸므로 실제 서브 결과에 영향을 줄 수 있습니다.",
+      "graphic": "ONE SERVE"
+    },
+    {
+      "cut": 2,
+      "claim": "얼핏 보면 그럴듯합니다. 긴 라켓은 더 큰 원을 그리니까요.",
+      "proof": "긴 반지름의 선속도 이점은 실제 스윙에서 관성 증가와 동작 적응으로 상쇄될 수 있습니다.",
+      "graphic": "LENGTH ≠ SPEED"
+    },
+    {
+      "cut": 3,
+      "claim": "같은 각도로 돌아도, 라켓 끝은 더 먼 거리를 움직입니다.",
+      "proof": "그립 쪽 회전축에서 헤드까지 거리가 늘어나면 헤드가 그리는 회전 반경도 커집니다.",
+      "graphic": "ROTATION RADIUS"
+    },
+    {
+      "cut": 4,
+      "claim": "그러니 이론상 헤드 속도는 조금 더 빨라질 수 있습니다.",
+      "proof": "회전 운동의 선속도 관계식 v=ωr에 따르면 각속도가 같을 때 반지름이 클수록 끝의 속도가 큽니다.",
+      "graphic": "v = ωr"
+    },
+    {
+      "cut": 5,
+      "claim": "물론 ITF 규정상 라켓은 73.7센티미터를 넘을 수 없습니다.",
+      "proof": "2026 ITF 테니스 규칙 부록 II는 라켓의 전체 길이 상한을 73.7센티미터로 정합니다.",
+      "graphic": "MAX 73.7 cm"
+    },
+    {
+      "cut": 6,
+      "claim": "그런데 규정보다 먼저, 선수의 팔이 또 다른 한계를 만납니다.",
+      "proof": "질량 요소가 회전축에서 멀어질수록 회전 관성에 미치는 영향이 커집니다.",
+      "graphic": "MASS OUTWARD"
+    },
+    {
+      "cut": 7,
+      "claim": "라켓이 길어질수록 질량도 손에서 멀어지기 때문입니다.",
+      "proof": "관성모멘트는 질량과 축에서의 거리 제곱에 좌우되며 스윙웨이트는 회전 가속 저항을 나타냅니다.",
+      "graphic": "SWINGWEIGHT"
+    },
+    {
+      "cut": 8,
+      "claim": "이때 함께 커지는 회전 저항을 스윙웨이트라고 부릅니다.",
+      "proof": "회전 운동식 τ=Iα에 따라 관성이 커지면 같은 각가속도를 만들기 위해 더 큰 토크가 필요합니다.",
+      "graphic": "τ = Iα"
+    },
+    {
+      "cut": 9,
+      "claim": "스윙웨이트가 커지면 같은 속도에도 더 큰 힘이 필요합니다.",
+      "proof": "선수가 추가 토크를 만들지 못하면 각가속도와 최종 각속도가 낮아질 수 있습니다.",
+      "graphic": "ANGULAR SPEED ↓"
+    },
+    {
+      "cut": 10,
+      "claim": "그 힘을 감당하지 못하면, 헤드 속도는 오히려 떨어집니다.",
+      "proof": "늘어난 반지름의 이점보다 회전 관성의 부담이 커지면 실제 헤드 속도는 오르지 않습니다.",
+      "graphic": "HAND CAN'T FOLLOW"
+    },
+    {
+      "cut": 11,
+      "claim": "길이로 얻은 이점이 무게 배치에서 사라지기도 하는 거죠.",
+      "proof": "서브 공 속도는 길이 수치가 아니라 충돌 순간의 헤드 속도와 충돌 조건으로 평가해야 합니다.",
+      "graphic": "IMPACT MOMENT"
+    },
+    {
+      "cut": 12,
+      "claim": "그럼 가볍게 만들면 되지 않을까요? 여기에도 작은 함정이 있습니다.",
+      "proof": "스윙웨이트를 낮추는 방식에 따라 충돌 지점의 유효질량도 함께 감소할 수 있습니다.",
+      "graphic": "HEAD SPEED vs MASS"
+    },
+    {
+      "cut": 13,
+      "claim": "관성을 낮추면 빨리 휘두르지만, 충돌의 묵직함은 줄어듭니다.",
+      "proof": "큰 유효질량은 충돌 효율에 유리하지만 높은 관성은 라켓을 가속하기 어렵게 만듭니다.",
+      "graphic": "POWER vs SPEED"
+    },
+    {
+      "cut": 14,
+      "claim": "선수 6명 실험에서는 관성을 12퍼센트 낮춰봤습니다.",
+      "proof": "대학 선수 6명의 초기 연구는 관성 12퍼센트 감소에서 평균 헤드 속도 10퍼센트 증가를 보고했습니다.",
+      "graphic": "MOI −12% / +10%"
+    },
+    {
+      "cut": 15,
+      "claim": "그러자 헤드 속도가 10퍼센트 높아졌습니다.",
+      "proof": "엘리트 여자 청소년 선수 11명의 연구에서는 스윙웨이트가 높아질 때 라켓 속도는 감소했고 공 속도는 비슷했습니다.",
+      "graphic": "SW +5–10% / SPEED ≈"
+    },
+    {
+      "cut": 16,
+      "claim": "반면 11명 연구에서는 스윙웨이트를 높여도 공 속도는 비슷했습니다.",
+      "proof": "서브 공 속도는 충돌 순간의 헤드 속도와 라켓의 유효질량 및 반발 특성이 함께 좌우합니다.",
+      "graphic": "HEAD SPEED × IMPACT"
+    },
+    {
+      "cut": 17,
+      "claim": "결국 서브 속도는 헤드 속도와 충돌 효율이 함께 만듭니다.",
+      "proof": "선수와 라켓의 상호작용 때문에 길이 수치만으로 실제 서브 결과를 확정할 수 없습니다.",
+      "graphic": "SPEED + ACCURACY"
+    },
+    {
+      "cut": 18,
+      "claim": "정리해보면 이렇습니다. 길이만으로는 서브가 빨라지지 않네요.",
+      "proof": "반지름 증가의 잠재적 이득은 관성 증가와 선수의 속도 저하 사이 균형에 따라 달라집니다.",
+      "graphic": "BALANCED DESIGN"
+    }
+  ],
+  "sources": [
+    {
+      "title": "ITF Rules of Tennis 2026 — Appendix II: The Racket",
+      "url": "https://www.itftennis.com/media/7221/2026-rules-of-tennis-english.pdf",
+      "supports": "라켓 전체 길이의 최대 허용치 73.7센티미터와 관성모멘트를 바꾸는 장치에 관한 공식 규격을 뒷받침합니다."
+    },
+    {
+      "title": "Recommendations for estimating the moments of inertia of a tennis racket",
+      "url": "https://link.springer.com/article/10.1007/s12283-019-0303-8",
+      "supports": "스윙웨이트의 정의, 질량·무게중심과 관성모멘트의 관계, 고정된 스윙 속도와 실제 선수 스윙의 차이를 뒷받침합니다."
+    },
+    {
+      "title": "The Influence of Racket Inertia Properties on the Tennis Serve: A 3-Dimensional Analysis",
+      "url": "https://www.lboro.ac.uk/microsites/ssehs/biomechanics/papers/racket-inertia-tennis-serve-3d-analysis.pdf",
+      "supports": "라켓 관성을 낮췄을 때 소규모 선수 표본에서 헤드 속도가 유의하게 증가한 초기 실험을 뒷받침합니다."
+    },
+    {
+      "title": "The effect of racquet swing weight on serve kinematics in elite adolescent female tennis players",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23587536/",
+      "supports": "스윙웨이트 증가가 라켓과 관절 속도를 낮췄지만 서브 공 속도는 높이지 못한 반복측정 연구를 뒷받침합니다."
+    },
+    {
+      "title": "Joint Kinetics to Assess the Influence of the Racket on a Tennis Player’s Shoulder",
+      "url": "https://www.jssm.org/jssm-12-259.xml-Fulltext",
+      "supports": "라켓 사양에 따라 비슷한 공 속도를 만드는 관절 부하와 운동 전략이 달라질 수 있음을 뒷받침합니다."
+    },
+    {
+      "title": "ITF Rackets and Strings Research",
+      "url": "https://www.itftennis.com/media/2283/rackets-and-strings-research.pdf",
+      "supports": "ITF가 라켓 속도와 타격 위치를 통제한 기계 시험으로 라켓 파워를 비교한다는 점을 뒷받침합니다."
+    }
+  ],
+  "factWarnings": [
+    "질량·무게중심·스윙웨이트를 동일하게 유지하면서 라켓 길이만 바꾼 직접 비교 연구는 이번 조사에서 확인하지 못했습니다.",
+    "v=ωr에 따른 속도 증가는 각속도와 회전 기하가 같다는 조건부 계산이며 실제 선수의 동작 적응을 포함하지 않습니다.",
+    "긴 라켓이 타점을 높일 수 있다는 설명은 단순 기하학적 가능성으로, 실제 타점은 토스와 자세 및 임팩트 위치에 따라 달라집니다.",
+    "관성 감소와 헤드 속도 증가를 보고한 초기 연구는 선수 6명의 작은 표본이므로 모든 수준의 선수에게 같은 효과를 단정할 수 없습니다.",
+    "스윙웨이트 연구들은 관성과 공 속도의 관계가 선수 집단과 실험 조건에 따라 달라질 수 있음을 보여주므로 특정 길이에서의 속도 증가량은 제시하지 않았습니다."
+  ],
+  "editorialNotes": [
+    "첫 문장을 장면 묘사에서 상식 전복 주장으로 교체",
+    "인접 문장을 원인·반전·결과로 연결",
+    "길이와 관성의 딜레마를 10번 컷에서 회수",
+    "실험 결과 뒤에 실용 결론을 배치"
+  ],
+  "slotFrame": {
+    "opening": 1,
+    "crisis": 10,
+    "reversal": 11,
+    "closing": 18
+  }
+}

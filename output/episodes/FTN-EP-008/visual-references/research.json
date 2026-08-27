@@ -1,0 +1,173 @@
+{
+ "episodeId": "FTN-PILOT-02",
+ "completedAt": "2026-08-27T12:00:00.000Z",
+ "updatedAt": "2026-08-27T12:00:00.000Z",
+ "approvedAt": null,
+ "provider": "claude-research",
+ "geometry": {
+  "subjectKo": "옵틱 옐로 테니스공과 그 시인성 서사에 필요한 시각 기준: 공의 규격·솔기 형태, 흰/검은 공 시대의 배경 대비, 코트 라인 규격, 그리고 1960~70년대 브라운관 TV 화면 표현.",
+  "subjectEn": "Visual baselines for the optic-yellow tennis ball story: ball dimensions and seam geometry, background contrast of the white/black-ball era, court line specification, and 1960s-70s CRT television depiction.",
+  "invariantsKo": [
+   "테니스공 지름은 6.54~6.86cm이며 완전한 구형이다.",
+   "펠트 표면 위 솔기는 흰색 곡선 두 개가 서로 맞물린 무한대(∞) 형태의 닫힌 곡선 하나로, 야구공 스티치나 농구공 직선 홈과 완전히 다르다.",
+   "옵틱 옐로는 형광 연두빛 노랑이며, 규칙상 '흰색 또는 노란색'이 함께 허용된다.",
+   "코트는 베이스라인·단식/복식 사이드라인·서비스라인·센터서비스라인·센터마크로 구성되고, 서비스 박스는 네트와 서비스라인 사이에만 있다.",
+   "네트는 중앙이 0.914m로 낮고 포스트 쪽이 1.07m로 높으며, 상단에 흰 밴드가 있다.",
+   "1970년 전후 브라운관 TV는 곡면 유리 화면, 4:3 비율, 가로 주사선, 목재 캐비닛 특징을 가진다.",
+   "흑백 화면에서 흰 공은 흰 코트 라인과 휘도가 겹쳐 구분이 사라진다 — 이 병합 현상이 서사의 핵심 시각 사실이다."
+  ],
+  "invariantsEn": [
+   "A tennis ball is 6.54-6.86 cm in diameter and perfectly spherical.",
+   "The seam is a single closed curve of two interlocking white arcs forming a figure-eight band, entirely unlike baseball stitching or basketball grooves.",
+   "Optic yellow is a fluorescent green-leaning yellow; the rules permit white or yellow together.",
+   "A court consists of baselines, singles/doubles sidelines, service lines, center service line and center mark; service boxes exist only between the net and the service lines.",
+   "The net is 0.914 m at center and 1.07 m at the posts, with a white band on top.",
+   "A circa-1970 CRT set has a curved glass screen, 4:3 ratio, horizontal scanlines, and a wooden cabinet.",
+   "On monochrome screens a white ball merges with white court lines in luminance — this merging is the story's key visual fact."
+  ],
+  "constructionKo": [
+   "공은 고무 반구 두 개를 접합한 코어 위에 아령(8자) 모양 펠트 패널 두 장을 감싸 만든다. 두 패널의 경계가 곧 흰 솔기 곡선이 된다.",
+   "단면은 바깥 펠트층–고무 셸–내부 공기(가압 또는 무가압) 순서다. 흰 공과 노란 공의 단면 구조는 동일하고 펠트 색만 다르다.",
+   "역사적 재현: 노란 공 도입 전에는 코트 배경에 따라 검은 공(밝은 배경)과 흰 공(어두운 배경)을 골라 썼다.",
+   "브라운관 재현: 화면 발광은 청백색 톤이며, 근접 샷에서는 섀도마스크 격자와 주사선이 보인다."
+  ],
+  "constructionEn": [
+   "A ball is built from two joined rubber half-shells wrapped with two dumbbell-shaped felt panels; the panel boundary forms the white seam curve.",
+   "The cross-section is outer felt, rubber shell, pressurized or non-pressurized air. White and yellow balls share identical construction, differing only in felt color.",
+   "Historical staging: before yellow, black balls were chosen for pale grounds and white balls for dark grounds.",
+   "CRT staging: screen glow is blue-white; close shots reveal shadow-mask dots and scanlines."
+  ],
+  "materialsKo": [
+   "코어: 가황 고무, 접합선이 남을 수 있다.",
+   "펠트: 울·나일론 혼방의 보풀 있는 표면, 옵틱 옐로 형광 염색 또는 흰색/검은색.",
+   "솔기: 흰 고무 시임 컴파운드 곡선.",
+   "코트: 잔디(연녹)·클레이(적갈)·하드(파랑/초록) 표면과 흰 도장 라인."
+  ],
+  "materialsEn": [
+   "Core: vulcanized rubber, possibly showing a joint line.",
+   "Felt: wool-nylon napped surface, fluorescent optic-yellow dye or white/black.",
+   "Seam: white rubber seam-compound curve.",
+   "Court: grass, clay, or hard surfaces with painted white lines."
+  ],
+  "mechanismKo": [
+   "시인성은 배경과의 휘도·색상 대비에서 나온다. 흑백 방송에서는 색이 사라지므로 휘도 대비만 남는다.",
+   "흰 공이 흰 라인 위를 지나면 두 밝기가 같아져 윤곽이 소멸한다 — 컷 5의 픽셀 병합 시뮬레이션 근거.",
+   "형광 노랑은 잔디·클레이·하드 어느 표면과도 휘도·색상 모두에서 강한 대비를 만들어 화면에서 끝까지 추적된다."
+  ],
+  "mechanismEn": [
+   "Visibility comes from luminance and hue contrast against the background; monochrome broadcast leaves only luminance.",
+   "When a white ball crosses a white line their luminance matches and the outline vanishes — the basis for cut 5's pixel-merge simulation.",
+   "Fluorescent yellow keeps strong contrast in both luminance and hue on grass, clay and hard courts, staying trackable on screen."
+  ],
+  "commonErrorsKo": [
+   "솔기를 야구공 스티치, 농구공 직선 홈, 배구공 패널로 그리는 오류.",
+   "솔기를 곡선 한 줄이나 직선으로 단순화하는 오류.",
+   "서비스 박스를 베이스라인 쪽에 붙이거나 센터마크를 빠뜨리는 코트 라인 오류.",
+   "네트를 좌우 같은 높이의 일자형으로 그리는 오류.",
+   "1970년대 장면에 평면 TV·리모컨·현대 UI를 넣는 시대 오류.",
+   "옵틱 옐로를 주황빛 노랑이나 금색으로 칠하는 색 오류."
+  ],
+  "commonErrorsEn": [
+   "Drawing the seam as baseball stitching, basketball grooves, or volleyball panels.",
+   "Simplifying the seam into one straight or single curved line.",
+   "Court errors: service boxes attached to the baseline, or a missing center mark.",
+   "Drawing the net at uniform height instead of sagging to 0.914 m at center.",
+   "Era errors: flat TVs, remotes, or modern UI in 1970s scenes.",
+   "Coloring optic yellow as orange-yellow or gold."
+  ]
+ },
+ "references": [
+  {
+   "id": "R01",
+   "title": "ITF — History of Tennis Balls (공식 PDF)",
+   "sourceType": "official",
+   "sourceUrl": "https://www.itftennis.com/media/2280/balls-history-of-tennis-balls.pdf",
+   "imageUrl": null,
+   "license": "link-review",
+   "authorityScore": 5,
+   "selected": true,
+   "whyUsefulKo": "흑/백 공 시대, TV 시인성 연구, 1972년 노란 공 허용, 윔블던 1986년 채택까지 서사의 모든 역사 사실을 담은 1차 공식 자료.",
+   "visualFactsKo": ["코트 배경에 따른 검은 공/흰 공 선택 관행", "노란 공 도입의 TV 시인성 배경"],
+   "visualFactsEn": ["Black/white ball choice by court background", "TV visibility rationale for yellow balls"]
+  },
+  {
+   "id": "R02",
+   "title": "ITF Rules of Tennis — 공 규격(부록 I)",
+   "sourceType": "official",
+   "sourceUrl": "https://www.itftennis.com/en/about-us/governance/rules-of-tennis/",
+   "imageUrl": null,
+   "license": "link-review",
+   "authorityScore": 5,
+   "selected": true,
+   "whyUsefulKo": "공 지름·질량 규격과 '흰색 또는 노란색' 허용 조항의 공식 근거. 컷 3·14의 규칙 장면 기준.",
+   "visualFactsKo": ["지름 6.54~6.86cm", "색상: White or Yellow"],
+   "visualFactsEn": ["Diameter 6.54-6.86 cm", "Colour: white or yellow"]
+  },
+  {
+   "id": "R03",
+   "title": "Wikipedia — Tennis ball (구조·펠트·솔기)",
+   "sourceType": "encyclopedia",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Tennis_ball",
+   "imageUrl": null,
+   "license": "link-review",
+   "authorityScore": 3,
+   "selected": true,
+   "whyUsefulKo": "고무 코어 2반구 + 아령형 펠트 패널 2장 구조와 옵틱 옐로 도입 맥락 확인. 컷 15 단면 장면의 층 구조 기준.",
+   "visualFactsKo": ["아령형 펠트 패널 2장이 만드는 ∞형 솔기", "가압 고무 코어 단면"],
+   "visualFactsEn": ["Two dumbbell felt panels forming the figure-eight seam", "Pressurized rubber core cross-section"]
+  },
+  {
+   "id": "R04",
+   "title": "Wikipedia — Cathode-ray tube (브라운관 구조)",
+   "sourceType": "encyclopedia",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Cathode-ray_tube",
+   "imageUrl": null,
+   "license": "link-review",
+   "authorityScore": 3,
+   "selected": true,
+   "whyUsefulKo": "곡면 유리·섀도마스크·주사선 등 1970년대 TV 화면 묘사의 형태 기준. 컷 4·5·6의 CRT 표현 근거.",
+   "visualFactsKo": ["곡면 4:3 화면과 가로 주사선", "근접 시 보이는 형광체 격자"],
+   "visualFactsEn": ["Curved 4:3 screen with horizontal scanlines", "Phosphor grid visible up close"]
+  },
+  {
+   "id": "R05",
+   "title": "Wikipedia — Tennis court (코트 라인 규격)",
+   "sourceType": "encyclopedia",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Tennis_court",
+   "imageUrl": null,
+   "license": "link-review",
+   "authorityScore": 3,
+   "selected": true,
+   "whyUsefulKo": "베이스라인·서비스 박스·센터마크 배치와 네트 높이의 시각 기준. 전판에서 반복된 코트 라인 오류를 막는 대조 자료.",
+   "visualFactsKo": ["서비스 박스는 네트와 서비스라인 사이", "네트 중앙 0.914m·포스트 1.07m"],
+   "visualFactsEn": ["Service boxes lie between net and service lines", "Net: 0.914 m center, 1.07 m posts"]
+  },
+  {
+   "id": "R06",
+   "title": "Wimbledon 공식 — 대회 역사",
+   "sourceType": "official",
+   "sourceUrl": "https://www.wimbledon.com/en_GB/aboutwimbledon/history.html",
+   "imageUrl": null,
+   "license": "link-review",
+   "authorityScore": 4,
+   "selected": true,
+   "whyUsefulKo": "1877년 개최와 1986년 노란 공 채택 등 컷 16 타임라인의 공식 근거. 잔디 코트 시대 분위기 참고.",
+   "visualFactsKo": ["1877년 첫 대회", "1986년 노란 공 채택"],
+   "visualFactsEn": ["First Championships 1877", "Yellow balls adopted 1986"]
+  }
+ ],
+ "searchQueries": [
+  "ITF rules of tennis ball specification appendix",
+  "history of tennis balls ITF pdf yellow 1972",
+  "tennis ball construction felt seam core",
+  "cathode ray tube television 1970s scanline",
+  "tennis court dimensions service box net height",
+  "Wimbledon yellow ball 1986"
+ ],
+ "promptAnchorKo": "공은 지름 대비 정확한 구형과 ∞형 흰 솔기 두 곡선을 유지한다. 코트는 베이스라인·서비스 박스·센터마크 규격 배치를 지키고, 네트는 중앙이 처진 형태다. 1970년대 장면의 TV는 곡면 4:3 브라운관이다.",
+ "promptAnchorEn": "Keep the ball perfectly spherical with the figure-eight white seam. Keep regulation court line layout (baselines, service boxes between net and service lines, center mark) and a net sagging to its lower center height. Any 1970s TV is a curved 4:3 CRT.",
+ "warnings": [
+  "노란 공 시인성 연구의 세부 수치·표본은 공개 자료에 없으므로 화면에 수치를 만들지 않는다.",
+  "이미지 자동 다운로드는 생략했다 — 각 출처 링크에서 시각 자료를 직접 검토해 선택할 것."
+ ]
+}

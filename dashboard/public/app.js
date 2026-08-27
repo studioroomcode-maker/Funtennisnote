@@ -1,11 +1,11 @@
 const stageMeta = {
-  brief: { title: "주제 선정", short: "주제", icon: "i-file", description: "에피소드 선택과 공식 자료 팩트 확인" },
-  shots: { title: "대본 제작", short: "대본", icon: "i-grid", description: "18문장 대본과 컷 설계 확정" },
-  voice: { title: "더빙", short: "더빙", icon: "i-audio", description: "필재 더빙과 실제 러닝타임 확정" },
-  keyframes: { title: "스토리보드 제작", short: "스토리보드", icon: "i-layers", description: "18컷 시작 프레임과 검토 시트 2장 생성·승인" },
-  video: { title: "영상 제작", short: "영상", icon: "i-film", description: "Flow 또는 Higgsfield 컷 제작" },
-  edit: { title: "합성·편집", short: "편집", icon: "i-film", description: "영상 클립과 확정 더빙 조립" },
-  qa: { title: "최종 검수", short: "검수", icon: "i-shield", description: "길이·화면·오디오 최종 검사" }
+  brief: { title: "자료 조사", short: "자료조사", icon: "i-file", description: "공식 자료 팩트 + 시각 자료 수집 (주제 선정은 에피소드 기획 탭)" },
+  shots: { title: "대본 생성", short: "대본", icon: "i-grid", description: "V4 반전 다큐 아크 18문장 대본" },
+  voice: { title: "더빙 생성", short: "더빙", icon: "i-audio", description: "문장별 TTS로 컷 길이 확정 (씬 설계 전 필수)" },
+  keyframes: { title: "씬 설계표 · 이미지", short: "씬설계표", icon: "i-layers", description: "컷별 설계 확정 후 이미지 생성·검수 (솔기·라인·텍스트 QC)" },
+  video: { title: "영상 제작", short: "영상", icon: "i-film", description: "승인된 이미지 기반 컷별 영상 생성" },
+  edit: { title: "편집 · BGM", short: "편집", icon: "i-film", description: "리타이밍 조립 + 내레이션 + BGM/SFX" },
+  qa: { title: "최종 검수", short: "검수", icon: "i-shield", description: "기하·텍스트·로고·길이 전체 프레임 검사" }
 };
 const statusText = {
   not_started: "시작 전",
@@ -183,6 +183,9 @@ function renderProjectHeader() {
   $("#pipelineTitle").textContent = project.title;
   $("#pipelineSubtitle").textContent = `#${String(project.episode?.number || "—").padStart(3, "0")} · ${project.episode?.categoryLabel || "에피소드"} · 목표 ${project.targetDuration}초 · ${project.readyForProduction ? "제작 가능" : "대본 작성 필요"}`;
   $("#pipelineVersion").textContent = project.source === "master-package" ? "MASTER PACKAGE" : "ACTIVE PROJECT";
+  const epNumber = project.episode?.number ? String(project.episode.number).padStart(3, "0") : "—";
+  $("#sidebarProjectCode").textContent = `FTN-EP-${epNumber}`;
+  $("#sidebarProjectMeta").textContent = `9:16 · ${Math.round(project.targetDuration)} sec · ${project.shots.length} cuts`;
 }
 
 function renderScriptEditor() {
@@ -233,11 +236,20 @@ function renderStageNav() {
   $("#stageNav").innerHTML = state.stages.map((stage, index) => {
     const meta = stageMeta[stage.id];
     const finished = stage.status === "complete";
-    return `<button class="stage-nav-button ${stage.status} ${activeStage === stage.id ? "active" : ""}" data-stage-nav="${stage.id}" type="button">
-      <span class="stage-index">${finished ? icon("i-check") : String(index + 1).padStart(2, "0")}</span>
-      <span class="stage-nav-copy"><strong>${meta.short}</strong><small>${statusText[stage.status]}</small></span>
-      ${icon("i-chevron")}
-    </button>`;
+    const actionLabel = stage.status === "ready_review" ? "승인" : "실행";
+    return `<div class="stage-nav-item">
+      <button class="stage-nav-button ${stage.status} ${activeStage === stage.id ? "active" : ""}" data-stage-nav="${stage.id}" type="button" title="${escapeHtml(stage.note || meta.description)}">
+        <span class="stage-index">${finished ? icon("i-check") : String(index + 1).padStart(2, "0")}</span>
+        <span class="stage-nav-copy"><strong>${meta.short}</strong><small>${statusText[stage.status]}</small></span>
+        ${icon("i-chevron")}
+      </button>
+      <div class="stage-nav-controls">
+        <label><span class="sr-only">${meta.title} 실행 방식</span><select class="mode-select" data-stage-mode="${stage.id}">
+          ${Object.entries(modeText).map(([value, label]) => `<option value="${value}" ${stage.mode === value ? "selected" : ""}>${label}</option>`).join("")}
+        </select></label>
+        <button class="run-stage" data-run-stage="${stage.id}" type="button" aria-label="${meta.title} ${actionLabel}" title="${meta.title} ${actionLabel}">${stage.status === "ready_review" ? icon("i-check") : icon("i-play")}</button>
+      </div>
+    </div>`;
   }).join("");
 }
 
@@ -664,7 +676,7 @@ function renderVisualResearch() {
   const licenseLabels = { "public-domain": "공개 도메인", "open-license": "오픈 라이선스", "source-link-only": "링크 검토만", unknown: "권리 미확인" };
   $("#visualReferenceCards").innerHTML = research.references.map((item) => `<article class="visual-source-card ${item.selected !== false ? "selected" : ""}">
     <label class="visual-source-select"><input type="checkbox" data-visual-reference-selection="${escapeHtml(item.id)}" ${item.selected !== false ? "checked" : ""}><span>프롬프트에 사용</span></label>
-    <div class="visual-source-thumb">${item.mediaUrl ? `<img src="${item.mediaUrl}" alt="${escapeHtml(item.title)} 레퍼런스 미리보기" loading="lazy">` : `<div><span>${icon("i-link")}</span><strong>출처 링크로 검토</strong><small>재사용 권리가 확인된 이미지만 썸네일로 저장합니다.</small></div>`}</div>
+    ${item.mediaUrl ? `<div class="visual-source-thumb"><img src="${item.mediaUrl}" alt="${escapeHtml(item.title)} 레퍼런스 미리보기" loading="lazy"></div>` : ""}
     <div class="visual-source-body">
       <div class="visual-source-meta"><span>${escapeHtml(typeLabels[item.sourceType] || item.sourceType)}</span><b>신뢰도 ${escapeHtml(item.authorityScore)}/5</b></div>
       <h3>${escapeHtml(item.title)}</h3>
@@ -1419,3 +1431,235 @@ init();
 
 
 
+
+
+// ===== Scene Design board (씬 설계표) — storyboard stage, local ComfyUI generation =====
+(() => {
+  const grid = document.getElementById("sceneDesignGrid");
+  if (!grid) return;
+  let sdDesign = null;
+  let sdStatus = null;
+  let sdPollTimer = null;
+  let sdLines = [];
+  let sdResearchCtx = { anchorKo: "", avoidKo: "" };
+
+  // 서버(comfyImagePromptText/comfyVideoPromptText)와 동일한 조합식 — 서버 수정 시 함께 갱신할 것
+  function sdImagePrompt(cut) {
+    return [
+      cut.staging,
+      `카메라: ${cut.cameraAngle}, ${cut.shotSize}, ${cut.lens}.`,
+      `조명과 톤: ${cut.tone}.`,
+      cut.inSceneText
+        ? `장면 안 텍스트: ${cut.inSceneText} — 이 글자만 정확한 철자로 장면의 사물에 새겨지듯 선명하게 렌더링하고, 그 외 어떤 글자·숫자도 만들지 않습니다.`
+        : "글자·숫자·자막·로고를 일절 생성하지 않습니다.",
+      "첨부된 레퍼런스 이미지의 테니스공 솔기 형태, 코트 라인 규격, 네트 구조를 정확히 따릅니다.",
+      sdResearchCtx.anchorKo ? `주제 조사 형태 기준: ${sdResearchCtx.anchorKo}` : "",
+      sdResearchCtx.avoidKo ? `조사로 확인된 금지 형태: ${sdResearchCtx.avoidKo}` : "",
+      "포토리얼 아키텍처 시각화 3D 렌더, 신비한 건축사전 스타일의 설명형 장면, 세로 9:16, 사람 없음, 워터마크 없음."
+    ].filter(Boolean).join(" ");
+  }
+  function sdVideoPrompt(cut) {
+    return [
+      `피사체 움직임: ${cut.subjectMotion}.`,
+      `카메라 모션: ${cut.cameraMove}. 카메라는 마지막 프레임까지 멈추지 않습니다.`,
+      cut.inSceneText ? `장면 속 글자(${cut.inSceneText})는 형태를 유지하며 뭉개지지 않습니다.` : "글자를 새로 만들지 않습니다.",
+      sdResearchCtx.avoidKo ? `형태 유지 — 조사로 확인된 금지 형태: ${sdResearchCtx.avoidKo}` : "",
+      "한 장소의 연속 숏, 컷 없음, 무음, 모핑 금지, 스케일 드리프트 금지."
+    ].filter(Boolean).join(" ");
+  }
+
+  const SD_FIELDS = [
+    ["staging", "장면 스테이징", "textarea"],
+    ["subjectMotion", "피사체 움직임", "textarea"],
+    ["cameraAngle", "카메라 앵글", "input"],
+    ["shotSize", "샷 사이즈", "input"],
+    ["lens", "렌즈감", "input"],
+    ["cameraMove", "카메라 모션", "input"],
+    ["tone", "조명·톤", "input"],
+    ["inSceneText", "인-신 텍스트", "input"]
+  ];
+
+  const sdBadge = (slot) => {
+    if (!slot) return "";
+    if (slot.status === "running") return '<span class="sd-state running">생성 중</span>';
+    if (slot.status === "queued") return '<span class="sd-state queued">대기열</span>';
+    if (slot.status === "error") return `<span class="sd-state error" title="${slot.message || ""}">오류</span>`;
+    if (slot.exists) return '<span class="sd-state done">완료</span>';
+    return '<span class="sd-state idle">미생성</span>';
+  };
+
+  function sdRender() {
+    if (!sdDesign) { grid.innerHTML = '<div class="storyboard-empty">저장된 씬 설계표가 없습니다.</div>'; return; }
+    grid.innerHTML = sdDesign.cuts.map((cut, index) => {
+      const status = (sdStatus && sdStatus.cuts && sdStatus.cuts[cut.cut]) || {};
+      const still = status.image && status.image.exists ? `<img src="${status.image.mediaUrl}" alt="" loading="lazy" />` : '<div class="sd-thumb-empty">이미지 미생성</div>';
+      const clipLink = status.video && status.video.exists ? `<a href="${status.video.mediaUrl}" target="_blank" rel="noreferrer">영상 열기</a>` : "";
+      const fields = SD_FIELDS.map(([key, label, kind]) => kind === "textarea"
+        ? `<label class="sd-cell"><span>${label}</span><textarea data-sd-cut="${index}" data-sd-key="${key}" rows="2">${cut[key] || ""}</textarea></label>`
+        : `<label class="sd-cell"><span>${label}</span><input data-sd-cut="${index}" data-sd-key="${key}" value="${String(cut[key] || "").replaceAll('"', "&quot;")}" /></label>`).join("");
+      const line = sdLines[cut.cut - 1] || "";
+      return `<article class="sd-cut-card sd-row" data-sd-row="${index}">
+        <div class="sd-left">
+          <strong class="sd-cut-no">CUT ${String(cut.cut).padStart(2, "0")}</strong>
+          <div class="sd-thumb">${still}</div>
+          <div class="sd-states">
+            <div class="sd-state-line">이미지 ${sdBadge(status.image)}</div>
+            <div class="sd-state-line">영상 ${sdBadge(status.video)}</div>
+            ${clipLink ? `<div class="sd-state-line">${clipLink}</div>` : ""}
+          </div>
+        </div>
+        <div class="sd-right">
+          <header>
+            <p class="sd-cut-line">${line || cut.title || ""}</p>
+            <span class="sd-cut-dur">${cut.title || ""} · ${cut.durationSec}s · ${cut.actionType || ""}</span>
+          </header>
+          <div class="sd-fields">${fields}</div>
+          <div class="sd-gen-row">
+            <button class="button button-small button-outline" data-sd-gen="image" data-sd-cutno="${cut.cut}" type="button">이미지 생성</button>
+            <textarea class="sd-prompt sd-prompt-image" readonly rows="2">${sdImagePrompt(cut)}</textarea>
+          </div>
+          <div class="sd-gen-row">
+            <button class="button button-small button-dark" data-sd-gen="video" data-sd-cutno="${cut.cut}" type="button" ${status.image && status.image.exists ? "" : "disabled"}>영상 생성</button>
+            <textarea class="sd-prompt sd-prompt-video" readonly rows="2">${sdVideoPrompt(cut)}</textarea>
+          </div>
+        </div>
+      </article>`;
+    }).join("");
+  }
+
+  function sdModel(kind) {
+    const select = document.getElementById(kind === "image" ? "sdImageModel" : "sdVideoModel");
+    return select ? select.value : (kind === "image" ? "z-image-turbo" : "minimax-h3");
+  }
+
+  async function sdLoadDesign() {
+    const response = await fetch("/api/scene-design");
+    const data = await response.json();
+    sdDesign = data.design;
+    sdLines = Array.isArray(data.scriptLines) ? data.scriptLines : [];
+    if (data.researchContext) sdResearchCtx = data.researchContext;
+    const specs = (sdDesign && sdDesign.specs) || {};
+    const imageSelect = document.getElementById("sdImageModel");
+    const videoSelect = document.getElementById("sdVideoModel");
+    if (imageSelect && specs.imageModel) imageSelect.value = specs.imageModel;
+    if (videoSelect && specs.videoModel) videoSelect.value = specs.videoModel;
+    const remember = () => {
+      if (!sdDesign) return;
+      sdDesign.specs = sdDesign.specs || {};
+      sdDesign.specs.imageModel = imageSelect ? imageSelect.value : "z-image-turbo";
+      sdDesign.specs.videoModel = videoSelect ? videoSelect.value : "minimax-h3";
+    };
+    if (imageSelect) imageSelect.addEventListener("change", remember);
+    if (videoSelect) videoSelect.addEventListener("change", remember);
+  }
+
+  async function sdRefreshStatus() {
+    try {
+      const response = await fetch("/api/comfy/status");
+      sdStatus = await response.json();
+    } catch (error) { sdStatus = null; }
+    const state = document.getElementById("sdComfyState");
+    if (state) {
+      if (!sdStatus) state.textContent = "상태 확인 실패";
+      else if (!sdStatus.serverOk) state.textContent = "ComfyUI 꺼짐";
+      else if (sdStatus.busy || sdStatus.pending) state.textContent = `생성 중 · 대기 ${sdStatus.pending}`;
+      else state.textContent = "ComfyUI 준비됨";
+      state.dataset.ok = sdStatus && sdStatus.serverOk ? "1" : "0";
+    }
+    sdRender();
+    const active = sdStatus && (sdStatus.busy || sdStatus.pending > 0);
+    clearTimeout(sdPollTimer);
+    sdPollTimer = setTimeout(sdRefreshStatus, active ? 5000 : 20000);
+  }
+
+  grid.addEventListener("input", (event) => {
+    const target = event.target;
+    if (!target.dataset || !target.dataset.sdKey) return;
+    const index = Number(target.dataset.sdCut);
+    sdDesign.cuts[index][target.dataset.sdKey] = target.value;
+    const row = target.closest("[data-sd-row]");
+    if (row) {
+      const imageBox = row.querySelector(".sd-prompt-image");
+      const videoBox = row.querySelector(".sd-prompt-video");
+      if (imageBox) imageBox.value = sdImagePrompt(sdDesign.cuts[index]);
+      if (videoBox) videoBox.value = sdVideoPrompt(sdDesign.cuts[index]);
+    }
+  });
+
+  grid.addEventListener("click", async (event) => {
+    const button = event.target.closest("[data-sd-gen]");
+    if (!button) return;
+    button.disabled = true;
+    try {
+      const response = await fetch("/api/comfy/generate", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ kind: button.dataset.sdGen, cut: Number(button.dataset.sdCutno), model: sdModel(button.dataset.sdGen) })
+      });
+      const data = await response.json();
+      if (!data.ok) window.alert(data.error || "생성 요청 실패");
+      else if (data.manual && data.prompts && data.prompts.length) {
+        try { await navigator.clipboard.writeText(data.prompts[0].prompt); } catch (error) {}
+        window.alert("Flow 수동 생성용 프롬프트를 클립보드에 복사했습니다.\nFlow 웹에서 생성한 뒤 안내된 경로에 저장하면 보드에 자동 반영됩니다.\n패키지 파일: " + data.packageFile);
+      }
+    } finally { sdRefreshStatus(); }
+  });
+
+  const saveButton = document.getElementById("sdSaveDesign");
+  if (saveButton) saveButton.addEventListener("click", async () => {
+    if (!sdDesign) return;
+    const response = await fetch("/api/scene-design", {
+      method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(sdDesign)
+    });
+    const data = await response.json();
+    window.alert(data.ok ? `씬 설계 저장 완료 (${data.cuts}컷)` : `저장 실패: ${data.error || ""}`);
+  });
+
+  const sdGenAll = (kind) => async () => {
+    const label = kind === "image" ? "이미지" : "영상";
+    const eta = kind === "image" ? "수십 초" : "약 20~40분";
+    if (!window.confirm(`미생성 컷의 ${label}를 로컬 ComfyUI로 전체 생성합니다. (컷당 ${eta}) 계속할까요?`)) return;
+    const response = await fetch("/api/comfy/generate", {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ kind, all: true, model: sdModel(kind) })
+    });
+    const data = await response.json();
+    if (!data.ok) window.alert(data.error || "생성 요청 실패");
+    else if (data.manual) window.alert("Flow 수동 생성용 프롬프트 패키지를 만들었습니다.\n" + data.packageFile + "\nFlow 웹에서 생성 후 안내된 경로에 저장하면 보드에 자동 반영됩니다.");
+    else if (!data.queued.length) window.alert("모든 컷이 이미 생성되어 있습니다.");
+    sdRefreshStatus();
+  };
+  const genAllImagesButton = document.getElementById("sdGenAllImages");
+  if (genAllImagesButton) genAllImagesButton.addEventListener("click", sdGenAll("image"));
+  const genAllVideosButton = document.getElementById("sdGenAllVideos");
+  if (genAllVideosButton) genAllVideosButton.addEventListener("click", sdGenAll("video"));
+
+  sdLoadDesign().then(sdRefreshStatus);
+})();
+
+
+// ===== Reference library: add new reference files =====
+(() => {
+  const input = document.getElementById("referenceUploadInput");
+  if (!input) return;
+  input.addEventListener("change", async () => {
+    const files = [...input.files].slice(0, 10);
+    if (!files.length) return;
+    const payload = [];
+    for (const file of files) {
+      const dataBase64 = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result).split(",")[1] || "");
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+      payload.push({ name: file.name, dataBase64 });
+    }
+    const response = await fetch("/api/reference/upload", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ files: payload })
+    });
+    const data = await response.json();
+    if (!data.ok) { window.alert(data.error || "업로드 실패"); return; }
+    window.alert(`레퍼런스 ${data.saved.length}개 추가: ${data.saved.join(", ")}`);
+    location.reload();
+  });
+})();

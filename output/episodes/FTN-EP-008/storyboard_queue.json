@@ -1,0 +1,781 @@
+{
+  "generatedAt": "2026-08-26T04:43:20.651Z",
+  "episodeId": "FTN-PILOT-02",
+  "imageCreditBasis": "인증된 Plus 워크스페이스 · CLI cost 실측 · 이미지 1장",
+  "purpose": "all-cut first-frame storyboard",
+  "queue": [
+    {
+      "cut": 1,
+      "time": "00:00.0–00:04.3",
+      "narration": "현행 규칙은 공을 ‘흰색 또는 노란색’으로 정하는데, 왜 코트에서는 노란 공이 표준처럼 보일까요?",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c01.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 01]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: wide-context. Explain only one cause or result from the narration: “현행 규칙은 공을 ‘흰색 또는 노란색’으로 정하는데, 왜 코트에서는 노란 공이 표준처럼 보일까요?”.\nFirst frame: A white tennis ball and a yellow tennis ball resting side by side on a court beside an open rulebook with no legible text\nCamera: isometric wide, 35mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A white tennis ball and a yellow tennis ball resting side by side on a court beside an open rulebook with no legible text\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “WHITE OR YELLOW” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 01]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 맥락 전경. 내레이션 “현행 규칙은 공을 ‘흰색 또는 노란색’으로 정하는데, 왜 코트에서는 노란 공이 표준처럼 보일까요?”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 글자 없는 펼친 규칙서 옆에 흰 공과 노란 공이 나란히 놓인 테니스 코트 바닥\n카메라: 아이소메트릭 · 와이드 · 35mm. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 글자 없는 펼친 규칙서 옆에 흰 공과 노란 공이 나란히 놓인 테니스 코트 바닥\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · 2026 ITF Rules of Tennis 부록 I의 공 규격표는 각 성인용 공 유형의 색상을 ‘White or Yellow’로 규정한다. · 실제 원인 지점 옆 후반 편집 레이어. “WHITE OR YELLOW”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 01]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: wide-context. Explain only one cause or result from the narration: “현행 규칙은 공을 ‘흰색 또는 노란색’으로 정하는데, 왜 코트에서는 노란 공이 표준처럼 보일까요?”.\nFirst frame: A white tennis ball and a yellow tennis ball resting side by side on a court beside an open rulebook with no legible text\nCamera: isometric wide, 35mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A white tennis ball and a yellow tennis ball resting side by side on a court beside an open rulebook with no legible text\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “WHITE OR YELLOW” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 2,
+      "time": "00:04.3–00:08.7",
+      "narration": "워낙 익숙해서 노란색만 정답이라고 생각하기 쉽죠.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c02.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 02]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: historical-diorama. Explain only one cause or result from the narration: “워낙 익숙해서 노란색만 정답이라고 생각하기 쉽죠.”.\nFirst frame: A single familiar yellow tennis ball resting beside the service line on a hard court\nCamera: high-angle medium, 50mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A single familiar yellow tennis ball resting beside the service line on a hard court\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “NOT YELLOW ONLY” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 02]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 역사 장면. 내레이션 “워낙 익숙해서 노란색만 정답이라고 생각하기 쉽죠.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 노란 테니스공 하나가 익숙한 하드코트 서비스 라인 옆에 놓인 순간\n카메라: 하이앵글 · 미디엄 · 50mm. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 노란 테니스공 하나가 익숙한 하드코트 서비스 라인 옆에 놓인 순간\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · 현행 ITF 규칙이 흰색과 노란색을 함께 허용하므로 노란색만 규칙상 정답이라는 해석은 맞지 않는다. · 실제 원인 지점 옆 후반 편집 레이어. “NOT YELLOW ONLY”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 02]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: historical-diorama. Explain only one cause or result from the narration: “워낙 익숙해서 노란색만 정답이라고 생각하기 쉽죠.”.\nFirst frame: A single familiar yellow tennis ball resting beside the service line on a hard court\nCamera: high-angle medium, 50mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A single familiar yellow tennis ball resting beside the service line on a hard court\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “NOT YELLOW ONLY” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 3,
+      "time": "00:08.7–00:13.0",
+      "narration": "하지만 국제테니스연맹인 ITF는 지금도 두 색을 모두 허용합니다.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c03.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 03]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: comparison. Explain only one cause or result from the narration: “하지만 국제테니스연맹인 ITF는 지금도 두 색을 모두 허용합니다.”.\nFirst frame: A white ball and a yellow ball placed inside the same baseline on an official court with no visible text\nCamera: top-down full, 35mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A white ball and a yellow ball placed inside the same baseline on an official court with no visible text\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “ITF RULE” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 03]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 물리 비교. 내레이션 “하지만 국제테니스연맹인 ITF는 지금도 두 색을 모두 허용합니다.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 흰 공과 노란 공이 같은 베이스라인 안쪽에 놓인 글자 없는 공식 코트\n카메라: 탑다운 · 풀샷 · 35mm. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 흰 공과 노란 공이 같은 베이스라인 안쪽에 놓인 글자 없는 공식 코트\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · 2026 ITF Rules of Tennis 부록 I은 Type 1, Type 2, Type 3 및 고지대용 공의 색상을 모두 흰색 또는 노란색으로 명시한다. · 실제 원인 지점 옆 후반 편집 레이어. “ITF RULE”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 03]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: comparison. Explain only one cause or result from the narration: “하지만 국제테니스연맹인 ITF는 지금도 두 색을 모두 허용합니다.”.\nFirst frame: A white ball and a yellow ball placed inside the same baseline on an official court with no visible text\nCamera: top-down full, 35mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A white ball and a yellow ball placed inside the same baseline on an official court with no visible text\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “ITF RULE” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 4,
+      "time": "00:13.0–00:17.3",
+      "narration": "노란 공이 나오기 전에는 코트 배경에 맞춰 검은 공이나 흰 공을 골랐습니다.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c04.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 04]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: macro. Explain only one cause or result from the narration: “노란 공이 나오기 전에는 코트 배경에 맞춰 검은 공이나 흰 공을 골랐습니다.”.\nFirst frame: A historical recreation of a single white tennis ball resting on a traditional grass court\nCamera: oblique-macro extreme-close-up, 100mm-macro. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A historical recreation of a single white tennis ball resting on a traditional grass court\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “BLACK / WHITE” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 04]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 재료 매크로. 내레이션 “노란 공이 나오기 전에는 코트 배경에 맞춰 검은 공이나 흰 공을 골랐습니다.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 고전적인 잔디 코트 위에 흰 테니스공 하나가 놓인 역사 재현 장면\n카메라: 사선 매크로 · 익스트림 클로즈업 · 100mm-macro. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 고전적인 잔디 코트 위에 흰 테니스공 하나가 놓인 역사 재현 장면\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF의 테니스공 역사 문서는 과거 공의 색이 코트 배경에 맞춰 검은색이나 흰색으로 선택됐다고 설명한다. · 실제 원인 지점 옆 후반 편집 레이어. “BLACK / WHITE”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 04]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: macro. Explain only one cause or result from the narration: “노란 공이 나오기 전에는 코트 배경에 맞춰 검은 공이나 흰 공을 골랐습니다.”.\nFirst frame: A historical recreation of a single white tennis ball resting on a traditional grass court\nCamera: oblique-macro extreme-close-up, 100mm-macro. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A historical recreation of a single white tennis ball resting on a traditional grass court\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “BLACK / WHITE” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 5,
+      "time": "00:17.3–00:21.7",
+      "narration": "그런데 TV 중계가 늘면서 공은 코트뿐 아니라 방송 화면에서도 또렷이 구분돼야 했습니다.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c05.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 05]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: cross-section. Explain only one cause or result from the narration: “그런데 TV 중계가 늘면서 공은 코트뿐 아니라 방송 화면에서도 또렷이 구분돼야 했습니다.”.\nFirst frame: A vintage color television in an empty living room showing a tennis court and a tiny white ball, with no text or interface\nCamera: side-orthographic section-detail, orthographic. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A vintage color television in an empty living room showing a tennis court and a tiny white ball, with no text or interface\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “TV BROADCAST” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 05]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 정밀 단면. 내레이션 “그런데 TV 중계가 늘면서 공은 코트뿐 아니라 방송 화면에서도 또렷이 구분돼야 했습니다.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 빈 거실의 빈티지 컬러 텔레비전에 글자 없이 테니스 코트와 흰 공이 작게 보이는 순간\n카메라: 측면 직교 · 단면 디테일 · orthographic. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 빈 거실의 빈티지 컬러 텔레비전에 글자 없이 테니스 코트와 흰 공이 작게 보이는 순간\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF 공식 연혁은 TV 중계 증가를 노란 공 실험과 허용의 배경으로 기록한다. · 실제 원인 지점 옆 후반 편집 레이어. “TV BROADCAST”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 05]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: cross-section. Explain only one cause or result from the narration: “그런데 TV 중계가 늘면서 공은 코트뿐 아니라 방송 화면에서도 또렷이 구분돼야 했습니다.”.\nFirst frame: A vintage color television in an empty living room showing a tennis court and a tiny white ball, with no text or interface\nCamera: side-orthographic section-detail, orthographic. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A vintage color television in an empty living room showing a tennis court and a tiny white ball, with no text or interface\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “TV BROADCAST” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 6,
+      "time": "00:21.7–00:26.0",
+      "narration": "연구는 노란 공이 TV 시청자에게 더 잘 보인다는 결과를 내놓았죠.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c06.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 06]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: mechanism-simulation. Explain only one cause or result from the narration: “연구는 노란 공이 TV 시청자에게 더 잘 보인다는 결과를 내놓았죠.”.\nFirst frame: A single yellow tennis ball clearly visible at center court on a vintage television screen, with no text or interface\nCamera: low-angle close-up, 85mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A single yellow tennis ball clearly visible at center court on a vintage television screen, with no text or interface\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “TV VISIBILITY” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 06]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 작동 시뮬레이션. 내레이션 “연구는 노란 공이 TV 시청자에게 더 잘 보인다는 결과를 내놓았죠.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 빈티지 텔레비전 화면 속 코트 중앙에 노란 공 하나가 선명하게 잡힌 순간\n카메라: 로우앵글 · 클로즈업 · 85mm. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 빈티지 텔레비전 화면 속 코트 중앙에 노란 공 하나가 선명하게 잡힌 순간\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF의 테니스공 역사 문서는 연구에서 노란 공이 텔레비전 시청자에게 더 잘 보였다고 명시한다. · 실제 원인 지점 옆 후반 편집 레이어. “TV VISIBILITY”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 06]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: mechanism-simulation. Explain only one cause or result from the narration: “연구는 노란 공이 TV 시청자에게 더 잘 보인다는 결과를 내놓았죠.”.\nFirst frame: A single yellow tennis ball clearly visible at center court on a vintage television screen, with no text or interface\nCamera: low-angle close-up, 85mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A single yellow tennis ball clearly visible at center court on a vintage television screen, with no text or interface\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “TV VISIBILITY” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 7,
+      "time": "00:26.0–00:30.3",
+      "narration": "경기를 보는 자리가 코트 옆에서 TV 화면까지 넓어졌기 때문입니다.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c07.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 07]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: macro. Explain only one cause or result from the narration: “경기를 보는 자리가 코트 옆에서 TV 화면까지 넓어졌기 때문입니다.”.\nFirst frame: Rear view of a viewer watching a text-free tennis broadcast in a living room, with a yellow ball visible on screen\nCamera: oblique-macro extreme-close-up, 100mm-macro. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: Rear view of a viewer watching a text-free tennis broadcast in a living room, with a yellow ball visible on screen\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “FROM COURT TO TV” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 07]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 재료 매크로. 내레이션 “경기를 보는 자리가 코트 옆에서 TV 화면까지 넓어졌기 때문입니다.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 거실에서 글자 없는 테니스 중계를 바라보는 시청자의 뒷모습과 화면 속 노란 공\n카메라: 사선 매크로 · 익스트림 클로즈업 · 100mm-macro. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 거실에서 글자 없는 테니스 중계를 바라보는 시청자의 뒷모습과 화면 속 노란 공\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF 연혁은 TV 중계 증가 뒤 2년간 실험이 진행됐다고 기록하고, 공 역사 문서는 TV 시청자에게 더 잘 보인다는 연구 결과를 도입 근거로 제시한다. · 실제 원인 지점 옆 후반 편집 레이어. “FROM COURT TO TV”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 07]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: macro. Explain only one cause or result from the narration: “경기를 보는 자리가 코트 옆에서 TV 화면까지 넓어졌기 때문입니다.”.\nFirst frame: Rear view of a viewer watching a text-free tennis broadcast in a living room, with a yellow ball visible on screen\nCamera: oblique-macro extreme-close-up, 100mm-macro. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: Rear view of a viewer watching a text-free tennis broadcast in a living room, with a yellow ball visible on screen\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “FROM COURT TO TV” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 8,
+      "time": "00:30.3–00:34.7",
+      "narration": "그래서 TV 시청자는 노란 공을 화면에서 더 쉽게 찾을 수 있었어요.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c08.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 08]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: mechanism-simulation. Explain only one cause or result from the narration: “그래서 TV 시청자는 노란 공을 화면에서 더 쉽게 찾을 수 있었어요.”.\nFirst frame: A yellow ball clearly visible over a green court within a color television image, with no text or graphics\nCamera: isometric close-up, 85mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A yellow ball clearly visible over a green court within a color television image, with no text or graphics\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “EASIER TO SEE” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 08]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 작동 시뮬레이션. 내레이션 “그래서 TV 시청자는 노란 공을 화면에서 더 쉽게 찾을 수 있었어요.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 컬러 텔레비전 속 녹색 코트 위에서 노란 공이 또렷하게 보이는 한 장면\n카메라: 아이소메트릭 · 클로즈업 · 85mm. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 컬러 텔레비전 속 녹색 코트 위에서 노란 공이 또렷하게 보이는 한 장면\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF 공식 역사 자료는 노란 공이 텔레비전 시청자에게 더 잘 보였다는 연구 결과를 기록한다. · 실제 원인 지점 옆 후반 편집 레이어. “EASIER TO SEE”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 08]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: mechanism-simulation. Explain only one cause or result from the narration: “그래서 TV 시청자는 노란 공을 화면에서 더 쉽게 찾을 수 있었어요.”.\nFirst frame: A yellow ball clearly visible over a green court within a color television image, with no text or graphics\nCamera: isometric close-up, 85mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A yellow ball clearly visible over a green court within a color television image, with no text or graphics\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “EASIER TO SEE” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 9,
+      "time": "00:34.7–00:39.0",
+      "narration": "문제는 당시 규칙이 흰 공만 요구해, 더 잘 보이는 색도 곧장 쓸 수 없었다는 점입니다.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c09.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 09]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: historical-diorama. Explain only one cause or result from the narration: “문제는 당시 규칙이 흰 공만 요구해, 더 잘 보이는 색도 곧장 쓸 수 없었다는 점입니다.”.\nFirst frame: A single white ball resting on court beside a closed rulebook with no legible text\nCamera: eye-level full, 35mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A single white ball resting on court beside a closed rulebook with no legible text\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “WHITE REQUIRED” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 09]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 역사 장면. 내레이션 “문제는 당시 규칙이 흰 공만 요구해, 더 잘 보이는 색도 곧장 쓸 수 없었다는 점입니다.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 흰 공 하나가 놓인 코트 옆에 닫힌 글자 없는 규칙서가 놓인 순간\n카메라: 아이레벨 · 풀샷 · 35mm. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 흰 공 하나가 놓인 코트 옆에 닫힌 글자 없는 규칙서가 놓인 순간\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF 공식 연혁은 노란 공이 허용되기 전까지 규칙이 흰 공을 요구했다고 기록한다. · 실제 원인 지점 옆 후반 편집 레이어. “WHITE REQUIRED”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 09]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: historical-diorama. Explain only one cause or result from the narration: “문제는 당시 규칙이 흰 공만 요구해, 더 잘 보이는 색도 곧장 쓸 수 없었다는 점입니다.”.\nFirst frame: A single white ball resting on court beside a closed rulebook with no legible text\nCamera: eye-level full, 35mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A single white ball resting on court beside a closed rulebook with no legible text\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “WHITE REQUIRED” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 10,
+      "time": "00:39.0–00:43.3",
+      "narration": "공 색 하나가 중계를 꽤 난감하게 했습니다.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c10.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 10]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: wide-context. Explain only one cause or result from the narration: “공 색 하나가 중계를 꽤 난감하게 했습니다.”.\nFirst frame: A white ball overlapping a bright court line on a dim vintage television screen, with no text or interface\nCamera: top-down extreme-wide, 24mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A white ball overlapping a bright court line on a dim vintage television screen, with no text or interface\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “ONE COLOR PROBLEM” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 10]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 맥락 전경. 내레이션 “공 색 하나가 중계를 꽤 난감하게 했습니다.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 어두운 빈티지 텔레비전 화면 속에서 흰 공이 밝은 코트 선 가까이에 겹친 순간\n카메라: 탑다운 · 익스트림 와이드 · 24mm. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 어두운 빈티지 텔레비전 화면 속에서 흰 공이 밝은 코트 선 가까이에 겹친 순간\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF 자료는 TV 시청자에게 노란 공이 더 잘 보였지만 당시에는 흰 공이 요구됐고, 규칙 변경 전에 실험이 필요했다고 기록한다. · 실제 원인 지점 옆 후반 편집 레이어. “ONE COLOR PROBLEM”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 10]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: wide-context. Explain only one cause or result from the narration: “공 색 하나가 중계를 꽤 난감하게 했습니다.”.\nFirst frame: A white ball overlapping a bright court line on a dim vintage television screen, with no text or interface\nCamera: top-down extreme-wide, 24mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A white ball overlapping a bright court line on a dim vintage television screen, with no text or interface\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “ONE COLOR PROBLEM” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 11,
+      "time": "00:43.3–00:47.7",
+      "narration": "더 잘 보인다면 바로 허용하면 되지 않았을까요?",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c11.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 11]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: comparison. Explain only one cause or result from the narration: “더 잘 보인다면 바로 허용하면 되지 않았을까요?”.\nFirst frame: A white ball and a yellow ball stopped on opposite sides of a court boundary line\nCamera: isometric medium, 50mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A white ball and a yellow ball stopped on opposite sides of a court boundary line\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “WHY NOT NOW?” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 11]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 물리 비교. 내레이션 “더 잘 보인다면 바로 허용하면 되지 않았을까요?”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 코트 입구에서 흰 공과 노란 공이 경계선 양쪽에 하나씩 멈춘 순간\n카메라: 아이소메트릭 · 미디엄 · 50mm. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 코트 입구에서 흰 공과 노란 공이 경계선 양쪽에 하나씩 멈춘 순간\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF 공식 연혁은 노란 공 사용을 허용하기 전에 2년간 실험했다고 기록한다. · 실제 원인 지점 옆 후반 편집 레이어. “WHY NOT NOW?”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 11]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: comparison. Explain only one cause or result from the narration: “더 잘 보인다면 바로 허용하면 되지 않았을까요?”.\nFirst frame: A white ball and a yellow ball stopped on opposite sides of a court boundary line\nCamera: isometric medium, 50mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A white ball and a yellow ball stopped on opposite sides of a court boundary line\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “WHY NOT NOW?” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 12,
+      "time": "00:47.7–00:52.0",
+      "narration": "ITF는 규칙을 바꾸기 전에 2년 동안 노란 공의 실제 사용을 시험했습니다.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c12.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 12]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: archive-review. Explain only one cause or result from the narration: “ITF는 규칙을 바꾸기 전에 2년 동안 노란 공의 실제 사용을 시험했습니다.”.\nFirst frame: A basket of yellow tennis balls at center court in a text-free trial setting\nCamera: high-angle full, 35mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A basket of yellow tennis balls at center court in a text-free trial setting\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “2-YEAR TRIAL” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 12]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 기록 검토. 내레이션 “ITF는 규칙을 바꾸기 전에 2년 동안 노란 공의 실제 사용을 시험했습니다.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 글자 없는 시험 코트 중앙에 노란 공 여러 개가 바구니 안에 담긴 순간\n카메라: 하이앵글 · 풀샷 · 35mm. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 글자 없는 시험 코트 중앙에 노란 공 여러 개가 바구니 안에 담긴 순간\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF 공식 연혁은 TV 중계 증가를 배경으로 규칙 변경 전 2년간 노란 공을 실험했다고 명시한다. · 실제 원인 지점 옆 후반 편집 레이어. “2-YEAR TRIAL”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 12]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: archive-review. Explain only one cause or result from the narration: “ITF는 규칙을 바꾸기 전에 2년 동안 노란 공의 실제 사용을 시험했습니다.”.\nFirst frame: A basket of yellow tennis balls at center court in a text-free trial setting\nCamera: high-angle full, 35mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A basket of yellow tennis balls at center court in a text-free trial setting\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “2-YEAR TRIAL” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 13,
+      "time": "00:52.0–00:56.3",
+      "narration": "세부 측정값은 공개되지 않았지만, 시험 뒤 흰 공만 요구하던 규칙을 바꿔 노란 공도 허용했습니다.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c13.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 13]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: comparison. Explain only one cause or result from the narration: “세부 측정값은 공개되지 않았지만, 시험 뒤 흰 공만 요구하던 규칙을 바꿔 노란 공도 허용했습니다.”.\nFirst frame: A white ball and a yellow ball resting together on an open rulebook with no legible text\nCamera: top-down wide, 24mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A white ball and a yellow ball resting together on an open rulebook with no legible text\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “TRIAL TO APPROVAL” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 13]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 물리 비교. 내레이션 “세부 측정값은 공개되지 않았지만, 시험 뒤 흰 공만 요구하던 규칙을 바꿔 노란 공도 허용했습니다.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 열린 글자 없는 규칙서 위에 흰 공과 노란 공이 함께 놓인 순간\n카메라: 탑다운 · 와이드 · 24mm. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 열린 글자 없는 규칙서 위에 흰 공과 노란 공이 함께 놓인 순간\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF 공식 연혁은 실험의 세부 측정값은 제시하지 않지만, 2년간의 실험 뒤 노란 공 사용이 허용됐다고 기록한다. · 실제 원인 지점 옆 후반 편집 레이어. “TRIAL TO APPROVAL”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 13]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: comparison. Explain only one cause or result from the narration: “세부 측정값은 공개되지 않았지만, 시험 뒤 흰 공만 요구하던 규칙을 바꿔 노란 공도 허용했습니다.”.\nFirst frame: A white ball and a yellow ball resting together on an open rulebook with no legible text\nCamera: top-down wide, 24mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A white ball and a yellow ball resting together on an open rulebook with no legible text\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “TRIAL TO APPROVAL” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 14,
+      "time": "00:56.3–01:00.7",
+      "narration": "그 결정이 테니스 규칙에 들어간 해가 1972년입니다.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c14.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 14]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: rule-diagram. Explain only one cause or result from the narration: “그 결정이 테니스 규칙에 들어간 해가 1972년입니다.”.\nFirst frame: A historical recreation of a yellow ball newly resting beside a white ball on a classic tennis court\nCamera: side-orthographic section-detail, orthographic. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A historical recreation of a yellow ball newly resting beside a white ball on a classic tennis court\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “1972” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 14]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 규칙 도해. 내레이션 “그 결정이 테니스 규칙에 들어간 해가 1972년입니다.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 고전적인 코트 위에서 노란 공 하나가 흰 공 옆에 새로 놓인 역사 재현 장면\n카메라: 측면 직교 · 단면 디테일 · orthographic. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 고전적인 코트 위에서 노란 공 하나가 흰 공 옆에 새로 놓인 역사 재현 장면\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF의 테니스공 역사 문서와 공식 연혁은 모두 1972년을 노란 공의 규칙 도입 또는 허용 시점으로 기록한다. · 실제 원인 지점 옆 후반 편집 레이어. “1972”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 14]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: rule-diagram. Explain only one cause or result from the narration: “그 결정이 테니스 규칙에 들어간 해가 1972년입니다.”.\nFirst frame: A historical recreation of a yellow ball newly resting beside a white ball on a classic tennis court\nCamera: side-orthographic section-detail, orthographic. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A historical recreation of a yellow ball newly resting beside a white ball on a classic tennis court\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “1972” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 15,
+      "time": "01:00.7–01:05.0",
+      "narration": "노란색은 새 성능 등급이 아니라, 같은 공 유형에 더해진 또 하나의 허용 색이죠.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c15.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 15]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: macro. Explain only one cause or result from the narration: “노란색은 새 성능 등급이 아니라, 같은 공 유형에 더해진 또 하나의 허용 색이죠.”.\nFirst frame: A same-sized white ball and yellow ball aligned side by side on the same court line\nCamera: oblique-macro extreme-close-up, 100mm-macro. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A same-sized white ball and yellow ball aligned side by side on the same court line\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “SAME PERFORMANCE CLASS” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 15]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 재료 매크로. 내레이션 “노란색은 새 성능 등급이 아니라, 같은 공 유형에 더해진 또 하나의 허용 색이죠.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 크기와 형태가 같은 흰 공과 노란 공이 동일한 코트 선 위에 나란히 놓인 순간\n카메라: 사선 매크로 · 익스트림 클로즈업 · 100mm-macro. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 크기와 형태가 같은 흰 공과 노란 공이 동일한 코트 선 위에 나란히 놓인 순간\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · 2026 ITF 규격표는 각 공 유형의 질량·크기·반발·변형 범위를 함께 정한 뒤 같은 항목에서 색상을 흰색 또는 노란색으로 허용한다. · 실제 원인 지점 옆 후반 편집 레이어. “SAME PERFORMANCE CLASS”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 15]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: macro. Explain only one cause or result from the narration: “노란색은 새 성능 등급이 아니라, 같은 공 유형에 더해진 또 하나의 허용 색이죠.”.\nFirst frame: A same-sized white ball and yellow ball aligned side by side on the same court line\nCamera: oblique-macro extreme-close-up, 100mm-macro. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A same-sized white ball and yellow ball aligned side by side on the same court line\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “SAME PERFORMANCE CLASS” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 16,
+      "time": "01:05.0–01:09.3",
+      "narration": "윔블던은 흰 공을 108년간 쓰다가 1986년에야 노란 공을 택했어요.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c16.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 16]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: comparison. Explain only one cause or result from the narration: “윔블던은 흰 공을 108년간 쓰다가 1986년에야 노란 공을 택했어요.”.\nFirst frame: A white ball and a yellow ball resting side by side on a grass court at the moment of transition\nCamera: isometric medium, 50mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A white ball and a yellow ball resting side by side on a grass court at the moment of transition\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “WIMBLEDON 1986” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 16]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 물리 비교. 내레이션 “윔블던은 흰 공을 108년간 쓰다가 1986년에야 노란 공을 택했어요.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 잔디 코트 위에 흰 공 하나와 노란 공 하나가 교체되기 직전처럼 나란히 놓인 순간\n카메라: 아이소메트릭 · 미디엄 · 50mm. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 잔디 코트 위에 흰 공 하나와 노란 공 하나가 교체되기 직전처럼 나란히 놓인 순간\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF 역사 문서와 윔블던 공식 자료는 윔블던의 노란 공 채택 연도를 1986년으로 확인하며, 윔블던 자료는 이전에 흰 공을 108년간 사용했다고 설명한다. · 실제 원인 지점 옆 후반 편집 레이어. “WIMBLEDON 1986”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 16]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: comparison. Explain only one cause or result from the narration: “윔블던은 흰 공을 108년간 쓰다가 1986년에야 노란 공을 택했어요.”.\nFirst frame: A white ball and a yellow ball resting side by side on a grass court at the moment of transition\nCamera: isometric medium, 50mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A white ball and a yellow ball resting side by side on a grass court at the moment of transition\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “WIMBLEDON 1986” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 17,
+      "time": "01:09.3–01:13.7",
+      "narration": "노란 공이 표준처럼 자리 잡은 핵심 이유는 TV 시청자에게 더 잘 보였기 때문입니다.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c17.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": false,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 17]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: cross-section. Explain only one cause or result from the narration: “노란 공이 표준처럼 자리 잡은 핵심 이유는 TV 시청자에게 더 잘 보였기 때문입니다.”.\nFirst frame: A yellow ball clearly visible at center court within a modern color broadcast image, with no text or interface\nCamera: low-angle close-up, 85mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A yellow ball clearly visible at center court within a modern color broadcast image, with no text or interface\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “TV VISIBILITY” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 17]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 정밀 단면. 내레이션 “노란 공이 표준처럼 자리 잡은 핵심 이유는 TV 시청자에게 더 잘 보였기 때문입니다.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 현대적인 컬러 중계 화면 속 코트 중앙에서 노란 공이 선명하게 보이는 순간\n카메라: 로우앵글 · 클로즈업 · 85mm. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 현대적인 컬러 중계 화면 속 코트 중앙에서 노란 공이 선명하게 보이는 순간\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF의 테니스공 역사 문서는 연구 결과 노란 공이 텔레비전 시청자에게 더 잘 보였기 때문에 규칙에 도입됐다고 명시한다. · 실제 원인 지점 옆 후반 편집 레이어. “TV VISIBILITY”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n캐릭터는 넣지 않습니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 17]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: cross-section. Explain only one cause or result from the narration: “노란 공이 표준처럼 자리 잡은 핵심 이유는 TV 시청자에게 더 잘 보였기 때문입니다.”.\nFirst frame: A yellow ball clearly visible at center court within a modern color broadcast image, with no text or interface\nCamera: low-angle close-up, 85mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A yellow ball clearly visible at center court within a modern color broadcast image, with no text or interface\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “TV VISIBILITY” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nShow no character.\nShow no brand or logo."
+    },
+    {
+      "cut": 18,
+      "time": "01:13.7–01:18.0",
+      "narration": "늘 보던 노란 테니스공은 방송 화면의 시청자까지 생각해 허용된 색으로 다시 보이죠.",
+      "provider": "higgsfield",
+      "model": "nano-banana-2-lite",
+      "status": "ready_review",
+      "approved": false,
+      "outputFile": "output/episodes/FTN-EP-008/stills/c18.png",
+      "referenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png",
+        "reference/basicrefer_net.png",
+        "reference/basicrefer_racket.png"
+      ],
+      "priorityReferenceImages": [
+        "reference/basicrefer_court.png",
+        "reference/basicrefer_tennisball.png"
+      ],
+      "topicReferenceImages": [],
+      "conditionalCharacterReferences": [
+        "reference/tedori_character_sheet_final.png",
+        "reference/tedori_original_reference.png"
+      ],
+      "conditionalBrandReferences": [
+        "reference/테니스노트로고.png",
+        "reference/테니스노트로고White.png",
+        "reference/tennisnote_icon.png"
+      ],
+      "useTedori": true,
+      "useTennisnoteBrand": false,
+      "characterPolicy": "Tedori only when narratively required; otherwise no mascot character",
+      "brandPolicy": "Tennisnote logo/icon only when signage or branding is required; no invented brands",
+      "referencePolicy": {
+        "geometry": "테니스 코트·공·네트·라켓의 비율과 구조는 레퍼런스 형태를 잠그고 왜곡·융해·중복·비대칭 변형을 금지합니다.",
+        "character": "마스코트·진행 캐릭터가 필요한 경우에만 테돌이를 사용하며 임의 캐릭터를 만들지 않습니다.",
+        "brand": "간판·브랜드·로고·아이콘이 필요하면 테니스노트 자산만 사용하고 임의 브랜드를 만들지 않습니다."
+      },
+      "promptLanguage": "en",
+      "prompt": "[STORYBOARD FIRST FRAME · CUT 18]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: hero-object. Explain only one cause or result from the narration: “늘 보던 노란 테니스공은 방송 화면의 시청자까지 생각해 허용된 색으로 다시 보이죠.”.\nFirst frame: A single yellow tennis ball resting on an empty evening court with a text-free broadcast camera visible in the distance\nCamera: eye-level full, 35mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A single yellow tennis ball resting on an empty evening court with a text-free broadcast camera visible in the distance\nTedori extra: Tedori is a quiet hidden background extra, never the presenter or the source of evidence. Placement: Place Tedori near an existing background edge on a rule-of-thirds point, only 15–20% of frame height, never blocking the primary evidence or infographic space.\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “MADE FOR THE SCREEN” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png, reference/tedori_character_sheet_final.png, reference/tedori_original_reference.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nMatch Tedori exactly to the supplied character references.\nShow no brand or logo.",
+      "promptKo": "[스토리보드 시작 이미지 · CUT 18]\n형식: 세로 9:16 단일 이미지, 한 장소, 한 순간, 한 핵심 근거.\n시각 역할: 대상 히어로. 내레이션 “늘 보던 노란 테니스공은 방송 화면의 시청자까지 생각해 허용된 색으로 다시 보이죠.”의 원인 또는 결과 하나만 설명합니다.\n첫 프레임: 저녁의 빈 테니스 코트 위에 노란 공 하나가 편안히 놓이고 멀리 글자 없는 중계 카메라가 보이는 순간\n카메라: 아이레벨 · 풀샷 · 35mm. 피사체를 자동으로 정면 중앙에 세우지 말고, 이 컷의 공간 관계가 가장 잘 읽히는 위치에 둡니다.\n반드시 보일 구조: 저녁의 빈 테니스 코트 위에 노란 공 하나가 편안히 놓이고 멀리 글자 없는 중계 카메라가 보이는 순간\n테돌이 엑스트라: 테돌이는 설명자가 아니라 장면을 조용히 구경하는 숨은 엑스트라입니다. 배치: 기존 배경의 화면 가장자리 3분할 지점에 두고, 프레임 높이의 15~20%만 차지하며 핵심 피사체와 인포그래픽 여백을 가리지 않습니다.\n스타일: 시네마틱 포토리얼 3D 미니어처 디오라마, detail_level 2. 핵심 피사체 풀컬러, 배경 저채도, 정교하지만 통제된 미세 질감. 같은 톤은 유지하되 이전 컷의 장소와 구도를 복제하지 않습니다.\n인포그래픽 편집 설계: leader-line · ITF 공식 역사 자료는 노란 공이 TV 시청자에게 더 잘 보인다는 연구 결과를 규칙 도입의 근거로 기록한다. · 실제 원인 지점 옆 후반 편집 레이어. “MADE FOR THE SCREEN”은 후반 편집에서 정확히 입력합니다. 생성 이미지에는 글자·숫자·자막·UI를 그리지 않습니다. 빨간 선은 실제 구조나 이동 지점에 고정될 때만 최대 하나 허용합니다.\n금지: 근거 없는 소품·숫자·장비 / 같은 정면 제품 구도의 반복. 여러 시간대, 콜라주, 분할 화면, 모션 블러, 임의 장비·숫자·브랜드, 라켓·공·코트·네트 왜곡.\n\n[REFERENCE LOCK] 아래 파일은 이 컷에 등장하는 피사체의 형태 기준입니다. 장면 자체를 복사하지 않습니다.\n입력 레퍼런스: reference/basicrefer_court.png, reference/basicrefer_tennisball.png, reference/tedori_character_sheet_final.png, reference/tedori_original_reference.png\n실제로 화면에 등장하는 장비만 레퍼런스와 같은 비율·구조로 만듭니다. 지시하지 않은 코트·공·네트·라켓은 추가하지 않습니다.\n피사체를 휘게 하거나 녹이거나 복제하지 않습니다. 잘못된 솔기, 추가 스트링, 비대칭 프레임, 임의 로고를 금지합니다.\n테돌이는 지정된 캐릭터 레퍼런스와 정확히 일치시킵니다.\n브랜드와 로고는 넣지 않습니다.",
+      "promptEn": "[STORYBOARD FIRST FRAME · CUT 18]\nFormat: one vertical 9:16 still, one location, one instant and one evidence point.\nVisual role: hero-object. Explain only one cause or result from the narration: “늘 보던 노란 테니스공은 방송 화면의 시청자까지 생각해 허용된 색으로 다시 보이죠.”.\nFirst frame: A single yellow tennis ball resting on an empty evening court with a text-free broadcast camera visible in the distance\nCamera: eye-level full, 35mm. Do not automatically center an upright product; compose for the physical relationship described by this cut.\nMust show: A single yellow tennis ball resting on an empty evening court with a text-free broadcast camera visible in the distance\nTedori extra: Tedori is a quiet hidden background extra, never the presenter or the source of evidence. Placement: Place Tedori near an existing background edge on a rule-of-thirds point, only 15–20% of frame height, never blocking the primary evidence or infographic space.\nLook: cinematic photoreal 3D miniature diorama, detail_level 2. Full-color primary evidence, low-saturation context, crisp but controlled micro-texture. Keep the palette consistent while changing location and composition from adjacent cuts.\nEditorial infographic plan: leader-line · Use only the verified evidence attached to this cut. · later editorial layer anchored beside the real causal point. Add “MADE FOR THE SCREEN” later in editing; generate no letters, numbers, captions or UI. Allow at most one technical-red line only when physically anchored to a real structure or motion path.\nAvoid: unsupported props, numbers or apparatus / repeated frontal product composition. No collage, split screen, multiple time phases, motion blur, unsupported apparatus, numbers or brands, and no warped racket, ball, court or net geometry.\n\n[REFERENCE LOCK] The files below define only the geometry of subjects that actually appear in this cut; do not copy their scenes.\nInput references: reference/basicrefer_court.png, reference/basicrefer_tennisball.png, reference/tedori_character_sheet_final.png, reference/tedori_original_reference.png\nMatch only visible equipment to the referenced proportions and construction. Do not add a court, ball, net or racket unless the scene explicitly asks for it.\nNo warping, melting, duplication, false seams, extra strings, asymmetric frames or invented logos.\nMatch Tedori exactly to the supplied character references.\nShow no brand or logo."
+    }
+  ]
+}

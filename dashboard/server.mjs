@@ -297,9 +297,14 @@ function scaffoldLines(episode) {
   ];
 }
 
+function episodeFolderName(episodeId) {
+  const episode = allEpisodes.find((item) => item.id === episodeId);
+  if (!episode) throw new Error("알 수 없는 에피소드입니다.");
+  return episode.number ? `FTN-EP-${String(episode.number).padStart(3, "0")}` : episodeId;
+}
+
 function episodeProjectDir(episodeId) {
-  if (!allEpisodes.some((episode) => episode.id === episodeId)) throw new Error("알 수 없는 에피소드입니다.");
-  return within(outputDir, path.join("episodes", episodeId));
+  return within(outputDir, path.join("episodes", episodeFolderName(episodeId)));
 }
 
 function episodeScriptFile(episodeId) {
@@ -1100,7 +1105,7 @@ async function decorateGenerationShots(shots, state, episodeId) {
   return Promise.all(shots.map(async (source) => {
     const saved = state.shots.find((item) => item.index === source.index) || {};
     const mode = saved.generationMode === "direct" ? "direct" : "keyframe";
-    const expectedFile = `output/episodes/${episodeId}/stills/c${String(source.index).padStart(2, "0")}.png`;
+    const expectedFile = `output/episodes/${episodeFolderName(episodeId)}/stills/c${String(source.index).padStart(2, "0")}.png`;
     const exists = await fs.access(path.join(projectRoot, expectedFile)).then(() => true).catch(() => false);
     const commonPrompts = generationPrompts(source, mode);
     const flowDefaults = buildFlowPrompts(source, mode);
@@ -1594,7 +1599,7 @@ async function generateHiggsfieldVideoCut(state, project, cut, variant = 1, forc
   if (!model) throw new Error("선택한 Higgsfield 영상 모델을 실행할 수 없습니다.");
   if (model.credits > status.credits) throw new Error(`영상 생성에 최소 ${model.credits}cr가 필요하지만 잔여 크레딧은 ${status.credits.toFixed(1)}cr입니다.`);
   const outputName = variant > 1 ? `c${String(cut).padStart(2, "0")}_v${variant}_silent.mp4` : `c${String(cut).padStart(2, "0")}_silent.mp4`;
-  const relativeOutput = `output/episodes/${project.episodeId}/clips/${outputName}`;
+  const relativeOutput = `output/episodes/${episodeFolderName(project.episodeId)}/clips/${outputName}`;
   const destination = within(projectRoot, relativeOutput);
   const exists = await fs.access(destination).then(() => true).catch(() => false);
   if (exists && !force) return { cached: true, cut, variant, outputFile: relativeOutput };
@@ -2600,7 +2605,7 @@ async function buildJobPlan(state, sourceShots, project) {
       inputFrame: usesKeyframe ? source.generation.expectedFile : null,
       inputFrameRequired: usesKeyframe,
       inputFrameApproved: usesKeyframe ? keyframeReady : null,
-      outputFile: `output/episodes/${project.episodeId}/clips/c${String(source.index).padStart(2, "0")}_silent.mp4`,
+      outputFile: `output/episodes/${episodeFolderName(project.episodeId)}/clips/c${String(source.index).padStart(2, "0")}_silent.mp4`,
       silent: state.settings.silentGeneration,
       promptLanguage: state.settings.language,
       prompt: shot.provider === "flow"
@@ -2819,6 +2824,303 @@ function allowedLocalMutation(req) {
   } catch { return false; }
 }
 
+// ---- Local ComfyUI generation (z-image FullHD stills + MiniMax H3 HD clips) ----
+const comfyBase = "http://127.0.0.1:8188";
+const comfyInputDir = "C:/Users/joker/AppData/Local/Comfy-Desktop/ComfyUI-Shared/input";
+const comfyOutputDir = "C:/Users/joker/AppData/Local/Comfy-Desktop/ComfyUI-Shared/output";
+const comfyJobs = { queue: [], running: null, results: {} };
+
+function comfyResult(cut) {
+  if (!comfyJobs.results[cut]) comfyJobs.results[cut] = { image: { status: "idle" }, video: { status: "idle" } };
+  return comfyJobs.results[cut];
+}
+
+async function comfyHttp(pathname, payload, timeoutMs = 60000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(comfyBase + pathname, {
+      method: payload === undefined ? "GET" : "POST",
+      headers: { "Content-Type": "application/json" },
+      body: payload === undefined ? undefined : JSON.stringify(payload),
+      signal: controller.signal
+    });
+    if (!response.ok) throw new Error(`ComfyUI ${response.status}: ${(await response.text()).slice(0, 200)}`);
+    return await response.json();
+  } finally { clearTimeout(timer); }
+}
+
+function comfyH3Length(durationSec) {
+  const frames = Math.ceil(Number(durationSec || 5) * 24);
+  const k = Math.max(0, Math.ceil((frames - 5) / 17));
+  return 5 + 17 * k;
+}
+
+async function comfyLoadDesignCut(episodeId, cut) {
+  const design = await readJson(path.join(episodeProjectDir(episodeId), "scene_design.json"), null);
+  const item = design?.cuts?.find((entry) => Number(entry.cut) === Number(cut));
+  if (!item) throw new Error(`씬 설계표에 CUT ${cut}가 없습니다.`);
+  return item;
+}
+
+async function comfyStageReferences(item, context) {
+  const nodes = {};
+  const links = [];
+  const topicFiles = (context && context.imageFiles ? context.imageFiles : []).map((file) => path.isAbsolute(file) ? file : within(projectRoot, file));
+  const designFiles = (item.references || []).map((file) => within(projectRoot, path.join("reference", path.basename(file))));
+  const files = [...designFiles, ...topicFiles].slice(0, 3);
+  for (let i = 0; i < files.length; i += 1) {
+    const source = files[i];
+    const staged = `ftn_ref_${path.basename(files[i])}`;
+    try {
+      await fs.copyFile(source, path.join(comfyInputDir, staged));
+      const id = `ref${i + 1}`;
+      nodes[id] = { class_type: "LoadImage", inputs: { image: staged } };
+      links.push([`image${i + 1}`, id]);
+    } catch { /* missing reference file: skip */ }
+  }
+  return { nodes, links };
+}
+
+async function sdResearchContext(episodeId) {
+  const research = await loadVisualReferenceResearch(episodeId);
+  if (!visualReferenceSummary(research).complete) return { anchorKo: "", avoidKo: "", imageFiles: [] };
+  const inv = (research.geometry?.invariantsKo || []).slice(0, 4).join(" ");
+  const anchorKo = [research.promptAnchorKo || "", inv].filter(Boolean).join(" ");
+  const avoidKo = (research.geometry?.commonErrorsKo || []).slice(0, 4).join(" ");
+  const imageFiles = selectedVisualReferenceFiles(research);
+  return { anchorKo, avoidKo, imageFiles };
+}
+
+function comfyImagePromptText(item, context) {
+  const parts = [
+    item.staging,
+    `카메라: ${item.cameraAngle}, ${item.shotSize}, ${item.lens}.`,
+    `조명과 톤: ${item.tone}.`,
+    item.inSceneText
+      ? `장면 안 텍스트: ${item.inSceneText} — 이 글자만 정확한 철자로 장면의 사물에 새겨지듯 선명하게 렌더링하고, 그 외 어떤 글자·숫자도 만들지 않습니다.`
+      : "글자·숫자·자막·로고를 일절 생성하지 않습니다.",
+    "첨부된 레퍼런스 이미지의 테니스공 솔기 형태, 코트 라인 규격, 네트 구조를 정확히 따릅니다.",
+    context && context.anchorKo ? `주제 조사 형태 기준: ${context.anchorKo}` : "",
+    context && context.avoidKo ? `조사로 확인된 금지 형태: ${context.avoidKo}` : "",
+    "포토리얼 아키텍처 시각화 3D 렌더, 신비한 건축사전 스타일의 설명형 장면, 세로 9:16, 사람 없음, 워터마크 없음."
+  ];
+  return parts.filter(Boolean).join(" ");
+}
+
+function comfyVideoPromptText(item, context) {
+  return [
+    `피사체 움직임: ${item.subjectMotion}.`,
+    `카메라 모션: ${item.cameraMove}. 카메라는 마지막 프레임까지 멈추지 않습니다.`,
+    item.inSceneText ? `장면 속 글자(${item.inSceneText})는 형태를 유지하며 뭉개지지 않습니다.` : "글자를 새로 만들지 않습니다.",
+    context && context.avoidKo ? `형태 유지 — 조사로 확인된 금지 형태: ${context.avoidKo}` : "",
+    "한 장소의 연속 숏, 컷 없음, 무음, 모핑 금지, 스케일 드리프트 금지."
+  ].filter(Boolean).join(" ");
+}
+
+async function comfyRunAndWait(workflow, timeoutMs) {
+  const submitted = await comfyHttp("/prompt", { prompt: workflow }, 120000);
+  const promptId = submitted.prompt_id;
+  const startedAt = Date.now();
+  while (Date.now() - startedAt < timeoutMs) {
+    await new Promise((resolve) => setTimeout(resolve, 8000));
+    let history = null;
+    try { history = await comfyHttp(`/history/${promptId}`, undefined, 30000); } catch { continue; }
+    const entry = history?.[promptId];
+    if (!entry) continue;
+    if (entry.status?.status_str === "error") throw new Error("ComfyUI 워크플로 오류");
+    if (entry.outputs && Object.keys(entry.outputs).length) return entry;
+  }
+  throw new Error("ComfyUI 생성 시간 초과");
+}
+
+async function comfyNewestOutput(prefix, extensions) {
+  const entries = await fs.readdir(comfyOutputDir, { recursive: true }).catch(() => []);
+  const matches = entries.filter((name) => {
+    const base = path.basename(String(name));
+    return base.startsWith(prefix) && extensions.includes(path.extname(base).slice(1).toLowerCase());
+  }).map((name) => path.join(comfyOutputDir, String(name)));
+  if (!matches.length) return null;
+  const stats = await Promise.all(matches.map(async (file) => ({ file, mtime: (await fs.stat(file)).mtimeMs })));
+  stats.sort((a, b) => b.mtime - a.mtime);
+  return stats[0].file;
+}
+
+function comfyStillPath(episodeId, cut) {
+  return path.join(episodeProjectDir(episodeId), "mg", "stills", `c${String(cut).padStart(2, "0")}.png`);
+}
+function comfyClipPath(episodeId, cut) {
+  return path.join(episodeProjectDir(episodeId), "mg", "clips", `c${String(cut).padStart(2, "0")}_silent.mp4`);
+}
+
+async function comfyGenerateImage(episodeId, cut) {
+  const item = await comfyLoadDesignCut(episodeId, cut);
+  const context = await sdResearchContext(episodeId);
+  const refs = await comfyStageReferences(item, context);
+  const workflow = {
+    u: { class_type: "UNETLoader", inputs: { unet_name: "z-image-turbo_fp8_scaled_e4m3fn_KJ.safetensors", weight_dtype: "default" } },
+    c: { class_type: "CLIPLoader", inputs: { clip_name: "qwen_3_4b.safetensors", type: "lumina2" } },
+    v: { class_type: "VAELoader", inputs: { vae_name: "ae.safetensors" } },
+    ...refs.nodes,
+    t: { class_type: "TextEncodeZImageOmni", inputs: { clip: ["c", 0], prompt: comfyImagePromptText(item, context), auto_resize_images: true, vae: ["v", 0], ...Object.fromEntries(refs.links.map(([slot, id]) => [slot, [id, 0]])) } },
+    n: { class_type: "ConditioningZeroOut", inputs: { conditioning: ["t", 0] } },
+    l: { class_type: "EmptySD3LatentImage", inputs: { width: 1088, height: 1920, batch_size: 1 } },
+    k: { class_type: "KSampler", inputs: { model: ["u", 0], positive: ["t", 0], negative: ["n", 0], latent_image: ["l", 0], seed: Date.now() % 1000000, steps: 9, cfg: 1, sampler_name: "euler", scheduler: "simple", denoise: 1 } },
+    d: { class_type: "VAEDecode", inputs: { samples: ["k", 0], vae: ["v", 0] } },
+    s: { class_type: "SaveImage", inputs: { images: ["d", 0], filename_prefix: `ftn_sd_img_c${String(cut).padStart(2, "0")}` } }
+  };
+  await comfyRunAndWait(workflow, 600000);
+  const produced = await comfyNewestOutput(`ftn_sd_img_c${String(cut).padStart(2, "0")}`, ["png", "jpg", "webp"]);
+  if (!produced) throw new Error("이미지 출력 파일을 찾지 못했습니다.");
+  const destination = comfyStillPath(episodeId, cut);
+  await fs.mkdir(path.dirname(destination), { recursive: true });
+  await fs.copyFile(produced, destination);
+  return destination;
+}
+
+async function comfyGenerateVideo(episodeId, cut) {
+  const item = await comfyLoadDesignCut(episodeId, cut);
+  const context = await sdResearchContext(episodeId);
+  const still = comfyStillPath(episodeId, cut);
+  await fs.access(still).catch(() => { throw new Error(`CUT ${cut}의 시작 이미지가 없습니다. 먼저 이미지를 생성하세요.`); });
+  const staged = `ftn_sd_first_c${String(cut).padStart(2, "0")}.png`;
+  await fs.copyFile(still, path.join(comfyInputDir, staged));
+  const workflow = {
+    u: { class_type: "UNETLoader", inputs: { unet_name: "minimax_h3_fl2va_pruned_int8_convrot.safetensors", weight_dtype: "default" } },
+    m: { class_type: "MiniMaxH3SigmaShift", inputs: { model: ["u", 0], shift_video: 12, shift_audio: 3 } },
+    c: { class_type: "CLIPLoader", inputs: { clip_name: "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors", type: "minimax" } },
+    v: { class_type: "VAELoader", inputs: { vae_name: "minimax_h3_video_vae_fp16.safetensors" } },
+    i: { class_type: "LoadImage", inputs: { image: staged } },
+    t: { class_type: "MiniMaxH3ImageToVideo", inputs: { clip: ["c", 0], vae: ["v", 0], prompt: comfyVideoPromptText(item, context), width: 704, height: 1280, length: comfyH3Length(item.durationSec), first_frame: ["i", 0] } },
+    n: { class_type: "ConditioningZeroOut", inputs: { conditioning: ["t", 0] } },
+    k: { class_type: "KSampler", inputs: { model: ["m", 0], positive: ["t", 0], negative: ["n", 0], latent_image: ["t", 1], seed: 7, steps: 20, cfg: 4.5, sampler_name: "euler", scheduler: "simple", denoise: 1 } },
+    x: { class_type: "LTXVSeparateAVLatent", inputs: { av_latent: ["k", 0] } },
+    d: { class_type: "VAEDecode", inputs: { samples: ["x", 0], vae: ["v", 0] } },
+    cv: { class_type: "CreateVideo", inputs: { images: ["d", 0], fps: 24 } },
+    s: { class_type: "SaveVideo", inputs: { video: ["cv", 0], filename_prefix: `ftn_sd_vid_c${String(cut).padStart(2, "0")}`, format: "mp4", codec: "h264" } }
+  };
+  await comfyRunAndWait(workflow, 3600000);
+  const produced = await comfyNewestOutput(`ftn_sd_vid_c${String(cut).padStart(2, "0")}`, ["mp4"]);
+  if (!produced) throw new Error("영상 출력 파일을 찾지 못했습니다.");
+  const destination = comfyClipPath(episodeId, cut);
+  await fs.mkdir(path.dirname(destination), { recursive: true });
+  await fs.copyFile(produced, destination);
+  return destination;
+}
+
+async function sdHiggsfieldImage(episodeId, cut) {
+  const item = await comfyLoadDesignCut(episodeId, cut);
+  const context = await sdResearchContext(episodeId);
+  const args = ["generate", "create", "nano_banana_2_lite", "--prompt", comfyImagePromptText(item, context), "--aspect-ratio", "9:16", "--resolution", "1k"];
+  for (const ref of (item.references || []).slice(0, 3)) {
+    const abs = within(projectRoot, path.join("reference", path.basename(ref)));
+    const ok = await fs.access(abs).then(() => true).catch(() => false);
+    if (ok) args.push("--image-references", abs);
+  }
+  args.push("--wait", "--wait-timeout", "20m", "--wait-interval", "5s");
+  const response = await runHiggsfieldJson(args);
+  const mediaUrl = generatedMediaUrl(response, "image");
+  if (!mediaUrl) throw new Error("Higgsfield 이미지 URL을 찾지 못했습니다.");
+  const destination = comfyStillPath(episodeId, cut);
+  await fs.mkdir(path.dirname(destination), { recursive: true });
+  await downloadGeneratedMedia(mediaUrl, destination, "image");
+  return destination;
+}
+
+async function sdHiggsfieldVideo(episodeId, cut, model) {
+  const item = await comfyLoadDesignCut(episodeId, cut);
+  const context = await sdResearchContext(episodeId);
+  const still = comfyStillPath(episodeId, cut);
+  await fs.access(still).catch(() => { throw new Error(`CUT ${cut}의 시작 이미지가 없습니다.`); });
+  const config = higgsfieldVideoModelMap[model];
+  if (!config) throw new Error(`지원하지 않는 영상 모델: ${model}`);
+  const duration = Math.max(5, Math.min(15, Math.ceil(Number(item.durationSec || 5))));
+  const args = ["generate", "create", config.jobType, "--prompt", comfyVideoPromptText(item, context), "--aspect-ratio", "9:16", "--duration", String(duration), "--resolution", config.resolution, "--start-image", still];
+  if (config.supportsAudioToggle) args.push("--generate-audio", "false");
+  if (config.cinemaMode) args.push("--mode", "omni_reference");
+  args.push("--wait", "--wait-timeout", "25m", "--wait-interval", "5s");
+  const response = await runHiggsfieldJson(args, 1_560_000);
+  const mediaUrl = generatedMediaUrl(response, "video");
+  if (!mediaUrl) throw new Error("Higgsfield 영상 URL을 찾지 못했습니다.");
+  const destination = comfyClipPath(episodeId, cut);
+  await fs.mkdir(path.dirname(destination), { recursive: true });
+  await downloadGeneratedMedia(mediaUrl, destination, "video");
+  return destination;
+}
+
+async function comfyRunnerLoop() {
+  if (comfyJobs.running) return;
+  comfyJobs.running = true;
+  try {
+    while (comfyJobs.queue.length) {
+      const job = comfyJobs.queue.shift();
+      const slot = comfyResult(job.cut)[job.kind];
+      slot.status = "running"; slot.message = ""; slot.model = job.model;
+      try {
+        if (job.kind === "image") {
+          if (job.model === "nano-banana-2-lite") await sdHiggsfieldImage(job.episodeId, job.cut);
+          else await comfyGenerateImage(job.episodeId, job.cut);
+        } else {
+          if (job.model === "kling-3-motion" || job.model === "seedance-2" || job.model === "cinema-studio-4") await sdHiggsfieldVideo(job.episodeId, job.cut, job.model);
+          else await comfyGenerateVideo(job.episodeId, job.cut);
+        }
+        slot.status = "done";
+      } catch (error) {
+        slot.status = "error";
+        slot.message = String(error.message || error).slice(0, 200);
+      }
+    }
+  } finally {
+    comfyJobs.running = false;
+  }
+}
+
+function comfyEnqueue(episodeId, kind, cuts, model) {
+  for (const cut of cuts) {
+    const already = comfyJobs.queue.some((job) => job.cut === cut && job.kind === kind);
+    const slot = comfyResult(cut)[kind];
+    if (already || slot.status === "running") continue;
+    slot.status = "queued"; slot.message = "";
+    comfyJobs.queue.push({ episodeId, kind, cut, model });
+  }
+  comfyRunnerLoop();
+}
+
+async function comfySceneStatus(episodeId) {
+  const cuts = {};
+  for (let cut = 1; cut <= 18; cut += 1) {
+    const still = comfyStillPath(episodeId, cut);
+    const clip = comfyClipPath(episodeId, cut);
+    const hasStill = await fs.access(still).then(() => true).catch(() => false);
+    const hasClip = await fs.access(clip).then(() => true).catch(() => false);
+    const jobs = comfyResult(cut);
+    cuts[cut] = {
+      image: { ...jobs.image, exists: hasStill, mediaUrl: hasStill ? `/media?path=${encodeURIComponent(path.relative(projectRoot, still).replaceAll("\\", "/"))}&v=${Date.now()}` : null },
+      video: { ...jobs.video, exists: hasClip, mediaUrl: hasClip ? `/media?path=${encodeURIComponent(path.relative(projectRoot, clip).replaceAll("\\", "/"))}` : null }
+    };
+  }
+  let serverOk = false;
+  try { await comfyHttp("/queue", undefined, 4000); serverOk = true; } catch { serverOk = false; }
+  return { serverOk, busy: comfyJobs.running, pending: comfyJobs.queue.length, cuts };
+}
+
+async function ensureOfficialResearchComplete(project, state) {
+  const stored = await readJson(episodeScriptFile(project.episodeId), null);
+  const existing = await loadEpisodeResearch(project.episodeId, stored);
+  if (researchSummary(existing).complete) return existing;
+  const generated = await runCodexOfficialResearch(project.episode);
+  if (!generated.ok) {
+    const detail = String(generated.error || generated.stderr || "알 수 없는 조사 오류").trim().split(/\r?\n/).slice(-2).join(" ");
+    throw new Error(`공식자료 조사 실패: ${detail}`);
+  }
+  const research = validateOfficialResearch(generated.value, project.episodeId);
+  await writeJson(episodeResearchFile(project.episodeId), research);
+  const briefStage = state.stages.find((stage) => stage.id === "brief");
+  if (briefStage) { briefStage.status = "complete"; briefStage.note = `공식자료 조사 완료 · 출처 ${research.sources.length}개 · 사실 ${research.facts.length}개`; }
+  await writeJson(stateFile, state);
+  return research;
+}
+
 async function api(req, res, url) {
   if (["POST", "PUT", "PATCH", "DELETE"].includes(req.method || "")) {
     if (!allowedLocalMutation(req)) return json(res, 403, { error: "로컬 대시보드에서 시작한 요청만 허용됩니다." });
@@ -2989,10 +3291,11 @@ async function api(req, res, url) {
       await writeJson(episodeVisualReferenceFile(project.episodeId), hydrated);
       return json(res, 200, { ok: true, cached: true, visualResearch: visualReferenceClientData(hydrated), message: `시각 레퍼런스 조사가 이미 완료되었습니다. 저장된 자료 ${hydrated.references.length}개와 공개 이미지 ${hydrated.references.filter((item) => item.localFile).length}개를 재사용합니다.` });
     }
-    const stored = await readJson(episodeScriptFile(project.episodeId), null);
-    const officialResearch = await loadEpisodeResearch(project.episodeId, stored);
-    if (!researchSummary(officialResearch).complete) return json(res, 409, { error: "먼저 공식자료 조사를 완료하세요." });
-    const generated = await runCodexVisualReferenceResearch(project.episode, officialResearch);
+    let officialResearch;
+    try { officialResearch = await ensureOfficialResearchComplete(project, state); }
+    catch (error) { return json(res, 502, { error: error.message }); }
+    let generated = await runCodexVisualReferenceResearch(project.episode, officialResearch);
+    if (!generated.ok) generated = await runCodexVisualReferenceResearch(project.episode, officialResearch); // 구조화 응답 파싱 실패 시 1회 자동 재시도
     if (!generated.ok) {
       const detail = String(generated.error || generated.stderr || "알 수 없는 시각 조사 오류").trim().split(/\r?\n/).slice(-3).join(" ");
       return json(res, 502, { error: `시각 레퍼런스 조사에 실패했습니다. ${detail}` });
@@ -3253,7 +3556,10 @@ async function api(req, res, url) {
     const episodeId = state.planning.activeEpisodeId;
     const file = path.join(episodeProjectDir(episodeId), "scene_design.json");
     const design = await readJson(file, null);
-    return json(res, 200, { episodeId, design });
+    const stored = await readJson(episodeScriptFile(episodeId), null);
+    const scriptLines = Array.isArray(stored?.scriptLines) ? stored.scriptLines : [];
+    const researchContext = await sdResearchContext(episodeId);
+    return json(res, 200, { episodeId, design, scriptLines, researchContext: { anchorKo: researchContext.anchorKo, avoidKo: researchContext.avoidKo, imageCount: researchContext.imageFiles.length } });
   }
   if (req.method === "PUT" && url.pathname === "/api/scene-design") {
     const body = await readBody(req);
@@ -3290,6 +3596,78 @@ async function api(req, res, url) {
     const file = path.join(episodeProjectDir(episodeId), "scene_design.json");
     await writeJson(file, design);
     return json(res, 200, { ok: true, episodeId, cuts: design.cuts.length });
+  }
+  if (req.method === "GET" && url.pathname === "/api/comfy/status") {
+    const { state } = await loadState();
+    return json(res, 200, await comfySceneStatus(state.planning.activeEpisodeId));
+  }
+  if (req.method === "POST" && url.pathname === "/api/comfy/generate") {
+    const body = await readBody(req);
+    const { state } = await loadState();
+    const episodeId = state.planning.activeEpisodeId;
+    const kind = body.kind === "video" ? "video" : "image";
+    let cuts = [];
+    if (body.all === true) {
+      for (let cut = 1; cut <= 18; cut += 1) {
+        const file = kind === "image" ? comfyStillPath(episodeId, cut) : comfyClipPath(episodeId, cut);
+        const exists = await fs.access(file).then(() => true).catch(() => false);
+        if (!exists || body.force === true) cuts.push(cut);
+      }
+    } else {
+      const cut = Number(body.cut);
+      if (!Number.isInteger(cut) || cut < 1 || cut > 18) return json(res, 400, { error: "컷 번호는 1~18 정수여야 합니다." });
+      cuts = [cut];
+    }
+    const imageModels = ["z-image-turbo", "nano-banana-2-lite", "flow-image"];
+    const videoModels = ["minimax-h3", "kling-3-motion", "seedance-2", "cinema-studio-4", "flow-video"];
+    const model = kind === "image"
+      ? (imageModels.includes(body.model) ? body.model : "z-image-turbo")
+      : (videoModels.includes(body.model) ? body.model : "minimax-h3");
+    if (model.startsWith("flow-")) {
+      const flowDir = path.join(episodeProjectDir(episodeId), "mg", "flow");
+      await fs.mkdir(flowDir, { recursive: true });
+      const prompts = [];
+      const flowContext = await sdResearchContext(episodeId);
+      for (const cut of cuts) {
+        const item = await comfyLoadDesignCut(episodeId, cut);
+        const promptText = kind === "image" ? comfyImagePromptText(item, flowContext) : comfyVideoPromptText(item, flowContext);
+        const refNote = (item.references || []).length ? `\nFlow Ingredients/Frames 첨부: ${item.references.join(", ")}` : "";
+        const saveNote = kind === "image"
+          ? `\n생성 후 저장 위치: output/episodes/${episodeFolderName(episodeId)}/mg/stills/c${String(cut).padStart(2, "0")}.png`
+          : `\n생성 후 저장 위치: output/episodes/${episodeFolderName(episodeId)}/mg/clips/c${String(cut).padStart(2, "0")}_silent.mp4`;
+        const block = `[CUT ${String(cut).padStart(2, "0")} · ${kind === "image" ? "이미지" : "영상"} · Omni Flash 권장 · 9:16 · 무음]\n${promptText}${refNote}${saveNote}`;
+        prompts.push({ cut, prompt: block });
+        await fs.writeFile(path.join(flowDir, `c${String(cut).padStart(2, "0")}_${kind}.txt`), block, "utf8");
+      }
+      await fs.writeFile(path.join(flowDir, `flow_${kind}_package.md`), prompts.map((entry) => entry.prompt).join("\n\n---\n\n"), "utf8");
+      return json(res, 200, { ok: true, manual: true, kind, model, queued: [], prompts, packageFile: `output/episodes/${episodeFolderName(episodeId)}/mg/flow/flow_${kind}_package.md` });
+    }
+    const isLocal = model === "z-image-turbo" || model === "minimax-h3";
+    if (isLocal) {
+      try { await comfyHttp("/queue", undefined, 4000); } catch { return json(res, 503, { error: "ComfyUI 서버(127.0.0.1:8188)가 꺼져 있습니다. ComfyUI Desktop을 실행하세요." }); }
+    } else {
+      const hf = await higgsfieldStatus();
+      if (!hf.authenticated) return json(res, 503, { error: "Higgsfield CLI 인증이 필요합니다." });
+    }
+    comfyEnqueue(episodeId, kind, cuts, model);
+    return json(res, 200, { ok: true, queued: cuts, kind, model });
+  }
+  if (req.method === "POST" && url.pathname === "/api/reference/upload") {
+    const body = await readBody(req);
+    const files = Array.isArray(body.files) ? body.files.slice(0, 10) : [];
+    if (!files.length) return json(res, 400, { error: "업로드할 파일이 없습니다." });
+    const saved = [];
+    for (const file of files) {
+      const base = path.basename(String(file.name || "")).replace(/[^\w.\-가-힣 ]/g, "_");
+      const ext = path.extname(base).toLowerCase();
+      if (![".png", ".jpg", ".jpeg", ".webp"].includes(ext)) return json(res, 400, { error: `허용되지 않는 형식: ${base}` });
+      const buffer = Buffer.from(String(file.dataBase64 || ""), "base64");
+      if (!buffer.length || buffer.length > 20 * 1024 * 1024) return json(res, 400, { error: `파일 크기 오류: ${base}` });
+      const destination = within(projectRoot, path.join("reference", base));
+      await fs.writeFile(destination, buffer);
+      saved.push(base);
+    }
+    return json(res, 200, { ok: true, saved });
   }
   return json(res, 404, { error: "API를 찾을 수 없습니다." });
 }

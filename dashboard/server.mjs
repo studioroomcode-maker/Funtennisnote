@@ -1951,46 +1951,7 @@ ${narrationWarmWitRules(episode)}
 지정된 JSON 스키마만 출력하십시오.`;
 }
 async function runCodexScriptGeneration(episode, selectedRhythm = "auto") {
-  const schemaFile = path.join(dataDir, "script-generation.schema.json");
-  await writeJson(schemaFile, scriptGenerationSchema());
-  const codexExecutable = process.platform === "win32"
-    ? path.join(process.env.APPDATA || "", "npm", "codex.cmd")
-    : "codex";
-  const args = [
-    "--search", "exec", "--ephemeral", "--sandbox", "read-only",
-    "--skip-git-repo-check", "--color", "never",
-    "-c", 'model_reasoning_effort="medium"',
-    "--output-schema", schemaFile, "-"
-  ];
-  const prompt = scriptGenerationPrompt(episode, selectedRhythm);
-  return await new Promise((resolve) => {
-    const child = spawn(codexExecutable, args, {
-      cwd: projectRoot,
-      windowsHide: true,
-      shell: process.platform === "win32"
-    });
-    let stdout = "";
-    let stderr = "";
-    let settled = false;
-    const finish = (result) => {
-      if (settled) return;
-      settled = true;
-      clearTimeout(timer);
-      resolve(result);
-    };
-    const timer = setTimeout(() => {
-      child.kill();
-      finish({ ok: false, error: "AI 대본 생성 시간이 4분을 초과했습니다.", stdout, stderr });
-    }, 240000);
-    child.stdout.on("data", (data) => { stdout += data.toString(); });
-    child.stderr.on("data", (data) => { stderr += data.toString(); });
-    child.on("error", (error) => finish({ ok: false, error: error.message, stdout, stderr }));
-    child.on("close", (code) => {
-      const value = extractLastJsonObject(stdout);
-      finish({ ok: code === 0 && Boolean(value), code, value, stdout, stderr, error: value ? "" : "구조화된 대본 응답을 읽지 못했습니다." });
-    });
-    child.stdin.end(prompt, "utf8");
-  });
+  return runCodexStructured(scriptGenerationPrompt(episode, selectedRhythm), scriptGenerationSchema(), "script-generation.schema.json", true, 240000, "AI 대본 생성 시간이 4분을 초과했습니다.");
 }
 
 function visualReferenceResearchSchema() {
@@ -2389,7 +2350,59 @@ async function terminateProcessTree(child) {
   });
 }
 
+const researchProviderFile = path.join(dataDir, "research-provider.json");
+
+async function loadResearchProvider() {
+  const stored = await readJson(researchProviderFile, null);
+  return stored?.provider === "claude" ? "claude" : "codex";
+}
+
+// Claude Code CLI 헤드리스 실행 — Codex와 동일한 구조화 출력 계약
+async function runClaudeStructured(prompt, schema, withSearch, timeoutMs, timeoutMessage) {
+  const claudeExecutable = process.platform === "win32"
+    ? path.join(process.env.USERPROFILE || "", ".local", "bin", "claude.exe")
+    : "claude";
+  const args = ["-p", "--model", "sonnet", ...(withSearch ? ["--allowedTools", "WebSearch,WebFetch"] : [])];
+  const fullPrompt = `${prompt}\n\n[출력 형식] 응답 맨 마지막에 아래 JSON 스키마를 정확히 따르는 JSON 객체 하나만 출력하십시오. 답변의 다른 위치에 JSON 객체를 포함하지 마십시오.\n${JSON.stringify(schema)}`;
+  return await new Promise((resolve) => {
+    const child = spawn(claudeExecutable, args, { cwd: projectRoot, windowsHide: true });
+    let stdout = "";
+    let stderr = "";
+    let settled = false;
+    const finish = (result) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      resolve(result);
+    };
+    const timer = setTimeout(async () => {
+      await terminateProcessTree(child);
+      finish({ ok: false, error: timeoutMessage, stdout, stderr });
+    }, timeoutMs);
+    child.stdout.on("data", (data) => { stdout += data.toString(); });
+    child.stderr.on("data", (data) => { stderr += data.toString(); });
+    child.on("error", (error) => finish({ ok: false, error: `Claude Code 실행 실패: ${error.message}`, stdout, stderr }));
+    child.on("close", (code) => {
+      const value = extractLastJsonObject(stdout);
+      finish({ ok: code === 0 && Boolean(value), code, value, stdout, stderr, provider: "claude", error: value ? "" : "Claude Code에서 구조화된 응답을 읽지 못했습니다." });
+    });
+    child.stdin.end(fullPrompt, "utf8");
+  });
+}
+
+// 선택된 엔진으로 실행하고, Codex 사용량 한도 초과 시 Claude Code로 자동 폴백
 async function runCodexStructured(prompt, schema, schemaName, withSearch, timeoutMs, timeoutMessage) {
+  const provider = await loadResearchProvider();
+  if (provider === "claude") return runClaudeStructured(prompt, schema, withSearch, timeoutMs, timeoutMessage);
+  const result = await runCodexStructuredRaw(prompt, schema, schemaName, withSearch, timeoutMs, timeoutMessage);
+  if (!result.ok && /사용량 한도|usage limit/i.test(String(result.error || ""))) {
+    const fallback = await runClaudeStructured(prompt, schema, withSearch, timeoutMs, timeoutMessage);
+    if (fallback.ok) return { ...fallback, usedFallback: true };
+  }
+  return result;
+}
+
+async function runCodexStructuredRaw(prompt, schema, schemaName, withSearch, timeoutMs, timeoutMessage) {
   const schemaFile = path.join(dataDir, schemaName);
   await writeJson(schemaFile, schema);
   const codexExecutable = process.platform === "win32" ? path.join(process.env.APPDATA || "", "npm", "codex.cmd") : "codex";
@@ -2420,7 +2433,18 @@ async function runCodexStructured(prompt, schema, schemaName, withSearch, timeou
     child.on("error", (error) => finish({ ok: false, error: error.message, stdout, stderr }));
     child.on("close", (code) => {
       const value = extractLastJsonObject(stdout);
-      finish({ ok: code === 0 && Boolean(value), code, value, stdout, stderr, error: value ? "" : "구조화된 응답을 읽지 못했습니다." });
+      let failMessage = "";
+      if (!value) {
+        const combined = `${stdout}\n${stderr}`;
+        if (/usage limit/i.test(combined)) {
+          const retryAt = combined.match(/try again at ([^.\r\n]+)/i);
+          failMessage = `Codex 사용량 한도 초과 — ${retryAt ? retryAt[1].trim() + " 이후" : "한도 갱신 후"} 다시 시도할 수 있습니다.`;
+        } else {
+          const errLine = combined.split(/\r?\n/).reverse().find((line) => line.trim().startsWith("ERROR:"));
+          failMessage = errLine ? errLine.trim() : "구조화된 응답을 읽지 못했습니다.";
+        }
+      }
+      finish({ ok: code === 0 && Boolean(value), code, value, stdout, stderr, error: failMessage });
     });
     child.stdin.end(prompt, "utf8");
   });
@@ -3920,6 +3944,15 @@ async function api(req, res, url) {
     }
     comfyEnqueue(episodeId, kind, cuts, model);
     return json(res, 200, { ok: true, queued: cuts, kind, model });
+  }
+  if (req.method === "GET" && url.pathname === "/api/research-provider") {
+    return json(res, 200, { ok: true, provider: await loadResearchProvider() });
+  }
+  if (req.method === "PUT" && url.pathname === "/api/research-provider") {
+    const body = await readBody(req);
+    const provider = body.provider === "claude" ? "claude" : "codex";
+    await writeJson(researchProviderFile, { provider, updatedAt: new Date().toISOString() });
+    return json(res, 200, { ok: true, provider });
   }
   if (req.method === "GET" && url.pathname === "/api/bgm/list") {
     await fs.mkdir(bgmDir, { recursive: true });

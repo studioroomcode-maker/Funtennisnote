@@ -390,6 +390,9 @@ body.planning-mode .app-shell { grid-template-columns: 1fr; }
 .episode-meta strong { margin-left: auto; color: var(--text); font-size: 14px; }
 .episode-actions { margin-top: 10px; }
 .shortlist-button { min-height: 32px; padding: 0 10px; border: 1px solid var(--border); border-radius: 7px; background: transparent; color: var(--muted); font-size: 10px; }
+.episode-actions-right { display: flex; align-items: center; gap: 6px; }
+.episode-select-button { font-weight: 700; }
+.episode-select-button.active { cursor: default; }
 .shortlist-button.active { border-color: var(--yellow-dark); color: var(--yellow); background: rgba(223,255,50,.06); }
 .catalog-footer { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px 18px; color: var(--subtle); font-size: 11px; }
 .dialog-actions { display: flex; justify-content: flex-end; padding-top: 4px; }

@@ -1,0 +1,155 @@
+{
+  "episodeId": "FTN-PILOT-01",
+  "completedAt": "2026-08-27T07:21:28.075Z",
+  "provider": "codex-search",
+  "facts": [
+    {
+      "id": "fact-01",
+      "fact": "독일 원예가·아마추어 테니스 선수 Werner Fischer가 이중 스트링(‘스파게티’) 공법을 고안해 1977년 5월 5일 미국에 특허를 출원했고, 1980년 2월 26일 특허번호 US4,190,249(발명명 'Tennis racket and method of making same')로 등록되었다.",
+      "proof": "미국 특허청 등록 문서(freepatentsonline 게재본)의 출원일·등록일·발명자·특허명 필드로 직접 확인됨.",
+      "graphic": "US Patent 4,190,249",
+      "sourceUrls": [
+        "https://www.freepatentsonline.com/4190249.html"
+      ]
+    },
+    {
+      "id": "fact-02",
+      "fact": "이 라켓은 세로(메인) 스트링을 두 겹으로 배치하고 그 사이에 가로(크로스) 스트링을 끼워 넣어, 통상적인 라켓처럼 세로·가로 스트링이 서로 얽혀 고정되지 않고 미끄러지듯 움직이는 구조였다. 메인 스트링 접촉점에는 원통형 보호대(튜브)를, 크로스 스트링 수는 일반 라켓(약 20개)보다 적은 5~6개를 사용했다.",
+      "proof": "특허 명세서 Abstract·Claim 1의 구조 설명(중앙 교차 스트링층+양쪽 메인 스트링층+접촉점 원통형 보호대)과 스트링 기술 해설 자료가 일치함.",
+      "graphic": "double-strung / non-interlaced strings",
+      "sourceUrls": [
+        "https://www.freepatentsonline.com/4190249.html",
+        "https://en.wikipedia.org/wiki/Spaghetti_racquet"
+      ]
+    },
+    {
+      "id": "fact-03",
+      "fact": "1977년 US오픈(8월31일~9월3일)에서 당시 세계랭킹 200위였던 Mike Fishbach가 이 라켓으로 1회전에서 Billy Martin, 2회전에서 16번 시드 Stan Smith(6-0, 6-2)를 연파하며 이 라켓이 처음으로 크게 주목받았다.",
+      "proof": "1977년 US오픈 경기 결과 및 당대 언론(Washington Post 등) 보도, 이후 다수 테니스 역사 정리 자료가 동일한 경기 결과와 날짜를 기록함.",
+      "graphic": "1977 US Open, R2 upset",
+      "sourceUrls": [
+        "https://www.washingtonpost.com/archive/lifestyle/1978/04/21/a-fistful-of-spaghetti-and-victory/a227c21e-24fe-4b17-bf61-4b5c4879ef9d/",
+        "https://en.wikipedia.org/wiki/Spaghetti_racquet"
+      ]
+    },
+    {
+      "id": "fact-04",
+      "fact": "1977년 9월 프랑스 대회들에서 Georges Goven이 이 라켓으로 세계 9위 Ilie Năstase를 꺾었고, 이후 Năstase 본인이 같은 라켓을 사용해 10월 2일 Raquette d'Or 결승에서 6-1, 7-5로 2세트를 먼저 따내자 상대 Guillermo Vilas가 3세트를 치르지 않고 기권했다.",
+      "proof": "1977 Raquette d'Or 대회 결과 기록 및 동시대 언론 보도가 날짜·스코어·기권 사실에서 일치함.",
+      "graphic": "Nastase vs Vilas, 1977-10-02",
+      "sourceUrls": [
+        "https://en.wikipedia.org/wiki/1977_Raquette_d%27Or",
+        "https://en.wikipedia.org/wiki/Spaghetti_racquet"
+      ]
+    },
+    {
+      "id": "fact-05",
+      "fact": "국제테니스연맹(ITF) 집행위원회는 1977년 10월 1일 모든 이중 스트링(스파게티) 라켓의 ITF 주관 대회 사용을 임시 금지한다고 발표했고, 이 조치는 이틀 뒤인 10월 3일 발효되었다.",
+      "proof": "ITF의 공식 임시 금지 발표 및 발효일이 당대 보도와 이후 테니스 규정사 정리 자료에서 동일하게 명시됨.",
+      "graphic": "ITF temporary ban, 1977-10-03",
+      "sourceUrls": [
+        "https://en.wikipedia.org/wiki/Spaghetti_racquet"
+      ]
+    },
+    {
+      "id": "fact-06",
+      "fact": "미국테니스협회(USTA)도 1977년 10월 19일 자국 주관 대회에서 이중 스트링 라켓 사용을 금지하는 자체 규정을 시행했다.",
+      "proof": "이 규정이 이후 Gunter Harz Sports v. USTA 소송의 직접 대상이 되었으며, 판결문·역사 자료에서 시행일이 일관되게 기록됨.",
+      "graphic": "NONE",
+      "sourceUrls": [
+        "https://en.wikipedia.org/wiki/Spaghetti_racquet"
+      ]
+    },
+    {
+      "id": "fact-07",
+      "fact": "ITF는 1978년 7월 13일 표결로 스파게티(이중 스트링) 라켓을 영구 금지했으며, 이때 처음으로 테니스 역사상 공식적인 '규정 라켓'의 정의(스트링 교차 방식 포함)를 규정에 명문화했다.",
+      "proof": "ITF의 영구 금지 표결일과 '테니스 역사상 최초의 라켓·스트링 규정'이라는 위상이 여러 테니스 규정사 정리 자료에서 일치해 확인됨.",
+      "graphic": "ITF permanent ban, 1978-07-13",
+      "sourceUrls": [
+        "https://en.wikipedia.org/wiki/Spaghetti_racquet"
+      ]
+    },
+    {
+      "id": "fact-08",
+      "fact": "현행 ITF Rules of Tennis Rule 4(라켓)는 히팅면을 이루는 스트링 패턴에 대해 '교차된 스트링으로 구성되며, 스트링은 교차 지점에서 번갈아 얽히거나(interlaced) 결속되어야(bonded) 한다'고 규정한다.",
+      "proof": "ITF 공식 Rules of Tennis 문서(스트링 관련 공식 PDF) 원문 조항으로 직접 확인됨. 이 조항이 스트링층이 얽히지 않고 분리되어 움직이는 스파게티 구조를 원천적으로 배제한다.",
+      "graphic": "Rule 4: interlaced or bonded",
+      "sourceUrls": [
+        "https://www.itftennis.com/media/2175/rackets-and-strings-strings.pdf"
+      ]
+    },
+    {
+      "id": "fact-09",
+      "fact": "라켓 판매권을 가진 Gunter Harz Sports(구 Werner Fischer Sports)는 USTA를 상대로 반독점 소송을 제기했으나, 네브래스카 연방지방법원(511 F. Supp. 1103, 1981)과 제8순회 연방항소법원(665 F.2d 222, 1981년 12월 2일 판결)이 모두 'USTA의 라켓 규정은 경쟁 테니스의 질서와 경기 본질 보존이라는 정당한 목적에 합리적으로 부합하며 필요한 범위를 넘지 않는다'며 USTA 승소로 판결했다.",
+      "proof": "연방법원 공식 판결문(지방법원·항소법원)에 사건번호·판결일·법리적 근거(합리성 원칙 적용)가 명시되어 있음.",
+      "graphic": "Gunter Harz Sports v. USTA, 665 F.2d 222 (8th Cir. 1981)",
+      "sourceUrls": [
+        "https://law.justia.com/cases/federal/district-courts/FSupp/511/1103/1429737/",
+        "https://law.justia.com/cases/federal/appellate-courts/F2/665/222/408137/"
+      ]
+    },
+    {
+      "id": "fact-10",
+      "fact": "실험실 측정에서 스파게티 스트링 라켓은 비스듬히 맞는 타구(oblique impact) 조건에서 일반적으로 얽어 짠 라켓보다 대략 2배 가까운 회전(스핀)을 공에 전달하는 것으로 나타났다. 이는 스트링층이 서로 독립적으로 미끄러지며 공과의 접촉 시간·범위가 늘어나기 때문으로 설명된다.",
+      "proof": "공학적 스포츠 물리 자료 및 테니스 규정사 정리 자료가 동일한 '약 2배' 스핀 증가 결론과 그 메커니즘(스트링 슬라이딩)을 제시함. 다만 원 실험의 구체적 연구 주체·수치는 문헌마다 상세도가 달라 정밀 수치로는 취급하지 않음.",
+      "graphic": "~2x spin, oblique impact",
+      "sourceUrls": [
+        "https://en.wikipedia.org/wiki/Spaghetti_racquet"
+      ]
+    },
+    {
+      "id": "fact-11",
+      "fact": "스파게티 라켓이 금지된 공식 근거는 '너무 강력해서'가 아니라, 스트링이 교차점에서 얽히거나 결속되지 않은 구조 자체가 새 규정(Rule 4) 위반이라는 점과, 공이 스트링에 이중으로 맞는 것으로 의심된 점(당시 규정상 이중 타구 금지)이었다. 즉 현행 규정은 스핀량을 직접 제한하지 않고 스트링 결속 방식을 규정해 이 구조를 원천 차단하는 방식을 택했다.",
+      "proof": "ITF의 임시·영구 금지 사유(경기 본질 성격 보존, 이중 타구 의심)와 현행 Rule 4 조문(스트링 결속 요건)이 서로 다른 층위의 근거임이 공식 규정 문언과 규정사 자료에서 함께 확인됨.",
+      "graphic": "NONE",
+      "sourceUrls": [
+        "https://www.itftennis.com/media/2175/rackets-and-strings-strings.pdf",
+        "https://en.wikipedia.org/wiki/Spaghetti_racquet"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "US Patent 4,190,249 — Tennis racket and method of making same (Werner Fischer)",
+      "url": "https://www.freepatentsonline.com/4190249.html",
+      "supports": "발명자, 출원·등록일, 라켓 구조(이중 스트링층, 원통형 보호대) 원문 근거"
+    },
+    {
+      "title": "ITF Tennis — STRINGS (공식 규정 PDF)",
+      "url": "https://www.itftennis.com/media/2175/rackets-and-strings-strings.pdf",
+      "supports": "현행 Rule 4 스트링 교차·결속 요건 원문"
+    },
+    {
+      "title": "Gunter Harz Sports v. US Tennis Ass'n, 511 F. Supp. 1103 (D. Neb. 1981)",
+      "url": "https://law.justia.com/cases/federal/district-courts/FSupp/511/1103/1429737/",
+      "supports": "연방지방법원의 USTA 금지 규정 적법성 판단 근거"
+    },
+    {
+      "title": "Gunter Harz Sports, Inc. v. United States Tennis Association, Inc., 665 F.2d 222 (8th Cir. 1981)",
+      "url": "https://law.justia.com/cases/federal/appellate-courts/F2/665/222/408137/",
+      "supports": "연방항소법원의 최종 판결(1981-12-02), USTA 승소 근거"
+    },
+    {
+      "title": "Spaghetti racquet — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Spaghetti_racquet",
+      "supports": "발명 배경, 대회 사용 사례(Fishbach, Goven, Nastase-Vilas), ITF 임시·영구 금지 일자, 실험 스핀 수치 정리"
+    },
+    {
+      "title": "A Fistful Of Spaghetti And Victory — The Washington Post (1978-04-21)",
+      "url": "https://www.washingtonpost.com/archive/lifestyle/1978/04/21/a-fistful-of-spaghetti-and-victory/a227c21e-24fe-4b17-bf61-4b5c4879ef9d/",
+      "supports": "1977년 US오픈 Fishbach 경기 결과 등 당대 보도"
+    },
+    {
+      "title": "1977 Raquette d'Or — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/1977_Raquette_d%27Or",
+      "supports": "Nastase-Vilas 결승 날짜·스코어·기권 기록"
+    }
+  ],
+  "factWarnings": [
+    "Werner Fischer의 최초 고안 연도는 자료에 따라 1971년 또는 1972년으로 다르게 언급되어 정확한 연도를 확정하지 못함.",
+    "'약 2배 스핀 증가' 실험 수치의 원 연구자·기관·측정 방법을 특정한 1차 논문을 확인하지 못해, 정밀 수치가 아닌 대략적 경향으로만 취급함.",
+    "Năstase, Vilas 등 선수들의 당시 인터뷰 인용문은 언론 재인용에 의존하며, 공식 기자회견록이나 대회 공식 성명으로는 확인하지 못해 대본에는 직접 인용하지 않는 것을 권장함.",
+    "Arthur Ashe가 라켓 작동 원리를 설명했다는 일화는 잡지 기고 등 2차 자료에서만 확인되며 공식 문서로 검증되지 않아 사실 목록에서 제외함."
+  ],
+  "migratedFromScript": false
+}

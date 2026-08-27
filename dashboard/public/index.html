@@ -139,6 +139,12 @@
           </div>
           <div class="visual-research-actions">
             <span class="reference-ready-badge" id="visualResearchStatus">조사 전</span>
+            <label class="compact-field"><span class="sr-only">조사·대본 AI 엔진</span>
+              <select id="researchProviderSelect" aria-label="조사·대본 AI 엔진" title="조사·대본 생성에 쓸 AI 엔진 (Codex 한도 초과 시 Claude Code로 자동 전환)">
+                <option value="codex">Codex</option>
+                <option value="claude">Claude Code</option>
+              </select>
+            </label>
             <button class="button button-outline" id="researchVisualReferencesButton" type="button">자료 조사 시작 (공식+시각)</button>
             <button class="button button-primary" id="approveVisualReferencesButton" type="button" disabled>선택 레퍼런스 승인</button>
           </div>

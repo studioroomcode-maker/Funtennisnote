@@ -1,0 +1,210 @@
+{
+  "episodeId": "FTN-PILOT-01",
+  "completedAt": "2026-08-27T07:25:23.097Z",
+  "updatedAt": "2026-08-27T07:26:30.900Z",
+  "approvedAt": "2026-08-27T07:26:30.900Z",
+  "provider": "codex-search",
+  "geometry": {
+    "subjectKo": "1977년 베르너 피셔(Werner Fischer)가 특허 낸 이중 스트링('스파게티') 테니스 라켓 — 메인(세로) 스트링을 앞뒤 두 겹으로 분리 배치하고 그 사이에 얽히지 않은 소수의 크로스(가로) 스트링을 끼워 넣은 3층 구조",
+    "subjectEn": "Werner Fischer's 1977-patented double-strung ('spaghetti') tennis racket — two separated front/rear layers of vertical main strings sandwiching a small number of non-interlaced horizontal cross strings",
+    "invariantsKo": [
+      "스트링 표면은 하나의 균일한 격자가 아니라, 앞/중간/뒤 3층 구조(앞 메인층-크로스층-뒤 메인층)다.",
+      "크로스 스트링은 5~6개뿐으로 통상 라켓(약 20개)보다 훨씬 적다.",
+      "메인 스트링과 크로스 스트링은 서로 얽혀(interlace) 고정되지 않고 접촉점에서 미끄러지듯 움직인다.",
+      "모든 메인-크로스 접촉점에는 원통형 보호 튜브(마카로니 모양)가 끼워져 있다.",
+      "앞쪽 메인 스트링층에는 별도의 가로 방향 홀딩 스트링이 있어 메인 다발을 하나의 단위로 묶는다.",
+      "라켓 프레임 자체(헤드 크기, 넥, 그립, 오벌 형태)는 1970년대 통상적 알루미늄 라켓과 동일하며, 구조적 특이점은 오직 스트링 배치에 있다.",
+      "실물 사진에서 크로스 스트링(주황/황갈색)은 스트링베드 전면이 아니라 중앙 대각선 대역에 다이아몬드형 클러스터로 뭉쳐 있고, 교차점마다 작은 흰색 클립으로 고정되어 있다."
+    ],
+    "invariantsEn": [
+      "The string surface is not one uniform grid — it is a 3-layer stack: front main layer, cross-string layer, rear main layer.",
+      "There are only 5-6 cross strings, far fewer than a conventional racket's ~20.",
+      "Main and cross strings are NOT interlaced/bonded at crossings — they slide against each other at contact points.",
+      "Every main-cross contact point has a short cylindrical protective sheath/tube (macaroni-like) threaded onto the string.",
+      "The front main-string layer carries additional horizontal 'holding strings' that unify the main-string bundle's lateral movement.",
+      "The frame itself (head size, throat, grip, oval silhouette) is an ordinary 1970s aluminum oval-head racket — the only structural anomaly is the string arrangement.",
+      "In real photographs, the cross strings (orange/tan) cluster in a diagonal diamond pattern concentrated in the center band, not across the whole face, each crossing fastened with a small white clip/tie."
+    ],
+    "constructionKo": [
+      "앞면(타구면)에서 뒤로: 1) 앞쪽 메인(세로) 스트링 다발, 2) 크로스(가로) 스트링 5~6개(앞뒤 메인층 사이에 위치), 3) 뒤쪽 메인(세로) 스트링 다발.",
+      "모든 메인-크로스 교차점에 원통형 나일론 튜브를 끼워 마찰을 줄이고 슬라이딩을 유도.",
+      "앞쪽 메인 스트링에 가로 방향 홀딩 스트링을 추가로 매어 메인 다발이 통일된 방향으로만 움직이게 함.",
+      "크로스 스트링은 매듭 또는 소량의 접착제(글루 방울)로 끝단을 고정해 슬라이딩 범위를 제한.",
+      "프레임: 알루미늄(주류) 또는 목재(초기 실험형) 오벌 헤드, 헤드 둘레에 표준 그로밋 구멍 배열."
+    ],
+    "constructionEn": [
+      "Front to back: 1) front bundle of vertical main strings, 2) 5-6 horizontal cross strings sandwiched between the two main layers, 3) rear bundle of vertical main strings.",
+      "A cylindrical nylon sheath is threaded onto every main-cross contact point to reduce friction and permit sliding.",
+      "The front main-string layer has extra horizontal 'holding strings' tied on to keep the main bundle moving as one unit.",
+      "Cross-string ends are secured with knots or small glue dabs that limit (but don't eliminate) their sliding range.",
+      "Frame: aluminum (typical) or wood (early prototypes), oval head, standard grommet holes around the head perimeter."
+    ],
+    "materialsKo": [
+      "프레임: 알루미늄 합금(주류) 또는 목재(초기 실험형).",
+      "스트링: 일반 나일론/거트 스트링(메인·크로스 동일 재질).",
+      "보호 튜브: 반투명 나일론/플라스틱 관 — 마카로니를 닮아 '스파게티'라는 별명이 붙음.",
+      "결속재: 얇은 실(홀딩 스트링), 소량의 접착제(글루 블롭), 작은 플라스틱/실 클립."
+    ],
+    "materialsEn": [
+      "Frame: aluminum alloy (typical) or wood (early prototypes).",
+      "Strings: ordinary nylon/gut stringing material, same for main and cross strings.",
+      "Protective sheaths: translucent nylon/plastic tubing — resembling macaroni, the source of the 'spaghetti' nickname.",
+      "Fasteners: thin filament (holding strings), small glue dabs, small plastic/thread clips."
+    ],
+    "mechanismKo": [
+      "타구 시 크로스 스트링이 두 겹의 메인 스트링 층 사이에서 앞뒤로 자유롭게 미끄러지며 공과의 접촉 시간·변형 범위가 늘어난다.",
+      "이 여분의 슬라이딩 움직임이 비스듬한 타구(oblique impact)에서 공에 전달되는 회전량을 통상 라켓 대비 약 2배로 늘린다.",
+      "홀딩 스트링과 보호 튜브는 완전 무질서한 움직임을 막고, 메인 스트링 다발이 통일된 방향으로만 이동하도록 제한한다."
+    ],
+    "mechanismEn": [
+      "On impact, the cross strings slide freely fore-and-aft between the two main-string layers, extending ball contact time and string deformation range.",
+      "This extra sliding motion roughly doubles spin transfer on oblique impacts compared to a conventionally strung racket.",
+      "Holding strings and protective sheaths prevent fully chaotic movement, constraining the main-string bundle to move as one coordinated unit."
+    ],
+    "commonErrorsKo": [
+      "스트링을 하나의 평면 격자로 그려 앞/뒤로 분리된 이중 메인층 구조를 표현하지 못하는 오류.",
+      "크로스 스트링을 일반 라켓처럼 20개 안팎으로 촘촘하게 그리는 오류 — 실제로는 5~6개뿐이며 중앙 대역에 집중됨.",
+      "라켓 프레임 자체를 미래적이거나 이색적인 형태로 왜곡하는 오류 — 실제 프레임은 평범한 1970년대 오벌 헤드 알루미늄 라켓 형태.",
+      "스트링 교차점의 원통형 보호 튜브를 생략하거나 매듭·구슬로 잘못 표현하는 오류.",
+      "메인 스트링과 크로스 스트링이 일반 라켓처럼 서로 얽혀(짜여) 있는 것으로 그리는 오류 — 실제로는 얽히지 않고 층이 분리되어 미끄러지는 구조."
+    ],
+    "commonErrorsEn": [
+      "Drawing the strings as one flat grid, failing to show the front/rear separated double main-string layer.",
+      "Drawing ~20 densely packed cross strings like a normal racket — the real count is only 5-6, clustered centrally.",
+      "Distorting the frame itself into a futuristic or exotic shape — the real frame is an unremarkable 1970s oval-head aluminum racket.",
+      "Omitting the cylindrical protective sheaths at crossing points, or replacing them with knots or beads.",
+      "Depicting main and cross strings as interlaced/woven like a normal racket — in reality the layers are separated and slide against each other."
+    ]
+  },
+  "references": [
+    {
+      "id": "ref-patent-drawing",
+      "title": "US Patent 4,190,249 — Tennis racket and method of making same (Werner Fischer), Drawings page 2",
+      "sourceType": "patent",
+      "sourceUrl": "https://www.freepatentsonline.com/4190249.html",
+      "imageUrl": "https://patentimages.storage.googleapis.com/b4/15/61/b31d52ee9c555a/US4190249-drawings-page-2.png",
+      "license": "public-domain",
+      "authorityScore": 5,
+      "whyUsefulKo": "발명자 본인이 제출한 공식 특허 도면으로, FIG.1(라켓 전체 원근도), FIG.2(스트링 배열 부분 원근도), FIG.3(3-3선 단면도)을 통해 3층 스트링 구조와 튜브 위치를 1차 자료로 직접 확인할 수 있음.",
+      "visualFactsKo": [
+        "FIG.1: 라켓 전체 원근도 — 프레임 외형은 통상적 오벌 헤드",
+        "FIG.2: 메인-크로스 스트링 배열의 부분 원근도, 접촉점 튜브 위치 표시",
+        "FIG.3: 3-3선 단면도 — 앞 메인층/크로스층/뒤 메인층의 앞뒤 간격 표현"
+      ],
+      "visualFactsEn": [
+        "FIG.1: full perspective view of the racket — ordinary oval-head frame silhouette",
+        "FIG.2: partial perspective of the main/cross string array showing sheath positions at contact points",
+        "FIG.3: cross-section along line 3-3 showing front-main/cross/rear-main layer spacing"
+      ],
+      "selected": true,
+      "localFile": "output/episodes/FTN-EP-001/visual-references/assets/vr01.png",
+      "downloadError": null
+    },
+    {
+      "id": "ref-woodtennis-kuebler",
+      "title": "Historic Spaghetti Strung Tennis Rackets — Kuebler Mark 77 (Werner Fischer construction), woodtennis.com",
+      "sourceType": "archive",
+      "sourceUrl": "http://woodtennis.com/fischer_spaghetti/",
+      "imageUrl": "http://www.woodtennis.com/fischer_spaghetti/fischer_spaghetti0.jpg",
+      "license": "source-link-only",
+      "authorityScore": 4,
+      "whyUsefulKo": "빈티지 라켓 컬렉터가 직접 촬영한 실물 Kuebler Mark 77(Fischer 스파게티 구조) 사진으로, 크로스 스트링이 스트링베드 전면이 아니라 중앙 대각선 대역에만 클러스터로 뭉쳐 있고 작은 흰색 클립으로 고정된 실제 형태를 직접 확인할 수 있음. 텍스트 설명만으로는 알기 어려운 밀도·범위 정보를 제공함.",
+      "visualFactsKo": [
+        "메인(세로) 스트링은 알루미늄 프레임 전체 폭에 걸쳐 촘촘하고 일반 라켓처럼 보임",
+        "크로스 스트링(주황/황갈색)은 중앙에 4~5개의 대각선 다이아몬드 클러스터로만 존재",
+        "각 크로스 교차점에 작은 흰색 클립 형태의 고정재가 보임",
+        "프레임은 은색 알루미늄, 검정 그립부, 'MARK 77' 라벨"
+      ],
+      "visualFactsEn": [
+        "Main (vertical) strings run densely across the full frame width, looking like a conventional stringbed",
+        "Cross strings (orange/tan) exist only as 4-5 diagonal diamond clusters concentrated in the center",
+        "Small white clip-like fasteners are visible at each cross-string crossing",
+        "Frame is silver aluminum with black throat/grip section and a 'MARK 77' label"
+      ],
+      "selected": true,
+      "localFile": null,
+      "downloadError": null
+    },
+    {
+      "id": "ref-woodtennis-gtxpro",
+      "title": "Adidas GTX Pro (Ivan Lendl) spaghetti-style stringing variant — woodtennis.com",
+      "sourceType": "archive",
+      "sourceUrl": "http://woodtennis.com/fischer_spaghetti/",
+      "imageUrl": "http://www.woodtennis.com/strings/speghetti/gtxProTspeghetti2.jpg",
+      "license": "source-link-only",
+      "authorityScore": 3,
+      "whyUsefulKo": "동일 사이트가 제시하는 비교용 라켓 사진으로, 일부 후기 복제형은 크로스 스트링을 전면 대각선 격자로 촘촘하게 배치해 원조 Fischer 구조(중앙 집중형)와 다른 변형이 존재함을 보여줌. 재현 방식의 편차를 인지하는 데 유용하나 원 특허 구조의 1차 근거로는 사용하지 않음.",
+      "visualFactsKo": [
+        "얇고 흰 크로스 스트링이 검은 메인 스트링 위에 대각선 방향으로 스트링베드 전면을 덮음",
+        "원조 Kuebler Mark 77과 달리 중앙 집중형 클러스터가 아니라 전면 균일 패턴"
+      ],
+      "visualFactsEn": [
+        "Thin white cross strings overlay the black main strings diagonally, covering the entire face",
+        "Unlike the original Kuebler Mark 77, this shows a uniform full-face pattern rather than a centered cluster"
+      ],
+      "selected": true,
+      "localFile": null,
+      "downloadError": null
+    },
+    {
+      "id": "ref-tennis-museum-gac",
+      "title": "Fischer/Adidas Spaghetti Strung Racquet — Australian Tennis Museum (Google Arts & Culture)",
+      "sourceType": "museum",
+      "sourceUrl": "https://artsandculture.google.com/asset/fischer-adidas-spaghetti-strung-racquet-fischer-adidas/-AHaWrrot0mjow?hl=en",
+      "imageUrl": "",
+      "license": "source-link-only",
+      "authorityScore": 4,
+      "whyUsefulKo": "호주 테니스 박물관(Sydney Olympic Park) 소장품 설명으로 '알루미늄 프레임, 플라스틱 넥, 메인 18개·크로스 5개' 등 공식 소장 자료의 재질·수량 정보를 제공함. 다만 페이지에서 직접 열람 가능한 원본 이미지 URL을 확인하지 못해 imageUrl은 비워둠.",
+      "visualFactsKo": [
+        "알루미늄 프레임, 플라스틱 넥(throat) 부품",
+        "메인 스트링 18개, 크로스 스트링 5개로 명시된 수량",
+        "크로스 스트링에 플라스틱 스파게티 튜빙과 소량의 접착제 적용"
+      ],
+      "visualFactsEn": [
+        "Aluminum frame with plastic throat piece",
+        "Explicitly counted: 18 main strings, 5 cross strings",
+        "Cross strings fitted with plastic spaghetti tubing and small glue dabs"
+      ],
+      "selected": true,
+      "localFile": null,
+      "downloadError": null
+    },
+    {
+      "id": "ref-itf-rule4",
+      "title": "ITF Rules of Tennis — Rule 4: Rackets and Strings (공식 규정 PDF)",
+      "sourceType": "official",
+      "sourceUrl": "https://www.itftennis.com/media/2175/rackets-and-strings-strings.pdf",
+      "imageUrl": "",
+      "license": "source-link-only",
+      "authorityScore": 5,
+      "whyUsefulKo": "현행 규정이 요구하는 '정상적인' 스트링 구조(교차점에서 얽히거나 결속됨)를 정의해, 스파게티 라켓이 왜 형태적으로 예외적인지에 대한 기준선(baseline shape)을 제공함. 이미지 자체는 없으나 구조적 반대 사례(interlaced/bonded)를 텍스트로 명확히 규정함.",
+      "visualFactsKo": [
+        "히팅면 스트링은 교차된 패턴이어야 하며 교차점에서 번갈아 얽히거나(interlaced) 결속되어야(bonded) 함을 명문화"
+      ],
+      "visualFactsEn": [
+        "Specifies that the hitting-surface strings must form a crossed pattern and be interlaced or bonded where they cross"
+      ],
+      "selected": true,
+      "localFile": null,
+      "downloadError": null
+    }
+  ],
+  "searchQueries": [
+    "spaghetti tennis racquet photo Fischer double strung 1977 museum archive",
+    "US Patent 4190249 tennis racket drawings",
+    "Fischer Adidas spaghetti strung racquet Australian Tennis Museum",
+    "woodtennis.com fischer spaghetti racket photos",
+    "ITF Rules of Tennis Rule 4 strings interlaced bonded",
+    "1977 Raquette d'Or Nastase Vilas spaghetti racket"
+  ],
+  "promptAnchorKo": "1970년대 오벌 헤드 알루미늄 테니스 라켓, 스트링베드는 앞뒤로 분리된 3층 구조: 앞쪽 세로 메인 스트링 다발 / 중앙에 얽히지 않은 가로 크로스 스트링 5~6개 / 뒤쪽 세로 메인 스트링 다발, 모든 메인-크로스 교차점에 작은 원통형 보호 튜브 장착, 크로스 스트링은 스트링베드 전면이 아니라 중앙 대각선 대역에 다이아몬드 클러스터로 집중, 초정밀 단면도로 앞/중간/뒤 세 층 사이 간격과 슬라이딩 여유 공간이 뚜렷이 구분되어 보임, 프레임 외형 자체는 평범한 통상적 1970년대 라켓 형태",
+  "promptAnchorEn": "1970s oval-head aluminum tennis racket, string bed built as a separated 3-layer stack: front bundle of vertical main strings / a central set of only 5-6 non-interlaced horizontal cross strings / rear bundle of vertical main strings, small cylindrical protective sheaths at every main-cross contact point, cross strings concentrated in a diagonal diamond cluster near the center rather than covering the full face, ultra-precise cross-section clearly showing the gap and sliding clearance between the front/middle/rear layers, ordinary unremarkable 1970s racket frame silhouette",
+  "warnings": [
+    "특허 도면 이미지는 저해상도 소형 이미지라 세부가 흐릿하여, 특허 명세서(Description) 텍스트와 대조해 구조를 재구성했다.",
+    "woodtennis.com 사진은 개인 컬렉터 아카이브 자료로 공식 라이선스가 없어 source-link-only로만 사용해야 한다.",
+    "Google Arts & Culture(호주 테니스 박물관) 자산 페이지는 직접 열람 가능한 원본 이미지 URL을 확인하지 못해 imageUrl을 비워두었다.",
+    "실물 사진마다 크로스 스트링의 배치 밀도·범위가 다르다(빈티지 Kuebler Mark 77은 중앙 대각선 클러스터, Adidas GTX Pro 복제형은 전면 대각선 격자) — 원 특허 구조(중앙 집중형)를 1차 기준으로 삼았다.",
+    "1977년 US오픈 등 경기 보도사진(Washington Post 등)은 접근이 차단되어 이미지를 직접 확인하지 못했으며, 구조 근거로 사용하지 않고 시대적 맥락 보조 자료로만 취급한다.",
+    "Werner Fischer의 최초 고안 연도는 자료마다 1971년/1972년/1977년으로 다르게 언급되어 정확한 연도를 확정하지 못했다(특허 출원일은 1977-05-05로 확실함)."
+  ]
+}

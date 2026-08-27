@@ -562,7 +562,7 @@ function renderPlanning() {
       <h3>${escapeHtml(episode.title)}</h3>
       <p>${escapeHtml(episode.hook)}</p>
       <div class="episode-meta"><span>${episode.targetSeconds}초</span><span>${episode.recommendedProvider === "flow" ? "Flow" : "Higgsfield"}</span><strong>${episode.score}</strong></div>
-      <div class="episode-actions"><button class="text-button" data-episode-detail="${episode.id}" type="button">자세히</button><button class="shortlist-button ${shortlisted ? "active" : ""}" data-shortlist="${episode.id}" type="button" aria-label="${escapeHtml(episode.title)} 찜하기">${shortlisted ? "찜됨" : "+ 찜"}</button></div>
+      <div class="episode-actions"><button class="text-button" data-episode-detail="${episode.id}" type="button">자세히</button><span class="episode-actions-right"><button class="shortlist-button episode-select-button ${isActive ? "active" : ""}" data-select-episode="${episode.id}" type="button" ${isActive ? "disabled" : ""} aria-label="${escapeHtml(episode.title)} 기획으로 선택">${isActive ? "선택됨" : "기획 선택"}</button><button class="shortlist-button ${shortlisted ? "active" : ""}" data-shortlist="${episode.id}" type="button" aria-label="${escapeHtml(episode.title)} 찜하기">${shortlisted ? "찜됨" : "+ 찜"}</button></span></div>
     </article>`;
   }).join("");
   $("#episodeEmpty").hidden = episodes.length > 0;
@@ -649,9 +649,9 @@ function renderVisualResearch() {
   const approveButton = $("#approveVisualReferencesButton");
   status.textContent = research.approved ? `승인 완료 · ${research.selectedCount}개` : research.complete ? `검토 필요 · ${research.referenceCount}개` : "조사 전";
   status.classList.toggle("ready", research.approved);
-  researchButton.disabled = research.complete || !officialComplete;
-  researchButton.textContent = research.complete ? "조사 완료" : "시각 레퍼런스 조사";
-  researchButton.title = officialComplete ? "" : "공식자료 조사를 먼저 완료하세요.";
+  researchButton.disabled = research.complete;
+  researchButton.textContent = research.complete ? "조사 완료" : "자료 조사 시작 (공식+시각)";
+  researchButton.title = research.complete ? "" : officialComplete ? "시각 레퍼런스 조사를 실행합니다." : "공식자료 조사부터 시각 레퍼런스까지 한 번에 실행됩니다.";
   approveButton.disabled = !research.complete || research.approved || research.selectedCount < 1;
   approveButton.textContent = research.approved ? "승인 완료" : "선택 레퍼런스 승인";
 
@@ -1659,6 +1659,23 @@ init();
   sdLoadDesign().then(sdRefreshStatus);
 })();
 
+
+// ===== Research provider switch (Codex / Claude Code) =====
+(() => {
+  const select = document.getElementById("researchProviderSelect");
+  if (!select) return;
+  fetch("/api/research-provider").then((response) => response.json()).then((data) => {
+    if (data && data.provider) select.value = data.provider;
+  }).catch(() => {});
+  select.addEventListener("change", async () => {
+    const response = await fetch("/api/research-provider", {
+      method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ provider: select.value })
+    });
+    const data = await response.json();
+    if (data.ok) toast(`조사·대본 엔진을 ${data.provider === "claude" ? "Claude Code" : "Codex"}로 전환했습니다.`);
+    else toast(data.error || "엔진 전환 실패", "error");
+  });
+})();
 
 // ===== Edit · Subtitle · BGM: final assembly =====
 (() => {
